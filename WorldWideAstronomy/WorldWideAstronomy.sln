@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WWA", "WWA\WWA.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WWATest", "WWATest\WWATest.csproj", "{75287ACC-12ED-4E84-979D-2023B3F80BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOFA", "SOFA\SOFA.csproj", "{C10B9102-3360-4607-A059-F98579A463B1}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -19,6 +21,9 @@ Global
 		SccProjectUniqueName2 = WWATest\\WWATest.csproj
 		SccProjectName2 = WWATest
 		SccLocalPath2 = WWATest
+		SccProjectUniqueName3 = SOFA\\SOFA.csproj
+		SccProjectName3 = SOFA
+		SccLocalPath3 = SOFA
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +38,10 @@ Global
 		{75287ACC-12ED-4E84-979D-2023B3F80BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75287ACC-12ED-4E84-979D-2023B3F80BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75287ACC-12ED-4E84-979D-2023B3F80BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C10B9102-3360-4607-A059-F98579A463B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C10B9102-3360-4607-A059-F98579A463B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C10B9102-3360-4607-A059-F98579A463B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C10B9102-3360-4607-A059-F98579A463B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
