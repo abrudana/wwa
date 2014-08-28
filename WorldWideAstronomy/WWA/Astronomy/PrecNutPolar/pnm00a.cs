@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WorldWideAstronomy
+{
+    public static partial class WWA
+    {
+        /// <summary>
+        /// Form the matrix of precession-nutation for a given date (including
+        /// frame bias), equinox-based, IAU 2000A model.
+        /// </summary>
+        /// 
+        /// <remarks>
+        /// This function is derived from the International Astronomical Union's
+        /// SOFA (Standards of Fundamental Astronomy) software collection.
+        /// http://www.iausofa.org
+        /// The code does not itself constitute software provided by and/or endorsed by SOFA.
+        /// This version is intended to retain identical functionality to the SOFA library, but
+        /// made distinct through different function names (prefixes) and C# language specific
+        /// modifications in code.
+        /// </remarks>
+        /// <param name="date1">TT as a 2-part Julian Date (Note 1)</param>
+        /// <param name="date2">TT as a 2-part Julian Date (Note 1)</param>
+        /// <param name="rbpn">classical NPB matrix (Note 2)</param>
+        public static void wwaPnm00a(double date1, double date2, double[,] rbpn)
+        {
+            double dpsi = 0, deps = 0, epsa = 0;
+            double[,] rb = new double[3, 3];
+            double[,] rp = new double[3, 3];
+            double[,] rbp = new double[3, 3];
+            double[,] rn = new double[3, 3];
+
+
+            /* Obtain the required matrix (discarding other results). */
+            wwaPn00a(date1, date2, ref dpsi, ref deps, ref epsa, rb, rp, rbp, rn, rbpn);
+
+            return;
+        }
+    }
+}
