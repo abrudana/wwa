@@ -267,13 +267,19 @@
     <Compile Include="VectorMatrix\VectorOps\sxpv.cs" />
     <Compile Include="wwa.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Documentation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ReadMe.1st">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentation\01-Routines.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Documentation\02-Operations.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
