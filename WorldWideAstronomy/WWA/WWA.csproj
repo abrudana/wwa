@@ -271,9 +271,9 @@
     <Folder Include="Documentation\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Copyright.txt">
+    <None Include="ReadMe.1st">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

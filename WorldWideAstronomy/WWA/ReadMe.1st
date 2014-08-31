@@ -1,10 +1,9 @@
-World Wide Astronomy - WWA
-Set of algorithms and procedures that implement standard models used in fundamental astronomy.
+World Wide Astronomy - WWA - https://wwa.codeplex.com/
+Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
 
 This program is derived from the International Astronomical Union's
 SOFA (Standards of Fundamental Astronomy) software collection.
 http://www.iausofa.org
-Released 2013-12-02, revised 2014-02-20
 
 The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
 This version is intended to retain identical functionality to the SOFA library, but

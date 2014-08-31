@@ -17,11 +17,26 @@ namespace WorldWideAstronomy
         /// The parameters produced by this function are required in the
         /// parallax, light deflection, aberration, and bias-precession-nutation
         /// parts of the astrometric transformation chain.
-        /// 
-        /// This function is derived from the International Astronomical Union's
-        /// SOFA (Standards of Fundamental Astronomy) software collection.
-        /// The code does not itself constitute software provided by and/or endorsed by SOFA.
         /// </summary>
+        /// 
+        /// /// <remarks>
+        /// World Wide Astronomy - WWA
+        /// Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+        /// 
+        /// This program is derived from the International Astronomical Union's
+        /// SOFA (Standards of Fundamental Astronomy) software collection.
+        /// http://www.iausofa.org
+        /// 
+        /// The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+        /// This version is intended to retain identical functionality to the SOFA library, but
+        /// made distinct through different function names (prefixes) and C# language specific
+        /// modifications in code.
+        /// 
+        /// Contributor
+        /// Attila Abrudán
+        /// 
+        /// Please read the ReadMe.1st text file for more information.
+        /// </remarks>
         /// <param name="date1">TDB as a 2-part...</param>
         /// <param name="date2">...Julian Date (Note 1)</param>
         /// <param name="ebpv">Earth barycentric position/velocity (au, au/day)</param>
