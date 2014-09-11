@@ -192,6 +192,9 @@ namespace WorldWideAstronomy
                 if (m >= (12 * changes[i].iyear + changes[i].month)) break;
             }
 
+            /* Prevent underflow warnings. */
+            if (i < 0) return -5;
+
             /* Get the Delta(AT). */
             da = changes[i].delat;
 
