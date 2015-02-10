@@ -48,7 +48,8 @@ namespace WorldWideAstronomy
             f = 1.0 - c;
 
             /* Euler axis (direction of rotation vector), perhaps null. */
-            if (phi != 0.0)
+            //if (phi != 0.0)
+            if (phi > 0.0)
             {
                 x /= phi;
                 y /= phi;

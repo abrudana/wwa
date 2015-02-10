@@ -158,15 +158,14 @@ int iauAtco13(double rc, double dc,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    int j;
    iauASTROM astrom;
    double ri, di;
-
 
 /* Star-independent astrometry parameters. */
    j = iauApco13(utc1, utc2, dut1, elong, phi, hm, xp, yp,
@@ -188,7 +187,7 @@ int iauAtco13(double rc, double dc,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

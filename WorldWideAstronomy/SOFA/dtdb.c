@@ -164,9 +164,9 @@ double iauDtdb(double date1, double date2,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double t, tsol, w, elsun, emsun, d, elj, els, wt, w0, w1, w2, w3, w4,
@@ -1069,7 +1069,6 @@ double iauDtdb(double date1, double date2,
       {    0.000209e-6,      155.420399434,  1.989815753 }
    };
 
-
 /* Time since J2000.0 in Julian millennia. */
    t = ((date1 - DJ00) + date2) / DJM;
 
@@ -1167,7 +1166,7 @@ double iauDtdb(double date1, double date2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

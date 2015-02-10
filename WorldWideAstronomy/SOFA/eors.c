@@ -40,13 +40,12 @@ double iauEors(double rnpb[3][3], double s)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double x, ax, xs, ys, zs, p, q, eo;
-
 
 /* Evaluate Wallace & Capitaine (2006) expression (16). */
    x = rnpb[2][0];
@@ -62,7 +61,7 @@ double iauEors(double rnpb[3][3], double s)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

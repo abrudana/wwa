@@ -99,6 +99,8 @@
     <Compile Include="Astronomy\FundamentalArgs\fasa03.cs" />
     <Compile Include="Astronomy\FundamentalArgs\faur03.cs" />
     <Compile Include="Astronomy\FundamentalArgs\fave03.cs" />
+    <Compile Include="Astronomy\GalacticCoordinates\g2icsr.cs" />
+    <Compile Include="Astronomy\GalacticCoordinates\icrs2g.cs" />
     <Compile Include="Astronomy\GeodeticGeocentric\eform.cs" />
     <Compile Include="Astronomy\GeodeticGeocentric\gc2gd.cs" />
     <Compile Include="Astronomy\GeodeticGeocentric\gc2gde.cs" />

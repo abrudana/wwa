@@ -675,6 +675,12 @@
     <ClCompile Include="zr.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="g2icrs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="icrs2g.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sofa.h">

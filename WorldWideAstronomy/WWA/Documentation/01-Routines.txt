@@ -44,6 +44,8 @@
  PMPX				apply proper motion and parallax
  PVTOB				observatory position and velocity
  REFCO				refraction constants
+ PMSAFE				apply proper motion, with zero-parallax precautions
+ STARPM				apply proper motion
 
  Time scales
 
@@ -183,8 +185,11 @@
  FK5HZ				FK5 to Hipparcos assuming zero Hipparcos proper motion
  H2FK5				transform Hipparcos star data into the FK5 system
  HFK5Z				Hipparcos to FK5 assuming zero Hipparcos proper motion
- PMSAFE				apply proper motion, with zero-parallax precautions
- STARPM				apply proper motion
+
+ Galactic coordinates
+
+ G2ICRS    transform IAU 1958 galactic coordinates to ICRS
+ ICRS2G    transform ICRS coordinates to IAU 1958 Galactic
 
  Geodetic/geocentric
 

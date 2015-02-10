@@ -38,13 +38,12 @@ double iauFaom03(double t)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double a;
-
 
 /* Mean longitude of the Moon's ascending node */
 /* (IERS Conventions 2003).                    */
@@ -58,7 +57,7 @@ double iauFaom03(double t)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

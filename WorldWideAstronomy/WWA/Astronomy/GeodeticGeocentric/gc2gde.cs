@@ -74,7 +74,9 @@ namespace WorldWideAstronomy
             p2 = x * x + y * y;
 
             /* Longitude. */
-            elong = p2 != 0.0 ? Math.Atan2(y, x) : 0.0;
+            //elong = p2 != 0.0 ? Math.Atan2(y, x) : 0.0;
+            //*elong = p2 > 0.0 ? atan2(y, x) : 0.0;
+            elong = p2 > 0.0 ? Math.Atan2(y, x) : 0.0;
 
             /* Unsigned z-coordinate. */
             absz = Math.Abs(z);

@@ -129,9 +129,9 @@ void iauApcs(double date1, double date2, double pv[2][3],
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
 /* au/d to m/s */
@@ -142,7 +142,6 @@ void iauApcs(double date1, double date2, double pv[2][3],
 
    int i;
    double dp, dv, pb[3], vb[3], ph[3], v2, w;
-
 
 /* Time since reference epoch, years (for proper motion calculation). */
    astrom->pmt = ( (date1 - DJ00) + date2 ) / DJY;
@@ -178,7 +177,7 @@ void iauApcs(double date1, double date2, double pv[2][3],
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -120,9 +120,9 @@ int iauStarpv(double ra, double dec,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
 /* Smallest allowed parallax */
@@ -141,7 +141,6 @@ int iauStarpv(double ra, double dec,
           d = 0.0, del = 0.0,       /* to prevent */
           odd = 0.0, oddel = 0.0,   /* compiler   */
           od = 0.0, odel = 0.0;     /* warnings   */
-
 
 /* Distance (AU). */
    if (px >= PXMIN) {
@@ -218,7 +217,7 @@ int iauStarpv(double ra, double dec,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

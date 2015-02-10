@@ -41,13 +41,12 @@ double iauFave03(double t)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double a;
-
 
 /* Mean longitude of Venus (IERS Conventions 2003). */
    a = fmod(3.176146697 + 1021.3285546211 * t, D2PI);
@@ -56,7 +55,7 @@ double iauFave03(double t)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

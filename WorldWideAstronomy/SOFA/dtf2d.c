@@ -82,14 +82,13 @@ int iauDtf2d(const char *scale, int iy, int im, int id,
 **
 **  This revision:  2013 July 26
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    int js, iy2, im2, id2;
    double dj, w, day, seclim, dat0, dat12, dat24, dleap, time;
-
 
 /* Today's Julian Day Number. */
    js = iauCal2jd(iy, im, id, &dj, &w);
@@ -157,7 +156,7 @@ int iauDtf2d(const char *scale, int iy, int im, int id,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -180,15 +180,14 @@ int iauApco13(double utc1, double utc2, double dut1,
 **
 **  This revision:   2013 December 5
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    int j;
    double tai1, tai2, tt1, tt2, ut11, ut12, ehpv[2][3], ebpv[2][3],
           r[3][3], x, y, s, theta, sp, refa, refb;
-
 
 /* UTC to other time scales. */
    j = iauUtctai(utc1, utc2, &tai1, &tai2);
@@ -232,7 +231,7 @@ int iauApco13(double utc1, double utc2, double dut1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

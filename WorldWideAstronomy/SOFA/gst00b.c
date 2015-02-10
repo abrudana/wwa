@@ -84,13 +84,12 @@ double iauGst00b(double uta, double utb)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double gmst00, ee00b, gst;
-
 
    gmst00 = iauGmst00(uta, utb, uta, utb);
    ee00b = iauEe00b(uta, utb);
@@ -100,7 +99,7 @@ double iauGst00b(double uta, double utb)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
