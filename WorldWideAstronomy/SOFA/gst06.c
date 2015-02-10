@@ -71,13 +71,12 @@ double iauGst06(double uta, double utb, double tta, double ttb,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double x, y, s, era, eors, gst;
-
 
 /* Extract CIP coordinates. */
    iauBpn2xy(rnpb, &x, &y);
@@ -94,7 +93,7 @@ double iauGst06(double uta, double utb, double tta, double ttb,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

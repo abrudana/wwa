@@ -53,9 +53,9 @@ void iauPmpx(double rc, double dc, double pr, double pd,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
 /* Km/s to au/year */
@@ -66,7 +66,6 @@ void iauPmpx(double rc, double dc, double pr, double pd,
 
    int i;
    double sr, cr, sd, cd, x, y, z, p[3], dt, pxr, w, pdz, pm[3];
-
 
 /* Spherical coordinates to unit vector (and useful functions). */
    sr = sin(rc);
@@ -98,7 +97,7 @@ void iauPmpx(double rc, double dc, double pr, double pd,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

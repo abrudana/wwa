@@ -17,7 +17,6 @@ void iauAtciqn(double rc, double dc, double pr, double pd,
 **  star-independent parameters can be obtained by calling one of the
 **  functions iauApci[13], iauApcg[13], iauApco[13] or iauApcs[13].
 **
-**
 **  If the only light-deflecting body to be taken into account is the
 **  Sun, the iauAtciq function can be used instead.  If in addition the
 **  parallax and proper motions are zero, the iauAtciqz function can be
@@ -108,13 +107,12 @@ void iauAtciqn(double rc, double dc, double pr, double pd,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double pco[3], pnat[3], ppr[3], pi[3], w;
-
 
 /* Proper motion and parallax, giving BCRS coordinate direction. */
    iauPmpx(rc, dc, pr, pd, px, rv, astrom->pmt, astrom->eb, pco);
@@ -136,7 +134,7 @@ void iauAtciqn(double rc, double dc, double pr, double pd,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

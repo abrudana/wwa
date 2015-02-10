@@ -65,16 +65,15 @@ int iauUtctai(double utc1, double utc2, double *tai1, double *tai2)
 **
 **  This revision:  2013 July 26
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 **
 */
 {
    int big1;
    int iy, im, id, j, iyt, imt, idt;
    double u1, u2, fd, dat0, dat12, w, dat24, dlod, dleap, z1, z2, a2;
-
 
 /* Put the two parts of the UTC into big-first order. */
    big1 = ( utc1 >= utc2 );
@@ -132,7 +131,7 @@ int iauUtctai(double utc1, double utc2, double *tai1, double *tai2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

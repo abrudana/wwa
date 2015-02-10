@@ -176,6 +176,7 @@
     <ClCompile Include="fk5hz.c" />
     <ClCompile Include="fw2m.c" />
     <ClCompile Include="fw2xy.c" />
+    <ClCompile Include="g2icrs.c" />
     <ClCompile Include="gc2gd.c" />
     <ClCompile Include="gc2gde.c" />
     <ClCompile Include="gd2gc.c" />
@@ -190,6 +191,7 @@
     <ClCompile Include="gst94.c" />
     <ClCompile Include="h2fk5.c" />
     <ClCompile Include="hfk5z.c" />
+    <ClCompile Include="icrs2g.c" />
     <ClCompile Include="ir.c" />
     <ClCompile Include="jd2cal.c" />
     <ClCompile Include="jdcalf.c" />

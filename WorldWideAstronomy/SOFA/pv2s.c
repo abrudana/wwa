@@ -41,13 +41,12 @@ void iauPv2s(double pv[2][3],
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double x, y, z, xd, yd, zd, rxy2, rxy, r2, rtrue, rw, xyp;
-
 
 /* Components of position/velocity vector. */
    x  = pv[0][0];
@@ -98,7 +97,7 @@ void iauPv2s(double pv[2][3],
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

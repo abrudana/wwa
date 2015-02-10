@@ -42,7 +42,8 @@ namespace WorldWideAstronomy
             y = r[2, 0] - r[0, 2];
             z = r[0, 1] - r[1, 0];
             s2 = Math.Sqrt(x * x + y * y + z * z);
-            if (s2 != 0)
+            //if (s2 != 0)
+            if (s2 > 0)
             {
                 c2 = r[0, 0] + r[1, 1] + r[2, 2] - 1.0;
                 phi = Math.Atan2(s2, c2);

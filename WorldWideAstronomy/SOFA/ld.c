@@ -75,14 +75,13 @@ void iauLd(double bm, double p[3], double q[3], double e[3],
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    int i;
    double qpe[3], qdqpe, w, eq[3], peq[3];
-
 
 /* q . (q + e). */
    for (i = 0; i < 3; i++) {
@@ -106,7 +105,7 @@ void iauLd(double bm, double p[3], double q[3], double e[3],
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

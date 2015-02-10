@@ -40,15 +40,14 @@ int iauTttai(double tt1, double tt2, double *tai1, double *tai2)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
 
 /* TT minus TAI (days). */
    static const double dtat = TTMTAI/DAYSEC;
-
 
 /* Result, safeguarding precision. */
    if ( tt1 > tt2 ) {
@@ -64,7 +63,7 @@ int iauTttai(double tt1, double tt2, double *tai1, double *tai2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

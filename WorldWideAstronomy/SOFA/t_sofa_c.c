@@ -17,11 +17,11 @@ static int verbose = 0;
 **
 **  All messages go to stdout.
 **
-**  This revision:  2013 November 7
+**  This revision:  2015 January 30
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 
 static void viv(int ival, int ivalok,
@@ -2905,7 +2905,7 @@ static void t_dat(int *status)
 **
 **  Called:  iauDat, vvd, viv
 **
-**  This revision:  2013 August 7
+**  This revision:  2015 January 30
 */
 {
    int j;
@@ -2921,6 +2921,11 @@ static void t_dat(int *status)
 
    vvd(deltat, 33.0, 0.0, "iauDat", "d2", status);
    viv(j, 0, "iauDat", "j2", status);
+
+   j = iauDat(2015, 9, 1, 0.0, &deltat);
+
+   vvd(deltat, 36.0, 0.0, "iauDat", "d3", status);
+   viv(j, 0, "iauDat", "j3", status);
 
 }
 
@@ -3903,6 +3908,32 @@ static void t_fw2xy(int *status)
 
 }
 
+static void t_g2icrs(int *status)
+/*
+**  - - - - - - - - -
+**   t _ g 2 i c r s
+**  - - - - - - - - -
+**
+**  Test iauG2icrs function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauG2icrs, vvd
+**
+**  This revision:  2015 January 30
+*/
+{
+   double dl, db, dr, dd;
+
+
+   dl =  5.5850536063818546461558105;
+   db = -0.7853981633974483096156608;
+   iauG2icrs (dl, db, &dr, &dd);
+   vvd(dr,  5.9338074302227188048671, 1e-14, "iauG2icrs", "R", status);
+   vvd(dd, -1.1784870613579944551541, 1e-14, "iauG2icrs", "D", status);
+ }
+
 static void t_gc2gd(int *status)
 /*
 **  - - - - - - - -
@@ -4272,6 +4303,31 @@ static void t_gst94(int *status)
    vvd(theta, 1.754166136020645203, 1e-12, "iauGst94", "", status);
 
 }
+
+static void t_icrs2g(int *status)
+/*
+**  - - - - - - - - -
+**   t _ i c r s 2 g
+**  - - - - - - - - -
+**
+**  Test iauIcrs2g function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauIcrs2g, vvd
+**
+**  This revision:  2015 January 30
+*/
+{
+   double dr, dd, dl, db;
+
+   dr =  5.9338074302227188048671087;
+   dd = -1.1784870613579944551540570;
+   iauIcrs2g (dr, dd, &dl, &db);
+   vvd(dl,  5.5850536063818546461558, 1e-14, "iauIcrs2g", "L", status);
+   vvd(db, -0.7853981633974483096157, 1e-14, "iauIcrs2g", "B", status);
+ }
 
 static void t_h2fk5(int *status)
 /*
@@ -9114,6 +9170,7 @@ int main(int argc, char *argv[])
    t_fk5hz(&status);
    t_fw2m(&status);
    t_fw2xy(&status);
+   t_g2icrs(&status);
    t_gc2gd(&status);
    t_gc2gde(&status);
    t_gd2gc(&status);
@@ -9128,6 +9185,7 @@ int main(int argc, char *argv[])
    t_gst94(&status);
    t_h2fk5(&status);
    t_hfk5z(&status);
+   t_icrs2g(&status);
    t_ir(&status);
    t_jd2cal(&status);
    t_jdcalf(&status);

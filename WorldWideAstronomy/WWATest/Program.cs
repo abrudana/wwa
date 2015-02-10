@@ -12,11 +12,11 @@ namespace WWA_Test
     //
     // All messages go to stdout.
     //
-    // This revision:  2013 November 7
+    // This revision:  2015 January 30
     //
-    // SOFA release 2013-12-02
+    // SOFA release 2015-02-09
     //
-    // Copyright (C) 2013 IAU SOFA Board.
+    // Copyright (C) 2015 IAU SOFA Board.
     //
     //<remarks>
     //This program is derived from the International Astronomical Union's
@@ -2958,7 +2958,7 @@ namespace WWA_Test
         **
         **  Called:  wwaDat, vvd, viv
         **
-        **  This revision:  2013 August 7
+        **  This revision: 2015 January 30
         */
         {
             int j;
@@ -2975,6 +2975,10 @@ namespace WWA_Test
             vvd(deltat, 33.0, 0.0, "wwaDat", "d2", ref status);
             viv(j, 0, "wwaDat", "j2", ref status);
 
+            j = WWA.wwaDat(2015, 9, 1, 0.0, ref deltat);
+
+            vvd(deltat, 36.0, 0.0, "wwaDat", "d3", ref status);
+            viv(j, 0, "wwaDat", "j3", ref status);
         }
 
         static void t_dtdb(ref int status)
@@ -3945,7 +3949,6 @@ namespace WWA_Test
         {
             double gamb, phib, psi, eps, x = 0, y = 0;
 
-
             gamb = -0.2243387670997992368e-5;
             phib = 0.4091014602391312982;
             psi = -0.9501954178013015092e-3;
@@ -3955,7 +3958,31 @@ namespace WWA_Test
 
             vvd(x, -0.3779734957034082790e-3, 1e-14, "wwaFw2xy", "x", ref status);
             vvd(y, -0.1924880848087615651e-6, 1e-14, "wwaFw2xy", "y", ref status);
+        }
 
+        static void t_g2icrs(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ g 2 i c r s
+        **  - - - - - - - - -
+        **
+        **  Test iauG2icrs function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaG2icrs, vvd
+        **
+        **  This revision:  2015 January 30
+        */
+        {
+            double dl, db, dr = 0, dd = 0;
+
+            dl = 5.5850536063818546461558105;
+            db = -0.7853981633974483096156608;
+            WWA.wwaG2icrs(dl, db, ref dr, ref dd);
+            vvd(dr, 5.9338074302227188048671, 1e-14, "wwaG2icrs", "R", ref status);
+            vvd(dd, -1.1784870613579944551541, 1e-14, "wwaG2icrs", "D", ref status);
         }
 
         static void t_gc2gd(ref int status)
@@ -4134,7 +4161,6 @@ namespace WWA_Test
         {
             double theta;
 
-
             theta = WWA.wwaGmst00(2400000.5, 53736.0, 2400000.5, 53736.0);
 
             vvd(theta, 1.754174972210740592, 1e-12, "wwaGmst00", "", ref status);
@@ -4158,7 +4184,6 @@ namespace WWA_Test
         */
         {
             double theta;
-
 
             theta = WWA.wwaGmst06(2400000.5, 53736.0, 2400000.5, 53736.0);
 
@@ -4184,7 +4209,6 @@ namespace WWA_Test
         {
             double theta;
 
-
             theta = WWA.wwaGmst82(2400000.5, 53736.0);
 
             vvd(theta, 1.754174981860675096, 1e-12, "wwaGmst82", "", ref status);
@@ -4209,7 +4233,6 @@ namespace WWA_Test
         {
             double theta;
 
-
             theta = WWA.wwaGst00a(2400000.5, 53736.0, 2400000.5, 53736.0);
 
             vvd(theta, 1.754166138018281369, 1e-12, "wwaGst00a", "", ref status);
@@ -4233,7 +4256,6 @@ namespace WWA_Test
         */
         {
             double theta;
-
 
             theta = WWA.wwaGst00b(2400000.5, 53736.0);
 
@@ -4322,11 +4344,35 @@ namespace WWA_Test
         {
             double theta;
 
-
             theta = WWA.wwaGst94(2400000.5, 53736.0);
 
             vvd(theta, 1.754166136020645203, 1e-12, "wwaGst94", "", ref status);
 
+        }
+
+        static void t_icrs2g(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ i c r s 2 g
+        **  - - - - - - - - -
+        **
+        **  Test iauIcrs2g function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaIcrs2g, vvd
+        **
+        **  This revision:  2015 January 30
+        */
+        {
+            double dr, dd, dl = 0, db = 0;
+
+            dr = 5.9338074302227188048671087;
+            dd = -1.1784870613579944551540570;
+            WWA.wwaIcrs2g(dr, dd, ref dl, ref db);
+            vvd(dl, 5.5850536063818546461558, 1e-14, "wwaIcrs2g", "L", ref status);
+            vvd(db, -0.7853981633974483096157, 1e-14, "wwaIcrs2g", "B", ref status);
         }
 
         static void t_h2fk5(ref int status)
@@ -9255,6 +9301,7 @@ namespace WWA_Test
             t_fk5hz(ref status);
             t_fw2m(ref status);
             t_fw2xy(ref status);
+            t_g2icrs(ref status);
             t_gc2gd(ref status);
             t_gc2gde(ref status);
             t_gd2gc(ref status);
@@ -9269,6 +9316,7 @@ namespace WWA_Test
             t_gst94(ref status);
             t_h2fk5(ref status);
             t_hfk5z(ref status);
+            t_icrs2g(ref status);
             t_ir(ref status);
             t_jd2cal(ref status);
             t_jdcalf(ref status);

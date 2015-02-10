@@ -104,15 +104,14 @@ void iauAticqn(double ri, double di, iauASTROM *astrom,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    int j, i;
    double pi[3], ppr[3], pnat[3], pco[3], w, d[3], before[3], r2, r,
           after[3];
-
 
 /* CIRS RA,Dec to Cartesian. */
    iauS2c(ri, di, pi);
@@ -182,7 +181,7 @@ void iauAticqn(double ri, double di, iauASTROM *astrom,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

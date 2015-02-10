@@ -41,7 +41,8 @@ namespace WorldWideAstronomy
 
             /* Obtain the spherical angles E and d. */
             r2 = x * x + y * y;
-            e = (r2 != 0.0) ? Math.Atan2(y, x) : 0.0;
+            //e = (r2 != 0.0) ? Math.Atan2(y, x) : 0.0;
+            e = (r2 > 0.0) ? Math.Atan2(y, x) : 0.0;
             d = Math.Atan(Math.Sqrt(r2 / (1.0 - r2)));
 
             /* Form the matrix. */

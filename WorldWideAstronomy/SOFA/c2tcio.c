@@ -59,13 +59,12 @@ void iauC2tcio(double rc2i[3][3], double era, double rpom[3][3],
 **
 **  This revision:  2013 August 24
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    double r[3][3];
-
 
 /* Construct the matrix. */
    iauCr(rc2i, r);
@@ -76,7 +75,7 @@ void iauC2tcio(double rc2i[3][3], double era, double rpom[3][3],
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

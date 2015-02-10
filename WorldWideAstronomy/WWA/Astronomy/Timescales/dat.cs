@@ -45,7 +45,7 @@ namespace WorldWideAstronomy
         /// :  even if no leap seconds have been       :
         /// :  added.                                  :
         /// :                                          :
-        /// :  Latest leap second:  2012 June 30       :
+        /// :  Latest leap second:  2015 June 30       :
         /// :                                          :
         /// :__________________________________________:
         /// </summary>
@@ -87,8 +87,8 @@ namespace WorldWideAstronomy
         public static int wwaDat(int iy, int im, int id, double fd, ref double deltat)
         {
             /* Release year for this version of wwaDat */
-            //enum { IYV = 2013};
-            const int IYV = 2013;
+            //enum { IYV = 2014};
+            const int IYV = 2015;
 
             /* Reference dates (MJD) and drift rates (s/day), pre leap seconds */
             double[,] drift = new double[,] {
@@ -106,7 +106,7 @@ namespace WorldWideAstronomy
       { 38761.0, 0.0012960 },
       { 39126.0, 0.0025920 },
       { 39126.0, 0.0025920 }
-   };
+            };
 
             /* Number of Delta(AT) expressions before leap seconds were introduced */
             //enum { NERA1 = (int) (sizeof drift / sizeof (double) / 2) };
@@ -153,10 +153,12 @@ namespace WorldWideAstronomy
       new Changes { iyear = 1999,  month = 1,  delat = 32.0       },
       new Changes { iyear = 2006,  month = 1,  delat = 33.0       },
       new Changes { iyear = 2009,  month = 1,  delat = 34.0       },
-      new Changes { iyear = 2012,  month = 7,  delat = 35.0       }
+      new Changes { iyear = 2012,  month = 7,  delat = 35.0       },
+      new Changes { iyear = 2015,  month = 7,  delat = 36.0       }
    };
 
             /* Number of Delta(AT) changes */
+            //const int NDAT = sizeof changes / sizeof changes[0];
             //const int NDAT = sizeof changes / sizeof changes[0];
             int NDAT = changes.GetLength(0); // by AA
 
@@ -193,7 +195,7 @@ namespace WorldWideAstronomy
             }
 
             /* Prevent underflow warnings. */
-            if (i < 0) return -5;
+            //if (i < 0) return -5;
 
             /* Get the Delta(AT). */
             da = changes[i].delat;

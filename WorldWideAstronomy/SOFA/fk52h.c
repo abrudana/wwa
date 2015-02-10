@@ -60,14 +60,13 @@ void iauFk52h(double r5, double d5,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
    int i;
    double pv5[2][3], r5h[3][3], s5h[3], wxp[3], vv[3], pvh[2][3];
-
 
 /* FK5 barycentric position/velocity pv-vector (normalized). */
    iauStarpv(r5, d5, dr5, dd5, px5, rv5, pv5);
@@ -97,7 +96,7 @@ void iauFk52h(double r5, double d5,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -54,9 +54,9 @@ int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2013-12-02
+**  SOFA release 2015-02-09
 **
-**  Copyright (C) 2013 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
 */
 {
 
@@ -71,7 +71,6 @@ int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2)
    static const double elbb = ELB/(1.0-ELB);
 
    double d, f;
-
 
 /* Result, preserving date format but safeguarding precision. */
    if ( tdb1 > tdb2 ) {
@@ -91,7 +90,7 @@ int iauTdbtcb(double tdb1, double tdb2, double *tcb1, double *tcb2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2013
+**  Copyright (C) 2015
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
