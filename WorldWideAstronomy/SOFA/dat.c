@@ -62,6 +62,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **                      -2 = bad month
 **                      -3 = bad day (Note 3)
 **                      -4 = bad fraction (Note 4)
+**                      -5 = internal error (Note 5)
 **
 **  Notes:
 **
@@ -102,7 +103,9 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **  5) The status value returned in the case where there are multiple
 **     errors refers to the first error detected.  For example, if the
 **     month and day are 13 and 32 respectively, status -2 (bad month)
-**     will be returned.
+**     will be returned.  The "internal error" status refers to a
+**     case that is impossible but causes some compilers to issue a
+**     warning.
 **
 **  6) In cases where a valid result is not available, zero is returned.
 **
@@ -117,7 +120,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **  Called:
 **     iauCal2jd    Gregorian calendar to JD
 **
-**  This revision:  2015 January 5
+**  This revision:  2015 February 27
 **
 **  SOFA release 2015-02-09
 **
@@ -197,7 +200,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
    };
 
 /* Number of Delta(AT) changes */
-   const int NDAT = sizeof changes / sizeof changes[0];
+   enum { NDAT = (int) (sizeof changes / sizeof changes[0]) };
 
 /* Miscellaneous local variables */
    int j, i, m;
@@ -229,6 +232,9 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
    for (i = NDAT-1; i >=0; i--) {
       if (m >= (12 * changes[i].iyear + changes[i].month)) break;
    }
+
+/* Prevent underflow warnings. */
+   if (i < 0) return -5;
 
 /* Get the Delta(AT). */
    da = changes[i].delat;
