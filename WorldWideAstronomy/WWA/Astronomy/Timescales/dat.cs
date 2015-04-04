@@ -83,6 +83,7 @@ namespace WorldWideAstronomy
         /// -2 = bad month
         /// -3 = bad day (Note 3)
         /// -4 = bad fraction (Note 4)
+        /// -5 = internal error (Note 5)
         /// </returns>
         public static int wwaDat(int iy, int im, int id, double fd, ref double deltat)
         {
@@ -159,7 +160,7 @@ namespace WorldWideAstronomy
 
             /* Number of Delta(AT) changes */
             //const int NDAT = sizeof changes / sizeof changes[0];
-            //const int NDAT = sizeof changes / sizeof changes[0];
+            //enum { NDAT = (int) (sizeof changes / sizeof changes[0]) }; // 2015 Február 27
             int NDAT = changes.GetLength(0); // by AA
 
             /* Miscellaneous local variables */
@@ -195,7 +196,7 @@ namespace WorldWideAstronomy
             }
 
             /* Prevent underflow warnings. */
-            //if (i < 0) return -5;
+            if (i < 0) return -5;
 
             /* Get the Delta(AT). */
             da = changes[i].delat;
