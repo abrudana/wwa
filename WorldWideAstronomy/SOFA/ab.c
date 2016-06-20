@@ -55,13 +55,14 @@ void iauAb(double pnat[3], double v[3], double s, double bm1,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int i;
    double pdv, w1, w2, r2, w, p[3], r;
+
 
    pdv = iauPdp(pnat, v);
    w1 = 1.0 + pdv/(1.0 + bm1);
@@ -81,7 +82,7 @@ void iauAb(double pnat[3], double v[3], double s, double bm1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

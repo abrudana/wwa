@@ -78,15 +78,16 @@ int iauD2dtf(const char *scale, int ndp, double d1, double d2,
 **
 **  This revision:  2014 February 15
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int leap;
    char s;
    int iy1, im1, id1, js, iy2, im2, id2, ihmsf1[4], i;
    double a1, b1, fd, dat0, dat12, w, dat24, dleap;
+
 
 /* The two-part JD. */
    a1 = d1;
@@ -189,7 +190,7 @@ int iauD2dtf(const char *scale, int ndp, double d1, double d2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

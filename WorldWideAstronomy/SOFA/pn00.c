@@ -102,12 +102,13 @@ void iauPn00(double date1, double date2, double dpsi, double deps,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double dpsipr, depspr, rbpw[3][3], rnw[3][3];
+
 
 /* IAU 2000 precession-rate adjustments. */
    iauPr00(date1, date2, &dpsipr, &depspr);
@@ -130,7 +131,7 @@ void iauPn00(double date1, double date2, double dpsi, double deps,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -62,13 +62,14 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int j, js;
    double denom, d1, d2, f1, f2, f;
+
 
 /* Denominator of fraction (e.g. 100 for 2 decimal places). */
    if ((ndp >= 0) && (ndp <= 9)) {
@@ -114,7 +115,7 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

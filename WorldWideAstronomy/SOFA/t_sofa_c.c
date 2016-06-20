@@ -17,11 +17,11 @@ static int verbose = 0;
 **
 **  All messages go to stdout.
 **
-**  This revision:  2015 January 30
+**  This revision:  2016 April 21
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 
 static void viv(int ival, int ivalok,
@@ -79,14 +79,14 @@ static void vvd(double val, double valok, double dval,
 **  Given and returned:
 **     status   int          set to TRUE if test fails
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 April 21
 */
 {
    double a, f;   /* absolute and fractional error */
 
 
    a = val - valok;
-   if (fabs(a) > dval) {
+   if (a != 0.0 && fabs(a) > fabs(dval)) {
       f = fabs(valok / a);
       *status = 1;
       printf("%s failed: %s want %.20g got %.20g (1/%.3g)\n",
@@ -2981,6 +2981,82 @@ static void t_dtf2d(int *status)
 
 }
 
+static void t_eceq06(int *status)
+/*
+**  - - - - -
+**   t _ e c e q 0 6
+**  - - - - -
+**
+**  Test iauEceq06 function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauEceq06, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double date1, date2, dl, db, dr, dd;
+
+
+   date1 = 2456165.5;
+   date2 = 0.401182685;
+   dl = 5.1;
+   db = -0.9;
+
+   iauEceq06(date1, date2, dl, db, &dr, &dd);
+
+   vvd(dr, 5.533459733613627767, 1e-14, "iauEceq06", "dr", status);
+   vvd(dd, -1.246542932554480576, 1e-14, "iauEceq06", "dd", status);
+
+}
+
+static void t_ecm06(int *status)
+/*
+**  - - - - - - - -
+**   t _ e c m 0 6
+**  - - - - - - - -
+**
+**  Test iauEcm06 function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauEcm06, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double date1, date2, rm[3][3];
+
+
+   date1 = 2456165.5;
+   date2 = 0.401182685;
+
+   iauEcm06(date1, date2, rm);
+
+   vvd(rm[0][0], 0.9999952427708701137, 1e-14,
+       "iauEcm06", "rm11", status);
+   vvd(rm[0][1], -0.2829062057663042347e-2, 1e-14,
+       "iauEcm06", "rm12", status);
+   vvd(rm[0][2], -0.1229163741100017629e-2, 1e-14,
+       "iauEcm06", "rm13", status);
+   vvd(rm[1][0], 0.3084546876908653562e-2, 1e-14,
+       "iauEcm06", "rm21", status);
+   vvd(rm[1][1], 0.9174891871550392514, 1e-14,
+       "iauEcm06", "rm22", status);
+   vvd(rm[1][2], 0.3977487611849338124, 1e-14,
+       "iauEcm06", "rm23", status);
+   vvd(rm[2][0], 0.2488512951527405928e-5, 1e-14,
+       "iauEcm06", "rm31", status);
+   vvd(rm[2][1], -0.3977506604161195467, 1e-14,
+       "iauEcm06", "rm32", status);
+   vvd(rm[2][2], 0.9174935488232863071, 1e-14,
+       "iauEcm06", "rm33", status);
+
+}
+
 static void t_ee00(int *status)
 /*
 **  - - - - - - -
@@ -3121,7 +3197,7 @@ static void t_eform(int *status)
 **
 **  Called:  iauEform, viv, vvd
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 March 12
 */
 {
    int j;
@@ -3135,19 +3211,19 @@ static void t_eform(int *status)
 
    viv(j, 0, "iauEform", "j1", status);
    vvd(a, 6378137.0, 1e-10, "iauEform", "a1", status);
-   vvd(f, 0.0033528106647474807, 1e-18, "iauEform", "f1", status);
+   vvd(f, 0.3352810664747480720e-2, 1e-18, "iauEform", "f1", status);
 
    j = iauEform(GRS80, &a, &f);
 
    viv(j, 0, "iauEform", "j2", status);
    vvd(a, 6378137.0, 1e-10, "iauEform", "a2", status);
-   vvd(f, 0.0033528106811823189, 1e-18, "iauEform", "f2", status);
+   vvd(f, 0.3352810681182318935e-2, 1e-18, "iauEform", "f2", status);
 
    j = iauEform(WGS72, &a, &f);
 
    viv(j, 0, "iauEform", "j2", status);
    vvd(a, 6378135.0, 1e-10, "iauEform", "a3", status);
-   vvd(f, 0.0033527794541675049, 1e-18, "iauEform", "f3", status);
+   vvd(f, 0.3352779454167504862e-2, 1e-18, "iauEform", "f3", status);
 
    j = iauEform(4, &a, &f);
    viv(j, -1, "iauEform", "j3", status);
@@ -3374,6 +3450,37 @@ static void t_epv00(int *status)
        "iauEpv00", "vb(z)", status);
 
    viv(j, 0, "iauEpv00", "j", status);
+
+}
+
+static void t_eqec06(int *status)
+/*
+**  - - - - - - - - -
+**   t _ e q e c 0 6
+**  - - - - - - - - -
+**
+**  Test iauEqec06 function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauEqec06, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double date1, date2, dr, dd, dl, db;
+
+
+   date1 = 1234.5;
+   date2 = 2440000.5;
+   dr = 1.234;
+   dd = 0.987;
+
+   iauEqec06(date1, date2, dr, dd, &dl, &db);
+
+   vvd(dl, 1.342509918994654619, 1e-14, "iauEqec06", "dl", status);
+   vvd(db, 0.5926215259704608132, 1e-14, "iauEqec06", "db", status);
 
 }
 
@@ -3947,7 +4054,7 @@ static void t_gc2gd(int *status)
 **
 **  Called:  iauGc2gd, viv, vvd
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 March 12
 */
 {
    int j;
@@ -3961,23 +4068,23 @@ static void t_gc2gd(int *status)
    j = iauGc2gd(WGS84, xyz, &e, &p, &h);
 
    viv(j, 0, "iauGc2gd", "j1", status);
-   vvd(e, 0.98279372324732907, 1e-14, "iauGc2gd", "e1", status);
+   vvd(e, 0.9827937232473290680, 1e-14, "iauGc2gd", "e1", status);
    vvd(p, 0.97160184819075459, 1e-14, "iauGc2gd", "p1", status);
-   vvd(h, 331.41724614260599, 1e-8, "iauGc2gd", "h1", status);
+   vvd(h, 331.4172461426059892, 1e-8, "iauGc2gd", "h1", status);
 
    j = iauGc2gd(GRS80, xyz, &e, &p, &h);
 
    viv(j, 0, "iauGc2gd", "j2", status);
-   vvd(e, 0.98279372324732907, 1e-14, "iauGc2gd", "e2", status);
+   vvd(e, 0.9827937232473290680, 1e-14, "iauGc2gd", "e2", status);
    vvd(p, 0.97160184820607853, 1e-14, "iauGc2gd", "p2", status);
    vvd(h, 331.41731754844348, 1e-8, "iauGc2gd", "h2", status);
 
    j = iauGc2gd(WGS72, xyz, &e, &p, &h);
 
    viv(j, 0, "iauGc2gd", "j3", status);
-   vvd(e, 0.98279372324732907, 1e-14, "iauGc2gd", "e3", status);
-   vvd(p, 0.97160181811015119, 1e-14, "iauGc2gd", "p3", status);
-   vvd(h, 333.27707261303181, 1e-8, "iauGc2gd", "h3", status);
+   vvd(e, 0.9827937232473290680, 1e-14, "iauGc2gd", "e3", status);
+   vvd(p, 0.9716018181101511937, 1e-14, "iauGc2gd", "p3", status);
+   vvd(h, 333.2770726130318123, 1e-8, "iauGc2gd", "h3", status);
 
    j = iauGc2gd(4, xyz, &e, &p, &h);
 
@@ -3997,7 +4104,7 @@ static void t_gc2gde(int *status)
 **
 **  Called:  iauGc2gde, viv, vvd
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 March 12
 */
 {
    int j;
@@ -4008,8 +4115,8 @@ static void t_gc2gde(int *status)
    j = iauGc2gde(a, f, xyz, &e, &p, &h);
 
    viv(j, 0, "iauGc2gde", "j", status);
-   vvd(e, 0.98279372324732907, 1e-14, "iauGc2gde", "e", status);
-   vvd(p, 0.97160183775704115, 1e-14, "iauGc2gde", "p", status);
+   vvd(e, 0.9827937232473290680, 1e-14, "iauGc2gde", "e", status);
+   vvd(p, 0.9716018377570411532, 1e-14, "iauGc2gde", "p", status);
    vvd(h, 332.36862495764397, 1e-8, "iauGc2gde", "h", status);
 }
 
@@ -4026,7 +4133,7 @@ static void t_gd2gc(int *status)
 **
 **  Called:  iauGd2gc, viv, vvd
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 March 12
 */
 {
    int j;
@@ -4040,23 +4147,23 @@ static void t_gd2gc(int *status)
    j = iauGd2gc(WGS84, e, p, h, xyz);
 
    viv(j, 0, "iauGd2gc", "j1", status);
-   vvd(xyz[0], -5599000.5577049947, 1e-7, "iauGd2gc", "0/1", status);
-   vvd(xyz[1], 233011.67223479203, 1e-7, "iauGd2gc", "1/1", status);
-   vvd(xyz[2], -3040909.4706983363, 1e-7, "iauGd2gc", "2/1", status);
+   vvd(xyz[0], -5599000.5577049947, 1e-7, "iauGd2gc", "1/1", status);
+   vvd(xyz[1], 233011.67223479203, 1e-7, "iauGd2gc", "2/1", status);
+   vvd(xyz[2], -3040909.4706983363, 1e-7, "iauGd2gc", "3/1", status);
 
    j = iauGd2gc(GRS80, e, p, h, xyz);
 
    viv(j, 0, "iauGd2gc", "j2", status);
-   vvd(xyz[0], -5599000.5577260984, 1e-7, "iauGd2gc", "0/2", status);
-   vvd(xyz[1], 233011.6722356703, 1e-7, "iauGd2gc", "1/2", status);
-   vvd(xyz[2], -3040909.4706095476, 1e-7, "iauGd2gc", "2/2", status);
+   vvd(xyz[0], -5599000.5577260984, 1e-7, "iauGd2gc", "1/2", status);
+   vvd(xyz[1], 233011.6722356702949, 1e-7, "iauGd2gc", "2/2", status);
+   vvd(xyz[2], -3040909.4706095476, 1e-7, "iauGd2gc", "3/2", status);
 
    j = iauGd2gc(WGS72, e, p, h, xyz);
 
    viv(j, 0, "iauGd2gc", "j3", status);
-   vvd(xyz[0], -5598998.7626301490, 1e-7, "iauGd2gc", "0/3", status);
-   vvd(xyz[1], 233011.5975297822, 1e-7, "iauGd2gc", "1/3", status);
-   vvd(xyz[2], -3040908.6861467111, 1e-7, "iauGd2gc", "2/3", status);
+   vvd(xyz[0], -5598998.7626301490, 1e-7, "iauGd2gc", "1/3", status);
+   vvd(xyz[1], 233011.5975297822211, 1e-7, "iauGd2gc", "2/3", status);
+   vvd(xyz[2], -3040908.6861467111, 1e-7, "iauGd2gc", "3/3", status);
 
    j = iauGd2gc(4, e, p, h, xyz);
 
@@ -4076,7 +4183,7 @@ static void t_gd2gce(int *status)
 **
 **  Called:  iauGd2gce, viv, vvd
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 March 12
 */
 {
    int j;
@@ -4087,9 +4194,9 @@ static void t_gd2gce(int *status)
    j = iauGd2gce(a, f, e, p, h, xyz);
 
    viv(j, 0, "iauGd2gce", "j", status);
-   vvd(xyz[0], -5598999.6665116328, 1e-7, "iauGd2gce", "0", status);
-   vvd(xyz[1], 233011.63514630572, 1e-7, "iauGd2gce", "1", status);
-   vvd(xyz[2], -3040909.0517314132, 1e-7, "iauGd2gce", "2", status);
+   vvd(xyz[0], -5598999.6665116328, 1e-7, "iauGd2gce", "1", status);
+   vvd(xyz[1], 233011.6351463057189, 1e-7, "iauGd2gce", "2", status);
+   vvd(xyz[2], -3040909.0517314132, 1e-7, "iauGd2gce", "3", status);
 }
 
 static void t_gmst00(int *status)
@@ -4665,6 +4772,262 @@ static void t_ldsun(int *status)
                "iauLdsun", "2", status);
    vvd(p1[2], -0.2167355419322321302, 1e-12,
                "iauLdsun", "3", status);
+
+}
+
+static void t_lteceq(int *status)
+/*
+**  - - - - - - - - -
+**   t _ l t e c e q
+**  - - - - - - - - -
+**
+**  Test iauLteceq function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLteceq, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, dl, db, dr, dd;
+
+
+   epj = 2500.0;
+   dl = 1.5;
+   db = 0.6;
+
+   iauLteceq(epj, dl, db, &dr, &dd);
+
+   vvd(dr, 1.275156021861921167, 1e-14, "iauLteceq", "dr", status);
+   vvd(dd, 0.9966573543519204791, 1e-14, "iauLteceq", "dd", status);
+
+}
+
+static void t_ltecm(int *status)
+/*
+**  - - - - - - - -
+**   t _ l t e c m
+**  - - - - - - - -
+**
+**  Test iauLtecm function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLtecm, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, rm[3][3];
+
+
+   epj = -3000.0;
+
+   iauLtecm(epj, rm);
+
+   vvd(rm[0][0], 0.3564105644859788825, 1e-14,
+       "iauLtecm", "rm11", status);
+   vvd(rm[0][1], 0.8530575738617682284, 1e-14,
+       "iauLtecm", "rm12", status);
+   vvd(rm[0][2], 0.3811355207795060435, 1e-14,
+       "iauLtecm", "rm13", status);
+   vvd(rm[1][0], -0.9343283469640709942, 1e-14,
+       "iauLtecm", "rm21", status);
+   vvd(rm[1][1], 0.3247830597681745976, 1e-14,
+       "iauLtecm", "rm22", status);
+   vvd(rm[1][2], 0.1467872751535940865, 1e-14,
+       "iauLtecm", "rm23", status);
+   vvd(rm[2][0], 0.1431636191201167793e-2, 1e-14,
+       "iauLtecm", "rm31", status);
+   vvd(rm[2][1], -0.4084222566960599342, 1e-14,
+       "iauLtecm", "rm32", status);
+   vvd(rm[2][2], 0.9127919865189030899, 1e-14,
+       "iauLtecm", "rm33", status);
+
+}
+
+static void t_lteqec(int *status)
+/*
+**  - - - - - - - - -
+**   t _ l t e q e c
+**  - - - - - - - - -
+**
+**  Test iauLteqec function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLteqec, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, dr, dd, dl, db;
+
+
+   epj = -1500.0;
+   dr = 1.234;
+   dd = 0.987;
+
+   iauLteqec(epj, dr, dd, &dl, &db);
+
+   vvd(dl, 0.5039483649047114859, 1e-14, "iauLteqec", "dl", status);
+   vvd(db, 0.5848534459726224882, 1e-14, "iauLteqec", "db", status);
+
+}
+
+static void t_ltp(int *status)
+/*
+**  - - - - - -
+**   t _ l t p
+**  - - - - - -
+**
+**  Test iauLtp function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLtp, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, rp[3][3];
+
+
+   epj = 1666.666;
+
+   iauLtp(epj, rp);
+
+   vvd(rp[0][0], 0.9967044141159213819, 1e-14,
+       "iauLtp", "rp11", status);
+   vvd(rp[0][1], 0.7437801893193210840e-1, 1e-14,
+       "iauLtp", "rp12", status);
+   vvd(rp[0][2], 0.3237624409345603401e-1, 1e-14,
+       "iauLtp", "rp13", status);
+   vvd(rp[1][0], -0.7437802731819618167e-1, 1e-14,
+       "iauLtp", "rp21", status);
+   vvd(rp[1][1], 0.9972293894454533070, 1e-14,
+       "iauLtp", "rp22", status);
+   vvd(rp[1][2], -0.1205768842723593346e-2, 1e-14,
+       "iauLtp", "rp23", status);
+   vvd(rp[2][0], -0.3237622482766575399e-1, 1e-14,
+       "iauLtp", "rp31", status);
+   vvd(rp[2][1], -0.1206286039697609008e-2, 1e-14,
+       "iauLtp", "rp32", status);
+   vvd(rp[2][2], 0.9994750246704010914, 1e-14,
+       "iauLtp", "rp33", status);
+
+}
+
+static void t_ltpb(int *status)
+/*
+**  - - - - - - -
+**   t _ l t p b
+**  - - - - - - -
+**
+**  Test iauLtpb function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLtpb, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, rpb[3][3];
+
+
+   epj = 1666.666;
+
+   iauLtpb(epj, rpb);
+
+   vvd(rpb[0][0], 0.9967044167723271851, 1e-14,
+       "iauLtpb", "rpb11", status);
+   vvd(rpb[0][1], 0.7437794731203340345e-1, 1e-14,
+       "iauLtpb", "rpb12", status);
+   vvd(rpb[0][2], 0.3237632684841625547e-1, 1e-14,
+       "iauLtpb", "rpb13", status);
+   vvd(rpb[1][0], -0.7437795663437177152e-1, 1e-14,
+       "iauLtpb", "rpb21", status);
+   vvd(rpb[1][1], 0.9972293947500013666, 1e-14,
+       "iauLtpb", "rpb22", status);
+   vvd(rpb[1][2], -0.1205741865911243235e-2, 1e-14,
+       "iauLtpb", "rpb23", status);
+   vvd(rpb[2][0], -0.3237630543224664992e-1, 1e-14,
+       "iauLtpb", "rpb31", status);
+   vvd(rpb[2][1], -0.1206316791076485295e-2, 1e-14,
+       "iauLtpb", "rpb32", status);
+   vvd(rpb[2][2], 0.9994750220222438819, 1e-14,
+       "iauLtpb", "rpb33", status);
+
+}
+
+static void t_ltpecl(int *status)
+/*
+**  - - - - - - - - -
+**   t _ l t p e c l
+**  - - - - - - - - -
+**
+**  Test iauLtpecl function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLtpecl, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, vec[3];
+
+
+   epj = -1500.0;
+
+   iauLtpecl(epj, vec);
+
+   vvd(vec[0], 0.4768625676477096525e-3, 1e-14,
+       "iauLtpecl", "vec1", status);
+   vvd(vec[1], -0.4052259533091875112, 1e-14,
+       "iauLtpecl", "vec2", status);
+   vvd(vec[2], 0.9142164401096448012, 1e-14,
+       "iauLtpecl", "vec3", status);
+
+}
+
+static void t_ltpequ(int *status)
+/*
+**  - - - - - - - - -
+**   t _ l t p e q u
+**  - - - - - - - - -
+**
+**  Test iauLtpequ function.
+**
+**  Returned:
+**     status    int         FALSE = success, TRUE = fail
+**
+**  Called:  iauLtpequ, vvd
+**
+**  This revision:  2016 March 12
+*/
+{
+   double epj, veq[3];
+
+
+   epj = -2500.0;
+
+   iauLtpequ(epj, veq);
+
+   vvd(veq[0], -0.3586652560237326659, 1e-14,
+       "iauLtpequ", "veq1", status);
+   vvd(veq[1], -0.1996978910771128475, 1e-14,
+       "iauLtpequ", "veq2", status);
+   vvd(veq[2], 0.9118552442250819624, 1e-14,
+       "iauLtpequ", "veq3", status);
 
 }
 
@@ -9062,7 +9425,7 @@ int main(int argc, char *argv[])
 **   m a i n
 **  - - - - -
 **
-**  This revision:  2013 October 3
+**  This revision:  2016 March 12
 */
 {
    int status;
@@ -9136,6 +9499,8 @@ int main(int argc, char *argv[])
    t_dat(&status);
    t_dtdb(&status);
    t_dtf2d(&status);
+   t_eceq06(&status);
+   t_ecm06(&status);
    t_ee00(&status);
    t_ee00a(&status);
    t_ee00b(&status);
@@ -9149,6 +9514,7 @@ int main(int argc, char *argv[])
    t_epj(&status);
    t_epj2jd(&status);
    t_epv00(&status);
+   t_eqec06(&status);
    t_eqeq94(&status);
    t_era00(&status);
    t_fad03(&status);
@@ -9192,6 +9558,13 @@ int main(int argc, char *argv[])
    t_ld(&status);
    t_ldn(&status);
    t_ldsun(&status);
+   t_lteceq(&status);
+   t_ltecm(&status);
+   t_lteqec(&status);
+   t_ltp(&status);
+   t_ltpb(&status);
+   t_ltpecl(&status);
+   t_ltpequ(&status);
    t_num00a(&status);
    t_num00b(&status);
    t_num06a(&status);

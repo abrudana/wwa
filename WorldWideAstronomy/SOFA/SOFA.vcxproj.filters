@@ -681,6 +681,36 @@
     <ClCompile Include="icrs2g.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="eceq06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ecm06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eqec06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lteceq.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltecm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lteqec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltpb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltpecl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltpequ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sofa.h">
@@ -689,5 +719,10 @@
     <ClInclude Include="sofam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

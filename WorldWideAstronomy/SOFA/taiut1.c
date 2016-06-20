@@ -42,13 +42,14 @@ int iauTaiut1(double tai1, double tai2, double dta,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 **
 */
 {
    double dtad;
+
 
 /* Result, safeguarding precision. */
    dtad = dta / DAYSEC;
@@ -65,7 +66,7 @@ int iauTaiut1(double tai1, double tai2, double dta,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

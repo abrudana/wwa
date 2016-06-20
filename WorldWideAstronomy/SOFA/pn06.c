@@ -100,12 +100,13 @@ void iauPn06(double date1, double date2, double dpsi, double deps,
 **
 **  This revision:  2013 November 14
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double gamb, phib, psib, eps, r1[3][3], r2[3][3], rt[3][3];
+
 
 /* Bias-precession Fukushima-Williams angles of J2000.0 = frame bias. */
    iauPfw06(DJM0, DJM00, &gamb, &phib, &psib, &eps);
@@ -140,7 +141,7 @@ void iauPn06(double date1, double date2, double dpsi, double deps,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

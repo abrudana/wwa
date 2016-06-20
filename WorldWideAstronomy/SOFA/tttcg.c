@@ -39,9 +39,9 @@ int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
 
@@ -50,6 +50,7 @@ int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2)
 
 /* TT to TCG rate */
    static const double elgg = ELG/(1.0-ELG);
+
 
 /* Result, safeguarding precision. */
    if ( tt1 > tt2 ) {
@@ -65,7 +66,7 @@ int iauTttcg(double tt1, double tt2, double *tcg1, double *tcg2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

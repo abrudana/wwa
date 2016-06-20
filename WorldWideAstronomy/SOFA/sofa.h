@@ -11,11 +11,11 @@
 **  This file is part of the International Astronomical Union's
 **  SOFA (Standards Of Fundamental Astronomy) software collection.
 **
-**  This revision:   2015 January 28
+**  This revision:   2016 March 10
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 
 #include "sofam.h"
@@ -198,6 +198,10 @@ void iauFw2m(double gamb, double phib, double psi, double eps,
              double r[3][3]);
 void iauFw2xy(double gamb, double phib, double psi, double eps,
               double *x, double *y);
+void iauLtp(double epj, double rp[3][3]);
+void iauLtpb(double epj, double rpb[3][3]);
+void iauLtpecl(double epj, double vec[3]);
+void iauLtpequ(double epj, double veq[3]);
 void iauNum00a(double date1, double date2, double rmatn[3][3]);
 void iauNum00b(double date1, double date2, double rmatn[3][3]);
 void iauNum06a(double date1, double date2, double rmatn[3][3]);
@@ -311,9 +315,19 @@ int iauStarpm(double ra1, double dec1,
               double *ra2, double *dec2,
               double *pmr2, double *pmd2, double *px2, double *rv2);
 
+/* Astronomy/EclipticCoordinates */
+void iauEceq06(double date1, double date2, double dl, double db,
+               double *dr, double *dd);
+void iauEcm06(double date1, double date2, double rm[3][3]);
+void iauEqec06(double date1, double date2, double dr, double dd,
+               double *dl, double *db);
+void iauLteceq(double epj, double dl, double db, double *dr, double *dd);
+void iauLtecm(double epj, double rm[3][3]);
+void iauLteqec(double epj, double dr, double dd, double *dl, double *db);
+
 /* Astronomy/GalacticCoordinates */
-void iauG2icrs ( double dl, double db, double *dr, double *dd );
-void iauIcrs2g ( double dr, double dd, double *dl, double *db );
+void iauG2icrs(double dl, double db, double *dr, double *dd);
+void iauIcrs2g(double dr, double dd, double *dl, double *db);
 
 /* Astronomy/GeodeticGeocentric */
 int iauEform(int n, double *a, double *f);
@@ -446,7 +460,7 @@ void iauSxpv(double s, double pv[2][3], double spv[2][3]);
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

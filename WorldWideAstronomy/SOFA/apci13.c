@@ -117,12 +117,13 @@ void iauApci13(double date1, double date2,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double ehpv[2][3], ebpv[2][3], r[3][3], x, y, s;
+
 
 /* Earth barycentric & heliocentric position/velocity (au, au/d). */
    (void) iauEpv00(date1, date2, ehpv, ebpv);
@@ -146,7 +147,7 @@ void iauApci13(double date1, double date2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

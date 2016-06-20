@@ -57,9 +57,9 @@ int iauJd2cal(double dj1, double dj2,
 **
 **  This revision:  2013 August 7
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
 /* Minimum and maximum allowed JD */
@@ -68,6 +68,7 @@ int iauJd2cal(double dj1, double dj2,
 
    long jd, l, n, i, k;
    double dj, d1, d2, f1, f2, f, d;
+
 
 /* Verify date is acceptable. */
    dj = dj1 + dj2;
@@ -108,7 +109,7 @@ int iauJd2cal(double dj1, double dj2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

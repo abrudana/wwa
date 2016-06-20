@@ -58,13 +58,14 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
 /* Hours to degrees * radians to turns */
    const double F = 15.0 / D2PI;
+
 
 /* Scale then use days to h,m,s function. */
    iauD2tf(ndp, angle*F, sign, idmsf);
@@ -73,7 +74,7 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

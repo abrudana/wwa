@@ -67,12 +67,13 @@ double iauEe00(double date1, double date2, double epsa, double dpsi)
 **
 **  This revision:  2008 May 16
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double ee;
+
 
 /* Equation of the equinoxes. */
    ee = dpsi * cos(epsa) + iauEect00(date1, date2);
@@ -81,7 +82,7 @@ double iauEe00(double date1, double date2, double epsa, double dpsi)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -86,12 +86,13 @@ void iauC2txy(double tta, double ttb, double uta, double utb,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double rc2i[3][3], era, sp, rpom[3][3];
+
 
 /* Form the celestial-to-intermediate matrix for this TT. */
    iauC2ixy(tta, ttb, x, y, rc2i);
@@ -112,7 +113,7 @@ void iauC2txy(double tta, double ttb, double uta, double utb,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -60,12 +60,13 @@ void iauPnm00a(double date1, double date2, double rbpn[3][3])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double dpsi, deps, epsa, rb[3][3], rp[3][3], rbp[3][3], rn[3][3];
+
 
 /* Obtain the required matrix (discarding other results). */
    iauPn00a(date1, date2, &dpsi, &deps, &epsa, rb, rp, rbp, rn, rbpn);
@@ -74,7 +75,7 @@ void iauPnm00a(double date1, double date2, double rbpn[3][3])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

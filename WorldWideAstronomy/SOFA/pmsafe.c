@@ -112,9 +112,9 @@ int iauPmsafe(double ra1, double dec1, double pmr1, double pmd1,
 **
 **  This revision:   2014 July 1
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
 
@@ -126,6 +126,7 @@ int iauPmsafe(double ra1, double dec1, double pmr1, double pmd1,
 
    int jpx, j;
    double pm, px1a;
+
 
 /* Proper motion in one year (radians). */
    pm = iauSeps(ra1, dec1, ra1+pmr1, dec1+pmd1);
@@ -150,7 +151,7 @@ int iauPmsafe(double ra1, double dec1, double pmr1, double pmd1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

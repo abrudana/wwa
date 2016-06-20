@@ -63,14 +63,15 @@ int iauTaiutc(double tai1, double tai2, double *utc1, double *utc2)
 **
 **  This revision:  2013 September 12
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int big1;
    int i, j;
    double a1, a2, u1, u2, g1, g2;
+
 
 /* Put the two parts of the TAI into big-first order. */
    big1 = ( tai1 >= tai2 );
@@ -112,7 +113,7 @@ int iauTaiutc(double tai1, double tai2, double *utc1, double *utc2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -54,9 +54,9 @@ int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
 
@@ -68,6 +68,7 @@ int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2)
    static const double tdb0 = TDB0/DAYSEC;
 
    double d;
+
 
 /* Result, safeguarding precision. */
    if ( tcb1 > tcb2 ) {
@@ -85,7 +86,7 @@ int iauTcbtdb(double tcb1, double tcb2, double *tdb1, double *tdb2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

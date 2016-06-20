@@ -43,9 +43,9 @@ void iauFk5hip(double r5h[3][3], double s5h[3])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double v[3];
@@ -53,6 +53,7 @@ void iauFk5hip(double r5h[3][3], double s5h[3])
 /* FK5 wrt Hipparcos orientation and spin (radians, radians/year) */
    double epx, epy, epz;
    double omx, omy, omz;
+
 
    epx = -19.9e-3 * DAS2R;
    epy =  -9.1e-3 * DAS2R;
@@ -79,7 +80,7 @@ void iauFk5hip(double r5h[3][3], double s5h[3])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
