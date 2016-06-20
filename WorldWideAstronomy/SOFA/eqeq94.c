@@ -58,12 +58,13 @@ double iauEqeq94(double date1, double date2)
 **
 **  This revision:  2013 August 31
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double t,  om,  dpsi,  deps,  eps0, ee;
+
 
 /* Interval between fundamental epoch J2000.0 and given date (JC). */
    t = ((date1 - DJ00) + date2) / DJC;
@@ -85,7 +86,7 @@ double iauEqeq94(double date1, double date2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

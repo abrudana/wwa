@@ -70,13 +70,14 @@ int iauUtcut1(double utc1, double utc2, double dut1,
 **
 **  This revision:  2013 August 12
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int iy, im, id, js, jw;
    double w, dat, dta, tai1, tai2;
+
 
 /* Look up TAI-UTC. */
    if ( iauJd2cal(utc1, utc2, &iy, &im, &id, &w) ) return -1;
@@ -100,7 +101,7 @@ int iauUtcut1(double utc1, double utc2, double dut1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

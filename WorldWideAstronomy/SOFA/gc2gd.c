@@ -58,13 +58,14 @@ int iauGc2gd ( int n, double xyz[3],
 **
 **  This revision:  2013 September 1
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int j;
    double a, f;
+
 
 /* Obtain reference ellipsoid parameters. */
    j = iauEform ( n, &a, &f );
@@ -87,7 +88,7 @@ int iauGc2gd ( int n, double xyz[3],
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

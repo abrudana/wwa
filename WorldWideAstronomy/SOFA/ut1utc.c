@@ -69,14 +69,15 @@ int iauUt1utc(double ut11, double ut12, double dut1,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int big1;
    int i, iy, im, id, js;
    double duts, u1, u2, d1, dats1, d2, fd, dats2, ddats, us1, us2, du;
+
 
 /* UT1-UTC in seconds. */
    duts = dut1;
@@ -146,7 +147,7 @@ int iauUt1utc(double ut11, double ut12, double dut1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

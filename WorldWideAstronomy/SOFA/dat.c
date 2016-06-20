@@ -122,9 +122,9 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **
 **  This revision:  2015 February 27
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
 /* Release year for this version of iauDat */
@@ -250,7 +250,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

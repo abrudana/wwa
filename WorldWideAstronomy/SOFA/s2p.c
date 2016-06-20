@@ -27,12 +27,13 @@ void iauS2p(double theta, double phi, double r, double p[3])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double u[3];
+
 
    iauS2c(theta, phi, u);
    iauSxp(r, u, p);
@@ -41,7 +42,7 @@ void iauS2p(double theta, double phi, double r, double p[3])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

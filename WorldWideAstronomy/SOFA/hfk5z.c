@@ -81,14 +81,15 @@ void iauHfk5z(double rh, double dh, double date1, double date2,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double t, ph[3], r5h[3][3], s5h[3], sh[3], vst[3],
    rst[3][3], r5ht[3][3], pv5e[2][3], vv[3],
    w, r, v;
+
 
 /* Time interval from fundamental epoch J2000.0 to given date (JY). */
    t = ((date1 - DJ00) + date2) / DJY;
@@ -128,7 +129,7 @@ void iauHfk5z(double rh, double dh, double date1, double date2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

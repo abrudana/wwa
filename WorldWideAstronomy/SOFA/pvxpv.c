@@ -37,12 +37,13 @@ void iauPvxpv(double a[2][3], double b[2][3], double axb[2][3])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double wa[2][3], wb[2][3], axbd[3], adxb[3];
+
 
 /* Make copies of the inputs. */
    iauCpv(a, wa);
@@ -60,7 +61,7 @@ void iauPvxpv(double a[2][3], double b[2][3], double axb[2][3])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

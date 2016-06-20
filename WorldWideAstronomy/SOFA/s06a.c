@@ -78,12 +78,13 @@ double iauS06a(double date1, double date2)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double rnpb[3][3], x, y, s;
+
 
 /* Bias-precession-nutation-matrix, IAU 20006/2000A. */
    iauPnm06a(date1, date2, rnpb);
@@ -98,7 +99,7 @@ double iauS06a(double date1, double date2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

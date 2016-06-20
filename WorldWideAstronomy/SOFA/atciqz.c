@@ -70,12 +70,13 @@ void iauAtciqz(double rc, double dc, iauASTROM *astrom,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double pco[3], pnat[3], ppr[3], pi[3], w;
+
 
 /* BCRS coordinate direction (unit vector). */
    iauS2c(rc, dc, pco);
@@ -97,7 +98,7 @@ void iauAtciqz(double rc, double dc, iauASTROM *astrom,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -137,17 +137,18 @@ int iauAtio13(double ri, double di,
 **
 **  Called:
 **     iauApio13    astrometry parameters, CIRS-observed, 2013
-**     iauAtioq     quick ICRS to observed
+**     iauAtioq     quick CIRS to observed
 **
-**  This revision:   2013 October 9
+**  This revision:   2016 February 2 
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int j;
    iauASTROM astrom;
+
 
 /* Star-independent astrometry parameters for CIRS->observed. */
    j = iauApio13(utc1, utc2, dut1, elong, phi, hm, xp, yp,
@@ -166,7 +167,7 @@ int iauAtio13(double ri, double di,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

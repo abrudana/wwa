@@ -92,9 +92,9 @@ void iauAtoiq(const char *type,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    int c;
@@ -102,6 +102,7 @@ void iauAtoiq(const char *type,
           xmhdo, ymhdo, zmhdo, az, sz, zdo, refa, refb, tz, dref,
           zdt, xaet, yaet, zaet, xmhda, ymhda, zmhda,
           f, xhd, yhd, zhd, xpl, ypl, w, hma;
+
 
 /* Coordinate type. */
    c = (int) type[0];
@@ -201,7 +202,7 @@ void iauAtoiq(const char *type,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

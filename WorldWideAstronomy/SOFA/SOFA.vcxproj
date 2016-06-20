@@ -142,6 +142,8 @@
     <ClCompile Include="dat.c" />
     <ClCompile Include="dtdb.c" />
     <ClCompile Include="dtf2d.c" />
+    <ClCompile Include="eceq06.c" />
+    <ClCompile Include="ecm06.c" />
     <ClCompile Include="ee00.c" />
     <ClCompile Include="ee00a.c" />
     <ClCompile Include="ee00b.c" />
@@ -155,6 +157,7 @@
     <ClCompile Include="epj.c" />
     <ClCompile Include="epj2jd.c" />
     <ClCompile Include="epv00.c" />
+    <ClCompile Include="eqec06.c" />
     <ClCompile Include="eqeq94.c" />
     <ClCompile Include="era00.c" />
     <ClCompile Include="fad03.c" />
@@ -198,6 +201,13 @@
     <ClCompile Include="ld.c" />
     <ClCompile Include="ldn.c" />
     <ClCompile Include="ldsun.c" />
+    <ClCompile Include="lteceq.c" />
+    <ClCompile Include="ltecm.c" />
+    <ClCompile Include="lteqec.c" />
+    <ClCompile Include="ltp.c" />
+    <ClCompile Include="ltpb.c" />
+    <ClCompile Include="ltpecl.c" />
+    <ClCompile Include="ltpequ.c" />
     <ClCompile Include="num00a.c" />
     <ClCompile Include="num00b.c" />
     <ClCompile Include="num06a.c" />
@@ -310,6 +320,9 @@
   <ItemGroup>
     <ClInclude Include="sofa.h" />
     <ClInclude Include="sofam.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

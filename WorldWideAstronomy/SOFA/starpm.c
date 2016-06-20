@@ -113,14 +113,15 @@ int iauStarpm(double ra1, double dec1,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double pv1[2][3], tl1, dt, pv[2][3], r2, rdv, v2, c2mv2, tl2,
           pv2[2][3];
    int j1, j2, j;
+
 
 /* RA,Dec etc. at the "before" epoch to space motion pv-vector. */
    j1 = iauStarpv(ra1, dec1, pmr1, pmd1, px1, rv1, pv1);
@@ -158,7 +159,7 @@ int iauStarpm(double ra1, double dec1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

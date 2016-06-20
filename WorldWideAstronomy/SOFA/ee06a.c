@@ -57,12 +57,13 @@ double iauEe06a(double date1, double date2)
 **
 **  This revision:  2008 May 18
 **
-**  SOFA release 2015-02-09
+**  SOFA release 2016-05-03
 **
-**  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
    double gst06a, gmst06, ee;
+
 
 /* Apparent and mean sidereal times. */
    gst06a = iauGst06a(0.0, 0.0, date1, date2);
@@ -75,7 +76,7 @@ double iauEe06a(double date1, double date2)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2015
+**  Copyright (C) 2016
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
