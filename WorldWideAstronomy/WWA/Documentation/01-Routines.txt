@@ -47,6 +47,14 @@
  PMSAFE				apply proper motion, with zero-parallax precautions
  STARPM				apply proper motion
 
+ Ecliptic coordinates
+ ECEQ06				Ecliptic to ICRS, IAU 2006     
+ ECM06				Rotation matrix, ICRS to ecliptic, IAU 2006     
+ EQEC06				ICRS to ecliptic, IAU 2006     
+ LTECEQ				ecliptic to ICRS, long term     
+ LTECM				rotation matrix, ICRS to ecliptic, long−term
+ LTEQEC				ICRS to ecliptic, long term
+  
  Time scales
 
  D2DTF				format 2-part JD for output
@@ -116,6 +124,10 @@
  EORS				equation of the origins, given NPB matrix and s
  FW2M				Fukushima-Williams angles to r-matrix
  FW2XY				Fukushima-Williams angles to X,Y
+ LTP				Long−term precession matrix     
+ LTPB				Long−term precession matrix, including ICRS frame bias     
+ LTPECL				Long−term precession of the ecliptic     
+ LTPEQU				Long−term precession of the equator
  NUM00A				nutation matrix, IAU 2000A
  NUM00B				nutation matrix, IAU 2000B
  NUM06A				nutation matrix, IAU 2006/2000A

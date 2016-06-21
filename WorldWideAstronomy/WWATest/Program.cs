@@ -69,7 +69,8 @@ namespace WWA_Test
 
 
             a = val - valok;
-            if (Math.Abs(a) > dval)
+            //if (Math.Abs(a) > dval)
+            if (a != 0.0 && Math.Abs(a) > Math.Abs(dval))
             {
                 f = Math.Abs(valok / a);
                 status = 1;
@@ -3033,6 +3034,74 @@ namespace WWA_Test
 
         }
 
+        static void t_eceq06(ref int status)
+        /*
+        **  - - - - -
+        **   t _ e c e q 0 6
+        **  - - - - -
+        **
+        **  Test wwaEceq06 function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaEceq06, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double date1, date2, dl, db, dr = 0, dd = 0;
+
+
+            date1 = 2456165.5;
+            date2 = 0.401182685;
+            dl = 5.1;
+            db = -0.9;
+
+            WWA.wwaEceq06(date1, date2, dl, db, ref dr, ref dd);
+
+            vvd(dr, 5.533459733613627767, 1e-14, "iauEceq06", "dr", ref status);
+            vvd(dd, -1.246542932554480576, 1e-14, "iauEceq06", "dd", ref status);
+
+        }
+
+        static void t_ecm06(ref int status)
+        /*
+        **  - - - - - - - -
+        **   t _ e c m 0 6
+        **  - - - - - - - -
+        **
+        **  Test iauEcm06 function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaEcm06, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double date1, date2;
+            double[,] rm = new double[3, 3];
+
+
+            date1 = 2456165.5;
+            date2 = 0.401182685;
+
+            WWA.wwaEcm06(date1, date2, rm);
+
+            vvd(rm[0, 0], 0.9999952427708701137, 1e-14, "iauEcm06", "rm11", ref status);
+            vvd(rm[0, 1], -0.2829062057663042347e-2, 1e-14, "iauEcm06", "rm12", ref status);
+            vvd(rm[0, 2], -0.1229163741100017629e-2, 1e-14, "iauEcm06", "rm13", ref status);
+            vvd(rm[1, 0], 0.3084546876908653562e-2, 1e-14, "iauEcm06", "rm21", ref status);
+            vvd(rm[1, 1], 0.9174891871550392514, 1e-14, "iauEcm06", "rm22", ref status);
+            vvd(rm[1, 2], 0.3977487611849338124, 1e-14, "iauEcm06", "rm23", ref status);
+            vvd(rm[2, 0], 0.2488512951527405928e-5, 1e-14, "iauEcm06", "rm31", ref status);
+            vvd(rm[2, 1], -0.3977506604161195467, 1e-14, "iauEcm06", "rm32", ref status);
+            vvd(rm[2, 2], 0.9174935488232863071, 1e-14, "iauEcm06", "rm33", ref status);
+
+        }
+
         static void t_ee00(ref int status)
         /*
         **  - - - - - - -
@@ -3172,7 +3241,7 @@ namespace WWA_Test
         **
         **  Called:  wwaEform, viv, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2016 March 12
         */
         {
             int j;
@@ -3186,19 +3255,22 @@ namespace WWA_Test
 
             viv(j, 0, "wwaEform", "j1", ref status);
             vvd(a, 6378137.0, 1e-10, "wwaEform", "a1", ref status);
-            vvd(f, 0.0033528106647474807, 1e-18, "wwaEform", "f1", ref status);
+            //vvd(f, 0.0033528106647474807, 1e-18, "wwaEform", "f1", ref status);
+            vvd(f, 0.3352810664747480720e-2, 1e-18, "wwaEform", "f1", ref status);
 
             j = WWA.wwaEform(WWA.GRS80, ref a, ref f);
 
             viv(j, 0, "wwaEform", "j2", ref status);
             vvd(a, 6378137.0, 1e-10, "wwaEform", "a2", ref status);
-            vvd(f, 0.0033528106811823189, 1e-18, "wwaEform", "f2", ref status);
+            //vvd(f, 0.0033528106811823189, 1e-18, "wwaEform", "f2", ref status);
+            vvd(f, 0.3352810681182318935e-2, 1e-18, "wwaEform", "f2", ref status);
 
             j = WWA.wwaEform(WWA.WGS72, ref a, ref f);
 
             viv(j, 0, "wwaEform", "j2", ref status);
             vvd(a, 6378135.0, 1e-10, "wwaEform", "a3", ref status);
-            vvd(f, 0.0033527794541675049, 1e-18, "wwaEform", "f3", ref status);
+            //vvd(f, 0.0033527794541675049, 1e-18, "wwaEform", "f3", ref status);
+            vvd(f, 0.3352779454167504862e-2, 1e-18, "wwaEform", "f3", ref status);
 
             j = WWA.wwaEform(4, ref a, ref f);
             viv(j, -1, "wwaEform", "j3", ref status);
@@ -3427,6 +3499,36 @@ namespace WWA_Test
                 "wwaEpv00", "vb(z)", ref status);
 
             viv(j, 0, "wwaEpv00", "j", ref status);
+
+        }
+
+        static void t_eqec06(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ e q e c 0 6
+        **  - - - - - - - - -
+        **
+        **  Test wwaEqec06 function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaEqec06, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double date1, date2, dr, dd, dl = 0, db = 0;
+
+            date1 = 1234.5;
+            date2 = 2440000.5;
+            dr = 1.234;
+            dd = 0.987;
+
+            WWA.wwaEqec06(date1, date2, dr, dd, ref dl, ref db);
+
+            vvd(dl, 1.342509918994654619, 1e-14, "wwaEqec06", "dl", ref status);
+            vvd(db, 0.5926215259704608132, 1e-14, "wwaEqec06", "db", ref status);
 
         }
 
@@ -3998,7 +4100,7 @@ namespace WWA_Test
         **
         **  Called:  wwaGc2gd, viv, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2016 March 12
         */
         {
             int j;
@@ -4012,23 +4114,29 @@ namespace WWA_Test
             j = WWA.wwaGc2gd(WWA.WGS84, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gd", "j1", ref status);
-            vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e1", ref status);
+            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e1", ref status);
+            vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gd", "e1", ref status);
             vvd(p, 0.97160184819075459, 1e-14, "wwaGc2gd", "p1", ref status);
-            vvd(h, 331.41724614260599, 1e-8, "wwaGc2gd", "h1", ref status);
+            //vvd(h, 331.41724614260599, 1e-8, "wwaGc2gd", "h1", ref status);
+            vvd(h, 331.4172461426059892, 1e-8, "wwaGc2gd", "h1", ref status);
 
             j = WWA.wwaGc2gd(WWA.GRS80, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gd", "j2", ref status);
-            vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e2", ref status);
+            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e2", ref status);
+            vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gd", "e2", ref status);
             vvd(p, 0.97160184820607853, 1e-14, "wwaGc2gd", "p2", ref status);
             vvd(h, 331.41731754844348, 1e-8, "wwaGc2gd", "h2", ref status);
 
             j = WWA.wwaGc2gd(WWA.WGS72, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gd", "j3", ref status);
-            vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e3", ref status);
-            vvd(p, 0.97160181811015119, 1e-14, "wwaGc2gd", "p3", ref status);
-            vvd(h, 333.27707261303181, 1e-8, "wwaGc2gd", "h3", ref status);
+            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e3", ref status);
+            vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gd", "e3", ref status);
+            //vvd(p, 0.97160181811015119, 1e-14, "wwaGc2gd", "p3", ref status);
+            vvd(p, 0.9716018181101511937, 1e-14, "wwaGc2gd", "p3", ref status);
+            //vvd(h, 333.27707261303181, 1e-8, "wwaGc2gd", "h3", ref status);
+            vvd(h, 333.2770726130318123, 1e-8, "wwaGc2gd", "h3", ref status);
 
             j = WWA.wwaGc2gd(4, xyz, ref e, ref p, ref h);
 
@@ -4048,7 +4156,7 @@ namespace WWA_Test
         **
         **  Called:  wwaGc2gde, viv, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2016 March 12
         */
         {
             int j;
@@ -4059,8 +4167,10 @@ namespace WWA_Test
             j = WWA.wwaGc2gde(a, f, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gde", "j", ref status);
-            vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gde", "e", ref status);
-            vvd(p, 0.97160183775704115, 1e-14, "wwaGc2gde", "p", ref status);
+            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gde", "e", ref status);
+            vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gde", "e", ref status);
+            //vvd(p, 0.97160183775704115, 1e-14, "wwaGc2gde", "p", ref status);
+            vvd(p, 0.9716018377570411532, 1e-14, "wwaGc2gde", "p", ref status);
             vvd(h, 332.36862495764397, 1e-8, "wwaGc2gde", "h", ref status);
         }
 
@@ -4077,7 +4187,7 @@ namespace WWA_Test
         **
         **  Called:  wwaGd2gc, viv, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2016 March 12
         */
         {
             int j;
@@ -4091,23 +4201,32 @@ namespace WWA_Test
             j = WWA.wwaGd2gc(WWA.WGS84, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gc", "j1", ref status);
-            vvd(xyz[0], -5599000.5577049947, 1e-7, "wwaGd2gc", "0/1", ref status);
-            vvd(xyz[1], 233011.67223479203, 1e-7, "wwaGd2gc", "1/1", ref status);
-            vvd(xyz[2], -3040909.4706983363, 1e-7, "wwaGd2gc", "2/1", ref status);
+            //vvd(xyz[0], -5599000.5577049947, 1e-7, "wwaGd2gc", "0/1", ref status);
+            //vvd(xyz[1], 233011.67223479203, 1e-7, "wwaGd2gc", "1/1", ref status);
+            //vvd(xyz[2], -3040909.4706983363, 1e-7, "wwaGd2gc", "2/1", ref status);
+            vvd(xyz[0], -5599000.5577049947, 1e-7, "wwaGd2gc", "1/1", ref status);
+            vvd(xyz[1], 233011.67223479203, 1e-7, "wwaGd2gc", "2/1", ref status);
+            vvd(xyz[2], -3040909.4706983363, 1e-7, "wwaGd2gc", "3/1", ref status);
 
             j = WWA.wwaGd2gc(WWA.GRS80, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gc", "j2", ref status);
-            vvd(xyz[0], -5599000.5577260984, 1e-7, "wwaGd2gc", "0/2", ref status);
-            vvd(xyz[1], 233011.6722356703, 1e-7, "wwaGd2gc", "1/2", ref status);
-            vvd(xyz[2], -3040909.4706095476, 1e-7, "wwaGd2gc", "2/2", ref status);
+            //vvd(xyz[0], -5599000.5577260984, 1e-7, "wwaGd2gc", "0/2", ref status);
+            //vvd(xyz[1], 233011.6722356703, 1e-7, "wwaGd2gc", "1/2", ref status);
+            //vvd(xyz[2], -3040909.4706095476, 1e-7, "wwaGd2gc", "2/2", ref status);
+            vvd(xyz[0], -5599000.5577260984, 1e-7, "wwaGd2gc", "1/2", ref status);
+            vvd(xyz[1], 233011.6722356702949, 1e-7, "wwaGd2gc", "2/2", ref status);
+            vvd(xyz[2], -3040909.4706095476, 1e-7, "wwaGd2gc", "3/2", ref status);
 
             j = WWA.wwaGd2gc(WWA.WGS72, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gc", "j3", ref status);
-            vvd(xyz[0], -5598998.7626301490, 1e-7, "wwaGd2gc", "0/3", ref status);
-            vvd(xyz[1], 233011.5975297822, 1e-7, "wwaGd2gc", "1/3", ref status);
-            vvd(xyz[2], -3040908.6861467111, 1e-7, "wwaGd2gc", "2/3", ref status);
+            //vvd(xyz[0], -5598998.7626301490, 1e-7, "wwaGd2gc", "0/3", ref status);
+            //vvd(xyz[1], 233011.5975297822, 1e-7, "wwaGd2gc", "1/3", ref status);
+            //vvd(xyz[2], -3040908.6861467111, 1e-7, "wwaGd2gc", "2/3", ref status);
+            vvd(xyz[0], -5598998.7626301490, 1e-7, "wwaGd2gc", "1/3", ref status);
+            vvd(xyz[1], 233011.5975297822211, 1e-7, "wwaGd2gc", "2/3", ref status);
+            vvd(xyz[2], -3040908.6861467111, 1e-7, "wwaGd2gc", "3/3", ref status);
 
             j = WWA.wwaGd2gc(4, e, p, h, xyz);
 
@@ -4127,7 +4246,7 @@ namespace WWA_Test
         **
         **  Called:  wwaGd2gce, viv, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2016 March 12
         */
         {
             int j;
@@ -4138,9 +4257,12 @@ namespace WWA_Test
             j = WWA.wwaGd2gce(a, f, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gce", "j", ref status);
-            vvd(xyz[0], -5598999.6665116328, 1e-7, "wwaGd2gce", "0", ref status);
-            vvd(xyz[1], 233011.63514630572, 1e-7, "wwaGd2gce", "1", ref status);
-            vvd(xyz[2], -3040909.0517314132, 1e-7, "wwaGd2gce", "2", ref status);
+            //vvd(xyz[0], -5598999.6665116328, 1e-7, "wwaGd2gce", "0", ref status);
+            //vvd(xyz[1], 233011.63514630572, 1e-7, "wwaGd2gce", "1", ref status);
+            //vvd(xyz[2], -3040909.0517314132, 1e-7, "wwaGd2gce", "2", ref status);
+            vvd(xyz[0], -5598999.6665116328, 1e-7, "wwaGd2gce", "1", ref status);
+            vvd(xyz[1], 233011.6351463057189, 1e-7, "wwaGd2gce", "2", ref status);
+            vvd(xyz[2], -3040909.0517314132, 1e-7, "wwaGd2gce", "3", ref status);
         }
 
         static void t_gmst00(ref int status)
@@ -4726,6 +4848,229 @@ namespace WWA_Test
             vvd(p1[2], -0.2167355419322321302, 1e-12,
                         "wwaLdsun", "3", ref status);
 
+        }
+
+        static void t_lteceq(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ l t e c e q
+        **  - - - - - - - - -
+        **
+        **  Test wwaLteceq function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaLteceq, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj, dl, db, dr = 0, dd = 0;
+
+
+            epj = 2500.0;
+            dl = 1.5;
+            db = 0.6;
+
+            WWA.wwaLteceq(epj, dl, db, ref dr, ref dd);
+
+            vvd(dr, 1.275156021861921167, 1e-14, "iauLteceq", "dr", ref status);
+            vvd(dd, 0.9966573543519204791, 1e-14, "iauLteceq", "dd", ref status);
+
+        }
+
+        static void t_ltecm(ref int status)
+        /*
+        **  - - - - - - - -
+        **   t _ l t e c m
+        **  - - - - - - - -
+        **
+        **  Test wwaLtecm function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaLtecm, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj;
+            double[,] rm = new double[3, 3];
+
+
+            epj = -3000.0;
+
+            WWA.wwaLtecm(epj, rm);
+
+            vvd(rm[0, 0], 0.3564105644859788825, 1e-14, "wwaLtecm", "rm11", ref status);
+            vvd(rm[0, 1], 0.8530575738617682284, 1e-14, "wwaLtecm", "rm12", ref status);
+            vvd(rm[0, 2], 0.3811355207795060435, 1e-14, "wwaLtecm", "rm13", ref status);
+            vvd(rm[1, 0], -0.9343283469640709942, 1e-14, "wwaLtecm", "rm21", ref status);
+            vvd(rm[1, 1], 0.3247830597681745976, 1e-14, "wwaLtecm", "rm22", ref status);
+            vvd(rm[1, 2], 0.1467872751535940865, 1e-14, "wwaLtecm", "rm23", ref status);
+            vvd(rm[2, 0], 0.1431636191201167793e-2, 1e-14, "wwaLtecm", "rm31", ref status);
+            vvd(rm[2, 1], -0.4084222566960599342, 1e-14, "wwaLtecm", "rm32", ref status);
+            vvd(rm[2, 2], 0.9127919865189030899, 1e-14, "wwaLtecm", "rm33", ref status);
+
+        }
+
+        static void t_lteqec(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ l t e q e c
+        **  - - - - - - - - -
+        **
+        **  Test wwaLteqec function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaLteqec, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj, dr, dd, dl = 0, db = 0;
+
+
+            epj = -1500.0;
+            dr = 1.234;
+            dd = 0.987;
+
+            WWA.wwaLteqec(epj, dr, dd, ref dl, ref db);
+
+            vvd(dl, 0.5039483649047114859, 1e-14, "wwaLteqec", "dl", ref status);
+            vvd(db, 0.5848534459726224882, 1e-14, "wwaLteqec", "db", ref status);
+        }
+
+        static void t_ltp(ref int status)
+        /*
+        **  - - - - - -
+        **   t _ l t p
+        **  - - - - - -
+        **
+        **  Test refLtp function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  refLtp, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj;
+            double[,] rp = new double[3, 3];
+
+
+            epj = 1666.666;
+
+            WWA.wwaLtp(epj, rp);
+
+            vvd(rp[0, 0], 0.9967044141159213819, 1e-14, "wwaLtp", "rp11", ref status);
+            vvd(rp[0, 1], 0.7437801893193210840e-1, 1e-14, "wwaLtp", "rp12", ref status);
+            vvd(rp[0, 2], 0.3237624409345603401e-1, 1e-14, "wwaLtp", "rp13", ref status);
+            vvd(rp[1, 0], -0.7437802731819618167e-1, 1e-14, "wwaLtp", "rp21", ref status);
+            vvd(rp[1, 1], 0.9972293894454533070, 1e-14, "wwaLtp", "rp22", ref status);
+            vvd(rp[1, 2], -0.1205768842723593346e-2, 1e-14, "wwaLtp", "rp23", ref status);
+            vvd(rp[2, 0], -0.3237622482766575399e-1, 1e-14, "wwaLtp", "rp31", ref status);
+            vvd(rp[2, 1], -0.1206286039697609008e-2, 1e-14, "wwaLtp", "rp32", ref status);
+            vvd(rp[2, 2], 0.9994750246704010914, 1e-14, "wwaLtp", "rp33", ref status);
+        }
+
+        static void t_ltpb(ref int status)
+        /*
+        **  - - - - - - -
+        **   t _ l t p b
+        **  - - - - - - -
+        **
+        **  Test wwaLtpb function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaLtpb, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj;
+            double[,] rpb = new double[3, 3];
+
+
+            epj = 1666.666;
+
+            WWA.wwaLtpb(epj, rpb);
+
+            vvd(rpb[0, 0], 0.9967044167723271851, 1e-14, "wwaLtpb", "rpb11", ref status);
+            vvd(rpb[0, 1], 0.7437794731203340345e-1, 1e-14, "wwaLtpb", "rpb12", ref status);
+            vvd(rpb[0, 2], 0.3237632684841625547e-1, 1e-14, "wwaLtpb", "rpb13", ref status);
+            vvd(rpb[1, 0], -0.7437795663437177152e-1, 1e-14, "wwaLtpb", "rpb21", ref status);
+            vvd(rpb[1, 1], 0.9972293947500013666, 1e-14, "wwaLtpb", "rpb22", ref status);
+            vvd(rpb[1, 2], -0.1205741865911243235e-2, 1e-14, "wwaLtpb", "rpb23", ref status);
+            vvd(rpb[2, 0], -0.3237630543224664992e-1, 1e-14, "wwaLtpb", "rpb31", ref status);
+            vvd(rpb[2, 1], -0.1206316791076485295e-2, 1e-14, "wwaLtpb", "rpb32", ref status);
+            vvd(rpb[2, 2], 0.9994750220222438819, 1e-14, "wwaLtpb", "rpb33", ref status);
+        }
+
+        static void t_ltpecl(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ l t p e c l
+        **  - - - - - - - - -
+        **
+        **  Test wwaLtpecl function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaLtpecl, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj;
+            double[] vec = new double[3];
+
+
+            epj = -1500.0;
+
+            WWA.wwaLtpecl(epj, vec);
+
+            vvd(vec[0], 0.4768625676477096525e-3, 1e-14, "wwaLtpecl", "vec1", ref status);
+            vvd(vec[1], -0.4052259533091875112, 1e-14, "wwaLtpecl", "vec2", ref status);
+            vvd(vec[2], 0.9142164401096448012, 1e-14, "wwaLtpecl", "vec3", ref status);
+        }
+
+        static void t_ltpequ(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ l t p e q u
+        **  - - - - - - - - -
+        **
+        **  Test wwaLtpequ function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  wwaLtpequ, vvd
+        **
+        **  This revision:  2016 March 12
+        */
+        {
+            double epj;
+            double[] veq = new double[3];
+
+
+            epj = -2500.0;
+
+            WWA.wwaLtpequ(epj, veq);
+
+            vvd(veq[0], -0.3586652560237326659, 1e-14, "wwaLtpequ", "veq1", ref status);
+            vvd(veq[1], -0.1996978910771128475, 1e-14, "wwaLtpequ", "veq2", ref status);
+            vvd(veq[2], 0.9118552442250819624, 1e-14, "wwaLtpequ", "veq3", ref status);
         }
 
         static void t_num00a(ref int status)
@@ -9267,6 +9612,8 @@ namespace WWA_Test
             t_dat(ref status);
             t_dtdb(ref status);
             t_dtf2d(ref status);
+            t_eceq06(ref status); // new
+            t_ecm06(ref status); // new
             t_ee00(ref status);
             t_ee00a(ref status);
             t_ee00b(ref status);
@@ -9280,6 +9627,7 @@ namespace WWA_Test
             t_epj(ref status);
             t_epj2jd(ref status);
             t_epv00(ref status);
+            t_eqec06(ref status); // new
             t_eqeq94(ref status);
             t_era00(ref status);
             t_fad03(ref status);
@@ -9323,6 +9671,13 @@ namespace WWA_Test
             t_ld(ref status);
             t_ldn(ref status);
             t_ldsun(ref status);
+            t_lteceq(ref status); // new
+            t_ltecm(ref status); // new
+            t_lteqec(ref status); // new
+            t_ltp(ref status); // new
+            t_ltpb(ref status); // new
+            t_ltpecl(ref status); // new
+            t_ltpequ(ref status); // new
             t_num00a(ref status);
             t_num00b(ref status);
             t_num06a(ref status);
@@ -9443,4 +9798,4 @@ namespace WWA_Test
             return status;
         }
     }
-}
+}   
