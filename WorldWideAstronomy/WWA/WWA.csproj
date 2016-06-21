@@ -83,6 +83,12 @@
     <Compile Include="Astronomy\Calendars\epj2jd.cs" />
     <Compile Include="Astronomy\Calendars\jd2cal.cs" />
     <Compile Include="Astronomy\Calendars\jdcalf.cs" />
+    <Compile Include="Astronomy\EclipticCoordinates\eceq06.cs" />
+    <Compile Include="Astronomy\EclipticCoordinates\ecm06.cs" />
+    <Compile Include="Astronomy\EclipticCoordinates\eqec06.cs" />
+    <Compile Include="Astronomy\EclipticCoordinates\lteceq.cs" />
+    <Compile Include="Astronomy\EclipticCoordinates\ltecm.cs" />
+    <Compile Include="Astronomy\EclipticCoordinates\lteqec.cs" />
     <Compile Include="Astronomy\Ephemerides\epv00.cs" />
     <Compile Include="Astronomy\Ephemerides\plan94.cs" />
     <Compile Include="Astronomy\FundamentalArgs\fad03.cs" />
@@ -128,6 +134,10 @@
     <Compile Include="Astronomy\PrecNutPolar\eors.cs" />
     <Compile Include="Astronomy\PrecNutPolar\fw2m.cs" />
     <Compile Include="Astronomy\PrecNutPolar\fw2xy.cs" />
+    <Compile Include="Astronomy\PrecNutPolar\ltp.cs" />
+    <Compile Include="Astronomy\PrecNutPolar\ltpb.cs" />
+    <Compile Include="Astronomy\PrecNutPolar\ltpecl.cs" />
+    <Compile Include="Astronomy\PrecNutPolar\ltpequ.cs" />
     <Compile Include="Astronomy\PrecNutPolar\num00a.cs" />
     <Compile Include="Astronomy\PrecNutPolar\num00b.cs" />
     <Compile Include="Astronomy\PrecNutPolar\num06a.cs" />
