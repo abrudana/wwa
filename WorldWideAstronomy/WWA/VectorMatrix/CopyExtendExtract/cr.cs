@@ -29,7 +29,8 @@ namespace WorldWideAstronomy
         /// Attila Abrudán
         /// 
         /// Please read the ReadMe.1st text file for more information.
-        /// </remarks>        /// Given:
+        /// </remarks>        
+        /// Given:
         /// <param name="r">r-matrix to be copied</param>
         /// Returned:
         /// <param name="c">copy</param>

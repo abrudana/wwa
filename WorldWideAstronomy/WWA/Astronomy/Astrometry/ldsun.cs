@@ -34,9 +34,35 @@ namespace WorldWideAstronomy
         /// <param name="e">direction from Sun to observer (unit vector)</param>
         /// <param name="em">distance from Sun to observer (au)</param>
         /// <param name="p1">observer to deflected source (unit vector)</param>
+        /// 
+        /// Notes:
+        /// 
+        /// 1) The source is presumed to be sufficiently distant that its
+        /// directions seen from the Sun and the observer are essentially
+        /// the same.
+        /// 
+        /// 2) The deflection is restrained when the angle between the star and
+        /// the center of the Sun is less than a threshold value, falling to
+        /// zero deflection for zero separation.The chosen threshold value
+        /// is within the solar limb for all solar-system applications, and
+        /// is about 5 arcminutes for the case of a terrestrial observer.
+        /// 
+        /// 3) The arguments p and p1 can be the same array.
+        /// 
+        /// Called:
+        /// wwaLd        light deflection by a solar-system body
         public static void wwaLdsun(double[] p, double[] e, double em, double[] p1)
         {
-            wwaLd(1.0, p, p, e, em, 1e-9, p1);
+            double em2, dlim;
+
+            /* Deflection limiter (smaller for distant observers). */
+            em2 = em * em;
+            if (em2 < 1.0) em2 = 1.0;
+            dlim = 1e-6 / (em2 > 1.0 ? em2 : 1.0);
+
+            /* Apply the deflection. */
+            //wwaLd(1.0, p, p, e, em, 1e-9, p1); // old
+            wwaLd(1.0, p, p, e, em, dlim, p1);
         }
     }
 }
