@@ -45,7 +45,7 @@ namespace WorldWideAstronomy
         /// :  even if no leap seconds have been       :
         /// :  added.                                  :
         /// :                                          :
-        /// :  Latest leap second:  2015 June 30       :
+        /// :  Latest leap second:  2016 December 31   :
         /// :                                          :
         /// :__________________________________________:
         /// </summary>
@@ -89,7 +89,8 @@ namespace WorldWideAstronomy
         {
             /* Release year for this version of wwaDat */
             //enum { IYV = 2014};
-            const int IYV = 2015;
+            //const int IYV = 2015;
+            const int IYV = 2016;
 
             /* Reference dates (MJD) and drift rates (s/day), pre leap seconds */
             double[,] drift = new double[,] {
@@ -155,7 +156,8 @@ namespace WorldWideAstronomy
       new Changes { iyear = 2006,  month = 1,  delat = 33.0       },
       new Changes { iyear = 2009,  month = 1,  delat = 34.0       },
       new Changes { iyear = 2012,  month = 7,  delat = 35.0       },
-      new Changes { iyear = 2015,  month = 7,  delat = 36.0       }
+      new Changes { iyear = 2015,  month = 7,  delat = 36.0       },
+      new Changes { iyear = 2017,  month = 1,  delat = 37.0       }
    };
 
             /* Number of Delta(AT) changes */

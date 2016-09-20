@@ -12,11 +12,11 @@ namespace WWA_Test
     //
     // All messages go to stdout.
     //
-    // This revision:  2015 January 30
+    // This revision:  2016 April 21
     //
-    // SOFA release 2015-02-09
+    // SOFA release 2016-05-03
     //
-    // Copyright (C) 2015 IAU SOFA Board.
+    // Copyright (C) 2016 IAU SOFA Board.
     //
     //<remarks>
     //This program is derived from the International Astronomical Union's
@@ -2959,7 +2959,7 @@ namespace WWA_Test
         **
         **  Called:  wwaDat, vvd, viv
         **
-        **  This revision: 2015 January 30
+        **  This revision: 2016 July 11
         */
         {
             int j;
@@ -2976,9 +2976,12 @@ namespace WWA_Test
             vvd(deltat, 33.0, 0.0, "wwaDat", "d2", ref status);
             viv(j, 0, "wwaDat", "j2", ref status);
 
-            j = WWA.wwaDat(2015, 9, 1, 0.0, ref deltat);
+            //j = WWA.wwaDat(2015, 9, 1, 0.0, ref deltat); // old
+            j = WWA.wwaDat(2017, 9, 1, 0.0, ref deltat);
 
-            vvd(deltat, 36.0, 0.0, "wwaDat", "d3", ref status);
+            //vvd(deltat, 36.0, 0.0, "wwaDat", "d3", ref status); // old
+            vvd(deltat, 37.0, 0.0, "wwaDat", "d3", ref status);
+
             viv(j, 0, "wwaDat", "j3", ref status);
         }
 
