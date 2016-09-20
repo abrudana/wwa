@@ -28,23 +28,33 @@ void iauLdsun(double p[3], double e[3], double em, double p1[3])
 **     the same.
 **
 **  2) The deflection is restrained when the angle between the star and
-**     the center of the Sun is less than about 9 arcsec, falling to
-**     zero for zero separation. (The chosen threshold is within the
-**     solar limb for all solar-system applications.)
+**     the center of the Sun is less than a threshold value, falling to
+**     zero deflection for zero separation.  The chosen threshold value
+**     is within the solar limb for all solar-system applications, and
+**     is about 5 arcminutes for the case of a terrestrial observer.
 **
 **  3) The arguments p and p1 can be the same array.
 **
 **  Called:
 **     iauLd        light deflection by a solar-system body
 **
-**  This revision:   2014 September 1
+**  This revision:   2016 June 16
 **
 **  SOFA release 2016-05-03
 **
 **  Copyright (C) 2016 IAU SOFA Board.  See notes at end.
 */
 {
-   iauLd(1.0, p, p, e, em, 1e-9, p1);
+   double em2, dlim;
+
+
+/* Deflection limiter (smaller for distant observers). */
+   em2 = em*em;
+   if ( em2 < 1.0 ) em2 = 1.0;
+   dlim = 1e-6 / (em2 > 1.0 ? em2 : 1.0);
+
+/* Apply the deflection. */
+   iauLd(1.0, p, p, e, em, dlim, p1);
 
 /* Finished. */
 
