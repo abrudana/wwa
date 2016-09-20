@@ -17,7 +17,7 @@ static int verbose = 0;
 **
 **  All messages go to stdout.
 **
-**  This revision:  2016 April 21
+**  This revision:  2016 July 11
 **
 **  SOFA release 2016-05-03
 **
@@ -2905,7 +2905,7 @@ static void t_dat(int *status)
 **
 **  Called:  iauDat, vvd, viv
 **
-**  This revision:  2015 January 30
+**  This revision:  2016 July 11
 */
 {
    int j;
@@ -2922,9 +2922,9 @@ static void t_dat(int *status)
    vvd(deltat, 33.0, 0.0, "iauDat", "d2", status);
    viv(j, 0, "iauDat", "j2", status);
 
-   j = iauDat(2015, 9, 1, 0.0, &deltat);
+   j = iauDat(2017, 9, 1, 0.0, &deltat);
 
-   vvd(deltat, 36.0, 0.0, "iauDat", "d3", status);
+   vvd(deltat, 37.0, 0.0, "iauDat", "d3", status);
    viv(j, 0, "iauDat", "j3", status);
 
 }
