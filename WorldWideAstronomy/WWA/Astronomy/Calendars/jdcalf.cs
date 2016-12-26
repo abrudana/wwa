@@ -74,8 +74,8 @@ namespace WorldWideAstronomy
             /* Separate days and fractions. */
             f1 = d1 % 1.0;
             f2 = d2 % 1.0;
-            d1 = Math.Round(d1 - f1, MidpointRounding.AwayFromZero);
-            d2 = Math.Round(d2 - f2, MidpointRounding.AwayFromZero);
+            d1 = dnint(d1 - f1);
+            d2 = dnint(d2 - f2);
 
             /* Round the total fraction to the specified number of places. */
             f = Math.Floor((f1 + f2) * denom + 0.5) / denom;
