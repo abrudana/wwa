@@ -73,8 +73,13 @@ namespace WorldWideAstronomy
             f2 = d2 % 1.0;
             f = Math.IEEERemainder(f1 + f2, 1.0);
             if (f < 0.0) f += 1.0;
-            d = Math.Floor(d1 - f1) + Math.Floor(d2 - f2) + Math.Floor(f1 + f2 - f);
-            jd = (long)Math.Floor(d) + 1L;
+            //d = Math.Floor(d1 - f1) + Math.Floor(d2 - f2) + Math.Floor(f1 + f2 - f);
+            // dnint :: http://www-01.ibm.com/support/docview.wss?uid=swg21258968
+            d = Math.Round(d1 - f1, MidpointRounding.AwayFromZero) + 
+                Math.Round(d2 - f2, MidpointRounding.AwayFromZero) + 
+                Math.Round(f1 + f2 - f, MidpointRounding.AwayFromZero);
+            //jd = (long)Math.Floor(d) + 1L;
+            jd = (long)Math.Round(d, MidpointRounding.AwayFromZero) + 1L;
 
             /* Express day in Gregorian calendar. */
             l = jd + 68569L;

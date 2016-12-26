@@ -120,7 +120,9 @@ namespace WorldWideAstronomy
             for (i = 0; i < IMAX; i++)
             {
                 d = 1.0 + betr;
-                del = Math.Sqrt(1.0 - betr * betr - bett * bett) - 1.0;
+                w = betr * betr + bett * bett;
+                w = betr * betr + bett * bett;
+                del = -w / (Math.Sqrt(1.0 - w) + 1.0);
                 betr = d * betsr + del;
                 bett = d * betst;
                 if (i > 0)
