@@ -3878,7 +3878,7 @@ namespace WWA_Test
         **
         **  Called:  wwaFk52h, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2016 December 22
         */
         {
             double r5, d5, dr5, dd5, px5, rv5, rh = 0, dh = 0, drh = 0, ddh = 0, pxh = 0, rvh = 0;
@@ -3904,9 +3904,8 @@ namespace WWA_Test
                 "wwaFk52h", "dd5", ref status);
             vvd(pxh, 0.37921, 1e-14,
                 "wwaFk52h", "px", ref status);
-            vvd(rvh, -7.6000000940000254, 1e-11,
-                "wwaFk52h", "rv", ref status);
-
+            vvd(rvh, -7.6000000940000254, 1e-10,
+                "iauFk52h", "rv", ref status);
         }
 
         static void t_fk5hip(ref int status)

@@ -60,7 +60,7 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 **     P. Kenneth Seidelmann (ed), University Science Books (1992),
 **     Section 12.92 (p604).
 **
-**  This revision:  2013 June 18
+**  This revision:  2016 December 2
 **
 **  SOFA release 2016-05-03
 **
@@ -93,11 +93,11 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 /* Separate days and fractions. */
    f1 = fmod(d1, 1.0);
    f2 = fmod(d2, 1.0);
-   d1 = floor(d1 - f1);
-   d2 = floor(d2 - f2);
+   d1 = dnint(d1-f1);
+   d2 = dnint(d2-f2);
 
 /* Round the total fraction to the specified number of places. */
-   f = floor((f1+f2)*denom + 0.5) / denom;
+   f = dnint((f1+f2)*denom) / denom;
 
 /* Re-assemble the rounded date and re-align to noon. */
    d2 += f + 0.5;

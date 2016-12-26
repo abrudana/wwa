@@ -55,7 +55,7 @@ int iauJd2cal(double dj1, double dj2,
 **     P. Kenneth Seidelmann (ed), University Science Books (1992),
 **     Section 12.92 (p604).
 **
-**  This revision:  2013 August 7
+**  This revision:  2016 December 2
 **
 **  SOFA release 2016-05-03
 **
@@ -89,8 +89,8 @@ int iauJd2cal(double dj1, double dj2,
    f2 = fmod(d2, 1.0);
    f = fmod(f1 + f2, 1.0);
    if (f < 0.0) f += 1.0;
-   d = floor(d1 - f1) + floor(d2 - f2) + floor(f1 + f2 - f);
-   jd = (long) floor(d) + 1L;
+   d = dnint(d1-f1) + dnint(d2-f2) + dnint(f1+f2-f);
+   jd = (long) dnint(d) + 1L;
 
 /* Express day in Gregorian calendar. */
    l = jd + 68569L;
