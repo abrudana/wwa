@@ -72,9 +72,9 @@ namespace WorldWideAstronomy
 
             /* The inertial-to-observed correction terms. */
             d = 1.0 + betr;
-            w = betr * betr - bett * bett;
+            w = betr * betr + bett * bett;
             if (d == 0.0 || w > 1.0) return -1;
-            del = w / (Math.Sqrt(1.0 - w) + 1.0);
+            del = -w / (Math.Sqrt(1.0 - w) + 1.0);
 
             /* Apply relativistic correction factor to radial velocity component. */
             w = (betr != 0) ? (betr - del) / (betr * d) : 1.0;
