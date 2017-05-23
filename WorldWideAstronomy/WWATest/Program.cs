@@ -299,14 +299,22 @@ namespace WWA_Test
                               "wwaApcg", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295811013146, 1e-12,
                            "wwaApcg", "em", ref status);
-            vvd(astrom.v[0], 0.4289638897813379954e-4, 1e-16,
-                             "wwaApcg", "v(1_", ref status);
-            vvd(astrom.v[1], 0.8115034021720941898e-4, 1e-16,
-                             "wwaApcg", "v(2)", ref status);
-            vvd(astrom.v[2], 0.3517555123437237778e-4, 1e-16,
-                             "wwaApcg", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999951686013336, 1e-12,
-                            "wwaApcg", "bm1", ref status);
+            //vvd(astrom.v[0], 0.4289638897813379954e-4, 1e-16,
+            //                 "wwaApcg", "v(1_", ref status);
+            vvd(astrom.v[0], 0.4289638913597693554e-4, 1e-16,
+                    "wwaApcg", "v(1)", ref status);
+            //vvd(astrom.v[1], 0.8115034021720941898e-4, 1e-16,
+            //                 "wwaApcg", "v(2)", ref status);
+            vvd(astrom.v[1], 0.8115034051581320575e-4, 1e-16,
+                    "wwaApcg", "v(2)", ref status);
+            //vvd(astrom.v[2], 0.3517555123437237778e-4, 1e-16,
+            //                 "wwaApcg", "v(3)", ref status);
+            vvd(astrom.v[2], 0.3517555136380563427e-4, 1e-16,
+                    "wwaApcg", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999951686013336, 1e-12,
+            //                "wwaApcg", "bm1", ref status);
+            vvd(astrom.bm1, 0.9999999951686012981, 1e-12,
+                   "wwaApcg", "bm1", ref status);
             vvd(astrom.bpn[0, 0], 1.0, 0.0,
                                   "wwaApcg", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.0, 0.0,
@@ -372,14 +380,22 @@ namespace WWA_Test
                             "wwaApcg13", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295964664178, 1e-12,
                             "wwaApcg13", "em", ref status);
-            vvd(astrom.v[0], 0.4289638897157027528e-4, 1e-16,
-                            "wwaApcg13", "v(1)", ref status);
-            vvd(astrom.v[1], 0.8115034002544663526e-4, 1e-16,
-                            "wwaApcg13", "v(2)", ref status);
-            vvd(astrom.v[2], 0.3517555122593144633e-4, 1e-16,
-                            "wwaApcg13", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999951686013498, 1e-12,
-                            "wwaApcg13", "bm1", ref status);
+            //vvd(astrom.v[0], 0.4289638897157027528e-4, 1e-16,
+            //                "wwaApcg13", "v(1)", ref status);
+            vvd(astrom.v[0], 0.4289638912941341125e-4, 1e-16,
+                   "wwaApcg13", "v(1)", ref status);
+            //vvd(astrom.v[1], 0.8115034002544663526e-4, 1e-16,
+            //                "wwaApcg13", "v(2)", ref status);
+            vvd(astrom.v[1], 0.8115034032405042132e-4, 1e-16,
+                  "wwaApcg13", "v(2)", ref status);
+            //vvd(astrom.v[2], 0.3517555122593144633e-4, 1e-16,
+            //                "wwaApcg13", "v(3)", ref status);
+            vvd(astrom.v[2], 0.3517555135536470279e-4, 1e-16,
+                   "wwaApcg13", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999951686013498, 1e-12,
+            //                "wwaApcg13", "bm1", ref status);
+            vvd(astrom.bm1, 0.9999999951686013142, 1e-12,
+                   "wwaApcg13", "bm1", ref status);
             vvd(astrom.bpn[0, 0], 1.0, 0.0,
                                   "wwaApcg13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.0, 0.0,
@@ -459,14 +475,22 @@ namespace WWA_Test
                               "wwaApci", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295811013146, 1e-12,
                            "wwaApci", "em", ref status);
-            vvd(astrom.v[0], 0.4289638897813379954e-4, 1e-16,
-                             "wwaApci", "v(1)", ref status);
-            vvd(astrom.v[1], 0.8115034021720941898e-4, 1e-16,
-                             "wwaApci", "v(2)", ref status);
-            vvd(astrom.v[2], 0.3517555123437237778e-4, 1e-16,
-                             "wwaApci", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999951686013336, 1e-12,
-                            "wwaApci", "bm1", ref status);
+            //vvd(astrom.v[0], 0.4289638897813379954e-4, 1e-16,
+            //                 "wwaApci", "v(1)", ref status);
+            vvd(astrom.v[0], 0.4289638913597693554e-4, 1e-16,
+                   "wwaApci", "v(1)", ref status);
+            //vvd(astrom.v[1], 0.8115034021720941898e-4, 1e-16,
+            //                 "wwaApci", "v(2)", ref status);
+            vvd(astrom.v[1], 0.8115034051581320575e-4, 1e-16,
+                    "wwaApci", "v(2)", ref status);
+            //vvd(astrom.v[2], 0.3517555123437237778e-4, 1e-16,
+            //                 "wwaApci", "v(3)", ref status);
+            vvd(astrom.v[2], 0.3517555136380563427e-4, 1e-16,
+                    "wwaApci", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999951686013336, 1e-12,
+            //                "wwaApci", "bm1", ref status);
+            vvd(astrom.bm1, 0.9999999951686012981, 1e-12,
+                   "wwaApci", "bm1", ref status);
             vvd(astrom.bpn[0, 0], 0.9999991390295159156, 1e-12,
                                   "wwaApci", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4978650072505016932e-7, 1e-12,
@@ -532,14 +556,23 @@ namespace WWA_Test
                               "wwaApci13", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295964664178, 1e-12,
                            "wwaApci13", "em", ref status);
-            vvd(astrom.v[0], 0.4289638897157027528e-4, 1e-16,
-                             "wwaApci13", "v(1)", ref status);
-            vvd(astrom.v[1], 0.8115034002544663526e-4, 1e-16,
-                             "wwaApci13", "v(2)", ref status);
-            vvd(astrom.v[2], 0.3517555122593144633e-4, 1e-16,
-                             "wwaApci13", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999951686013498, 1e-12,
+            //vvd(astrom.v[0], 0.4289638897157027528e-4, 1e-16,
+            //                 "wwaApci13", "v(1)", ref status);
+            //vvd(astrom.v[1], 0.8115034002544663526e-4, 1e-16,
+            //                 "wwaApci13", "v(2)", ref status);
+            //vvd(astrom.v[2], 0.3517555122593144633e-4, 1e-16,
+            //                 "wwaApci13", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999951686013498, 1e-12,
+            //                "wwaApci13", "bm1", ref status);
+            vvd(astrom.v[0], 0.4289638912941341125e-4, 1e-16,
+                            "wwaApci13", "v(1)", ref status);
+            vvd(astrom.v[1], 0.8115034032405042132e-4, 1e-16,
+                            "wwaApci13", "v(2)", ref status);
+            vvd(astrom.v[2], 0.3517555135536470279e-4, 1e-16,
+                            "wwaApci13", "v(3)", ref status);
+            vvd(astrom.bm1, 0.9999999951686013142, 1e-12,
                             "wwaApci13", "bm1", ref status);
+
             vvd(astrom.bpn[0, 0], 0.9999992060376761710, 1e-12,
                                   "wwaApci13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4124244860106037157e-7, 1e-12,
@@ -619,28 +652,51 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 13.25248468622587269, 1e-11,
                             "wwaApco", "pmt", ref status);
-            vvd(astrom.eb[0], -0.9741827110630897003, 1e-12,
-                              "wwaApco", "eb(1)", ref status);
-            vvd(astrom.eb[1], -0.2115130190135014340, 1e-12,
+            //vvd(astrom.eb[0], -0.9741827110630897003, 1e-12,
+            //                  "wwaApco", "eb(1)", ref status);
+            //vvd(astrom.eb[1], -0.2115130190135014340, 1e-12,
+            //                  "wwaApco", "eb(2)", ref status);
+            //vvd(astrom.eb[2], -0.09179840186968295686, 1e-12,
+            //                  "wwaApco", "eb(3)", ref status);
+            //vvd(astrom.eh[0], -0.9736425571689670428, 1e-12,
+            //                  "wwaApco", "eh(1)", ref status);
+            //vvd(astrom.eh[1], -0.2092452125848862201, 1e-12,
+            //                  "wwaApco", "eh(2)", ref status);
+            //vvd(astrom.eh[2], -0.09075578152261439954, 1e-12,
+            //                  "wwaApco", "eh(3)", ref status);
+            //vvd(astrom.em, 0.9998233241710617934, 1e-12,
+            //               "wwaApco", "em", ref status);
+            //vvd(astrom.v[0], 0.2078704985147609823e-4, 1e-16,
+            //                 "wwaApco", "v(1)", ref status);
+            //vvd(astrom.v[1], -0.8955360074407552709e-4, 1e-16,
+            //                 "wwaApco", "v(2)", ref status);
+            //vvd(astrom.v[2], -0.3863338980073114703e-4, 1e-16,
+            //                 "wwaApco", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999950277561600, 1e-12,
+            //                "wwaApco", "bm1", ref status);
+            vvd(astrom.eb[0], -0.9741827110630322720, 1e-12,
+                            "wwaApco", "eb(1)", ref status);
+            vvd(astrom.eb[1], -0.2115130190135344832, 1e-12,
                               "wwaApco", "eb(2)", ref status);
-            vvd(astrom.eb[2], -0.09179840186968295686, 1e-12,
+            vvd(astrom.eb[2], -0.09179840186949532298, 1e-12,
                               "wwaApco", "eb(3)", ref status);
-            vvd(astrom.eh[0], -0.9736425571689670428, 1e-12,
+            vvd(astrom.eh[0], -0.9736425571689739035, 1e-12,
                               "wwaApco", "eh(1)", ref status);
-            vvd(astrom.eh[1], -0.2092452125848862201, 1e-12,
+            vvd(astrom.eh[1], -0.2092452125849330936, 1e-12,
                               "wwaApco", "eh(2)", ref status);
-            vvd(astrom.eh[2], -0.09075578152261439954, 1e-12,
+            vvd(astrom.eh[2], -0.09075578152243272599, 1e-12,
                               "wwaApco", "eh(3)", ref status);
-            vvd(astrom.em, 0.9998233241710617934, 1e-12,
+            vvd(astrom.em, 0.9998233241709957653, 1e-12,
                            "wwaApco", "em", ref status);
-            vvd(astrom.v[0], 0.2078704985147609823e-4, 1e-16,
+            vvd(astrom.v[0], 0.2078704992916728762e-4, 1e-16,
                              "wwaApco", "v(1)", ref status);
-            vvd(astrom.v[1], -0.8955360074407552709e-4, 1e-16,
+            vvd(astrom.v[1], -0.8955360107151952319e-4, 1e-16,
                              "wwaApco", "v(2)", ref status);
-            vvd(astrom.v[2], -0.3863338980073114703e-4, 1e-16,
+            vvd(astrom.v[2], -0.3863338994288951082e-4, 1e-16,
                              "wwaApco", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999950277561600, 1e-12,
+            vvd(astrom.bm1, 0.9999999950277561236, 1e-12,
                             "wwaApco", "bm1", ref status);
+
             vvd(astrom.bpn[0, 0], 0.9999991390295159156, 1e-12,
                                   "wwaApco", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4978650072505016932e-7, 1e-12,
@@ -724,28 +780,51 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 13.25248468622475727, 1e-11,
                             "wwaApco13", "pmt", ref status);
-            vvd(astrom.eb[0], -0.9741827107321449445, 1e-12,
-                            "wwaApco13", "eb(1)", ref status);
-            vvd(astrom.eb[1], -0.2115130190489386190, 1e-12,
+            //vvd(astrom.eb[0], -0.9741827107321449445, 1e-12,
+            //                "wwaApco13", "eb(1)", ref status);
+            //vvd(astrom.eb[1], -0.2115130190489386190, 1e-12,
+            //                  "wwaApco13", "eb(2)", ref status);
+            //vvd(astrom.eb[2], -0.09179840189515518726, 1e-12,
+            //                  "wwaApco13", "eb(3)", ref status);
+            //vvd(astrom.eh[0], -0.9736425572586866640, 1e-12,
+            //                  "wwaApco13", "eh(1)", ref status);
+            //vvd(astrom.eh[1], -0.2092452121602867431, 1e-12,
+            //                  "wwaApco13", "eh(2)", ref status);
+            //vvd(astrom.eh[2], -0.09075578153903832650, 1e-12,
+            //                  "wwaApco13", "eh(3)", ref status);
+            //vvd(astrom.em, 0.9998233240914558422, 1e-12,
+            //               "wwaApco13", "em", ref status);
+            //vvd(astrom.v[0], 0.2078704986751370303e-4, 1e-16,
+            //                 "wwaApco13", "v(1)", ref status);
+            //vvd(astrom.v[1], -0.8955360100494469232e-4, 1e-16,
+            //                 "wwaApco13", "v(2)", ref status);
+            //vvd(astrom.v[2], -0.3863338978840051024e-4, 1e-16,
+            //                 "wwaApco13", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999950277561368, 1e-12,
+            //                "wwaApco13", "bm1", ref status);
+            vvd(astrom.eb[0], -0.9741827107320875162, 1e-12,
+                   "wwaApco13", "eb(1)", ref status);
+            vvd(astrom.eb[1], -0.2115130190489716682, 1e-12,
                               "wwaApco13", "eb(2)", ref status);
-            vvd(astrom.eb[2], -0.09179840189515518726, 1e-12,
+            vvd(astrom.eb[2], -0.09179840189496755339, 1e-12,
                               "wwaApco13", "eb(3)", ref status);
-            vvd(astrom.eh[0], -0.9736425572586866640, 1e-12,
+            vvd(astrom.eh[0], -0.9736425572586935247, 1e-12,
                               "wwaApco13", "eh(1)", ref status);
-            vvd(astrom.eh[1], -0.2092452121602867431, 1e-12,
+            vvd(astrom.eh[1], -0.2092452121603336166, 1e-12,
                               "wwaApco13", "eh(2)", ref status);
-            vvd(astrom.eh[2], -0.09075578153903832650, 1e-12,
+            vvd(astrom.eh[2], -0.09075578153885665295, 1e-12,
                               "wwaApco13", "eh(3)", ref status);
-            vvd(astrom.em, 0.9998233240914558422, 1e-12,
+            vvd(astrom.em, 0.9998233240913898141, 1e-12,
                            "wwaApco13", "em", ref status);
-            vvd(astrom.v[0], 0.2078704986751370303e-4, 1e-16,
+            vvd(astrom.v[0], 0.2078704994520489246e-4, 1e-16,
                              "wwaApco13", "v(1)", ref status);
-            vvd(astrom.v[1], -0.8955360100494469232e-4, 1e-16,
+            vvd(astrom.v[1], -0.8955360133238868938e-4, 1e-16,
                              "wwaApco13", "v(2)", ref status);
-            vvd(astrom.v[2], -0.3863338978840051024e-4, 1e-16,
+            vvd(astrom.v[2], -0.3863338993055887398e-4, 1e-16,
                              "wwaApco13", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999950277561368, 1e-12,
+            vvd(astrom.bm1, 0.9999999950277561004, 1e-12,
                             "wwaApco13", "bm1", ref status);
+
             vvd(astrom.bpn[0, 0], 0.9999991390295147999, 1e-12,
                                   "wwaApco13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4978650075315529277e-7, 1e-12,
@@ -836,28 +915,51 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 13.25248468622587269, 1e-11,
                             "wwaApcs", "pmt", ref status);
-            vvd(astrom.eb[0], -0.9741827110630456169, 1e-12,
-                              "wwaApcs", "eb(1)", ref status);
-            vvd(astrom.eb[1], -0.2115130190136085494, 1e-12,
+            //vvd(astrom.eb[0], -0.9741827110630456169, 1e-12,
+            //                  "wwaApcs", "eb(1)", ref status);
+            //vvd(astrom.eb[1], -0.2115130190136085494, 1e-12,
+            //                  "wwaApcs", "eb(2)", ref status);
+            //vvd(astrom.eb[2], -0.09179840186973175487, 1e-12,
+            //                  "wwaApcs", "eb(3)", ref status);
+            //vvd(astrom.eh[0], -0.9736425571689386099, 1e-12,
+            //                  "wwaApcs", "eh(1)", ref status);
+            //vvd(astrom.eh[1], -0.2092452125849967195, 1e-12,
+            //                  "wwaApcs", "eh(2)", ref status);
+            //vvd(astrom.eh[2], -0.09075578152266466572, 1e-12,
+            //                  "wwaApcs", "eh(3)", ref status);
+            //vvd(astrom.em, 0.9998233241710457140, 1e-12,
+            //               "wwaApcs", "em", ref status);
+            //vvd(astrom.v[0], 0.2078704985513566571e-4, 1e-16,
+            //                 "wwaApcs", "v(1)", ref status);
+            //vvd(astrom.v[1], -0.8955360074245006073e-4, 1e-16,
+            //                 "wwaApcs", "v(2)", ref status);
+            //vvd(astrom.v[2], -0.3863338980073572719e-4, 1e-16,
+            //                 "wwaApcs", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999950277561601, 1e-12,
+            //                "wwaApcs", "bm1", ref status);
+            vvd(astrom.eb[0], -0.9741827110629881886, 1e-12,
+                     "wwaApcs", "eb(1)", ref status);
+            vvd(astrom.eb[1], -0.2115130190136415986, 1e-12,
                               "wwaApcs", "eb(2)", ref status);
-            vvd(astrom.eb[2], -0.09179840186973175487, 1e-12,
+            vvd(astrom.eb[2], -0.09179840186954412099, 1e-12,
                               "wwaApcs", "eb(3)", ref status);
-            vvd(astrom.eh[0], -0.9736425571689386099, 1e-12,
+            vvd(astrom.eh[0], -0.9736425571689454706, 1e-12,
                               "wwaApcs", "eh(1)", ref status);
-            vvd(astrom.eh[1], -0.2092452125849967195, 1e-12,
+            vvd(astrom.eh[1], -0.2092452125850435930, 1e-12,
                               "wwaApcs", "eh(2)", ref status);
-            vvd(astrom.eh[2], -0.09075578152266466572, 1e-12,
+            vvd(astrom.eh[2], -0.09075578152248299218, 1e-12,
                               "wwaApcs", "eh(3)", ref status);
-            vvd(astrom.em, 0.9998233241710457140, 1e-12,
+            vvd(astrom.em, 0.9998233241709796859, 1e-12,
                            "wwaApcs", "em", ref status);
-            vvd(astrom.v[0], 0.2078704985513566571e-4, 1e-16,
+            vvd(astrom.v[0], 0.2078704993282685510e-4, 1e-16,
                              "wwaApcs", "v(1)", ref status);
-            vvd(astrom.v[1], -0.8955360074245006073e-4, 1e-16,
+            vvd(astrom.v[1], -0.8955360106989405683e-4, 1e-16,
                              "wwaApcs", "v(2)", ref status);
-            vvd(astrom.v[2], -0.3863338980073572719e-4, 1e-16,
+            vvd(astrom.v[2], -0.3863338994289409097e-4, 1e-16,
                              "wwaApcs", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999950277561601, 1e-12,
+            vvd(astrom.bm1, 0.9999999950277561237, 1e-12,
                             "wwaApcs", "bm1", ref status);
+
             vvd(astrom.bpn[0, 0], 1, 0,
                                   "wwaApcs", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0, 0,
@@ -916,28 +1018,51 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 12.65133794027378508, 1e-11,
                             "wwaApcs13", "pmt", ref status);
-            vvd(astrom.eb[0], 0.9012691529023298391, 1e-12,
-                              "wwaApcs13", "eb(1)", ref status);
-            vvd(astrom.eb[1], -0.4173999812023068781, 1e-12,
+            //vvd(astrom.eb[0], 0.9012691529023298391, 1e-12,
+            //                  "wwaApcs13", "eb(1)", ref status);
+            //vvd(astrom.eb[1], -0.4173999812023068781, 1e-12,
+            //                  "wwaApcs13", "eb(2)", ref status);
+            //vvd(astrom.eb[2], -0.1809906511146821008, 1e-12,
+            //                  "wwaApcs13", "eb(3)", ref status);
+            //vvd(astrom.eh[0], 0.8939939101759726824, 1e-12,
+            //                  "wwaApcs13", "eh(1)", ref status);
+            //vvd(astrom.eh[1], -0.4111053891734599955, 1e-12,
+            //                  "wwaApcs13", "eh(2)", ref status);
+            //vvd(astrom.eh[2], -0.1782336880637689334, 1e-12,
+            //                  "wwaApcs13", "eh(3)", ref status);
+            //vvd(astrom.em, 1.010428384373318379, 1e-12,
+            //               "wwaApcs13", "em", ref status);
+            //vvd(astrom.v[0], 0.4279877278327626511e-4, 1e-16,
+            //                 "wwaApcs13", "v(1)", ref status);
+            //vvd(astrom.v[1], 0.7963255057040027770e-4, 1e-16,
+            //                 "wwaApcs13", "v(2)", ref status);
+            //vvd(astrom.v[2], 0.3517564000441374759e-4, 1e-16,
+            //                 "wwaApcs13", "v(3)", ref status);
+            //vvd(astrom.bm1, 0.9999999952947981330, 1e-12,
+            //                "wwaApcs13", "bm1", ref status);
+            vvd(astrom.eb[0], 0.9012691529025250644, 1e-12,
+                     "wwaApcs13", "eb(1)", ref status);
+            vvd(astrom.eb[1], -0.4173999812023194317, 1e-12,
                               "wwaApcs13", "eb(2)", ref status);
-            vvd(astrom.eb[2], -0.1809906511146821008, 1e-12,
+            vvd(astrom.eb[2], -0.1809906511146429670, 1e-12,
                               "wwaApcs13", "eb(3)", ref status);
-            vvd(astrom.eh[0], 0.8939939101759726824, 1e-12,
+            vvd(astrom.eh[0], 0.8939939101760130792, 1e-12,
                               "wwaApcs13", "eh(1)", ref status);
-            vvd(astrom.eh[1], -0.4111053891734599955, 1e-12,
+            vvd(astrom.eh[1], -0.4111053891734021478, 1e-12,
                               "wwaApcs13", "eh(2)", ref status);
-            vvd(astrom.eh[2], -0.1782336880637689334, 1e-12,
+            vvd(astrom.eh[2], -0.1782336880636997374, 1e-12,
                               "wwaApcs13", "eh(3)", ref status);
-            vvd(astrom.em, 1.010428384373318379, 1e-12,
+            vvd(astrom.em, 1.010428384373491095, 1e-12,
                            "wwaApcs13", "em", ref status);
-            vvd(astrom.v[0], 0.4279877278327626511e-4, 1e-16,
+            vvd(astrom.v[0], 0.4279877294121697570e-4, 1e-16,
                              "wwaApcs13", "v(1)", ref status);
-            vvd(astrom.v[1], 0.7963255057040027770e-4, 1e-16,
+            vvd(astrom.v[1], 0.7963255087052120678e-4, 1e-16,
                              "wwaApcs13", "v(2)", ref status);
-            vvd(astrom.v[2], 0.3517564000441374759e-4, 1e-16,
+            vvd(astrom.v[2], 0.3517564013384691531e-4, 1e-16,
                              "wwaApcs13", "v(3)", ref status);
-            vvd(astrom.bm1, 0.9999999952947981330, 1e-12,
+            vvd(astrom.bm1, 0.9999999952947980978, 1e-12,
                             "wwaApcs13", "bm1", ref status);
+
             vvd(astrom.bpn[0, 0], 1, 0,
                                   "wwaApcs13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0, 0,
@@ -1161,9 +1286,13 @@ namespace WWA_Test
 
             WWA.wwaAtci13(rc, dc, pr, pd, px, rv, date1, date2, ref ri, ref di, ref eo);
 
-            vvd(ri, 2.710121572969038991, 1e-12,
+            //vvd(ri, 2.710121572969038991, 1e-12,
+            //        "wwaAtci13", "ri", ref status);
+            //vvd(di, 0.1729371367218230438, 1e-12,
+            //        "wwaAtci13", "di", ref status);
+            vvd(ri, 2.710121572968696744, 1e-12,
                     "wwaAtci13", "ri", ref status);
-            vvd(di, 0.1729371367218230438, 1e-12,
+            vvd(di, 0.1729371367219539137, 1e-12,
                     "wwaAtci13", "di", ref status);
             vvd(eo, -0.002900618712657375647, 1e-14,
                     "wwaAtci13", "eo", ref status);
@@ -1205,8 +1334,10 @@ namespace WWA_Test
 
             WWA.wwaAtciq(rc, dc, pr, pd, px, rv, ref astrom, ref ri, ref di);
 
-            vvd(ri, 2.710121572969038991, 1e-12, "wwaAtciq", "ri", ref status);
-            vvd(di, 0.1729371367218230438, 1e-12, "wwaAtciq", "di", ref status);
+            //vvd(ri, 2.710121572969038991, 1e-12, "wwaAtciq", "ri", ref status);
+            //vvd(di, 0.1729371367218230438, 1e-12, "wwaAtciq", "di", ref status);
+            vvd(ri, 2.710121572968696744, 1e-12, "wwaAtciq", "ri", ref status);
+            vvd(di, 0.1729371367219539137, 1e-12, "wwaAtciq", "di", ref status);
         }
 
         static void t_atciqn(ref int status)
@@ -1276,9 +1407,10 @@ namespace WWA_Test
 
             WWA.wwaAtciqn(rc, dc, pr, pd, px, rv, ref astrom, 3, b, ref ri, ref di);
 
-            vvd(ri, 2.710122008105325582, 1e-12, "wwaAtciqn", "ri", ref status);
-            vvd(di, 0.1729371916491459122, 1e-12, "wwaAtciqn", "di", ref status);
-
+            //vvd(ri, 2.710122008105325582, 1e-12, "wwaAtciqn", "ri", ref status);
+            //vvd(di, 0.1729371916491459122, 1e-12, "wwaAtciqn", "di", ref status);
+            vvd(ri, 2.710122008104983335, 1e-12, "wwaAtciqn", "ri", ref status);
+            vvd(di, 0.1729371916492767821, 1e-12, "wwaAtciqn", "di", ref status);
         }
 
         static void t_atciqz(ref int status)
@@ -1312,8 +1444,10 @@ namespace WWA_Test
 
             WWA.wwaAtciqz(rc, dc, ref astrom, ref ri, ref di);
 
-            vvd(ri, 2.709994899247599271, 1e-12, "wwaAtciqz", "ri", ref status);
-            vvd(di, 0.1728740720983623469, 1e-12, "wwaAtciqz", "di", ref status);
+            //vvd(ri, 2.709994899247599271, 1e-12, "wwaAtciqz", "ri", ref status);
+            //vvd(di, 0.1728740720983623469, 1e-12, "wwaAtciqz", "di", ref status);
+            vvd(ri, 2.709994899247256984, 1e-12, "wwaAtciqz", "ri", ref status);
+            vvd(di, 0.1728740720984931891, 1e-12, "wwaAtciqz", "di", ref status);
         }
 
         static void t_atco13(ref int status)
@@ -1361,11 +1495,17 @@ namespace WWA_Test
                           phpa, tc, rh, wl,
                           ref aob, ref zob, ref hob, ref dob, ref rob, ref eo);
 
-            vvd(aob, 0.09251774485358230653, 1e-12, "wwaAtco13", "aob", ref status);
-            vvd(zob, 1.407661405256767021, 1e-12, "wwaAtco13", "zob", ref status);
-            vvd(hob, -0.09265154431403157925, 1e-12, "wwaAtco13", "hob", ref status);
-            vvd(dob, 0.1716626560075591655, 1e-12, "wwaAtco13", "dob", ref status);
-            vvd(rob, 2.710260453503097719, 1e-12, "wwaAtco13", "rob", ref status);
+            //vvd(aob, 0.09251774485358230653, 1e-12, "wwaAtco13", "aob", ref status);
+            //vvd(zob, 1.407661405256767021, 1e-12, "wwaAtco13", "zob", ref status);
+            //vvd(hob, -0.09265154431403157925, 1e-12, "wwaAtco13", "hob", ref status);
+            //vvd(dob, 0.1716626560075591655, 1e-12, "wwaAtco13", "dob", ref status);
+            //vvd(rob, 2.710260453503097719, 1e-12, "wwaAtco13", "rob", ref status);
+            vvd(aob, 0.09251774485385390973, 1e-12, "wwaAtco13", "aob", ref status);
+            vvd(zob, 1.407661405256671703, 1e-12, "wwaAtco13", "zob", ref status);
+            vvd(hob, -0.09265154431430045141, 1e-12, "wwaAtco13", "hob", ref status);
+            vvd(dob, 0.1716626560074556029, 1e-12, "wwaAtco13", "dob", ref status);
+            vvd(rob, 2.710260453503366591, 1e-12, "wwaAtco13", "rob", ref status);
+
             vvd(eo, -0.003020548354802412839, 1e-14, "wwaAtco13", "eo", ref status);
             viv(j, 0, "wwaAtco13", "j", ref status);
 
@@ -1397,8 +1537,10 @@ namespace WWA_Test
 
             WWA.wwaAtic13(ri, di, date1, date2, ref rc, ref dc, ref eo);
 
-            vvd(rc, 2.710126504531374930, 1e-12, "wwaAtic13", "rc", ref status);
-            vvd(dc, 0.1740632537628342320, 1e-12, "wwaAtic13", "dc", ref status);
+            //vvd(rc, 2.710126504531374930, 1e-12, "wwaAtic13", "rc", ref status);
+            //vvd(dc, 0.1740632537628342320, 1e-12, "wwaAtic13", "dc", ref status);
+            vvd(rc, 2.710126504531716819, 1e-12, "wwaAtic13", "rc", ref status);
+            vvd(dc, 0.1740632537627034482, 1e-12, "wwaAtic13", "dc", ref status);
             vvd(eo, -0.002900618712657375647, 1e-14, "wwaAtic13", "eo", ref status);
 
         }
@@ -1431,8 +1573,10 @@ namespace WWA_Test
 
             WWA.wwaAticq(ri, di, ref astrom, ref rc, ref dc);
 
-            vvd(rc, 2.710126504531374930, 1e-12, "wwaAticq", "rc", ref status);
-            vvd(dc, 0.1740632537628342320, 1e-12, "wwaAticq", "dc", ref status);
+            //vvd(rc, 2.710126504531374930, 1e-12, "wwaAticq", "rc", ref status);
+            //vvd(dc, 0.1740632537628342320, 1e-12, "wwaAticq", "dc", ref status);
+            vvd(rc, 2.710126504531716819, 1e-12, "wwaAticq", "rc", ref status);
+            vvd(dc, 0.1740632537627034482, 1e-12, "wwaAticq", "dc", ref status);
 
         }
 
@@ -1494,8 +1638,10 @@ namespace WWA_Test
 
             WWA.wwaAticqn(ri, di, ref astrom, 3, b, ref rc, ref dc);
 
-            vvd(rc, 2.709999575032685412, 1e-12, "wwaAtciqn", "rc", ref status);
-            vvd(dc, 0.1739999656317778034, 1e-12, "wwaAtciqn", "dc", ref status);
+            //vvd(rc, 2.709999575032685412, 1e-12, "wwaAtciqn", "rc", ref status);
+            //vvd(dc, 0.1739999656317778034, 1e-12, "wwaAtciqn", "dc", ref status);
+            vvd(rc, 2.709999575033027333, 1e-12, "wwaAtciqn", "rc", ref status);
+            vvd(dc, 0.1739999656316469990, 1e-12, "wwaAtciqn", "dc", ref status);
         }
 
         static void t_atio13(ref int status)
@@ -1634,8 +1780,10 @@ namespace WWA_Test
             j = WWA.wwaAtoc13(ref refR, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
-            vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "R/rc", ref status);
-            vvd(dc, 0.1741696500895398562, 1e-12, "wwaAtoc13", "R/dc", ref status);
+            //vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "R/rc", ref status);
+            //vvd(dc, 0.1741696500895398562, 1e-12, "wwaAtoc13", "R/dc", ref status);
+            vvd(rc, 2.709956744660731630, 1e-12, "wwaAtoc13", "R/rc", ref status);
+            vvd(dc, 0.1741696500896438967, 1e-12, "wwaAtoc13", "R/dc", ref status);
             viv(j, 0, "wwaAtoc13", "R/j", ref status);
 
             ob1 = -0.09247619879782006106;
@@ -1644,8 +1792,10 @@ namespace WWA_Test
             j = WWA.wwaAtoc13(ref refH, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
-            vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "H/rc", ref status);
-            vvd(dc, 0.1741696500895398562, 1e-12, "wwaAtoc13", "H/dc", ref status);
+            //vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "H/rc", ref status);
+            //vvd(dc, 0.1741696500895398562, 1e-12, "wwaAtoc13", "H/dc", ref status);
+            vvd(rc, 2.709956744660731630, 1e-12, "wwaAtoc13", "H/rc", ref status);
+            vvd(dc, 0.1741696500896438967, 1e-12, "wwaAtoc13", "H/dc", ref status);
             viv(j, 0, "wwaAtoc13", "H/j", ref status);
 
             ob1 = 0.09233952224794989993;
@@ -1654,8 +1804,10 @@ namespace WWA_Test
             j = WWA.wwaAtoc13(ref refA, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
-            vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "A/rc", ref status);
-            vvd(dc, 0.1741696500895398565, 1e-12, "wwaAtoc13", "A/dc", ref status);
+            //vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "A/rc", ref status);
+            //vvd(dc, 0.1741696500895398565, 1e-12, "wwaAtoc13", "A/dc", ref status);
+            vvd(rc, 2.709956744660731630, 1e-12, "wwaAtoc13", "A/rc", ref status);
+            vvd(dc, 0.1741696500896438970, 1e-12, "wwaAtoc13", "A/dc", ref status);
             viv(j, 0, "wwaAtoc13", "A/j", ref status);
 
         }
@@ -3904,8 +4056,11 @@ namespace WWA_Test
                 "wwaFk52h", "dd5", ref status);
             vvd(pxh, 0.37921, 1e-14,
                 "wwaFk52h", "px", ref status);
-            vvd(rvh, -7.6000000940000254, 1e-10,
-                "iauFk52h", "rv", ref status);
+            //vvd(rvh, -7.6000000940000254, 1e-10,
+            //    "iauFk52h", "rv", ref status);
+            vvd(rvh, -7.6000000940000254, 1e-11,
+                    "wwaFk52h", "rv", ref status);
+
         }
 
         static void t_fk5hip(ref int status)
@@ -4538,8 +4693,10 @@ namespace WWA_Test
                 "wwaH2fk5", "dd5", ref status);
             vvd(px5, 0.37921, 1e-13,
                 "wwaH2fk5", "px", ref status);
-            vvd(rv5, -7.6000001309071126, 1e-10,
-                "wwaH2fk5", "rv", ref status);
+            //vvd(rv5, -7.6000001309071126, 1e-10,
+            //    "wwaH2fk5", "rv", ref status);
+            vvd(rv5, -7.6000001309071126, 1e-11,
+                   "wwaH2fk5", "rv", ref status);
 
         }
 
@@ -6053,9 +6210,12 @@ namespace WWA_Test
 
             WWA.wwaPmpx(rc, dc, pr, pd, px, rv, pmt, pob, pco);
 
-            vvd(pco[0], 0.2328137623960308440, 1e-12, "wwaPmpx", "1", ref status);
-            vvd(pco[1], 0.6651097085397855317, 1e-12, "wwaPmpx", "2", ref status);
-            vvd(pco[2], 0.7095257765896359847, 1e-12, "wwaPmpx", "3", ref status);
+            //vvd(pco[0], 0.2328137623960308440, 1e-12, "wwaPmpx", "1", ref status);
+            //vvd(pco[1], 0.6651097085397855317, 1e-12, "wwaPmpx", "2", ref status);
+            //vvd(pco[2], 0.7095257765896359847, 1e-12, "wwaPmpx", "3", ref status);
+            vvd(pco[0], 0.2328137623960308438, 1e-12, "wwaPmpx", "1", ref status);
+            vvd(pco[1], 0.6651097085397855328, 1e-12, "wwaPmpx", "2", ref status);
+            vvd(pco[2], 0.7095257765896359837, 1e-12, "wwaPmpx", "3", ref status);
 
         }
 
@@ -6097,16 +6257,25 @@ namespace WWA_Test
 
             vvd(ra2, 1.234087484501017061, 1e-12,
                      "wwaPmsafe", "ra2", ref status);
-            vvd(dec2, 0.7888249982450468574, 1e-12,
-                     "wwaPmsafe", "dec2", ref status);
+            //vvd(dec2, 0.7888249982450468574, 1e-12,
+            //         "wwaPmsafe", "dec2", ref status);
+            vvd(dec2, 0.7888249982450468567, 1e-12,
+                    "wwaPmsafe", "dec2", ref status);
             vvd(pmr2, 0.9996457663586073988e-5, 1e-12,
                       "wwaPmsafe", "pmr2", ref status);
-            vvd(pmd2, -0.2000040085106737816e-4, 1e-16,
-                      "wwaPmsafe", "pmd2", ref status);
-            vvd(px2, 0.9999997295356765185e-2, 1e-12,
+            //vvd(pmd2, -0.2000040085106737816e-4, 1e-16,
+            //          "wwaPmsafe", "pmd2", ref status);
+            //vvd(px2, 0.9999997295356765185e-2, 1e-12,
+            //         "wwaPmsafe", "px2", ref status);
+            //vvd(rv2, 10.38468380113917014, 1e-10,
+            //         "wwaPmsafe", "rv2", ref status);
+            vvd(pmd2, -0.2000040085106754565e-4, 1e-16,
+                    "wwaPmsafe", "pmd2", ref status);
+            vvd(px2, 0.9999997295356830666e-2, 1e-12,
                      "wwaPmsafe", "px2", ref status);
-            vvd(rv2, 10.38468380113917014, 1e-10,
+            vvd(rv2, 10.38468380293920069, 1e-10,
                      "wwaPmsafe", "rv2", ref status);
+
             viv(j, 0, "wwaPmsafe", "j", ref status);
 
         }
@@ -7492,10 +7661,14 @@ namespace WWA_Test
 
             vvd(ra, 0.1686756e-1, 1e-12, "wwaPvstar", "ra", ref status);
             vvd(dec, -1.093989828, 1e-12, "wwaPvstar", "dec", ref status);
-            vvd(pmr, -0.178323516e-4, 1e-16, "wwaPvstar", "pmr", ref status);
-            vvd(pmd, 0.2336024047e-5, 1e-16, "wwaPvstar", "pmd", ref status);
+            //vvd(pmr, -0.178323516e-4, 1e-16, "wwaPvstar", "pmr", ref status);
+            //vvd(pmd, 0.2336024047e-5, 1e-16, "wwaPvstar", "pmd", ref status);
+            vvd(pmr, -0.1783235160000472788e-4, 1e-16, "wwaPvstar", "pmr", ref status);
+            vvd(pmd, 0.2336024047000619347e-5, 1e-16, "wwaPvstar", "pmd", ref status);
+
             vvd(px, 0.74723, 1e-12, "wwaPvstar", "px", ref status);
-            vvd(rv, -21.6, 1e-11, "wwaPvstar", "rv", ref status);
+            //vvd(rv, -21.6, 1e-11, "wwaPvstar", "rv", ref status);
+            vvd(rv, -21.60000010107306010, 1e-11, "wwaPvstar", "rv", ref status);
 
             viv(j, 0, "wwaPvstar", "j", ref status);
 
@@ -8519,17 +8692,29 @@ namespace WWA_Test
                           2400000.5, 50083.0, 2400000.5, 53736.0,
                           ref ra2, ref dec2, ref pmr2, ref pmd2, ref px2, ref rv2);
 
-            vvd(ra2, 0.01668919069414242368, 1e-13,
+            //vvd(ra2, 0.01668919069414242368, 1e-13,
+            //    "wwaStarpm", "ra", ref status);
+            //vvd(dec2, -1.093966454217127879, 1e-13,
+            //    "wwaStarpm", "dec", ref status);
+            //vvd(pmr2, -0.1783662682155932702e-4, 1e-17,
+            //    "wwaStarpm", "pmr", ref status);
+            //vvd(pmd2, 0.2338092915987603664e-5, 1e-17,
+            //    "wwaStarpm", "pmd", ref status);
+            //vvd(px2, 0.7473533835323493644, 1e-13,
+            //    "wwaStarpm", "px", ref status);
+            //vvd(rv2, -21.59905170476860786, 1e-11,
+            //    "wwaStarpm", "rv", ref status);
+            vvd(ra2, 0.01668919069414256149, 1e-13,
                 "wwaStarpm", "ra", ref status);
-            vvd(dec2, -1.093966454217127879, 1e-13,
+            vvd(dec2, -1.093966454217127897, 1e-13,
                 "wwaStarpm", "dec", ref status);
-            vvd(pmr2, -0.1783662682155932702e-4, 1e-17,
+            vvd(pmr2, -0.1783662682153176524e-4, 1e-17,
                 "wwaStarpm", "pmr", ref status);
-            vvd(pmd2, 0.2338092915987603664e-5, 1e-17,
+            vvd(pmd2, 0.2338092915983989595e-5, 1e-17,
                 "wwaStarpm", "pmd", ref status);
-            vvd(px2, 0.7473533835323493644, 1e-13,
+            vvd(px2, 0.7473533835317719243, 1e-13,
                 "wwaStarpm", "px", ref status);
-            vvd(rv2, -21.59905170476860786, 1e-11,
+            vvd(rv2, -21.59905170476417175, 1e-11,
                 "wwaStarpm", "rv", ref status);
 
             viv(j, 0, "wwaStarpm", "j", ref status);
@@ -8573,11 +8758,17 @@ namespace WWA_Test
             vvd(pv[0, 2], -245251.2339876830091, 1e-10,
                 "wwaStarpv", "13", ref status);
 
-            vvd(pv[1, 0], -0.4051854035740712739e-2, 1e-13,
+            //vvd(pv[1, 0], -0.4051854035740712739e-2, 1e-13,
+            //    "wwaStarpv", "21", ref status);
+            //vvd(pv[1, 1], -0.6253919754866173866e-2, 1e-15,
+            //    "wwaStarpv", "22", ref status);
+            //vvd(pv[1, 2], 0.1189353719774107189e-1, 1e-13,
+            //    "wwaStarpv", "23", ref status);
+            vvd(pv[1, 0], -0.4051854008955659551e-2, 1e-13,
                 "wwaStarpv", "21", ref status);
-            vvd(pv[1, 1], -0.6253919754866173866e-2, 1e-15,
+            vvd(pv[1, 1], -0.6253919754414777970e-2, 1e-15,
                 "wwaStarpv", "22", ref status);
-            vvd(pv[1, 2], 0.1189353719774107189e-1, 1e-13,
+            vvd(pv[1, 2], 0.1189353714588109341e-1, 1e-13,
                 "wwaStarpv", "23", ref status);
 
             viv(j, 0, "wwaStarpv", "j", ref status);

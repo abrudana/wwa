@@ -159,9 +159,10 @@ namespace WorldWideAstronomy
         public const double TTMTAI = 32.184;
 
         /// <summary>
-        /// Astronomical unit (m)
+        /// Astronomical unit (m, IAU 2012)
         /// </summary>
-        public const double DAU = 149597870e3;
+        //public const double DAU = 149597870e3;
+        public const double DAU = 149597870.7e3;
 
         /// <summary>
         /// Speed of light (m/s)
@@ -171,7 +172,8 @@ namespace WorldWideAstronomy
         /// <summary>
         /// Light time for 1 au (s)
         /// </summary>
-        public const double AULT = 499.004782;
+        //public const double AULT = 499.004782;
+        public const double AULT = (DAU / CMPS);
 
         /// <summary>
         /// Speed of light (AU per day)
