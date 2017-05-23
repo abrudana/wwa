@@ -30,7 +30,7 @@ namespace WorldWideAstronomy
         /// 
         /// Please read the ReadMe.1st text file for more information.
         /// </remarks>
-        /// <param name="pv">pv-vector (AU, AU/day)</param>
+        /// <param name="pv">pv-vector (au, au/day)</param>
         /// <param name="ra">right ascension (radians)</param>
         /// <param name="dec">declination (radians)</param>
         /// <param name="pmr">RA proper motion (radians/year)</param>
@@ -57,12 +57,12 @@ namespace WorldWideAstronomy
             double[] pv1 = new double[3];
 
 
-            /* Isolate the radial component of the velocity (AU/day, inertial). */
+            /* Isolate the radial component of the velocity (au/day, inertial). */
             wwaPn(CopyArray(pv, 0), ref r, x);
             vr = wwaPdp(x, CopyArray(pv, 1));
             wwaSxp(vr, x, ur);
 
-            /* Isolate the transverse component of the velocity (AU/day, inertial). */
+            /* Isolate the transverse component of the velocity (au/day, inertial). */
             wwaPmp(CopyArray(pv, 1), ur, ut);
             vt = wwaPm(ut);
 
@@ -72,9 +72,9 @@ namespace WorldWideAstronomy
 
             /* The inertial-to-observed correction terms. */
             d = 1.0 + betr;
-            w = 1.0 - betr * betr - bett * bett;
-            if (d == 0.0 || w < 0) return -1;
-            del = Math.Sqrt(w) - 1.0;
+            w = betr * betr - bett * bett;
+            if (d == 0.0 || w > 1.0) return -1;
+            del = w / (Math.Sqrt(1.0 - w) + 1.0);
 
             /* Apply relativistic correction factor to radial velocity component. */
             w = (betr != 0) ? (betr - del) / (betr * d) : 1.0;
@@ -84,7 +84,7 @@ namespace WorldWideAstronomy
             /* component.                                                  */
             wwaSxp(1.0 / d, ut, ust);
 
-            /* Combine the two to obtain the observed velocity vector (AU/day). */
+            /* Combine the two to obtain the observed velocity vector (au/day). */
             //wwaPpp(usr, ust, CopyArray(pv, 1));
             pv1 = CopyArray(pv, 1);
             wwaPpp(usr, ust, pv1);
