@@ -86,7 +86,7 @@ namespace WorldWideAstronomy
 
             /* Revise and return the status. */
             //if (!j % 2) j += jpx;
-            if ((j % 2) == 0 ? true : false);
+            if ((j % 2) == 0 ? true : false)
                 j += jpx;
             return j;
         }
