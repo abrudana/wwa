@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="a2af.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="a2tf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ab.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="af2a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="anp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="anpm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apcg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apcg13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apci.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apci13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apco.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apco13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apcs13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aper.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aper13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="apio13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atci13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atciq.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atciqn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atciqz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atco13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atic13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aticq.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aticqn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atio13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atioq.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atoc13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atoi13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atoiq.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bi00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bp00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bp06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bpn2xy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2i00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2i00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2i06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2ibpn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2ixy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2ixys.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2t00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2t00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2t06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2tcio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2teqx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2tpe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c2txy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cal2jd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d2dtf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d2tf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dtdb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dtf2d.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ee00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ee00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ee00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ee06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eect00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eform.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eo06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eors.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="epb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="epb2jd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="epj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="epj2jd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="epv00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eqeq94.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="era00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fad03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fae03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="faf03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="faju03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fal03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="falp03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fama03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fame03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fane03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="faom03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fapa03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fasa03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="faur03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fave03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fk5hip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fk5hz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fk52h.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fw2m.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fw2xy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gc2gd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gc2gde.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gd2gc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gd2gce.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gmst00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gmst06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gmst82.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gst00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gst00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gst06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gst06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gst94.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="h2fk5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hfk5z.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jd2cal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jdcalf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ld.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ldn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ldsun.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="num00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="num00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="num06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="numat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nut00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nut00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nut06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nut80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nutm80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="obl06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="obl80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p2pv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p2s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p06e.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pb06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pdp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pfw06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="plan94.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmat00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmat06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmat76.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmpx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmsafe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pn00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pn00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pn00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pn06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pn06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pnm00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pnm00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pnm06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pnm80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pom00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ppp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ppsp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pr00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prec76.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pv2p.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pv2s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvdpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvmpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvppv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvstar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvtob.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pvxpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pxp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="refco.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rm2v.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rv2m.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rxp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rxpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rxr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s2c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s2p.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s2pv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s2xpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="s06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sepp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="seps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sp00.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="starpm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="starpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sxp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sxpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="t_sofa_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="taitt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="taiut1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="taiutc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tcbtdb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tcgtt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tdbtcb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tdbtt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tf2a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tf2d.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trxp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trxpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tttai.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tttcg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tttdb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ttut1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ut1tai.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ut1tt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ut1utc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utctai.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utcut1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xy06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xys00a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xys00b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xys06a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zpv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="g2icrs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="icrs2g.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eceq06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ecm06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eqec06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lteceq.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltecm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lteqec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltpb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltpecl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ltpequ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sofa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sofam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
