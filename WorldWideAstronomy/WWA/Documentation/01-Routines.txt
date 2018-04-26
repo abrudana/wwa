@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿ROUTINES
 
  Calendars
@@ -434,4 +433,3 @@
  Obsolete
 
  C2TCEO				former name of C2TCIO
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
