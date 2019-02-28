@@ -84,40 +84,23 @@ double iauEect00(double date1, double date2)
 **
 **  References:
 **
-<<<<<<< HEAD
 **     Capitaine, N. & Gontier, A.-M., Astron.Astrophys., 275,
 **     645-650 (1993)
 **
 **     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
 **     implement the IAU 2000 definition of UT1", Astron.Astrophys., 406,
 **     1135-1149 (2003)
-=======
-**     Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
-**     645-650 (1993)
-**
-**     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
-**     implement the IAU 2000 definition of UT1", Astronomy &
-**     Astrophysics, 406, 1135-1149 (2003)
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **
 **     IAU Resolution C7, Recommendation 3 (1994)
 **
 **     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
 **     IERS Technical Note No. 32, BKG (2004)
 **
-<<<<<<< HEAD
 **  This revision:  2017 October 12
 **
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  This revision:  2013 June 18
-**
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
 /* Time since J2000.0, in Julian centuries */
@@ -253,11 +236,7 @@ double iauEect00(double date1, double date2)
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

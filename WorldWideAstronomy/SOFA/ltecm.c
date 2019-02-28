@@ -63,15 +63,9 @@ void iauLtecm(double epj, double rm[3][3])
 **
 **  This revision:  2015 December 6
 **
-<<<<<<< HEAD
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
 /* Frame bias (IERS Conventions 2010, Eqs. 5.21 and 5.33) */
@@ -108,11 +102,7 @@ void iauLtecm(double epj, double rm[3][3])
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

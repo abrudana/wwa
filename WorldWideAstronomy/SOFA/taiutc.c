@@ -63,15 +63,9 @@ int iauTaiutc(double tai1, double tai2, double *utc1, double *utc2)
 **
 **  This revision:  2013 September 12
 **
-<<<<<<< HEAD
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    int big1;
@@ -119,11 +113,7 @@ int iauTaiutc(double tai1, double tai2, double *utc1, double *utc2)
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

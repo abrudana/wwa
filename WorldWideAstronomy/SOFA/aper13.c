@@ -115,15 +115,9 @@ void iauAper13(double ut11, double ut12, iauASTROM *astrom)
 **
 **  This revision:   2013 September 25
 **
-<<<<<<< HEAD
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    iauAper(iauEra00(ut11,ut12), astrom);
@@ -132,11 +126,7 @@ void iauAper13(double ut11, double ut12, iauASTROM *astrom)
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

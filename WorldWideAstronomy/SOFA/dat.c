@@ -6,11 +6,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **   i a u D a t
 **  - - - - - - -
 **
-<<<<<<< HEAD
 **  For a given UTC date, calculate Delta(AT) = TAI-UTC.
-=======
-**  For a given UTC date, calculate delta(AT) = TAI-UTC.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **
 **     :------------------------------------------:
 **     :                                          :
@@ -47,11 +43,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **  This function is part of the International Astronomical Union's
 **  SOFA (Standards Of Fundamental Astronomy) software collection.
 **
-<<<<<<< HEAD
 **  Status:  user-replaceable support function.
-=======
-**  Status:  support function.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **
 **  Given:
 **     iy     int      UTC:  year (Notes 1 and 2)
@@ -128,7 +120,6 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **  Called:
 **     iauCal2jd    Gregorian calendar to JD
 **
-<<<<<<< HEAD
 **  This revision:  2017 October 7
 **
 **  SOFA release 2018-01-30
@@ -138,17 +129,6 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 {
 /* Release year for this version of iauDat */
    enum { IYV = 2017};
-=======
-**  This revision:  2017 April 18
-**
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
-*/
-{
-/* Release year for this version of iauDat */
-   enum { IYV = 2016};
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 
 /* Reference dates (MJD) and drift rates (s/day), pre leap seconds */
    static const double drift[][2] = {
@@ -271,11 +251,7 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
@@ -312,7 +288,6 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **        of how the derived work is based upon, contains and/or differs
 **        from the original SOFA software.
 **
-<<<<<<< HEAD
 **     c) UNLIKE OTHER SOFA SOFTWARE, WHICH IS STRICTLY "READ ONLY",
 **        USERS ARE PERMITTED TO REPLACE THIS FUNCTION WITH ONE USING
 **        THE SAME NAME BUT DIFFERENT CODE.  This is to allow use of
@@ -320,11 +295,6 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **        seconds, perhaps file or network based.  It avoids the need
 **        for applications to be relinked periodically in order to pick
 **        up SOFA updates.
-=======
-**     c) The names of all routines in your derived work shall not
-**        include the prefix "iau" or "sofa" or trivial modifications
-**        thereof such as changes of case.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **
 **     d) The origin of the SOFA components of your derived work must
 **        not be misrepresented;  you must not claim that you wrote the
@@ -378,8 +348,5 @@ int iauDat(int iy, int im, int id, double fd, double *deltat )
 **                 United Kingdom
 **
 **--------------------------------------------------------------------*/
-<<<<<<< HEAD
 
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 }

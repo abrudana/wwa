@@ -43,11 +43,7 @@ double iauDtdb(double date1, double date2,
 **  This function is part of the International Astronomical Union's
 **  SOFA (Standards Of Fundamental Astronomy) software collection.
 **
-<<<<<<< HEAD
 **  Status:  support function.
-=======
-**  Status:  support routine.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **
 **  Given:
 **     date1,date2   double  date, TDB (Notes 1-3)
@@ -166,19 +162,11 @@ double iauDtdb(double date1, double date2,
 **     Simon, J.L., Bretagnon, P., Chapront, J., Chapront-Touze, M.,
 **     Francou, G. & Laskar, J., Astron.Astrophys., 282, 663-683 (1994).
 **
-<<<<<<< HEAD
 **  This revision:  2018 January 2
 **
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  This revision:  2013 June 18
-**
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    double t, tsol, w, elsun, emsun, d, elj, els, wt, w0, w1, w2, w3, w4,
@@ -1179,11 +1167,7 @@ double iauDtdb(double date1, double date2,
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

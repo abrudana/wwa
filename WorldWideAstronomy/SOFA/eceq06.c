@@ -60,15 +60,9 @@ void iauEceq06(double date1, double date2, double dl, double db,
 **
 **  This revision:  2016 February 9
 **
-<<<<<<< HEAD
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    double rm[3][3], v1[3], v2[3], a, b;
@@ -92,11 +86,7 @@ void iauEceq06(double date1, double date2, double dl, double db,
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

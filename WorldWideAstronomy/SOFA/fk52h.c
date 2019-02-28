@@ -56,7 +56,6 @@ void iauFk52h(double r5, double d5,
 **
 **  Reference:
 **
-<<<<<<< HEAD
 **     F.Mignard & M.Froeschle, Astron.Astrophys., 354, 732-739 (2000).
 **
 **  This revision:  2017 October 12
@@ -64,15 +63,6 @@ void iauFk52h(double r5, double d5,
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
-**
-**  This revision:  2013 June 18
-**
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    int i;
@@ -107,11 +97,7 @@ void iauFk52h(double r5, double d5,
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

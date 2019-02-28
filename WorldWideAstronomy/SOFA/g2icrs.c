@@ -11,11 +11,7 @@ void iauG2icrs ( double dl, double db, double *dr, double *dd )
 **  This function is part of the International Astronomical Union's
 **  SOFA (Standards of Fundamental Astronomy) software collection.
 **
-<<<<<<< HEAD
 **  Status:  support function.
-=======
-**  Status:  support routine.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **
 **  Given:
 **     dl     double      galactic longitude (radians)
@@ -70,19 +66,11 @@ void iauG2icrs ( double dl, double db, double *dr, double *dd )
 **     derived from the ESA Hipparcos Space Astrometry Mission.  ESA
 **     Publications Division, Noordwijk, Netherlands.
 **
-<<<<<<< HEAD
 **  This revision:   2018 January 2
 **
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  This revision:   2015 January 20
-**
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    double v1[3], v2[3];
@@ -127,11 +115,7 @@ void iauG2icrs ( double dl, double db, double *dr, double *dd )
 
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

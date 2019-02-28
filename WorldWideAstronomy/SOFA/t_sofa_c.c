@@ -17,19 +17,11 @@ static int verbose = 0;
 **
 **  All messages go to stdout.
 **
-<<<<<<< HEAD
 **  This revision:  2017 October 21
 **
 **  SOFA release 2018-01-30
 **
 **  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
-=======
-**  This revision:  2017 March 15
-**
-**  SOFA release 2017-04-20
-**
-**  Copyright (C) 2017 IAU SOFA Board.  See notes at end.
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 
 static void viv(int ival, int ivalok,
@@ -204,7 +196,6 @@ static void t_ab(int *status)
 
 }
 
-<<<<<<< HEAD
 static void t_ae2hd(int *status)
 /*
 **  - - - - - - - -
@@ -235,8 +226,6 @@ static void t_ae2hd(int *status)
 
 }
 
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 static void t_af2a(int *status)
 /*
 **  - - - - - - -
@@ -4521,7 +4510,6 @@ static void t_h2fk5(int *status)
 
 }
 
-<<<<<<< HEAD
 static void t_hd2ae(int *status)
 /*
 **  - - - - - - - -
@@ -4581,8 +4569,6 @@ static void t_hd2pa(int *status)
 
 }
 
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 static void t_hfk5z(int *status)
 /*
 **  - - - - - - - -
@@ -8905,7 +8891,6 @@ static void t_tf2d(int *status)
 
 }
 
-<<<<<<< HEAD
 static void t_tpors(int *status)
 /*
 **  - - - - - - - -
@@ -9123,8 +9108,6 @@ static void t_tpxev(int *status)
 
 }
 
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 static void t_tr(int *status)
 /*
 **  - - - - -
@@ -9748,11 +9731,7 @@ int main(int argc, char *argv[])
 **   m a i n
 **  - - - - -
 **
-<<<<<<< HEAD
 **  This revision:  2017 October 21
-=======
-**  This revision:  2016 March 12
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 */
 {
    int status;
@@ -9771,10 +9750,7 @@ int main(int argc, char *argv[])
    t_a2af(&status);
    t_a2tf(&status);
    t_ab(&status);
-<<<<<<< HEAD
    t_ae2hd(&status);
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
    t_af2a(&status);
    t_anp(&status);
    t_anpm(&status);
@@ -9881,11 +9857,8 @@ int main(int argc, char *argv[])
    t_gst06a(&status);
    t_gst94(&status);
    t_h2fk5(&status);
-<<<<<<< HEAD
    t_hd2ae(&status);
    t_hd2pa(&status);
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
    t_hfk5z(&status);
    t_icrs2g(&status);
    t_ir(&status);
@@ -9989,15 +9962,12 @@ int main(int argc, char *argv[])
    t_tdbtt(&status);
    t_tf2a(&status);
    t_tf2d(&status);
-<<<<<<< HEAD
    t_tpors(&status);
    t_tporv(&status);
    t_tpsts(&status);
    t_tpstv(&status);
    t_tpxes(&status);
    t_tpxev(&status);
-=======
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
    t_tr(&status);
    t_trxp(&status);
    t_trxpv(&status);
@@ -10028,11 +9998,7 @@ int main(int argc, char *argv[])
 }
 /*----------------------------------------------------------------------
 **
-<<<<<<< HEAD
 **  Copyright (C) 2018
-=======
-**  Copyright (C) 2017
->>>>>>> 5af891ac4fdac5d00c361155293d2f5c4ac76e5f
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
