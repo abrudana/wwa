@@ -14,6 +14,8 @@ This version is intended to retain identical functionality to the SOFA library, 
 made distinct through different function names (prefixes) and C# language specific
 modifications in code.
 
+WWA is also available as a NuGet package.
+
 Contributor
 Attila Abrudán
 If you make income with the help of this library please donate to the contributor (help to keep up to date the C# version).
