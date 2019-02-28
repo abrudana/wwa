@@ -290,9 +290,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="license.md" />
     <None Include="ReadMe.1st">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="WWA.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\01-Routines.txt">

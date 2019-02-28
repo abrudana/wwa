@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>2018-01-30</version>
+    <title>World Wide Astronomy</title>
+    <authors>Attila Abrudán</authors>
+    <owners>International Astronomical Union</owners>
+    <license type="file">license.md</license>
+    <projectUrl>https://github.com/abrudana/wwa</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.</description>
+    <releaseNotes>Issue: 2018-01-30 by iausofa</releaseNotes>
+    <copyright>Copyright 2014-19</copyright>
+    <tags>SOFA astronomy calendars timescales ecliptic ephemerides precession nutation</tags>
+  </metadata>
+  <files>
+      <file src="ReadMe.1st" target="ReadMe.1st" />
+      <file src="license.md" target="license.md" />
+  </files>
+</package>

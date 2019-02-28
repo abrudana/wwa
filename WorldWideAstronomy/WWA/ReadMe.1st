@@ -1,9 +1,11 @@
-World Wide Astronomy - WWA - https://wwa.codeplex.com/
+World Wide Astronomy - WWA - https://github.com/abrudana/wwa
 Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
 
 This program is derived from the International Astronomical Union's
 SOFA (Standards of Fundamental Astronomy) software collection.
+Issue 2018-01-30.
 http://www.iausofa.org
+
 
 The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
 This version is intended to retain identical functionality to the SOFA library, but
@@ -12,6 +14,7 @@ modifications in code.
 
 Contributor
 Attila Abrudán
+If you make income with the help of this library please donate to the contributor (help to keep up to date the C# version).
 
 SOFA Software License
 NOTICE TO USER:
