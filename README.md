@@ -1,5 +1,5 @@
 # World Wide Astronomy - WWA
-Current WWA Library release based on :  SOFA Library Issue 2017-04-20 for ANSI C
+Current WWA Library release based on :  SOFA Library Issue 2018-01-30 for ANSI C
 Project Description
 
 World Wide Astronomy - WWA
