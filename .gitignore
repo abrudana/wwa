@@ -262,3 +262,4 @@ __pycache__/
 *.c
 *.c
 WorldWideAstronomy/SOFA/apio.c
+/WorldWideAstronomy/WWA/nuget.exe
