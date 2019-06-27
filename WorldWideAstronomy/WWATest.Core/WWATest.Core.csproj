@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Authors>Attila Abrudán</Authors>
+    <Description>World Widw Astronomy - SOFA</Description>
+  </PropertyGroup>
+
+</Project>
