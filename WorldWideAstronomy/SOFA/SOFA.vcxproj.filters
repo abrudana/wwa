@@ -233,6 +233,15 @@
     <ClCompile Include="zp.c" />
     <ClCompile Include="zpv.c" />
     <ClCompile Include="zr.c" />
+    <ClCompile Include="ae2hd.c" />
+    <ClCompile Include="hd2ae.c" />
+    <ClCompile Include="hd2pa.c" />
+    <ClCompile Include="tpors.c" />
+    <ClCompile Include="tporv.c" />
+    <ClCompile Include="tpsts.c" />
+    <ClCompile Include="tpstv.c" />
+    <ClCompile Include="tpxes.c" />
+    <ClCompile Include="tpxev.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sofa.h" />
