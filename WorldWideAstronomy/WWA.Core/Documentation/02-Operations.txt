@@ -1,0 +1,105 @@
+﻿OPERATIONS INVOLVING P-VECTORS AND R-MATRICES
+
+ Initialize
+
+ ZP				zero p-vector
+ ZR				initialize r-matrix to null
+ IR				initialize r-matrix to identity
+
+ Copy/extend/extract
+
+ CP				copy p-vector
+ CR				copy r-matrix
+
+ Build rotations
+
+ RX				rotate r-matrix about x
+ RY				rotate r-matrix about y
+ RZ				rotate r-matrix about z
+
+ Spherical/Cartesian conversions
+
+ S2C			spherical to unit vector
+ C2S			unit vector to spherical
+ S2P			spherical to p-vector
+ P2S			p-vector to spherical
+
+ Operations on vectors
+
+ PPP			p-vector plus p-vector
+ PMP			p-vector minus p-vector
+ PPSP			p-vector plus scaled p-vector
+ PDP			inner (=scalar=dot) product of two p-vectors
+ PXP			outer (=vector=cross) product of two p-vectors
+ PM				modulus of p-vector
+ PN				normalize p-vector returning modulus
+ SXP			multiply p-vector by scalar
+
+ Operations on matrices
+
+ RXR			r-matrix multiply
+ TR				transpose r-matrix
+
+ Matrix-vector products
+
+ RXP			product of r-matrix and p-vector
+ TRXP			product of transpose of r-matrix and p-vector
+
+ Separation and position-angle
+
+ SEPP			angular separation from p-vectors
+ SEPS			angular separation from spherical coordinates
+ PAP			position-angle from p-vectors
+ PAS			position-angle from spherical coordinates
+
+ Rotation vectors
+
+ RV2M			r-vector to r-matrix
+ RM2V			r-matrix to r-vector
+
+
+OPERATIONS INVOLVING PV-VECTORS
+
+ Initialize
+
+ ZPV			zero pv-vector
+
+ Copy/extend/extract
+
+ CPV			copy pv-vector
+ P2PV			append zero velocity to p-vector
+ PV2P			discard velocity component of pv-vector
+
+ Spherical/Cartesian conversions
+
+ S2PV			spherical to pv-vector
+ PV2S			pv-vector to spherical
+
+ Operations on vectors
+
+ PVPPV			pv-vector plus pv-vector
+ PVMPV			pv-vector minus pv-vector
+ PVDPV			inner (=scalar=dot) product of two pv-vectors
+ PVXPV			outer (=vector=cross) product of two pv-vectors
+ PVM			modulus of pv-vector
+ SXPV			multiply pv-vector by scalar
+ S2XPV			multiply pv-vector by two scalars
+ PVU			update pv-vector
+ PVUP			update pv-vector discarding velocity
+
+ Matrix-vector products
+
+ RXPV			product of r-matrix and pv-vector
+ TRXPV			product of transpose of r-matrix and pv-vector
+
+
+OPERATIONS ON ANGLES
+
+ ANP			normalize radians to range 0 to 2pi
+ ANPM			normalize radians to range -pi to +pi
+ A2TF			decompose radians into hours, minutes, seconds
+ A2AF			decompose radians into degrees, arcminutes, arcseconds
+ AF2A			degrees, arcminutes, arcseconds to radians
+ D2TF			decompose days into hours, minutes, seconds
+ TF2A			hours, minutes, seconds to radians
+ TF2D			hours, minutes, seconds to days

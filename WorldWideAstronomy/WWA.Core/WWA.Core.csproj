@@ -1,9 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <Authors>Attila Abrudán</Authors>
     <Description>World Wide Astronomy - SOFA</Description>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\AA_Works\CLOUD\GitHub\wwa\WorldWideAstronomy\WWA.Core\WWA.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Astronomy\" />
+    <Folder Include="Documentation\" />
+    <Folder Include="VecotrMatrix\" />
+    <Folder Include="NewFunctions\" />
+  </ItemGroup>
 
 </Project>
