@@ -1,0 +1,1 @@
+nuget push bin\Release\WWA.Core.1.1.0.nupkg oy2hmy6ese5uuvr7ybuq5oz4t6azotcuxhtadwpyivecpe -Source https://api.nuget.org/v3/index.json
