@@ -70,7 +70,7 @@ namespace WWA_Test
 
             a = val - valok;
             //if (Math.Abs(a) > dval)
-            if (a != 0.0 && Math.Abs(a) > Math.Abs(dval))
+            if (double.IsNaN(a) || (a != 0.0 && Math.Abs(a) > Math.Abs(dval)))
             {
                 f = Math.Abs(valok / a);
                 status = 1;
@@ -1592,7 +1592,9 @@ namespace WWA_Test
         {
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -1628,6 +1630,9 @@ namespace WWA_Test
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaLDBODY[] b = new WWA.wwaLDBODY[3];
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
 
             date1 = 2456165.5;
             date2 = 0.401182685;
