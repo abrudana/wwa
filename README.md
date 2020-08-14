@@ -1,5 +1,5 @@
 # World Wide Astronomy - WWA
-Current WWA Library release based on : SOFA Library Issue 2018-01-30 for ANSI C Project.
+Current WWA Library release based on : SOFA Library Issue 2020-07-21 (Version 16) for ANSI C Project.
 
 World Wide Astronomy - WWA
 Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
