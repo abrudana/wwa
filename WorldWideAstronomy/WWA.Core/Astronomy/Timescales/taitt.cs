@@ -45,7 +45,7 @@ namespace WorldWideAstronomy
             const double dtat = TTMTAI / DAYSEC;
 
             /* Result, safeguarding precision. */
-            if (tai1 > tai2)
+            if (Math.Abs(tai1) > Math.Abs(tai2))
             {
                 tt1 = tai1;
                 tt2 = tai2 + dtat;

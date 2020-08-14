@@ -5599,6 +5599,122 @@
             <param name="ha">hour angle (local)</param>
             <param name="dec">declination</param>
         </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk425(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Convert B1950.0 FK4 star catalog data to J2000.0 FK5.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk45z(System.Double,System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            Convert a B1950.0 FK4 star position to J2000.0 FK5, assuming zero proper motion in the FK5 system.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk524(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Convert J2000.0 FK5 star catalog data to B1950.0 FK4.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk54z(System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Convert a J2000.0 FK5 star position to B1950.0 FK4, assuming zero proper motion in FK5 and parallax.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
         <member name="M:WorldWideAstronomy.WWA.wwaHd2ae(System.Double,System.Double,System.Double,System.Double@,System.Double@)">
             <summary>
             Equatorial to horizon coordinates:  transform hour angle and

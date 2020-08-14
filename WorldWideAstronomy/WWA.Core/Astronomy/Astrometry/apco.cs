@@ -55,7 +55,7 @@ namespace WorldWideAstronomy
             double elong, double phi, double hm, double xp, double yp, double sp, double refa, double refb, ref wwaASTROM astrom)
         {
             double sl, cl;
-            double [,] r = new double[3, 3];
+            double[,] r = new double[3, 3];
             double[,] pvc = new double[2, 3] { { 0, 0, 0 }, { 0, 0, 0 } };
             double[,] pv = new double[2, 3] { { 0, 0, 0 }, { 0, 0, 0 } };
 

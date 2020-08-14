@@ -55,7 +55,7 @@ namespace WorldWideAstronomy
 
 
             /* Result, preserving date format but safeguarding precision. */
-            if (tdb1 > tdb2)
+            if (Math.Abs(tdb1) > Math.Abs(tdb2))
             {
                 d = t77td - tdb1;
                 f = tdb2 - tdb0;
@@ -66,7 +66,7 @@ namespace WorldWideAstronomy
             {
                 d = t77td - tdb2;
                 f = tdb1 - tdb0;
-                tcb1 = f + (d - (f - t77tf)) * elbb;
+                tcb1 = f - (d - (f - t77tf)) * elbb;
                 tcb2 = tdb2;
             }
 

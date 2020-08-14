@@ -49,7 +49,7 @@ namespace WorldWideAstronomy
             double a1, a2, u1, u2, g1 = 0, g2 = 0;
 
             /* Put the two parts of the TAI into big-first order. */
-            big1 = (tai1 >= tai2 ? true : false);
+            big1 = (Math.Abs(tai1) >= Math.Abs(tai2));
             if (big1)
             {
                 a1 = tai1;

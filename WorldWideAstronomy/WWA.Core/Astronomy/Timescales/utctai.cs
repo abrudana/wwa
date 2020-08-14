@@ -48,7 +48,7 @@ namespace WorldWideAstronomy
             double u1, u2, fd = 0, dat0 = 0, dat12 = 0, w = 0, dat24 = 0, dlod, dleap, z1 = 0, z2 = 0, a2;
 
             /* Put the two parts of the UTC into big-first order. */
-            big1 = (utc1 >= utc2 ? true : false);
+            big1 = (Math.Abs(utc1) >= Math.Abs(utc2) ? true : false);
             if (big1)
             {
                 u1 = utc1;

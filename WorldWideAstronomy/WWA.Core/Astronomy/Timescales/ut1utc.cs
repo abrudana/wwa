@@ -53,7 +53,7 @@ namespace WorldWideAstronomy
             duts = dut1;
 
             /* Put the two parts of the UT1 into big-first order. */
-            big1 = (ut11 >= ut12 ? true : false);
+            big1 = (Math.Abs(ut11) >= Math.Abs(ut12) ? true : false);
             if (big1)
             {
                 u1 = ut11;
