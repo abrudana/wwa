@@ -46,7 +46,7 @@ namespace WorldWideAstronomy
 
             /* Result, safeguarding precision. */
             dtd = dt / DAYSEC;
-            if (tt1 > tt2)
+            if (Math.Abs(tt1) > Math.Abs(tt2))
             {
                 ut11 = tt1;
                 ut12 = tt2 - dtd;

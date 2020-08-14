@@ -208,16 +208,15 @@ namespace WorldWideAstronomy
             return A < 0.0 ? Math.Ceiling(A) : Math.Floor(A);
         }
 
+        /* dnint(A) - round to nearest whole number (double) */
         /// <summary>
         /// dnint(A) - round to nearest whole number (double)
         /// </summary>
         /// <param name="A"></param>
         /// <returns></returns>
         public static double dnint(double A)
-        {
-            //return A < 0.0 ? Math.Ceiling((A)-0.5) : Math.Floor((A)+0.5);
-            return A < 0.0 ? Math.Ceiling((A) - 0.5) : Math.Floor((A) + 0.5);
-            //return A < 0.0 ? Math.Round(A) : Math.Round(A, MidpointRounding.AwayFromZero);
+        { 
+            return (Math.Abs(A) < 0.5 ? 0.0 : ((A) < 0.0 ? Math.Ceiling((A) - 0.5) : Math.Floor((A) + 0.5)));
         }
 
         /// <summary>
@@ -326,5 +325,21 @@ namespace WorldWideAstronomy
 
             return res;
         }
+
+        // Const values come from sdk\inc\crt\float.h
+        public const double DBL_EPSILON = 2.2204460492503131e-016; /* smallest such that 1.0+DBL_EPSILON != 1.0 */
+        ///// <summary>
+        ///// #define DBL_EPSILON 2.2204460492503131e-16
+        ///// </summary>
+        ///// <returns></returns>
+        //public static double getDblEpsilon()
+        //{
+        //    double d = 1;
+        //    while (1.0 + d / 2 != 1.0)
+        //    {
+        //        d = d / 2;
+        //    }
+        //    return d;
+        //}
     }
 }

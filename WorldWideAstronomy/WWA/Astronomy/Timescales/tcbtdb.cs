@@ -52,7 +52,7 @@ namespace WorldWideAstronomy
 
 
             /* Result, safeguarding precision. */
-            if (tcb1 > tcb2)
+            if (Math.Abs(tcb1) > Math.Abs(tcb2))
             {
                 d = tcb1 - t77td;
                 tdb1 = tcb1;

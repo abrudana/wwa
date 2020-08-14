@@ -46,7 +46,7 @@ namespace WorldWideAstronomy
 
 
             /* Result, safeguarding precision. */
-            if (tt1 > tt2)
+            if (Math.Abs(tt1) > Math.Abs(tt2))
             {
                 tai1 = tt1;
                 tai2 = tt2 - dtat;

@@ -139,11 +139,11 @@ int iauAtio13(double ri, double di,
 **     iauApio13    astrometry parameters, CIRS-observed, 2013
 **     iauAtioq     quick CIRS to observed
 **
-**  This revision:   2016 February 2 
+**  This revision:   2016 February 2
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
    int j;
@@ -167,7 +167,7 @@ int iauAtio13(double ri, double di,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
@@ -260,5 +260,4 @@ int iauAtio13(double ri, double di,
 **                 United Kingdom
 **
 **--------------------------------------------------------------------*/
-
 }

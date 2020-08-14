@@ -113,7 +113,6 @@
     <Compile Include="Astronomy\GeodeticGeocentric\gc2gde.cs" />
     <Compile Include="Astronomy\GeodeticGeocentric\gd2gc.cs" />
     <Compile Include="Astronomy\GeodeticGeocentric\gd2gce.cs" />
-    <Compile Include="Astronomy\GeodeticGeocentric\pvtob.cs" />
     <Compile Include="Astronomy\PrecNutPolar\bi00.cs" />
     <Compile Include="Astronomy\PrecNutPolar\bp00.cs" />
     <Compile Include="Astronomy\PrecNutPolar\bp06.cs" />
@@ -193,7 +192,6 @@
     <Compile Include="Astronomy\RotationAndTime\gst06.cs" />
     <Compile Include="Astronomy\RotationAndTime\gst06a.cs" />
     <Compile Include="Astronomy\RotationAndTime\gst94.cs" />
-    <Compile Include="Astronomy\SpaceMotion\pmsafe.cs" />
     <Compile Include="Astronomy\SpaceMotion\pvstar.cs" />
     <Compile Include="Astronomy\SpaceMotion\starpv.cs" />
     <Compile Include="Astronomy\StarCatalogs\fk52h.cs" />
@@ -223,6 +221,10 @@
     <Compile Include="Astronomy\Timescales\utctai.cs" />
     <Compile Include="Astronomy\Timescales\utcut1.cs" />
     <Compile Include="NewFunctions\ae2hd.cs" />
+    <Compile Include="NewFunctions\fk425.cs" />
+    <Compile Include="NewFunctions\fk45z.cs" />
+    <Compile Include="NewFunctions\fk524.cs" />
+    <Compile Include="NewFunctions\fk54z.cs" />
     <Compile Include="NewFunctions\hd2ae.cs" />
     <Compile Include="NewFunctions\hd2pa.cs" />
     <Compile Include="NewFunctions\tpors.cs" />

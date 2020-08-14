@@ -176,7 +176,11 @@
     <ClCompile Include="fasa03.c" />
     <ClCompile Include="faur03.c" />
     <ClCompile Include="fave03.c" />
+    <ClCompile Include="fk425.c" />
+    <ClCompile Include="fk45z.c" />
+    <ClCompile Include="fk524.c" />
     <ClCompile Include="fk52h.c" />
+    <ClCompile Include="fk54z.c" />
     <ClCompile Include="fk5hip.c" />
     <ClCompile Include="fk5hz.c" />
     <ClCompile Include="fw2m.c" />

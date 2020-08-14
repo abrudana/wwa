@@ -242,6 +242,10 @@
     <ClCompile Include="tpstv.c" />
     <ClCompile Include="tpxes.c" />
     <ClCompile Include="tpxev.c" />
+    <ClCompile Include="fk45z.c" />
+    <ClCompile Include="fk54z.c" />
+    <ClCompile Include="fk425.c" />
+    <ClCompile Include="fk524.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sofa.h" />

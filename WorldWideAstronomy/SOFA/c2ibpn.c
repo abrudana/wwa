@@ -78,9 +78,9 @@ void iauC2ibpn(double date1, double date2, double rbpn[3][3],
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
    double x, y;
@@ -96,7 +96,7 @@ void iauC2ibpn(double date1, double date2, double rbpn[3][3],
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

@@ -68,9 +68,9 @@ void iauPvtob(double elong, double phi, double hm,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
 /* Earth rotation rate in radians per UT1 second */
@@ -107,7 +107,7 @@ void iauPvtob(double elong, double phi, double hm,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
@@ -200,5 +200,4 @@ void iauPvtob(double elong, double phi, double hm,
 **                 United Kingdom
 **
 **--------------------------------------------------------------------*/
-
 }

@@ -60,15 +60,15 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 **     P. Kenneth Seidelmann (ed), University Science Books (1992),
 **     Section 12.92 (p604).
 **
-**  This revision:  2016 December 2
+**  This revision:  2020 April 13
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
    int j, js;
-   double denom, d1, d2, f1, f2, f;
+   double denom, d1, d2, f1, f2, d, djd, f, rf;
 
 
 /* Denominator of fraction (e.g. 100 for 2 decimal places). */
@@ -80,32 +80,43 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
       denom = 1.0;
    }
 
-/* Copy the date, big then small, and realign to midnight. */
-   if (dj1 >= dj2) {
+/* Copy the date, big then small. */
+   if (fabs(dj1) >= fabs(dj2)) {
       d1 = dj1;
       d2 = dj2;
    } else {
       d1 = dj2;
       d2 = dj1;
    }
-   d2 -= 0.5;
 
-/* Separate days and fractions. */
-   f1 = fmod(d1, 1.0);
-   f2 = fmod(d2, 1.0);
-   d1 = dnint(d1-f1);
-   d2 = dnint(d2-f2);
+/* Realign to midnight (without rounding error). */
+   d1 -= 0.5;
+
+/* Separate day and fraction (as precisely as possible). */
+   d = dnint(d1);
+   f1 = d1 - d;
+   djd = d;
+   d = dnint(d2);
+   f2 = d2 - d;
+   djd += d;
+   d = dnint(f1 + f2);
+   f = (f1 - d) + f2;
+   if (f < 0.0) {
+       f += 1.0;
+       d -= 1.0;
+   }
+   djd += d;
 
 /* Round the total fraction to the specified number of places. */
-   f = dnint((f1+f2)*denom) / denom;
+   rf = dnint(f*denom) / denom;
 
-/* Re-assemble the rounded date and re-align to noon. */
-   d2 += f + 0.5;
+/* Re-align to noon. */
+   djd += 0.5;
 
 /* Convert to Gregorian calendar. */
-   js = iauJd2cal(d1, d2, &iymdf[0], &iymdf[1], &iymdf[2], &f);
+   js = iauJd2cal(djd, rf, &iymdf[0], &iymdf[1], &iymdf[2], &f);
    if (js == 0) {
-      iymdf[3] = (int) (f * denom);
+      iymdf[3] = (int) dnint(f * denom);
    } else {
       j = js;
    }
@@ -115,7 +126,7 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

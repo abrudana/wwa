@@ -44,7 +44,8 @@ namespace WorldWideAstronomy
         public static int wwaJdcalf(int ndp, double dj1, double dj2, int[] iymdf)
         {
             int j, js;
-            double denom, d1, d2, f1, f2, f;
+            double denom, d1, d2, f1, f2, d, djd, f, rf;
+
 
             /* Denominator of fraction (e.g. 100 for 2 decimal places). */
             if ((ndp >= 0) && (ndp <= 9))
@@ -58,8 +59,8 @@ namespace WorldWideAstronomy
                 denom = 1.0;
             }
 
-            /* Copy the date, big then small, and realign to midnight. */
-            if (dj1 >= dj2)
+            /* Copy the date, big then small. */
+            if (Math.Abs(dj1) >= Math.Abs(dj2))
             {
                 d1 = dj1;
                 d2 = dj2;
@@ -69,25 +70,37 @@ namespace WorldWideAstronomy
                 d1 = dj2;
                 d2 = dj1;
             }
-            d2 -= 0.5;
 
-            /* Separate days and fractions. */
-            f1 = d1 % 1.0;
-            f2 = d2 % 1.0;
-            d1 = dnint(d1 - f1);
-            d2 = dnint(d2 - f2);
+            /* Realign to midnight (without rounding error). */
+            d1 -= 0.5;
+
+            /* Separate day and fraction (as precisely as possible). */
+            d = dnint(d1);
+            f1 = d1 - d;
+            djd = d;
+            d = dnint(d2);
+            f2 = d2 - d;
+            djd += d;
+            d = dnint(f1 + f2);
+            f = (f1 - d) + f2;
+            if (f < 0.0)
+            {
+                f += 1.0;
+                d -= 1.0;
+            }
+            djd += d;
 
             /* Round the total fraction to the specified number of places. */
-            f = Math.Floor((f1 + f2) * denom + 0.5) / denom;
+            rf = dnint(f * denom) / denom;
 
-            /* Re-assemble the rounded date and re-align to noon. */
-            d2 += f + 0.5;
+            /* Re-align to noon. */
+            djd += 0.5;
 
             /* Convert to Gregorian calendar. */
-            js = wwaJd2cal(d1, d2, ref iymdf[0], ref iymdf[1], ref iymdf[2], ref f);
+            js = wwaJd2cal(djd, rf, ref iymdf[0], ref iymdf[1], ref iymdf[2], ref f);
             if (js == 0)
             {
-                iymdf[3] = (int)(f * denom);
+                iymdf[3] = (int)dnint(f * denom);
             }
             else
             {

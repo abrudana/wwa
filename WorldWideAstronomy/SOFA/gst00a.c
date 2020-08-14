@@ -76,9 +76,9 @@ double iauGst00a(double uta, double utb, double tta, double ttb)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
    double gmst00, ee00a, gst;
@@ -92,7 +92,7 @@ double iauGst00a(double uta, double utb, double tta, double ttb)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

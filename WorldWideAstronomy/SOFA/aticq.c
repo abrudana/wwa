@@ -66,9 +66,9 @@ void iauAticq(double ri, double di, iauASTROM *astrom,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
    int j, i;
@@ -144,7 +144,7 @@ void iauAticq(double ri, double di, iauASTROM *astrom,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
@@ -237,5 +237,4 @@ void iauAticq(double ri, double di, iauASTROM *astrom,
 **                 United Kingdom
 **
 **--------------------------------------------------------------------*/
-
 }

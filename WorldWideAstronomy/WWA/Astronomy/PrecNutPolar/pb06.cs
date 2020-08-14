@@ -40,23 +40,32 @@ namespace WorldWideAstronomy
         public static void wwaPb06(double date1, double date2, ref double bzeta, ref double bz, ref double btheta)
         {
             double[,] r = new double[3, 3];
-            double r31, r32;
-
+            double y, x;
 
             /* Precession matrix via Fukushima-Williams angles. */
             wwaPmat06(date1, date2, r);
 
-            /* Solve for z. */
-            bz = Math.Atan2(r[1, 2], r[0, 2]);
+            /* Solve for z, choosing the +/- pi alternative. */
+            y = r[1, 2];
+            x = -r[0, 2];
+            if (x < 0.0)
+            {
+                y = -y;
+                x = -x;
+            }
+            bz = (x != 0.0 || y != 0.0) ? -Math.Atan2(y, x) : 0.0;
 
-            /* Remove it from the matrix. */
+            /* Derotate it out of the matrix. */
             wwaRz(bz, r);
 
             /* Solve for the remaining two angles. */
-            bzeta = Math.Atan2(r[1, 0], r[1, 1]);
-            r31 = r[2, 0];
-            r32 = r[2, 1];
-            btheta = Math.Atan2(-dsign(Math.Sqrt(r31 * r31 + r32 * r32), r[0, 2]), r[2, 2]);
+            y = r[0, 2];
+            x = r[2, 2];
+            btheta = (x != 0.0 || y != 0.0) ? -Math.Atan2(y, x) : 0.0;
+
+            y = -r[1, 0];
+            x = r[1, 1];
+            bzeta = (x != 0.0 || y != 0.0) ? -Math.Atan2(y, x) : 0.0;
 
             return;
         }

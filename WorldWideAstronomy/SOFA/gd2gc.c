@@ -61,9 +61,9 @@ int iauGd2gc ( int n, double elong, double phi, double height,
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2018-01-30
+**  SOFA release 2020-07-21
 **
-**  Copyright (C) 2018 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
 */
 {
    int j;
@@ -87,7 +87,7 @@ int iauGd2gc ( int n, double elong, double phi, double height,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2018
+**  Copyright (C) 2020
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
@@ -180,5 +180,4 @@ int iauGd2gc ( int n, double elong, double phi, double height,
 **                 United Kingdom
 **
 **--------------------------------------------------------------------*/
-
 }

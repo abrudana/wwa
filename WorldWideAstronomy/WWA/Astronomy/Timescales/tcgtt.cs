@@ -46,7 +46,7 @@ namespace WorldWideAstronomy
 
 
             /* Result, safeguarding precision. */
-            if (tcg1 > tcg2)
+            if (Math.Abs(tcg1) > Math.Abs(tcg2))
             {
                 tt1 = tcg1;
                 tt2 = tcg2 - ((tcg1 - DJM0) + (tcg2 - t77t)) * ELG;
