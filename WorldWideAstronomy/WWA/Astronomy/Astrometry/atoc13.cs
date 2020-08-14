@@ -55,6 +55,10 @@ namespace WorldWideAstronomy
         {
             int j;
             wwaASTROM astrom = new wwaASTROM();
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
+
             double eo = 0, ri = 0, di = 0;
 
             /* Star-independent astrometry parameters. */

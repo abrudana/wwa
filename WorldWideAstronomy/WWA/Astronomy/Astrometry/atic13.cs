@@ -41,6 +41,9 @@ namespace WorldWideAstronomy
         {
             /* Star-independent astrometry parameters */
             wwaASTROM astrom = new wwaASTROM();
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
 
             /* Star-independent astrometry parameters. */
             wwaApci13(date1, date2, ref astrom, ref eo);
