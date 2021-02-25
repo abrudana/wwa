@@ -61,13 +61,13 @@ int iauJd2cal(double dj1, double dj2,
 **     Section 12.92 (p604).
 **
 **     Klein, A., A Generalized Kahan-Babuska-Summation-Algorithm.
-**     Computing 76, 279-293 (2006), Section 3.
+**     Computing, 76, 279-293 (2006), Section 3.
 **
-**  This revision:  2020 June 24
+**  This revision:  2020 October 21
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
 /* Minimum and maximum allowed JD */
@@ -151,7 +151,7 @@ int iauJd2cal(double dj1, double dj2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

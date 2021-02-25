@@ -10,7 +10,8 @@ namespace WorldWideAstronomy
     {
         /// <summary>
         /// Form the matrix of precession-nutation for a given date (including
-        /// frame bias), IAU 2006 precession and IAU 2000A nutation models.
+        /// frame bias), equinox based, IAU 2006 precession and IAU 2000A
+        /// nutation models.
         /// </summary>
         /// 
         /// <remarks>
@@ -33,8 +34,8 @@ namespace WorldWideAstronomy
         /// </remarks>
         /// <param name="date1">TT as a 2-part Julian Date (Note 1)</param>
         /// <param name="date2">TT as a 2-part Julian Date (Note 1)</param>
-        /// <param name="rnpb">bias-precession-nutation matrix (Note 2)</param>
-        public static void wwaPnm06a(double date1, double date2, double[,] rnpb)
+        /// <param name="rbpn">bias-precession-nutation matrix (Note 2)</param>
+        public static void wwaPnm06a(double date1, double date2, double[,] rbpn)
         {
             double gamb = 0, phib = 0, psib = 0, epsa = 0, dp = 0, de = 0;
 
@@ -46,7 +47,7 @@ namespace WorldWideAstronomy
             wwaNut06a(date1, date2, ref dp, ref de);
 
             /* Equinox based nutation x precession x bias matrix. */
-            wwaFw2m(gamb, phib, psib + dp, epsa + de, rnpb);
+            wwaFw2m(gamb, phib, psib + dp, epsa + de, rbpn);
 
             return;
         }

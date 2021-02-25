@@ -46,10 +46,11 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 **     the Gregorian Calendar, nor is the AD/BC numbering convention
 **     observed.
 **
-**  3) Refer to the function iauJd2cal.
+**  3) See also the function iauJd2cal.
 **
-**  4) NDP should be 4 or less if internal overflows are to be
-**     avoided on machines which use 16-bit integers.
+**  4) The number of decimal places ndp should be 4 or less if internal
+**     overflows are to be avoided on platforms which use 16-bit
+**     integers.
 **
 **  Called:
 **     iauJd2cal    JD to Gregorian calendar
@@ -60,11 +61,11 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 **     P. Kenneth Seidelmann (ed), University Science Books (1992),
 **     Section 12.92 (p604).
 **
-**  This revision:  2020 April 13
+**  This revision:  2020 October 22
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
    int j, js;
@@ -126,7 +127,7 @@ int iauJdcalf(int ndp, double dj1, double dj2, int iymdf[4])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

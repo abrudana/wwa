@@ -10,7 +10,7 @@ namespace WorldWideAstronomy
     {
         /// <summary>
         /// Form the matrix of precession-nutation for a given date (including
-        /// frame bias), equinox-based, IAU 2000A model.
+        /// frame bias), equinox based, IAU 2000A model.
         /// </summary>
         /// 
         /// <remarks>

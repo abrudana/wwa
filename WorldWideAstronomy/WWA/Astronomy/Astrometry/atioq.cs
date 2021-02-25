@@ -50,7 +50,11 @@ namespace WorldWideAstronomy
             const double SELMIN = 0.05;
 
             double[] v = new double[3];
-            double x, y, z, xhd, yhd, zhd, f, xhdt, yhdt, zhdt, xaet, yaet, zaet, azobs, r, tz, w, del, cosdel, xaeo, yaeo, zaeo, zdobs, hmobs = 0, dcobs = 0, raobs;
+            double x, y, z, sx, cx, sy, cy, xhd, yhd, zhd, f, xhdt, yhdt, zhdt, xaet, yaet, zaet, 
+                azobs, r, tz, w, del, cosdel, xaeo, yaeo, zaeo, zdobs, hmobs, dcobs, raobs;
+
+            hmobs = 0;
+            dcobs = 0;
 
             /* CIRS RA,Dec to Cartesian -HA,Dec. */
             wwaS2c(ri - astrom.eral, di, v);
@@ -59,9 +63,13 @@ namespace WorldWideAstronomy
             z = v[2];
 
             /* Polar motion. */
-            xhd = x + astrom.xpl * z;
-            yhd = y - astrom.ypl * z;
-            zhd = z - astrom.xpl * x + astrom.ypl * y;
+            sx = Math.Sin(astrom.xpl);
+            cx = Math.Cos(astrom.xpl);
+            sy = Math.Sin(astrom.ypl);
+            cy = Math.Cos(astrom.ypl);
+            xhd = cx * x + sx * z;
+            yhd = sx * sy * x + cy * y - cx * sy * z;
+            zhd = -sx * cy * x + sy * y + cx * cy * z;
 
             /* Diurnal aberration. */
             f = (1.0 - astrom.diurab * yhd);

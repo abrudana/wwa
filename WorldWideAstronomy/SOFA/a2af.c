@@ -58,9 +58,9 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 **
 **  This revision:  2020 April 1
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
 /* Hours to degrees * radians to turns */
@@ -74,7 +74,7 @@ void iauA2af(int ndp, double angle, char *sign, int idmsf[4])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

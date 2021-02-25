@@ -54,19 +54,34 @@ namespace WorldWideAstronomy
         public static void wwaApco(double date1, double date2, double[,] ebpv, double[] ehp, double x, double y, double s, double theta, 
             double elong, double phi, double hm, double xp, double yp, double sp, double refa, double refb, ref wwaASTROM astrom)
         {
-            double sl, cl;
+            double sl, cl, a, b, eral, c;
             double[,] r = new double[3, 3];
             double[,] pvc = new double[2, 3] { { 0, 0, 0 }, { 0, 0, 0 } };
             double[,] pv = new double[2, 3] { { 0, 0, 0 }, { 0, 0, 0 } };
 
-            /* Longitude with adjustment for TIO locator s'. */
-            astrom.along = elong + sp;
+            /* Form the rotation matrix, CIRS to apparent [HA,Dec]. */
+            wwaIr(r);
+            wwaRz(theta + sp, r);
+            wwaRy(-xp, r);
+            wwaRx(-yp, r);
+            wwaRz(elong, r);
 
-            /* Polar motion, rotated onto the local meridian. */
-            sl = Math.Sin(astrom.along);
-            cl = Math.Cos(astrom.along);
-            astrom.xpl = xp*cl - yp*sl;
-            astrom.ypl = xp*sl + yp*cl;
+            /* Solve for local Earth rotation angle. */
+            a = r[0, 0];
+            b = r[0, 1];
+            eral = (a != 0.0 || b != 0.0) ? Math.Atan2(b, a) : 0.0;
+            astrom.eral = eral;
+            
+            /* Solve for polar motion [X,Y] with respect to local meridian. */
+            a = r[0, 0];
+            c = r[0, 2];
+            astrom.xpl = Math.Atan2(c, Math.Sqrt(a * a + b * b));
+            a = r[1, 2];
+            b = r[2, 2];
+            astrom.ypl = (a != 0.0 || b != 0.0) ? -Math.Atan2(a, b) : 0.0;
+
+            /* Adjusted longitude. */
+            astrom.along = wwaAnpm(eral - theta);
 
             /* Functions of latitude. */
             astrom.sphi = Math.Sin(phi);
@@ -75,9 +90,6 @@ namespace WorldWideAstronomy
             /* Refraction constants. */
             astrom.refa = refa;
             astrom.refb = refb;
-
-            /* Local Earth rotation angle. */
-            wwaAper(theta, ref astrom);
 
             /* Disable the (redundant) diurnal aberration step. */
             astrom.diurab = 0.0;

@@ -32,7 +32,7 @@ namespace WorldWideAstronomy
         /// Please read the ReadMe.1st text file for more information.
         /// </remarks>
         /// <param name="rnpb">classical nutation x precession x bias matrix</param>
-        /// <param name="s">the quantity s (the CIO locator)</param>
+        /// <param name="s">the quantity s (the CIO locator) in radians</param>
         /// <returns>the equation of the origins in radians.</returns>
         public static double wwaEors(double[,] rnpb, double s)
         {

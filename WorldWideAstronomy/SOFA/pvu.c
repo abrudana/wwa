@@ -35,9 +35,9 @@ void iauPvu(double dt, double pv[2][3], double upv[2][3])
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
    iauPpsp(pv[0], dt, pv[1], upv[0]);
@@ -47,7 +47,7 @@ void iauPvu(double dt, double pv[2][3], double upv[2][3])
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

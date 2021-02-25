@@ -2622,7 +2622,7 @@
         <member name="M:WorldWideAstronomy.WWA.wwaC2t00a(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double[0:,0:])">
             <summary>
             Form the celestial to terrestrial matrix given the date, the UT1 and
-            the polar motion, using the IAU 2000A nutation model.
+            the polar motion, using the IAU 2000A precession-nutation model.
             </summary>
             
             <remarks>
@@ -2654,7 +2654,7 @@
         <member name="M:WorldWideAstronomy.WWA.wwaC2t00b(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double[0:,0:])">
             <summary>
             Form the celestial to terrestrial matrix given the date, the UT1 and
-            the polar motion, using the IAU 2000B nutation model.
+            the polar motion, using the IAU 2000A precession-nutation model.
             </summary>
             
             <remarks>
@@ -2686,7 +2686,7 @@
         <member name="M:WorldWideAstronomy.WWA.wwaC2t06a(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double[0:,0:])">
             <summary>
             Form the celestial to terrestrial matrix given the date, the UT1 and
-            the polar motion, using the IAU 2006 precession and IAU 2000A nutation models.
+            the polar motion, using the IAU 2006/2000A precession-nutation models.
             </summary>
             
             <remarks>
@@ -2895,7 +2895,7 @@
             Please read the ReadMe.1st text file for more information.
             </remarks>
             <param name="rnpb">classical nutation x precession x bias matrix</param>
-            <param name="s">the quantity s (the CIO locator)</param>
+            <param name="s">the quantity s (the CIO locator) in radians</param>
             <returns>the equation of the origins in radians.</returns>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaFw2m(System.Double,System.Double,System.Double,System.Double,System.Double[0:,0:])">
@@ -3733,7 +3733,7 @@
         <member name="M:WorldWideAstronomy.WWA.wwaPnm00a(System.Double,System.Double,System.Double[0:,0:])">
             <summary>
             Form the matrix of precession-nutation for a given date (including
-            frame bias), equinox-based, IAU 2000A model.
+            frame bias), equinox based, IAU 2000A model.
             </summary>
             
             <remarks>
@@ -3789,7 +3789,8 @@
         <member name="M:WorldWideAstronomy.WWA.wwaPnm06a(System.Double,System.Double,System.Double[0:,0:])">
             <summary>
             Form the matrix of precession-nutation for a given date (including
-            frame bias), IAU 2006 precession and IAU 2000A nutation models.
+            frame bias), equinox based, IAU 2006 precession and IAU 2000A
+            nutation models.
             </summary>
             
             <remarks>
@@ -3812,7 +3813,7 @@
             </remarks>
             <param name="date1">TT as a 2-part Julian Date (Note 1)</param>
             <param name="date2">TT as a 2-part Julian Date (Note 1)</param>
-            <param name="rnpb">bias-precession-nutation matrix (Note 2)</param>
+            <param name="rbpn">bias-precession-nutation matrix (Note 2)</param>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaPnm80(System.Double,System.Double,System.Double[0:,0:])">
             <summary>

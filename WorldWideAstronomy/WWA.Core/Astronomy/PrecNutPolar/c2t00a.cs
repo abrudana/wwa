@@ -10,7 +10,7 @@ namespace WorldWideAstronomy
     {
         /// <summary>
         /// Form the celestial to terrestrial matrix given the date, the UT1 and
-        /// the polar motion, using the IAU 2000A nutation model.
+        /// the polar motion, using the IAU 2000A precession-nutation model.
         /// </summary>
         /// 
         /// <remarks>

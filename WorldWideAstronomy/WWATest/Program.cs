@@ -744,11 +744,11 @@ namespace WWA_Test
                                   "wwaApco", "bpn(2,3)", ref status);
             vvd(astrom.bpn[2, 2], 0.9999991386008323373, 1e-12,
                                   "wwaApco", "bpn(3,3)", ref status);
-            vvd(astrom.along, -0.5278008060301974337, 1e-12,
+            vvd(astrom.along, -0.5278008060295995734, 1e-12,
                               "wwaApco", "along", ref status);
-            vvd(astrom.xpl, 0.1133427418174939329e-5, 1e-17,
+            vvd(astrom.xpl, 0.1133427418130752958e-5, 1e-17,
                             "wwaApco", "xpl", ref status);
-            vvd(astrom.ypl, 0.1453347595745898629e-5, 1e-17,
+            vvd(astrom.ypl, 0.1453347595780646207e-5, 1e-17,
                             "wwaApco", "ypl", ref status);
             vvd(astrom.sphi, -0.9440115679003211329, 1e-12,
                              "wwaApco", "sphi", ref status);
@@ -756,7 +756,7 @@ namespace WWA_Test
                              "wwaApco", "cphi", ref status);
             vvd(astrom.diurab, 0, 0,
                                "wwaApco", "diurab", ref status);
-            vvd(astrom.eral, 2.617608903969802566, 1e-12,
+            vvd(astrom.eral, 2.617608903970400427, 1e-12,
                              "wwaApco", "eral", ref status);
             vvd(astrom.refa, 0.2014187790000000000e-3, 1e-15,
                              "wwaApco", "refa", ref status);
@@ -809,28 +809,6 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 13.25248468622475727, 1e-11,
                             "wwaApco13", "pmt", ref status);
-            //vvd(astrom.eb[0], -0.9741827107321449445, 1e-12,
-            //                "wwaApco13", "eb(1)", ref status);
-            //vvd(astrom.eb[1], -0.2115130190489386190, 1e-12,
-            //                  "wwaApco13", "eb(2)", ref status);
-            //vvd(astrom.eb[2], -0.09179840189515518726, 1e-12,
-            //                  "wwaApco13", "eb(3)", ref status);
-            //vvd(astrom.eh[0], -0.9736425572586866640, 1e-12,
-            //                  "wwaApco13", "eh(1)", ref status);
-            //vvd(astrom.eh[1], -0.2092452121602867431, 1e-12,
-            //                  "wwaApco13", "eh(2)", ref status);
-            //vvd(astrom.eh[2], -0.09075578153903832650, 1e-12,
-            //                  "wwaApco13", "eh(3)", ref status);
-            //vvd(astrom.em, 0.9998233240914558422, 1e-12,
-            //               "wwaApco13", "em", ref status);
-            //vvd(astrom.v[0], 0.2078704986751370303e-4, 1e-16,
-            //                 "wwaApco13", "v(1)", ref status);
-            //vvd(astrom.v[1], -0.8955360100494469232e-4, 1e-16,
-            //                 "wwaApco13", "v(2)", ref status);
-            //vvd(astrom.v[2], -0.3863338978840051024e-4, 1e-16,
-            //                 "wwaApco13", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999950277561368, 1e-12,
-            //                "wwaApco13", "bm1", ref status);
             vvd(astrom.eb[0], -0.9741827107320875162, 1e-12,
                    "wwaApco13", "eb(1)", ref status);
             vvd(astrom.eb[1], -0.2115130190489716682, 1e-12,
@@ -853,7 +831,6 @@ namespace WWA_Test
                              "wwaApco13", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999950277561004, 1e-12,
                             "wwaApco13", "bm1", ref status);
-
             vvd(astrom.bpn[0, 0], 0.9999991390295147999, 1e-12,
                                   "wwaApco13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4978650075315529277e-7, 1e-12,
@@ -872,11 +849,11 @@ namespace WWA_Test
                                   "wwaApco13", "bpn(2,3)", ref status);
             vvd(astrom.bpn[2, 2], 0.9999991386008312212, 1e-12,
                                   "wwaApco13", "bpn(3,3)", ref status);
-            vvd(astrom.along, -0.5278008060301974337, 1e-12,
+            vvd(astrom.along, -0.5278008060295995733, 1e-12,
                               "wwaApco13", "along", ref status);
-            vvd(astrom.xpl, 0.1133427418174939329e-5, 1e-17,
+            vvd(astrom.xpl, 0.1133427418130752958e-5, 1e-17,
                             "wwaApco13", "xpl", ref status);
-            vvd(astrom.ypl, 0.1453347595745898629e-5, 1e-17,
+            vvd(astrom.ypl, 0.1453347595780646207e-5, 1e-17,
                             "wwaApco13", "ypl", ref status);
             vvd(astrom.sphi, -0.9440115679003211329, 1e-12,
                              "wwaApco13", "sphi", ref status);
@@ -884,7 +861,7 @@ namespace WWA_Test
                              "wwaApco13", "cphi", ref status);
             vvd(astrom.diurab, 0, 0,
                                "wwaApco13", "diurab", ref status);
-            vvd(astrom.eral, 2.617608909189066140, 1e-12,
+            vvd(astrom.eral, 2.617608909189664000, 1e-12,
                              "wwaApco13", "eral", ref status);
             vvd(astrom.refa, 0.2014187785940396921e-3, 1e-15,
                              "wwaApco13", "refa", ref status);
@@ -1206,11 +1183,11 @@ namespace WWA_Test
 
             WWA.wwaApio(sp, theta, elong, phi, hm, xp, yp, refa, refb, ref astrom);
 
-            vvd(astrom.along, -0.5278008060301974337, 1e-12,
+            vvd(astrom.along, -0.5278008060295995734, 1e-12,
                               "wwaApio", "along", ref status);
-            vvd(astrom.xpl, 0.1133427418174939329e-5, 1e-17,
+            vvd(astrom.xpl, 0.1133427418130752958e-5, 1e-17,
                             "wwaApio", "xpl", ref status);
-            vvd(astrom.ypl, 0.1453347595745898629e-5, 1e-17,
+            vvd(astrom.ypl, 0.1453347595780646207e-5, 1e-17,
                             "wwaApio", "ypl", ref status);
             vvd(astrom.sphi, -0.9440115679003211329, 1e-12,
                              "wwaApio", "sphi", ref status);
@@ -1218,7 +1195,7 @@ namespace WWA_Test
                              "wwaApio", "cphi", ref status);
             vvd(astrom.diurab, 0.5135843661699913529e-6, 1e-12,
                                "wwaApio", "diurab", ref status);
-            vvd(astrom.eral, 2.617608903969802566, 1e-12,
+            vvd(astrom.eral, 2.617608903970400427, 1e-12,
                              "wwaApio", "eral", ref status);
             vvd(astrom.refa, 0.2014187790000000000e-3, 1e-15,
                              "wwaApio", "refa", ref status);
@@ -1263,11 +1240,11 @@ namespace WWA_Test
 
             j = WWA.wwaApio13(utc1, utc2, dut1, elong, phi, hm, xp, yp, phpa, tc, rh, wl, ref astrom);
 
-            vvd(astrom.along, -0.5278008060301974337, 1e-12,
+            vvd(astrom.along, -0.5278008060295995733, 1e-12,
                               "wwaApio13", "along", ref status);
-            vvd(astrom.xpl, 0.1133427418174939329e-5, 1e-17,
+            vvd(astrom.xpl, 0.1133427418130752958e-5, 1e-17,
                             "wwaApio13", "xpl", ref status);
-            vvd(astrom.ypl, 0.1453347595745898629e-5, 1e-17,
+            vvd(astrom.ypl, 0.1453347595780646207e-5, 1e-17,
                             "wwaApio13", "ypl", ref status);
             vvd(astrom.sphi, -0.9440115679003211329, 1e-12,
                              "wwaApio13", "sphi", ref status);
@@ -1275,7 +1252,7 @@ namespace WWA_Test
                              "wwaApio13", "cphi", ref status);
             vvd(astrom.diurab, 0.5135843661699913529e-6, 1e-12,
                                "wwaApio13", "diurab", ref status);
-            vvd(astrom.eral, 2.617608909189066140, 1e-12,
+            vvd(astrom.eral, 2.617608909189664000, 1e-12,
                              "wwaApio13", "eral", ref status);
             vvd(astrom.refa, 0.2014187785940396921e-3, 1e-15,
                              "wwaApio13", "refa", ref status);
@@ -1524,16 +1501,11 @@ namespace WWA_Test
                           phpa, tc, rh, wl,
                           ref aob, ref zob, ref hob, ref dob, ref rob, ref eo);
 
-            //vvd(aob, 0.09251774485358230653, 1e-12, "wwaAtco13", "aob", ref status);
-            //vvd(zob, 1.407661405256767021, 1e-12, "wwaAtco13", "zob", ref status);
-            //vvd(hob, -0.09265154431403157925, 1e-12, "wwaAtco13", "hob", ref status);
-            //vvd(dob, 0.1716626560075591655, 1e-12, "wwaAtco13", "dob", ref status);
-            //vvd(rob, 2.710260453503097719, 1e-12, "wwaAtco13", "rob", ref status);
-            vvd(aob, 0.09251774485385390973, 1e-12, "wwaAtco13", "aob", ref status);
-            vvd(zob, 1.407661405256671703, 1e-12, "wwaAtco13", "zob", ref status);
-            vvd(hob, -0.09265154431430045141, 1e-12, "wwaAtco13", "hob", ref status);
-            vvd(dob, 0.1716626560074556029, 1e-12, "wwaAtco13", "dob", ref status);
-            vvd(rob, 2.710260453503366591, 1e-12, "wwaAtco13", "rob", ref status);
+            vvd(aob, 0.9251774485485515207e-1, 1e-12, "wwaAtco13", "aob", ref status);
+            vvd(zob, 1.407661405256499357, 1e-12, "wwaAtco13", "zob", ref status);
+            vvd(hob, -0.9265154431529724692e-1, 1e-12, "wwaAtco13", "hob", ref status);
+            vvd(dob, 0.1716626560072526200, 1e-12, "wwaAtco13", "dob", ref status);
+            vvd(rob, 2.710260453504961012, 1e-12, "wwaAtco13", "rob", ref status);
 
             vvd(eo, -0.003020548354802412839, 1e-14, "wwaAtco13", "eo", ref status);
             viv(j, 0, "wwaAtco13", "j", ref status);
@@ -1718,11 +1690,11 @@ namespace WWA_Test
                           xp, yp, phpa, tc, rh, wl,
                           ref aob, ref zob, ref hob, ref dob, ref rob);
 
-            vvd(aob, 0.09233952224794989993, 1e-12, "wwaAtio13", "aob", ref status);
-            vvd(zob, 1.407758704513722461, 1e-12, "wwaAtio13", "zob", ref status);
-            vvd(hob, -0.09247619879782006106, 1e-12, "wwaAtio13", "hob", ref status);
-            vvd(dob, 0.1717653435758265198, 1e-12, "wwaAtio13", "dob", ref status);
-            vvd(rob, 2.710085107986886201, 1e-12, "wwaAtio13", "rob", ref status);
+            vvd(aob, 0.9233952224895122499e-1, 1e-12, "wwaAtio13", "aob", ref status);
+            vvd(zob, 1.407758704513549991, 1e-12, "wwaAtio13", "zob", ref status);
+            vvd(hob, -0.9247619879881698140e-1, 1e-12, "wwaAtio13", "hob", ref status);
+            vvd(dob, 0.1717653435756234676, 1e-12, "wwaAtio13", "dob", ref status);
+            vvd(rob, 2.710085107988480746, 1e-12, "wwaAtio13", "rob", ref status);
             viv(j, 0, "wwaAtio13", "j", ref status);
         }
 
@@ -1765,12 +1737,11 @@ namespace WWA_Test
 
             WWA.wwaAtioq(ri, di, ref astrom, ref aob, ref zob, ref hob, ref dob, ref rob);
 
-            vvd(aob, 0.09233952224794989993, 1e-12, "wwaAtioq", "aob", ref status);
-            vvd(zob, 1.407758704513722461, 1e-12, "wwaAtioq", "zob", ref status);
-            vvd(hob, -0.09247619879782006106, 1e-12, "wwaAtioq", "hob", ref status);
-            vvd(dob, 0.1717653435758265198, 1e-12, "wwaAtioq", "dob", ref status);
-            vvd(rob, 2.710085107986886201, 1e-12, "wwaAtioq", "rob", ref status);
-
+            vvd(aob, 0.9233952224895122499e-1, 1e-12, "wwaAtioq", "aob", ref status);
+            vvd(zob, 1.407758704513549991, 1e-12, "wwaAtioq", "zob", ref status);
+            vvd(hob, -0.9247619879881698140e-1, 1e-12, "wwaAtioq", "hob", ref status);
+            vvd(dob, 0.1717653435756234676, 1e-12, "wwaAtioq", "dob", ref status);
+            vvd(rob, 2.710085107988480746, 1e-12, "wwaAtioq", "rob", ref status);
         }
 
         static void t_atoc13(ref int status)
@@ -1814,10 +1785,8 @@ namespace WWA_Test
             j = WWA.wwaAtoc13(ref refR, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
-            //vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "R/rc", ref status);
-            //vvd(dc, 0.1741696500895398562, 1e-12, "wwaAtoc13", "R/dc", ref status);
-            vvd(rc, 2.709956744660731630, 1e-12, "wwaAtoc13", "R/rc", ref status);
-            vvd(dc, 0.1741696500896438967, 1e-12, "wwaAtoc13", "R/dc", ref status);
+            vvd(rc, 2.709956744659136129, 1e-12, "wwaAtoc13", "R/rc", ref status);
+            vvd(dc, 0.1741696500898471362, 1e-12, "wwaAtoc13", "R/dc", ref status);
             viv(j, 0, "wwaAtoc13", "R/j", ref status);
 
             ob1 = -0.09247619879782006106;
@@ -1826,10 +1795,8 @@ namespace WWA_Test
             j = WWA.wwaAtoc13(ref refH, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
-            //vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "H/rc", ref status);
-            //vvd(dc, 0.1741696500895398562, 1e-12, "wwaAtoc13", "H/dc", ref status);
-            vvd(rc, 2.709956744660731630, 1e-12, "wwaAtoc13", "H/rc", ref status);
-            vvd(dc, 0.1741696500896438967, 1e-12, "wwaAtoc13", "H/dc", ref status);
+            vvd(rc, 2.709956744659734086, 1e-12, "wwaAtoc13", "H/rc", ref status);
+            vvd(dc, 0.1741696500898471362, 1e-12, "wwaAtoc13", "H/dc", ref status);
             viv(j, 0, "wwaAtoc13", "H/j", ref status);
 
             ob1 = 0.09233952224794989993;
@@ -1838,12 +1805,9 @@ namespace WWA_Test
             j = WWA.wwaAtoc13(ref refA, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
-            //vvd(rc, 2.709956744661000609, 1e-12, "wwaAtoc13", "A/rc", ref status);
-            //vvd(dc, 0.1741696500895398565, 1e-12, "wwaAtoc13", "A/dc", ref status);
-            vvd(rc, 2.709956744660731630, 1e-12, "wwaAtoc13", "A/rc", ref status);
-            vvd(dc, 0.1741696500896438970, 1e-12, "wwaAtoc13", "A/dc", ref status);
+            vvd(rc, 2.709956744659734086, 1e-12, "wwaAtoc13", "A/rc", ref status);
+            vvd(dc, 0.1741696500898471366, 1e-12, "wwaAtoc13", "A/dc", ref status);
             viv(j, 0, "wwaAtoc13", "A/j", ref status);
-
         }
 
         static void t_atoi13(ref int status)
@@ -1886,8 +1850,8 @@ namespace WWA_Test
             j = WWA.wwaAtoi13(ref refR, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref ri, ref di);
-            vvd(ri, 2.710121574449135955, 1e-12, "wwaAtoi13", "R/ri", ref status);
-            vvd(di, 0.1729371839114567725, 1e-12, "wwaAtoi13", "R/di", ref status);
+            vvd(ri, 2.710121574447540810, 1e-12, "wwaAtoi13", "R/ri", ref status);
+            vvd(di, 0.1729371839116608778, 1e-12, "wwaAtoi13", "R/di", ref status);
             viv(j, 0, "wwaAtoi13", "R/J", ref status);
 
             ob1 = -0.09247619879782006106;
@@ -1896,8 +1860,8 @@ namespace WWA_Test
             j = WWA.wwaAtoi13(ref refH, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref ri, ref di);
-            vvd(ri, 2.710121574449135955, 1e-12, "wwaAtoi13", "H/ri", ref status);
-            vvd(di, 0.1729371839114567725, 1e-12, "wwaAtoi13", "H/di", ref status);
+            vvd(ri, 2.710121574448138676, 1e-12, "wwaAtoi13", "H/ri", ref status);
+            vvd(di, 0.1729371839116608778, 1e-12, "wwaAtoi13", "H/di", ref status);
             viv(j, 0, "wwaAtoi13", "H/J", ref status);
 
             ob1 = 0.09233952224794989993;
@@ -1906,8 +1870,8 @@ namespace WWA_Test
             j = WWA.wwaAtoi13(ref refA, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref ri, ref di);
-            vvd(ri, 2.710121574449135955, 1e-12, "wwaAtoi13", "A/ri", ref status);
-            vvd(di, 0.1729371839114567728, 1e-12, "wwaAtoi13", "A/di", ref status);
+            vvd(ri, 2.710121574448138676, 1e-12, "wwaAtoi13", "A/ri", ref status);
+            vvd(di, 0.1729371839116608781, 1e-12, "wwaAtoi13", "A/di", ref status);
             viv(j, 0, "wwaAtoi13", "A/J", ref status);
 
         }
@@ -1951,29 +1915,28 @@ namespace WWA_Test
             ob2 = 0.1717653435758265198;
             char refR = 'R';
             WWA.wwaAtoiq(ref refR, ob1, ob2, ref astrom, ref ri, ref di);
-            vvd(ri, 2.710121574449135955, 1e-12,
-                    "wwaAtoiq", "R/ri", ref status);
-            vvd(di, 0.1729371839114567725, 1e-12,
-                    "wwaAtoiq", "R/di", ref status);
+            vvd(ri, 2.710121574447540810, 1e-12,
+                "wwaAtoiq", "R/ri", ref status);
+            vvd(di, 0.17293718391166087785, 1e-12,
+                "wwaAtoiq", "R/di", ref status);
 
             ob1 = -0.09247619879782006106;
             ob2 = 0.1717653435758265198;
             char refH = 'H';
             WWA.wwaAtoiq(ref refH, ob1, ob2, ref astrom, ref ri, ref di);
-            vvd(ri, 2.710121574449135955, 1e-12,
-                    "wwaAtoiq", "H/ri", ref status);
-            vvd(di, 0.1729371839114567725, 1e-12,
-                    "wwaAtoiq", "H/di", ref status);
+            vvd(ri, 2.710121574448138676, 1e-12,
+                "wwaAtoiq", "H/ri", ref status);
+            vvd(di, 0.1729371839116608778, 1e-12,
+                "wwaAtoiq", "H/di", ref status);
 
             ob1 = 0.09233952224794989993;
             ob2 = 1.407758704513722461;
             char refA = 'A';
             WWA.wwaAtoiq(ref refA, ob1, ob2, ref astrom, ref ri, ref di);
-            vvd(ri, 2.710121574449135955, 1e-12,
-                    "wwaAtoiq", "A/ri", ref status);
-            vvd(di, 0.1729371839114567728, 1e-12,
-                    "wwaAtoiq", "A/di", ref status);
-
+            vvd(ri, 2.710121574448138676, 1e-12,
+                "wwaAtoiq", "A/ri", ref status);
+            vvd(di, 0.1729371839116608781, 1e-12,
+                "wwaAtoiq", "A/di", ref status);
         }
 
         static void t_bi00(ref int status)
@@ -3249,8 +3212,8 @@ namespace WWA_Test
 
             WWA.wwaEceq06(date1, date2, dl, db, ref dr, ref dd);
 
-            vvd(dr, 5.533459733613627767, 1e-14, "iauEceq06", "dr", ref status);
-            vvd(dd, -1.246542932554480576, 1e-14, "iauEceq06", "dd", ref status);
+            vvd(dr, 5.533459733613627767, 1e-14, "wwaEceq06", "dr", ref status);
+            vvd(dd, -1.246542932554480576, 1e-14, "wwaEceq06", "dd", ref status);
 
         }
 
@@ -3279,15 +3242,15 @@ namespace WWA_Test
 
             WWA.wwaEcm06(date1, date2, rm);
 
-            vvd(rm[0, 0], 0.9999952427708701137, 1e-14, "iauEcm06", "rm11", ref status);
-            vvd(rm[0, 1], -0.2829062057663042347e-2, 1e-14, "iauEcm06", "rm12", ref status);
-            vvd(rm[0, 2], -0.1229163741100017629e-2, 1e-14, "iauEcm06", "rm13", ref status);
-            vvd(rm[1, 0], 0.3084546876908653562e-2, 1e-14, "iauEcm06", "rm21", ref status);
-            vvd(rm[1, 1], 0.9174891871550392514, 1e-14, "iauEcm06", "rm22", ref status);
-            vvd(rm[1, 2], 0.3977487611849338124, 1e-14, "iauEcm06", "rm23", ref status);
-            vvd(rm[2, 0], 0.2488512951527405928e-5, 1e-14, "iauEcm06", "rm31", ref status);
-            vvd(rm[2, 1], -0.3977506604161195467, 1e-14, "iauEcm06", "rm32", ref status);
-            vvd(rm[2, 2], 0.9174935488232863071, 1e-14, "iauEcm06", "rm33", ref status);
+            vvd(rm[0, 0], 0.9999952427708701137, 1e-14, "wwaEcm06", "rm11", ref status);
+            vvd(rm[0, 1], -0.2829062057663042347e-2, 1e-14, "wwaEcm06", "rm12", ref status);
+            vvd(rm[0, 2], -0.1229163741100017629e-2, 1e-14, "wwaEcm06", "rm13", ref status);
+            vvd(rm[1, 0], 0.3084546876908653562e-2, 1e-14, "wwaEcm06", "rm21", ref status);
+            vvd(rm[1, 1], 0.9174891871550392514, 1e-14, "wwaEcm06", "rm22", ref status);
+            vvd(rm[1, 2], 0.3977487611849338124, 1e-14, "wwaEcm06", "rm23", ref status);
+            vvd(rm[2, 0], 0.2488512951527405928e-5, 1e-14, "wwaEcm06", "rm31", ref status);
+            vvd(rm[2, 1], -0.3977506604161195467, 1e-14, "wwaEcm06", "rm32", ref status);
+            vvd(rm[2, 2], 0.9174935488232863071, 1e-14, "wwaEcm06", "rm33", ref status);
 
         }
 
@@ -4082,15 +4045,15 @@ namespace WWA_Test
                      ref r2000, ref d2000, ref dr2000, ref dd2000, ref p2000, ref v2000);
 
             vvd(r2000, 0.08757989933556446040, 1e-14,
-                "iauFk425", "r2000", ref status);
+                "wwaFk425", "r2000", ref status);
             vvd(d2000, -1.132279113042091895, 1e-12,
-                "iauFk425", "d2000", ref status);
+                "wwaFk425", "d2000", ref status);
             vvd(dr2000, 0.1953670614474396139e-4, 1e-17,
-                "iauFk425", "dr2000", ref status);
+                "wwaFk425", "dr2000", ref status);
             vvd(dd2000, 0.5637686678659640164e-5, 1e-18,
-                "iauFk425", "dd2000", ref status);
-            vvd(p2000, 0.1339919950582767871, 1e-13, "iauFk425", "p2000", ref status);
-            vvd(v2000, 8.736999669183529069, 1e-12, "iauFk425", "v2000", ref status);
+                "wwaFk425", "dd2000", ref status);
+            vvd(p2000, 0.1339919950582767871, 1e-13, "wwaFk425", "p2000", ref status);
+            vvd(v2000, 8.736999669183529069, 1e-12, "wwaFk425", "v2000", ref status);
 
         }
 
@@ -4120,9 +4083,9 @@ namespace WWA_Test
             WWA.wwaFk45z(r1950, d1950, bepoch, ref r2000, ref d2000);
 
             vvd(r2000, 0.02719295911606862303, 1e-15,
-                "iauFk45z", "r2000", ref status);
+                "wwaFk45z", "r2000", ref status);
             vvd(d2000, -0.1115766001565926892, 1e-13,
-                "iauFk45z", "d2000", ref status);
+                "wwaFk45z", "d2000", ref status);
 
         }
 
@@ -4157,16 +4120,16 @@ namespace WWA_Test
                      ref r1950, ref d1950, ref dr1950, ref dd1950, ref p1950, ref v1950);
 
             vvd(r1950, 0.8636359659799603487, 1e-13,
-                "iauFk524", "r1950", ref status);
+                "wwaFk524", "r1950", ref status);
             vvd(d1950, -0.7550281733160843059, 1e-13,
-                "iauFk524", "d1950", ref status);
+                "wwaFk524", "d1950", ref status);
             vvd(dr1950, 0.2023628192747172486e-4, 1e-17,
-                "iauFk524", "dr1950", ref status);
+                "wwaFk524", "dr1950", ref status);
             vvd(dd1950, 0.3624459754935334718e-5, 1e-18,
-                "iauFk524", "dd1950", ref status);
+                "wwaFk524", "dd1950", ref status);
             vvd(p1950, 0.1560079963299390241, 1e-13,
-                "iauFk524", "p1950", ref status);
-            vvd(v1950, 86.79606353469163751, 1e-11, "iauFk524", "v1950", ref status);
+                "wwaFk524", "p1950", ref status);
+            vvd(v1950, 86.79606353469163751, 1e-11, "wwaFk524", "v1950", ref status);
 
         }
 
@@ -4203,14 +4166,12 @@ namespace WWA_Test
                 "wwaFk52h", "ra", ref status);
             vvd(dh, -0.2917516070530391757, 1e-14,
                 "wwaFk52h", "dec", ref status);
-            vvd(drh, -0.19618741256057224e-6, 1e-19,
+            vvd(drh, -0.1961874125605721270e-6, 1e-19,
                 "wwaFk52h", "dr5", ref status);
             vvd(ddh, -0.58459905176693911e-5, 1e-19,
                 "wwaFk52h", "dd5", ref status);
             vvd(pxh, 0.37921, 1e-14,
                 "wwaFk52h", "px", ref status);
-            //vvd(rvh, -7.6000000940000254, 1e-10,
-            //    "iauFk52h", "rv", ref status);
             vvd(rvh, -7.6000000940000254, 1e-11,
                     "wwaFk52h", "rv", ref status);
 
@@ -4242,13 +4203,13 @@ namespace WWA_Test
             WWA.wwaFk54z(r2000, d2000, bepoch, ref r1950, ref d1950, ref dr1950, ref dd1950);
 
             vvd(r1950, 0.01602015588390065476, 1e-14,
-                "iauFk54z", "r1950", ref status);
+                "wwaFk54z", "r1950", ref status);
             vvd(d1950, -0.1164397101110765346, 1e-13,
-                "iauFk54z", "d1950", ref status);
+                "wwaFk54z", "d1950", ref status);
             vvd(dr1950, -0.1175712648471090704e-7, 1e-20,
-                "iauFk54z", "dr1950", ref status);
+                "wwaFk54z", "dr1950", ref status);
             vvd(dd1950, 0.2108109051316431056e-7, 1e-20,
-                "iauFk54z", "dd1950", ref status);
+                "wwaFk54z", "dd1950", ref status);
 
         }
 
@@ -5281,8 +5242,8 @@ namespace WWA_Test
 
             WWA.wwaLteceq(epj, dl, db, ref dr, ref dd);
 
-            vvd(dr, 1.275156021861921167, 1e-14, "iauLteceq", "dr", ref status);
-            vvd(dd, 0.9966573543519204791, 1e-14, "iauLteceq", "dd", ref status);
+            vvd(dr, 1.275156021861921167, 1e-14, "wwaLteceq", "dr", ref status);
+            vvd(dd, 0.9966573543519204791, 1e-14, "wwaLteceq", "dd", ref status);
 
         }
 
@@ -7996,11 +7957,11 @@ namespace WWA_Test
 
             WWA.wwaPvu(2920.0, pv, upv);
 
-            vvd(upv[0, 0], 126656.7598605317105, 1e-12,
+            vvd(upv[0, 0], 126656.7598605317105, 1e-6,
                 "wwaPvu", "p1", ref status);
-            vvd(upv[0, 1], 2118.531271155726332, 1e-12,
+            vvd(upv[0, 1], 2118.531271155726332, 1e-8,
                 "wwaPvu", "p2", ref status);
-            vvd(upv[0, 2], -245216.5048590656190, 1e-12,
+            vvd(upv[0, 2], -245216.5048590656190, 1e-6,
                 "wwaPvu", "p3", ref status);
 
             vvd(upv[1, 0], -0.4051854035740713039e-2, 1e-12,
@@ -8042,10 +8003,9 @@ namespace WWA_Test
 
             WWA.wwaPvup(2920.0, pv, p);
 
-            vvd(p[0], 126656.7598605317105, 1e-12, "wwaPvup", "1", ref status);
-            vvd(p[1], 2118.531271155726332, 1e-12, "wwaPvup", "2", ref status);
-            vvd(p[2], -245216.5048590656190, 1e-12, "wwaPvup", "3", ref status);
-
+            vvd(p[0], 126656.7598605317105, 1e-6, "wwaPvup", "1", ref status);
+            vvd(p[1], 2118.531271155726332, 1e-8, "wwaPvup", "2", ref status);
+            vvd(p[2], -245216.5048590656190, 1e-6, "wwaPvup", "3", ref status);
         }
 
         static void t_pvxpv(ref int status)
@@ -9377,11 +9337,11 @@ namespace WWA_Test
 
             n = WWA.wwaTpors(xi, eta, ra, dec, ref az1, ref bz1, ref az2, ref bz2);
 
-            vvd(az1, 1.736621577783208748, 1e-13, "iauTpors", "az1", ref status);
-            vvd(bz1, 1.436736561844090323, 1e-13, "iauTpors", "bz1", ref status);
+            vvd(az1, 1.736621577783208748, 1e-13, "wwaTpors", "az1", ref status);
+            vvd(bz1, 1.436736561844090323, 1e-13, "wwaTpors", "bz1", ref status);
 
-            vvd(az2, 4.004971075806584490, 1e-13, "iauTpors", "az2", ref status);
-            vvd(bz2, 1.565084088476417917, 1e-13, "iauTpors", "bz2", ref status);
+            vvd(az2, 4.004971075806584490, 1e-13, "wwaTpors", "az2", ref status);
+            vvd(bz2, 1.565084088476417917, 1e-13, "wwaTpors", "bz2", ref status);
 
             viv(n, 2, "wwaTpors", "n", ref status);
 

@@ -42,8 +42,8 @@ namespace WorldWideAstronomy
             public double em;       /* distance from Sun to observer (au) */
             public double[] v;      /* barycentric observer velocity (vector, c) - array[3] */
             public double bm1;      /* sqrt(1-|v|^2): reciprocal of Lorenz factor */
-            public double[,] bpn;  /* bias-precession-nutation matrix - array[3][3] */
-            public double along;    /* longitude + s' + dERA(DUT) (radians) */
+            public double[,] bpn;   /* bias-precession-nutation matrix - array[3][3] */
+            public double along;    /* adjusted longitude (radians) */
             public double phi;      /* geodetic latitude (radians) */
             public double xpl;      /* polar motion xp wrt local meridian (radians) */
             public double ypl;      /* polar motion yp wrt local meridian (radians) */

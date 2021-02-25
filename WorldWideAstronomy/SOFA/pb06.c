@@ -70,9 +70,9 @@ void iauPb06(double date1, double date2,
 **
 **  This revision:  2020 May 27
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
    double r[3][3], y, x;
@@ -104,7 +104,7 @@ void iauPb06(double date1, double date2,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

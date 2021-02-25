@@ -43,11 +43,13 @@ namespace WorldWideAstronomy
         /// <param name="di">CIRS declination (radians)</param>
         public static void wwaAtoiq(ref char type, double ob1, double ob2, ref wwaASTROM astrom, ref double ri, ref double di)
         {
-            int c;
-            double c1, c2, sphi, cphi, ce, xaeo, yaeo, zaeo, xmhdo, ymhdo, zmhdo, az, sz, zdo, refa, refb, tz, dref,
-                   zdt, xaet, yaet, zaet, xmhda, ymhda, zmhda, f, xhd, yhd, zhd, xpl, ypl, w, hma = 0;
-            double[] v = new double[3];
+            /* Minimum sin(alt) for refraction purposes */
+            const double SELMIN = 0.05;
 
+            int c;
+            double c1, c2, sphi, cphi, ce, xaeo, yaeo, zaeo, xmhdo, ymhdo, zmhdo, az, sz, zdo, refa, refb, 
+                tz, dref, zdt, xaet, yaet, zaet, xmhda, ymhda, zmhda, f, xhd, yhd, zhd, sx, cx, sy, cy, hma = 0;
+            double[] v = new double[3];
 
             /* Coordinate type. */
             c = (int)type;
@@ -114,7 +116,7 @@ namespace WorldWideAstronomy
             /* Fast algorithm using two constant model. */
             refa = astrom.refa;
             refb = astrom.refb;
-            tz = sz / zaeo;
+            tz = sz / (zaeo > SELMIN ? zaeo : SELMIN);
             dref = (refa + refb * tz * tz) * tz;
             zdt = zdo + dref;
 
@@ -136,12 +138,13 @@ namespace WorldWideAstronomy
             zhd = f * zmhda;
 
             /* Polar motion. */
-            xpl = astrom.xpl;
-            ypl = astrom.ypl;
-            w = xpl * xhd - ypl * yhd + zhd;
-            v[0] = xhd - xpl * w;
-            v[1] = yhd + ypl * w;
-            v[2] = w - (xpl * xpl + ypl * ypl) * zhd;
+            sx = Math.Sin(astrom.xpl);
+            cx = Math.Cos(astrom.xpl);
+            sy = Math.Sin(astrom.ypl);
+            cy = Math.Cos(astrom.ypl);
+            v[0] = cx * xhd + sx * sy * yhd - sx * cy * zhd;
+            v[1] = cy * yhd + sy * zhd;
+            v[2] = sx * xhd - cx * sy * yhd + cx * cy * zhd;
 
             /* To spherical -HA,Dec. */
             wwaC2s(v, ref hma, ref di);

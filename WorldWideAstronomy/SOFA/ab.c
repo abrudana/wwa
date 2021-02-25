@@ -55,9 +55,9 @@ void iauAb(double pnat[3], double v[3], double s, double bm1,
 **
 **  This revision:   2013 October 9
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
    int i;
@@ -82,7 +82,7 @@ void iauAb(double pnat[3], double v[3], double s, double bm1,
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **

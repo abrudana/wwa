@@ -85,7 +85,7 @@ namespace WorldWideAstronomy
                 dleap = dat24 - (2.0 * dat12 - dat0);
 
                 /* If leap second day, scale the fraction of a day into SI. */
-                leap = (dleap != 0.0 ? 1 : 0);
+                leap = (Math.Abs(dleap) > 0.5 ? 1 : 0);
                 if (leap == 0 ? false : true) fd += fd * dleap / DAYSEC;
             }
 
@@ -112,11 +112,9 @@ namespace WorldWideAstronomy
                     ihmsf1[0] = 0;
                     ihmsf1[1] = 0;
                     ihmsf1[2] = 0;
-
                 }
                 else
                 {
-
                     /* Yes.  Are we past the leap second itself? */
                     if (ihmsf1[2] > 0)
                     {
@@ -132,7 +130,6 @@ namespace WorldWideAstronomy
                     }
                     else
                     {
-
                         /* No.  Use 23 59 60... today. */
                         ihmsf1[0] = 23;
                         ihmsf1[1] = 59;

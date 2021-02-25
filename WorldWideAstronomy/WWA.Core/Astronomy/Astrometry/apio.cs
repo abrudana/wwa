@@ -45,17 +45,34 @@ namespace WorldWideAstronomy
         /// <param name="astrom">star-independent astrometry parameters:</param>
         public static void wwaApio(double sp, double theta, double elong, double phi, double hm, double xp, double yp, double refa, double refb, ref wwaASTROM astrom)
         {
-            double sl, cl;
+            double[,] r = new double[3, 3];
+            double a, b, eral, c;
             double[,] pv = new double[2, 3];
 
-            /* Longitude with adjustment for TIO locator s'. */
-            astrom.along = elong + sp;
 
-            /* Polar motion, rotated onto the local meridian. */
-            sl = Math.Sin(astrom.along);
-            cl = Math.Cos(astrom.along);
-            astrom.xpl = xp * cl - yp * sl;
-            astrom.ypl = xp * sl + yp * cl;
+            /* Form the rotation matrix, CIRS to apparent [HA,Dec]. */
+            wwaIr(r);
+            wwaRz(theta + sp, r);
+            wwaRy(-xp, r);
+            wwaRx(-yp, r);
+            wwaRz(elong, r);
+
+            /* Solve for local Earth rotation angle. */
+            a = r[0, 0];
+            b = r[0, 1];
+            eral = (a != 0.0 || b != 0.0) ? Math.Atan2(b, a) : 0.0;
+            astrom.eral = eral;
+
+            /* Solve for polar motion [X,Y] with respect to local meridian. */
+            a = r[0, 0];
+            c = r[0, 2];
+            astrom.xpl = Math.Atan2(c, Math.Sqrt(a * a + b * b));
+            a = r[1, 2];
+            b = r[2, 2];
+            astrom.ypl = (a != 0.0 || b != 0.0) ? -Math.Atan2(a, b) : 0.0;
+
+            /* Adjusted longitude. */
+            astrom.along = wwaAnpm(eral - theta);
 
             /* Functions of latitude. */
             astrom.sphi = Math.Sin(phi);
@@ -65,14 +82,11 @@ namespace WorldWideAstronomy
             wwaPvtob(elong, phi, hm, xp, yp, sp, theta, pv);
 
             /* Magnitude of diurnal aberration vector. */
-            astrom.diurab = Math.Sqrt(pv[1,0] * pv[1,0] + pv[1,1] * pv[1,1]) / CMPS;
+            astrom.diurab = Math.Sqrt(pv[1, 0] * pv[1, 0] + pv[1, 1] * pv[1, 1]) / CMPS;
 
             /* Refraction constants. */
             astrom.refa = refa;
             astrom.refb = refb;
-
-            /* Local Earth rotation angle. */
-            wwaAper(theta, ref astrom);
         }   
     }
 }

@@ -30,9 +30,9 @@ void iauC2s(double p[3], double *theta, double *phi)
 **
 **  This revision:  2013 June 18
 **
-**  SOFA release 2020-07-21
+**  SOFA release 2021-01-25
 **
-**  Copyright (C) 2020 IAU SOFA Board.  See notes at end.
+**  Copyright (C) 2021 IAU SOFA Board.  See notes at end.
 */
 {
    double x, y, z, d2;
@@ -50,7 +50,7 @@ void iauC2s(double p[3], double *theta, double *phi)
 
 /*----------------------------------------------------------------------
 **
-**  Copyright (C) 2020
+**  Copyright (C) 2021
 **  Standards Of Fundamental Astronomy Board
 **  of the International Astronomical Union.
 **
