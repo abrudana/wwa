@@ -104,6 +104,8 @@
     <ClCompile Include="aper13.c" />
     <ClCompile Include="apio.c" />
     <ClCompile Include="apio13.c" />
+    <ClCompile Include="atcc13.c" />
+    <ClCompile Include="atccq.c" />
     <ClCompile Include="atci13.c" />
     <ClCompile Include="atciq.c" />
     <ClCompile Include="atciqn.c" />
@@ -216,6 +218,7 @@
     <ClCompile Include="ltpb.c" />
     <ClCompile Include="ltpecl.c" />
     <ClCompile Include="ltpequ.c" />
+    <ClCompile Include="moon98.c" />
     <ClCompile Include="num00a.c" />
     <ClCompile Include="num00b.c" />
     <ClCompile Include="num06a.c" />

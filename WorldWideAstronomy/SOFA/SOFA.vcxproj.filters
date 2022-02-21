@@ -246,6 +246,9 @@
     <ClCompile Include="fk54z.c" />
     <ClCompile Include="fk425.c" />
     <ClCompile Include="fk524.c" />
+    <ClCompile Include="atcc13.c" />
+    <ClCompile Include="atccq.c" />
+    <ClCompile Include="moon98.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sofa.h" />
