@@ -45,8 +45,6 @@ namespace WorldWideAstronomy
 
             /* Form the celestial-to-intermediate matrix (n.b. IAU 2000 specific). */
             wwaC2ixy(date1, date2, x, y, rc2i);
-
-            return;
         }
     }
 }

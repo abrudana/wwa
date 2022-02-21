@@ -49,7 +49,7 @@ namespace WorldWideAstronomy
             depsbi = DEBIAS;
             dra = DRA0;
 
-            return;
+            /* Finished */
         }
     }
 }

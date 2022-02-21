@@ -43,8 +43,6 @@ namespace WorldWideAstronomy
 
             /* Scale then use days to h,m,s function. */
             wwaD2tf(ndp, angle * F, ref sign, idmsf);
-
-            return;
         }
     }
 }

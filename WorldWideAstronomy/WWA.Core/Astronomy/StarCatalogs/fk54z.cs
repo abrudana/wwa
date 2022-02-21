@@ -31,7 +31,7 @@ namespace WorldWideAstronomy
         /// <param name="bepoch"></param>
         /// <param name="r2000"></param>
         /// <param name="d2000"></param>
-        public static void wwaFk54z(double r2000, double d2000, double bepoch, 
+        public static void wwaFk54z(double r2000, double d2000, double bepoch,
               ref double r1950, ref double d1950,
               ref double dr1950, ref double dd1950)
         {

@@ -51,8 +51,6 @@ namespace WorldWideAstronomy
 
             /* Form the celestial-to-intermediate matrix. */
             wwaC2ixys(x, y, s, rc2i);
-
-            return;
         }
     }
 }

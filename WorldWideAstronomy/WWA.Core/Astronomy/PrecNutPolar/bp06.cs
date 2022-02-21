@@ -54,8 +54,6 @@ namespace WorldWideAstronomy
 
             /* PxB matrix. */
             wwaCr(rbpw, rbp);
-
-            return;
         }        
     }
 }

@@ -50,11 +50,9 @@ namespace WorldWideAstronomy
             const double SELMIN = 0.05;
 
             double[] v = new double[3];
-            double x, y, z, sx, cx, sy, cy, xhd, yhd, zhd, f, xhdt, yhdt, zhdt, xaet, yaet, zaet, 
-                azobs, r, tz, w, del, cosdel, xaeo, yaeo, zaeo, zdobs, hmobs, dcobs, raobs;
-
-            hmobs = 0;
-            dcobs = 0;
+            double x, y, z, sx, cx, sy, cy, xhd, yhd, zhd, f, xhdt, yhdt, zhdt, 
+                xaet, yaet, zaet, azobs, r, tz, w, del, cosdel, xaeo, yaeo, zaeo, 
+                zdobs, hmobs = 0, dcobs = 0, raobs;
 
             /* CIRS RA,Dec to Cartesian -HA,Dec. */
             wwaS2c(ri - astrom.eral, di, v);
@@ -97,7 +95,8 @@ namespace WorldWideAstronomy
             /* A*tan(z)+B*tan^3(z) model, with Newton-Raphson correction. */
             tz = r / z;
             w = astrom.refb * tz * tz;
-            del = (astrom.refa + w) * tz / (1.0 + (astrom.refa + 3.0 * w) / (z * z));
+            del = (astrom.refa + w) * tz /
+                  (1.0 + (astrom.refa + 3.0 * w) / (z * z));
 
             /* Apply the change, giving observed vector. */
             cosdel = 1.0 - del * del / 2.0;
@@ -126,6 +125,8 @@ namespace WorldWideAstronomy
             hob = -hmobs;
             dob = dcobs;
             rob = wwaAnp(raobs);
+
+            /* Finished. */
         }
     }
 }

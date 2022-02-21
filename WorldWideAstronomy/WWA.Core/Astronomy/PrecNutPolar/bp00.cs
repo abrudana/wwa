@@ -76,8 +76,6 @@ namespace WorldWideAstronomy
 
             /* Bias-precession matrix: GCRS to mean of date. */
             wwaRxr(rp, rbw, rbp);
-
-            return;
         }
     }
 }

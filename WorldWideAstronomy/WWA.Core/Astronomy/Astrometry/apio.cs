@@ -49,7 +49,6 @@ namespace WorldWideAstronomy
             double a, b, eral, c;
             double[,] pv = new double[2, 3];
 
-
             /* Form the rotation matrix, CIRS to apparent [HA,Dec]. */
             wwaIr(r);
             wwaRz(theta + sp, r);
@@ -87,6 +86,8 @@ namespace WorldWideAstronomy
             /* Refraction constants. */
             astrom.refa = refa;
             astrom.refb = refb;
-        }   
+
+            /* Finished. */
+        }
     }
 }

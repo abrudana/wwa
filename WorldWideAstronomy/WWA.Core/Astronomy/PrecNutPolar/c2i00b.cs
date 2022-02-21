@@ -43,8 +43,6 @@ namespace WorldWideAstronomy
 
             /* Form the celestial-to-intermediate matrix. */
             wwaC2ibpn(date1, date2, rbpn, rc2i);
-
-            return;
         }
     }
 }

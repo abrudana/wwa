@@ -19,10 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Astronomy\" />
     <Folder Include="Documentation\" />
     <Folder Include="VecotrMatrix\" />
-    <Folder Include="NewFunctions\" />
   </ItemGroup>
 
   <ItemGroup>

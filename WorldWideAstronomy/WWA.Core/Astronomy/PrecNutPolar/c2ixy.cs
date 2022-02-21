@@ -40,8 +40,6 @@ namespace WorldWideAstronomy
         {
             /* Compute s and then the matrix. */
             wwaC2ixys(x, y, wwaS00(date1, date2, x, y), rc2i);
-
-            return;
         }
     }
 }

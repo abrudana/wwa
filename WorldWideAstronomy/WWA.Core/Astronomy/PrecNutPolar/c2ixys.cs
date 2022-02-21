@@ -50,8 +50,6 @@ namespace WorldWideAstronomy
             wwaRz(e, rc2i);
             wwaRy(d, rc2i);
             wwaRz(-(e + s), rc2i);
-
-            return;
         }
     }
 }

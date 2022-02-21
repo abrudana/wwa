@@ -44,8 +44,6 @@ namespace WorldWideAstronomy
 
             theta = (d2 == 0.0) ? 0.0 : Math.Atan2(y, x);
             phi = (z == 0.0) ? 0.0 : Math.Atan2(z, Math.Sqrt(d2));
-
-            return;
         }
     }
 }

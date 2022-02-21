@@ -39,8 +39,6 @@ namespace WorldWideAstronomy
             /* Extract the X,Y coordinates. */
             x = rbpn[2, 0];
             y = rbpn[2, 1];
-
-            return;
         }
     }
 }

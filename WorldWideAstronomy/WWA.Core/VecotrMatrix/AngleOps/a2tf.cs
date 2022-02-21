@@ -40,8 +40,6 @@ namespace WorldWideAstronomy
         {
             /* Scale then use days to h,m,s function. */
             wwaD2tf(ndp, angle / D2PI, ref sign, ihmsf);
-
-            return;
         }
     }
 }
