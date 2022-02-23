@@ -1297,6 +1297,10 @@ namespace WWA_Test
             double date1, date2, eo = 0, rc, dc, pr, pd, px, rv, ri = 0, di = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
 
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
+
             date1 = 2456165.5;
             date2 = 0.401182685;
             WWA.wwaApci13(date1, date2, ref astrom, ref eo);
@@ -1403,6 +1407,9 @@ namespace WWA_Test
             double date1, date2, eo = 0, rc, dc, ri = 0, di = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
 
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -1523,7 +1530,10 @@ namespace WWA_Test
         {
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
+            
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -1557,6 +1567,10 @@ namespace WWA_Test
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaLDBODY[] b = new WWA.wwaLDBODY[3];
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
+
+            astrom.eb = new double[3];
+            astrom.eh = new double[3];
+            astrom.bpn = new double[3, 3];
 
 
             date1 = 2456165.5;
