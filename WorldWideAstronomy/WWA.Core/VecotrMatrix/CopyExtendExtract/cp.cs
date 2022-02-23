@@ -39,11 +39,11 @@ namespace WorldWideAstronomy
             if (c == null)
                 c = new double[3];
 
-            Array.Copy(p, c, p.Length);
+            //Array.Copy(p, c, p.Length);
 
-            //c[0] = p[0];
-            //c[1] = p[1];
-            //c[2] = p[2];
+            c[0] = p[0];
+            c[1] = p[1];
+            c[2] = p[2];
 
             return;
         }

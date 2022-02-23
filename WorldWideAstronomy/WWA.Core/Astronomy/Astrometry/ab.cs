@@ -43,7 +43,7 @@ namespace WorldWideAstronomy
             double[] p = new double[3];
             pdv = wwaPdp(pnat, v);
             w1 = 1.0 + pdv/(1.0 + bm1);
-            w2 = SRS/s;
+            w2 = WWA.SRS/s;
             r2 = 0.0;
             for (i = 0; i < 3; i++)
             {

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Attila Abrudán</Authors>
     <Description>World Wide Astronomy - SOFA</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

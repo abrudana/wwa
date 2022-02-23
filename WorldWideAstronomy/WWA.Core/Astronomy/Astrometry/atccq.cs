@@ -47,7 +47,7 @@ namespace WorldWideAstronomy
               double pr, double pd, double px, double rv,
               ref wwaASTROM astrom, ref double ra, ref double da)
         {
-            double[] p = new double[3] { 0, 0, 0};
+            double[] p = new double[3];
             double w = 0;
 
             /* Proper motion and parallax, giving BCRS coordinate direction. */

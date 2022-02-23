@@ -37,9 +37,10 @@ namespace WorldWideAstronomy
             double w;
 
             //w = fmod(a, D2PI);
-            w = Math.IEEERemainder(a, D2PI);
+            //w = Math.IEEERemainder(a, WWA.D2PI);
+            w = a % WWA.D2PI;
 
-            if (w < 0) w += D2PI;
+            if (w < 0) w += WWA.D2PI;
 
             return w;
         }

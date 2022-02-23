@@ -39,7 +39,8 @@ namespace WorldWideAstronomy
         /// <param name="pmt">proper motion time interval (SSB, Julian years)</param>
         /// <param name="pob">SSB to observer vector (au)</param>
         /// <param name="pco">coordinate direction (BCRS unit vector)</param>
-        public static void wwaPmpx(double rc, double dc, double pr, double pd, double px, double rv, double pmt, double[] pob, double[] pco)
+        public static void wwaPmpx(double rc, double dc, double pr, double pd, 
+            double px, double rv, double pmt, double[] pob, double[] pco)
         {
             if (pob == null)
                 pob = new double[3];
@@ -52,7 +53,7 @@ namespace WorldWideAstronomy
 
             int i;
             double sr, cr, sd, cd, x, y, z, dt, pxr, w, pdz;
-            double[] p = new double[3] { 0, 0, 0 };
+            double[] p = new double[3];
             double[] pm = new double[3];
 
             /* Spherical coordinates to unit vector (and useful functions). */
@@ -68,7 +69,7 @@ namespace WorldWideAstronomy
             dt = pmt + wwaPdp(p, pob) * AULTY;
 
             /* Space motion (radians per year). */
-            pxr = px * DAS2R;
+            pxr = px * WWA.DAS2R;
             w = VF * rv * pxr;
             pdz = pd * z;
             pm[0] = -pr * y - pdz * cr + w * x;

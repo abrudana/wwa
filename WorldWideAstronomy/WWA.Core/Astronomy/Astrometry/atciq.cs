@@ -50,9 +50,9 @@ namespace WorldWideAstronomy
         /// <param name="di">CIRS RA,Dec (radians)</param>
         public static void wwaAtciq(double rc, double dc, double pr, double pd, double px, double rv, ref wwaASTROM astrom, ref double ri, ref double di)
         {
-            double[] pco = new double[3] { 0, 0, 0 };
-            double[] pnat = new double[3] { 0, 0, 0 };
-            double[] ppr = new double[3] { 0, 0, 0 };
+            double[] pco = new double[3];
+            double[] pnat = new double[3];
+            double[] ppr = new double[3];
             double[] pi = new double[3];
             double w = 0;
 

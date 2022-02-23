@@ -36,6 +36,8 @@ namespace WorldWideAstronomy
         public static double wwaPdp(double[] a, double[] b)
         {
             double w;
+            if (b == null)
+                b = new double[3];
 
             w = a[0] * b[0]
                + a[1] * b[1]

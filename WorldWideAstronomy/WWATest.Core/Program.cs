@@ -12,11 +12,11 @@ namespace WWA_Test
     //
     // All messages go to stdout.
     //
-    // This revision:  2016 April 21
+    // This revision:  2021 April 18
     //
-    // SOFA release 2016-05-03
+    // SOFA release 2021-05-12
     //
-    // Copyright (C) 2016 IAU SOFA Board.
+    // Copyright (C) 2016 iau SOFA Board.
     //
     //<remarks>
     //This program is derived from the International Astronomical Union's
@@ -47,7 +47,7 @@ namespace WWA_Test
                 status = 1;
                 Console.WriteLine("{0} failed: {1} want {2} got {3}\n", func, test, ivalok, ival);
             }
-            else if (verbose == 0 ? false : true)
+            else if (verbose == 1)
             {
                 Console.WriteLine("{0} passed: {1} want {2} got {3}\n", func, test, ivalok, ival);
             }
@@ -67,7 +67,6 @@ namespace WWA_Test
         {
             double a, f;   /* absolute and fractional error */
 
-
             a = val - valok;
             //if (Math.Abs(a) > dval)
             if (double.IsNaN(a) || (a != 0.0 && Math.Abs(a) > Math.Abs(dval)))
@@ -82,18 +81,19 @@ namespace WWA_Test
             }
         }
 
+
         static void t_a2af(ref int status)
         /*
         **  - - - - - - -
         **   t _ a 2 a f
         **  - - - - - - -
         **
-        **  Test wwaA2af function.
+        **  Test WWA.wwaA2af function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaA2af, viv
+        **  Called:  WWA.wwaA2af, viv
         **
         **  This revision:  2013 August 7
         */
@@ -101,9 +101,10 @@ namespace WWA_Test
             int[] idmsf = new int[4];
             char s = '\0';
 
+
             WWA.wwaA2af(4, 2.345, ref s, idmsf);
 
-            viv((int)s, (int)'+', "wwaA2af", "s", ref status);
+            viv(s, '+', "wwaA2af", "s", ref status);
 
             viv(idmsf[0], 134, "wwaA2af", "0", ref status);
             viv(idmsf[1], 21, "wwaA2af", "1", ref status);
@@ -118,12 +119,12 @@ namespace WWA_Test
         **   t _ a 2 t f
         **  - - - - - - -
         **
-        **  Test wwaA2tf function.
+        **  Test WWA.wwaA2tf function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaA2tf, viv
+        **  Called:  WWA.wwaA2tf, viv
         **
         **  This revision:  2013 August 7
         */
@@ -131,14 +132,16 @@ namespace WWA_Test
             int[] ihmsf = new int[4];
             char s = '\0';
 
+
             WWA.wwaA2tf(4, -3.01234, ref s, ihmsf);
 
-            viv((int)s, (int)'-', "wwaA2tf", "s", ref status);
+            viv((int)s, '-', "wwaA2tf", "s", ref status);
 
             viv(ihmsf[0], 11, "wwaA2tf", "0", ref status);
             viv(ihmsf[1], 30, "wwaA2tf", "1", ref status);
             viv(ihmsf[2], 22, "wwaA2tf", "2", ref status);
             viv(ihmsf[3], 6484, "wwaA2tf", "3", ref status);
+
         }
 
         static void t_ab(ref int status)
@@ -147,20 +150,21 @@ namespace WWA_Test
         **   t _ a b
         **  - - - - -
         **
-        **  Test wwaAb function.
+        **  Test WWA.wwaAb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAb, vvd
+        **  Called:  WWA.wwaAb, vvd
         **
         **  This revision:  2013 October 1
         */
         {
             double[] pnat = new double[3];
             double[] v = new double[3];
-            double[] ppr = new double[3];
             double s, bm1;
+            double[] ppr = new double[3];
+
 
             pnat[0] = -0.76321968546737951;
             pnat[1] = -0.60869453983060384;
@@ -185,17 +189,18 @@ namespace WWA_Test
         **   t _ a e 2 h d
         **  - - - - - - - -
         **
-        **  Test iauAe2hd function.
+        **  Test WWA.wwaAe2hd function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAe2hd and vvd
+        **  Called:  WWA.wwaAe2hd and vvd
         **
         **  This revision:  2017 October 21
         */
         {
             double a, e, p, h = 0, d = 0;
+
 
             a = 5.5;
             e = 1.1;
@@ -214,12 +219,12 @@ namespace WWA_Test
         **   t _ a f 2 a
         **  - - - - - - -
         **
-        **  Test wwaAf2a function.
+        **  Test WWA.wwaAf2a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAf2a, viv
+        **  Called:  WWA.wwaAf2a, viv
         **
         **  This revision:  2013 August 7
         */
@@ -241,12 +246,12 @@ namespace WWA_Test
         **   t _ a n p
         **  - - - - - -
         **
-        **  Test wwaAnp function.
+        **  Test WWA.wwaAnp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAnp, vvd
+        **  Called:  WWA.wwaAnp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -260,12 +265,12 @@ namespace WWA_Test
         **   t _ a n p m
         **  - - - - - - -
         **
-        **  Test wwaAnpm function.
+        **  Test WWA.wwaAnpm function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAnpm, vvd
+        **  Called:  WWA.wwaAnpm, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -279,14 +284,14 @@ namespace WWA_Test
         **   t _ a p c g
         **  - - - - - - -
         **
-        **  Test wwaApcg function.
+        **  Test WWA.wwaApcg function.  
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApcg, vvd
+        **  Called:  WWA.wwaApcg, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2;
@@ -328,22 +333,14 @@ namespace WWA_Test
                               "wwaApcg", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295811013146, 1e-12,
                            "wwaApcg", "em", ref status);
-            //vvd(astrom.v[0], 0.4289638897813379954e-4, 1e-16,
-            //                 "wwaApcg", "v(1_", ref status);
             vvd(astrom.v[0], 0.4289638913597693554e-4, 1e-16,
-                    "wwaApcg", "v(1)", ref status);
-            //vvd(astrom.v[1], 0.8115034021720941898e-4, 1e-16,
-            //                 "wwaApcg", "v(2)", ref status);
+                             "wwaApcg", "v(1)", ref status);
             vvd(astrom.v[1], 0.8115034051581320575e-4, 1e-16,
-                    "wwaApcg", "v(2)", ref status);
-            //vvd(astrom.v[2], 0.3517555123437237778e-4, 1e-16,
-            //                 "wwaApcg", "v(3)", ref status);
+                             "wwaApcg", "v(2)", ref status);
             vvd(astrom.v[2], 0.3517555136380563427e-4, 1e-16,
-                    "wwaApcg", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999951686013336, 1e-12,
-            //                "wwaApcg", "bm1", ref status);
+                             "wwaApcg", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999951686012981, 1e-12,
-                   "wwaApcg", "bm1", ref status);
+                            "wwaApcg", "bm1", ref status);
             vvd(astrom.bpn[0, 0], 1.0, 0.0,
                                   "wwaApcg", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.0, 0.0,
@@ -371,14 +368,14 @@ namespace WWA_Test
         **   t _ a p c g 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaApcg13 function.
+        **  Test WWA.wwaApcg13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApcg13, vvd
+        **  Called:  WWA.wwaApcg13, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2;
@@ -387,6 +384,7 @@ namespace WWA_Test
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
+
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -409,22 +407,14 @@ namespace WWA_Test
                             "wwaApcg13", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295964664178, 1e-12,
                             "wwaApcg13", "em", ref status);
-            //vvd(astrom.v[0], 0.4289638897157027528e-4, 1e-16,
-            //                "wwaApcg13", "v(1)", ref status);
             vvd(astrom.v[0], 0.4289638912941341125e-4, 1e-16,
-                   "wwaApcg13", "v(1)", ref status);
-            //vvd(astrom.v[1], 0.8115034002544663526e-4, 1e-16,
-            //                "wwaApcg13", "v(2)", ref status);
+                            "wwaApcg13", "v(1)", ref status);
             vvd(astrom.v[1], 0.8115034032405042132e-4, 1e-16,
-                  "wwaApcg13", "v(2)", ref status);
-            //vvd(astrom.v[2], 0.3517555122593144633e-4, 1e-16,
-            //                "wwaApcg13", "v(3)", ref status);
+                            "wwaApcg13", "v(2)", ref status);
             vvd(astrom.v[2], 0.3517555135536470279e-4, 1e-16,
-                   "wwaApcg13", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999951686013498, 1e-12,
-            //                "wwaApcg13", "bm1", ref status);
+                            "wwaApcg13", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999951686013142, 1e-12,
-                   "wwaApcg13", "bm1", ref status);
+                            "wwaApcg13", "bm1", ref status);
             vvd(astrom.bpn[0, 0], 1.0, 0.0,
                                   "wwaApcg13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.0, 0.0,
@@ -452,19 +442,20 @@ namespace WWA_Test
         **   t _ a p c i
         **  - - - - - - -
         **
-        **  Test wwaApci function.
+        **  Test WWA.wwaApci function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci, vvd
+        **  Called:  WWA.wwaApci, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
-            double date1, date2, x, y, s;
-            double[] ehp = new double[3];
+            double date1, date2;
             double[,] ebpv = new double[2, 3];
+            double[] ehp = new double[3];
+            double x, y, s;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
 
             astrom.eb = new double[3];
@@ -504,22 +495,14 @@ namespace WWA_Test
                               "wwaApci", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295811013146, 1e-12,
                            "wwaApci", "em", ref status);
-            //vvd(astrom.v[0], 0.4289638897813379954e-4, 1e-16,
-            //                 "wwaApci", "v(1)", ref status);
             vvd(astrom.v[0], 0.4289638913597693554e-4, 1e-16,
-                   "wwaApci", "v(1)", ref status);
-            //vvd(astrom.v[1], 0.8115034021720941898e-4, 1e-16,
-            //                 "wwaApci", "v(2)", ref status);
+                             "wwaApci", "v(1)", ref status);
             vvd(astrom.v[1], 0.8115034051581320575e-4, 1e-16,
-                    "wwaApci", "v(2)", ref status);
-            //vvd(astrom.v[2], 0.3517555123437237778e-4, 1e-16,
-            //                 "wwaApci", "v(3)", ref status);
+                             "wwaApci", "v(2)", ref status);
             vvd(astrom.v[2], 0.3517555136380563427e-4, 1e-16,
-                    "wwaApci", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999951686013336, 1e-12,
-            //                "wwaApci", "bm1", ref status);
+                             "wwaApci", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999951686012981, 1e-12,
-                   "wwaApci", "bm1", ref status);
+                            "wwaApci", "bm1", ref status);
             vvd(astrom.bpn[0, 0], 0.9999991390295159156, 1e-12,
                                   "wwaApci", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4978650072505016932e-7, 1e-12,
@@ -547,14 +530,14 @@ namespace WWA_Test
         **   t _ a p c i 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaApci13 function.
+        **  Test WWA.wwaApci13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci13, vvd
+        **  Called:  WWA.wwaApci13, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2, eo = 0;
@@ -563,6 +546,7 @@ namespace WWA_Test
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
+
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -585,23 +569,14 @@ namespace WWA_Test
                               "wwaApci13", "eh(3)", ref status);
             vvd(astrom.em, 1.010465295964664178, 1e-12,
                            "wwaApci13", "em", ref status);
-            //vvd(astrom.v[0], 0.4289638897157027528e-4, 1e-16,
-            //                 "wwaApci13", "v(1)", ref status);
-            //vvd(astrom.v[1], 0.8115034002544663526e-4, 1e-16,
-            //                 "wwaApci13", "v(2)", ref status);
-            //vvd(astrom.v[2], 0.3517555122593144633e-4, 1e-16,
-            //                 "wwaApci13", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999951686013498, 1e-12,
-            //                "wwaApci13", "bm1", ref status);
             vvd(astrom.v[0], 0.4289638912941341125e-4, 1e-16,
-                            "wwaApci13", "v(1)", ref status);
+                             "wwaApci13", "v(1)", ref status);
             vvd(astrom.v[1], 0.8115034032405042132e-4, 1e-16,
-                            "wwaApci13", "v(2)", ref status);
+                             "wwaApci13", "v(2)", ref status);
             vvd(astrom.v[2], 0.3517555135536470279e-4, 1e-16,
-                            "wwaApci13", "v(3)", ref status);
+                             "wwaApci13", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999951686013142, 1e-12,
                             "wwaApci13", "bm1", ref status);
-
             vvd(astrom.bpn[0, 0], 0.9999992060376761710, 1e-12,
                                   "wwaApci13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4124244860106037157e-7, 1e-12,
@@ -631,20 +606,20 @@ namespace WWA_Test
         **   t _ a p c o
         **  - - - - - - -
         **
-        **  Test wwaApco function.
+        **  Test WWA.wwaApco function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApco, vvd
+        **  Called:  WWA.wwaApco, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2021 January 5
         */
         {
-            double date1, date2, x, y, s,
-                   theta, elong, phi, hm, xp, yp, sp, refa, refb;
+            double date1, date2;
             double[,] ebpv = new double[2, 3];
             double[] ehp = new double[3];
+            double x, y, s, theta, elong, phi, hm, xp, yp, sp, refa, refb;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
 
             astrom.eb = new double[3];
@@ -681,30 +656,8 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 13.25248468622587269, 1e-11,
                             "wwaApco", "pmt", ref status);
-            //vvd(astrom.eb[0], -0.9741827110630897003, 1e-12,
-            //                  "wwaApco", "eb(1)", ref status);
-            //vvd(astrom.eb[1], -0.2115130190135014340, 1e-12,
-            //                  "wwaApco", "eb(2)", ref status);
-            //vvd(astrom.eb[2], -0.09179840186968295686, 1e-12,
-            //                  "wwaApco", "eb(3)", ref status);
-            //vvd(astrom.eh[0], -0.9736425571689670428, 1e-12,
-            //                  "wwaApco", "eh(1)", ref status);
-            //vvd(astrom.eh[1], -0.2092452125848862201, 1e-12,
-            //                  "wwaApco", "eh(2)", ref status);
-            //vvd(astrom.eh[2], -0.09075578152261439954, 1e-12,
-            //                  "wwaApco", "eh(3)", ref status);
-            //vvd(astrom.em, 0.9998233241710617934, 1e-12,
-            //               "wwaApco", "em", ref status);
-            //vvd(astrom.v[0], 0.2078704985147609823e-4, 1e-16,
-            //                 "wwaApco", "v(1)", ref status);
-            //vvd(astrom.v[1], -0.8955360074407552709e-4, 1e-16,
-            //                 "wwaApco", "v(2)", ref status);
-            //vvd(astrom.v[2], -0.3863338980073114703e-4, 1e-16,
-            //                 "wwaApco", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999950277561600, 1e-12,
-            //                "wwaApco", "bm1", ref status);
             vvd(astrom.eb[0], -0.9741827110630322720, 1e-12,
-                            "wwaApco", "eb(1)", ref status);
+                              "wwaApco", "eb(1)", ref status);
             vvd(astrom.eb[1], -0.2115130190135344832, 1e-12,
                               "wwaApco", "eb(2)", ref status);
             vvd(astrom.eb[2], -0.09179840186949532298, 1e-12,
@@ -725,7 +678,6 @@ namespace WWA_Test
                              "wwaApco", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999950277561236, 1e-12,
                             "wwaApco", "bm1", ref status);
-
             vvd(astrom.bpn[0, 0], 0.9999991390295159156, 1e-12,
                                   "wwaApco", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0.4978650072505016932e-7, 1e-12,
@@ -771,25 +723,24 @@ namespace WWA_Test
         **   t _ a p c o 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaApco13 function.
+        **  Test WWA.wwaApco13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApco13, vvd, viv
+        **  Called:  WWA.wwaApco13, vvd, viv
         **
-        **  This revision:  2013 October 4
+        **  This revision:  2021 January 5
         */
         {
             double utc1, utc2, dut1, elong, phi, hm, xp, yp,
                    phpa, tc, rh, wl, eo = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
+            int j;
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
 
-            int j;
 
             utc1 = 2456384.5;
             utc2 = 0.969254051;
@@ -810,7 +761,7 @@ namespace WWA_Test
             vvd(astrom.pmt, 13.25248468622475727, 1e-11,
                             "wwaApco13", "pmt", ref status);
             vvd(astrom.eb[0], -0.9741827107320875162, 1e-12,
-                   "wwaApco13", "eb(1)", ref status);
+                            "wwaApco13", "eb(1)", ref status);
             vvd(astrom.eb[1], -0.2115130190489716682, 1e-12,
                               "wwaApco13", "eb(2)", ref status);
             vvd(astrom.eb[2], -0.09179840189496755339, 1e-12,
@@ -879,14 +830,14 @@ namespace WWA_Test
         **   t _ a p c s
         **  - - - - - - -
         **
-        **  Test wwaApcs function.
+        **  Test WWA.wwaApcs function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApcs, vvd
+        **  Called:  WWA.wwaApcs, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2;
@@ -894,7 +845,6 @@ namespace WWA_Test
             double[,] ebpv = new double[2, 3];
             double[] ehp = new double[3];
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
@@ -921,30 +871,8 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 13.25248468622587269, 1e-11,
                             "wwaApcs", "pmt", ref status);
-            //vvd(astrom.eb[0], -0.9741827110630456169, 1e-12,
-            //                  "wwaApcs", "eb(1)", ref status);
-            //vvd(astrom.eb[1], -0.2115130190136085494, 1e-12,
-            //                  "wwaApcs", "eb(2)", ref status);
-            //vvd(astrom.eb[2], -0.09179840186973175487, 1e-12,
-            //                  "wwaApcs", "eb(3)", ref status);
-            //vvd(astrom.eh[0], -0.9736425571689386099, 1e-12,
-            //                  "wwaApcs", "eh(1)", ref status);
-            //vvd(astrom.eh[1], -0.2092452125849967195, 1e-12,
-            //                  "wwaApcs", "eh(2)", ref status);
-            //vvd(astrom.eh[2], -0.09075578152266466572, 1e-12,
-            //                  "wwaApcs", "eh(3)", ref status);
-            //vvd(astrom.em, 0.9998233241710457140, 1e-12,
-            //               "wwaApcs", "em", ref status);
-            //vvd(astrom.v[0], 0.2078704985513566571e-4, 1e-16,
-            //                 "wwaApcs", "v(1)", ref status);
-            //vvd(astrom.v[1], -0.8955360074245006073e-4, 1e-16,
-            //                 "wwaApcs", "v(2)", ref status);
-            //vvd(astrom.v[2], -0.3863338980073572719e-4, 1e-16,
-            //                 "wwaApcs", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999950277561601, 1e-12,
-            //                "wwaApcs", "bm1", ref status);
             vvd(astrom.eb[0], -0.9741827110629881886, 1e-12,
-                     "wwaApcs", "eb(1)", ref status);
+                              "wwaApcs", "eb(1)", ref status);
             vvd(astrom.eb[1], -0.2115130190136415986, 1e-12,
                               "wwaApcs", "eb(2)", ref status);
             vvd(astrom.eb[2], -0.09179840186954412099, 1e-12,
@@ -965,7 +893,6 @@ namespace WWA_Test
                              "wwaApcs", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999950277561237, 1e-12,
                             "wwaApcs", "bm1", ref status);
-
             vvd(astrom.bpn[0, 0], 1, 0,
                                   "wwaApcs", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0, 0,
@@ -993,20 +920,19 @@ namespace WWA_Test
         **   t _ a p c s 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaApcs13 function.
+        **  Test WWA.wwaApcs13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApcs13, vvd
+        **  Called:  WWA.wwaApcs13, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2;
             double[,] pv = new double[2, 3];
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
@@ -1024,30 +950,8 @@ namespace WWA_Test
 
             vvd(astrom.pmt, 12.65133794027378508, 1e-11,
                             "wwaApcs13", "pmt", ref status);
-            //vvd(astrom.eb[0], 0.9012691529023298391, 1e-12,
-            //                  "wwaApcs13", "eb(1)", ref status);
-            //vvd(astrom.eb[1], -0.4173999812023068781, 1e-12,
-            //                  "wwaApcs13", "eb(2)", ref status);
-            //vvd(astrom.eb[2], -0.1809906511146821008, 1e-12,
-            //                  "wwaApcs13", "eb(3)", ref status);
-            //vvd(astrom.eh[0], 0.8939939101759726824, 1e-12,
-            //                  "wwaApcs13", "eh(1)", ref status);
-            //vvd(astrom.eh[1], -0.4111053891734599955, 1e-12,
-            //                  "wwaApcs13", "eh(2)", ref status);
-            //vvd(astrom.eh[2], -0.1782336880637689334, 1e-12,
-            //                  "wwaApcs13", "eh(3)", ref status);
-            //vvd(astrom.em, 1.010428384373318379, 1e-12,
-            //               "wwaApcs13", "em", ref status);
-            //vvd(astrom.v[0], 0.4279877278327626511e-4, 1e-16,
-            //                 "wwaApcs13", "v(1)", ref status);
-            //vvd(astrom.v[1], 0.7963255057040027770e-4, 1e-16,
-            //                 "wwaApcs13", "v(2)", ref status);
-            //vvd(astrom.v[2], 0.3517564000441374759e-4, 1e-16,
-            //                 "wwaApcs13", "v(3)", ref status);
-            //vvd(astrom.bm1, 0.9999999952947981330, 1e-12,
-            //                "wwaApcs13", "bm1", ref status);
             vvd(astrom.eb[0], 0.9012691529025250644, 1e-12,
-                     "wwaApcs13", "eb(1)", ref status);
+                              "wwaApcs13", "eb(1)", ref status);
             vvd(astrom.eb[1], -0.4173999812023194317, 1e-12,
                               "wwaApcs13", "eb(2)", ref status);
             vvd(astrom.eb[2], -0.1809906511146429670, 1e-12,
@@ -1068,7 +972,6 @@ namespace WWA_Test
                              "wwaApcs13", "v(3)", ref status);
             vvd(astrom.bm1, 0.9999999952947980978, 1e-12,
                             "wwaApcs13", "bm1", ref status);
-
             vvd(astrom.bpn[0, 0], 1, 0,
                                   "wwaApcs13", "bpn(1,1)", ref status);
             vvd(astrom.bpn[1, 0], 0, 0,
@@ -1096,12 +999,12 @@ namespace WWA_Test
         **   t _ a p e r
         **  - - - - - - -
         *
-        **  Test wwaAper function.
+        **  Test WWA.wwaAper function.
         *
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         *
-        **  Called:  wwaAper, vvd
+        **  Called:  WWA.wwaAper, vvd
         *
         **  This revision:  2013 October 3
         */
@@ -1126,12 +1029,12 @@ namespace WWA_Test
         **   t _ a p e r 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAper13 function.
+        **  Test WWA.wwaAper13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAper13, vvd
+        **  Called:  WWA.wwaAper13, vvd
         **
         **  This revision:  2013 October 3
         */
@@ -1157,14 +1060,14 @@ namespace WWA_Test
         **   t _ a p i o
         **  - - - - - - -
         **
-        **  Test wwaApio function.
+        **  Test WWA.wwaApio function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApio, vvd
+        **  Called:  WWA.wwaApio, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2021 January 5
         */
         {
             double sp, theta, elong, phi, hm, xp, yp, refa, refb;
@@ -1210,14 +1113,14 @@ namespace WWA_Test
         **   t _ a p i o 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaApio13 function.
+        **  Test WWA.wwaApio13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApio13, vvd, viv
+        **  Called:  WWA.wwaApio13, vvd, viv
         **
-        **  This revision:  2013 October 4
+        **  This revision:  2021 January 5
         */
         {
             double utc1, utc2, dut1, elong, phi, hm, xp, yp, phpa, tc, rh, wl;
@@ -1238,7 +1141,8 @@ namespace WWA_Test
             rh = 0.59;
             wl = 0.55;
 
-            j = WWA.wwaApio13(utc1, utc2, dut1, elong, phi, hm, xp, yp, phpa, tc, rh, wl, ref astrom);
+            j = WWA.wwaApio13(utc1, utc2, dut1, elong, phi, hm, xp, yp,
+                          phpa, tc, rh, wl, ref astrom);
 
             vvd(astrom.along, -0.5278008060295995733, 1e-12,
                               "wwaApio13", "along", ref status);
@@ -1262,20 +1166,93 @@ namespace WWA_Test
 
         }
 
+        static void t_atcc13(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ a t c c 1 3
+        **  - - - - - - - - -
+        **
+        **  Test WWA.wwaAtcc13 function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  WWA.wwaAtcc13, vvd
+        **
+        **  This revision:  2021 April 18
+        */
+        {
+            double rc, dc, pr, pd, px, rv, date1, date2, ra = 0, da = 0;
+
+
+            rc = 2.71;
+            dc = 0.174;
+            pr = 1e-5;
+            pd = 5e-6;
+            px = 0.1;
+            rv = 55.0;
+            date1 = 2456165.5;
+            date2 = 0.401182685;
+
+            WWA.wwaAtcc13(rc, dc, pr, pd, px, rv, date1, date2, ref ra, ref da);
+
+            vvd(ra, 2.710126504531372384, 1e-12,
+                    "wwaAtcc13", "ra", ref status);
+            vvd(da, 0.1740632537628350152, 1e-12,
+                    "wwaAtcc13", "da", ref status);
+
+        }
+
+        static void t_atccq(ref int status)
+        /*
+        **  - - - - - - - -
+        **   t _ a t c c q
+        **  - - - - - - - -
+        **
+        **  Test WWA.wwaAtccq function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  WWA.wwaApcc13, WWA.wwaAtccq, vvd
+        **
+        **  This revision:  2021 April 18
+        */
+        {
+            double date1, date2, eo = 0, rc, dc, pr, pd, px, rv, ra = 0, da = 0;
+            WWA.wwaASTROM astrom = new WWA.wwaASTROM();
+
+            date1 = 2456165.5;
+            date2 = 0.401182685;
+            WWA.wwaApci13(date1, date2, ref astrom, ref eo);
+            rc = 2.71;
+            dc = 0.174;
+            pr = 1e-5;
+            pd = 5e-6;
+            px = 0.1;
+            rv = 55.0;
+
+            WWA.wwaAtccq(rc, dc, pr, pd, px, rv, ref astrom, ref ra, ref da);
+
+            vvd(ra, 2.710126504531372384, 1e-12, "wwaAtccq", "ra", ref status);
+            vvd(da, 0.1740632537628350152, 1e-12, "wwaAtccq", "da", ref status);
+
+        }
+
         static void t_atci13(ref int status)
         /*
         **  - - - - - - - - -
         **   t _ a t c i 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAtci13 function.
+        **  Test WWA.wwaAtci13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAtci13, vvd
+        **  Called:  WWA.wwaAtci13, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double rc, dc, pr, pd, px, rv, date1, date2, ri = 0, di = 0, eo = 0;
@@ -1292,10 +1269,6 @@ namespace WWA_Test
 
             WWA.wwaAtci13(rc, dc, pr, pd, px, rv, date1, date2, ref ri, ref di, ref eo);
 
-            //vvd(ri, 2.710121572969038991, 1e-12,
-            //        "wwaAtci13", "ri", ref status);
-            //vvd(di, 0.1729371367218230438, 1e-12,
-            //        "wwaAtci13", "di", ref status);
             vvd(ri, 2.710121572968696744, 1e-12,
                     "wwaAtci13", "ri", ref status);
             vvd(di, 0.1729371367219539137, 1e-12,
@@ -1311,22 +1284,18 @@ namespace WWA_Test
         **   t _ a t c i q
         **  - - - - - - - -
         **
-        **  Test wwaAtciq function.
+        **  Test WWA.wwaAtciq function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci13, wwaAtciq, vvd
+        **  Called:  WWA.wwaApci13, WWA.wwaAtciq, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2, eo = 0, rc, dc, pr, pd, px, rv, ri = 0, di = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
-            astrom.eb = new double[3];
-            astrom.eh = new double[3];
-            astrom.bpn = new double[3, 3];
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -1340,10 +1309,9 @@ namespace WWA_Test
 
             WWA.wwaAtciq(rc, dc, pr, pd, px, rv, ref astrom, ref ri, ref di);
 
-            //vvd(ri, 2.710121572969038991, 1e-12, "wwaAtciq", "ri", ref status);
-            //vvd(di, 0.1729371367218230438, 1e-12, "wwaAtciq", "di", ref status);
             vvd(ri, 2.710121572968696744, 1e-12, "wwaAtciq", "ri", ref status);
             vvd(di, 0.1729371367219539137, 1e-12, "wwaAtciq", "di", ref status);
+
         }
 
         static void t_atciqn(ref int status)
@@ -1352,21 +1320,19 @@ namespace WWA_Test
         **   t _ a t c i q n
         **  - - - - - - - - -
         **
-        **  Test wwaAtciqn function.
+        **  Test WWA.wwaAtciqn function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci13, wwaAtciqn, vvd
+        **  Called:  WWA.wwaApci13, WWA.wwaAtciqn, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             WWA.wwaLDBODY[] b = new WWA.wwaLDBODY[3];
-
             double date1, date2, eo = 0, rc, dc, pr, pd, px, rv, ri = 0, di = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
@@ -1413,10 +1379,9 @@ namespace WWA_Test
 
             WWA.wwaAtciqn(rc, dc, pr, pd, px, rv, ref astrom, 3, b, ref ri, ref di);
 
-            //vvd(ri, 2.710122008105325582, 1e-12, "wwaAtciqn", "ri", ref status);
-            //vvd(di, 0.1729371916491459122, 1e-12, "wwaAtciqn", "di", ref status);
             vvd(ri, 2.710122008104983335, 1e-12, "wwaAtciqn", "ri", ref status);
             vvd(di, 0.1729371916492767821, 1e-12, "wwaAtciqn", "di", ref status);
+
         }
 
         static void t_atciqz(ref int status)
@@ -1425,22 +1390,19 @@ namespace WWA_Test
         **   t _ a t c i q z
         **  - - - - - - - - -
         **
-        **  Test wwaAtciqz function.
+        **  Test WWA.wwaAtciqz function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci13, wwaAtciqz, vvd
+        **  Called:  WWA.wwaApci13, WWA.wwaAtciqz, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2, eo = 0, rc, dc, ri = 0, di = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
 
-            astrom.eb = new double[3];
-            astrom.eh = new double[3];
-            astrom.bpn = new double[3, 3];
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -1450,10 +1412,9 @@ namespace WWA_Test
 
             WWA.wwaAtciqz(rc, dc, ref astrom, ref ri, ref di);
 
-            //vvd(ri, 2.709994899247599271, 1e-12, "wwaAtciqz", "ri", ref status);
-            //vvd(di, 0.1728740720983623469, 1e-12, "wwaAtciqz", "di", ref status);
             vvd(ri, 2.709994899247256984, 1e-12, "wwaAtciqz", "ri", ref status);
             vvd(di, 0.1728740720984931891, 1e-12, "wwaAtciqz", "di", ref status);
+
         }
 
         static void t_atco13(ref int status)
@@ -1462,20 +1423,21 @@ namespace WWA_Test
         **   t _ a t c o 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAtco13 function.
+        **  Test WWA.wwaAtco13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAtco13, vvd, viv
+        **  Called:  WWA.wwaAtco13, vvd, viv
         **
-        **  This revision:  2013 October 4
+        **  This revision:  2021 January 5
         */
         {
             double rc, dc, pr, pd, px, rv, utc1, utc2, dut1,
                    elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                    aob = 0, zob = 0, hob = 0, dob = 0, rob = 0, eo = 0;
             int j;
+
 
             rc = 2.71;
             dc = 0.174;
@@ -1506,7 +1468,6 @@ namespace WWA_Test
             vvd(hob, -0.9265154431529724692e-1, 1e-12, "wwaAtco13", "hob", ref status);
             vvd(dob, 0.1716626560072526200, 1e-12, "wwaAtco13", "dob", ref status);
             vvd(rob, 2.710260453504961012, 1e-12, "wwaAtco13", "rob", ref status);
-
             vvd(eo, -0.003020548354802412839, 1e-14, "wwaAtco13", "eo", ref status);
             viv(j, 0, "wwaAtco13", "j", ref status);
 
@@ -1518,14 +1479,14 @@ namespace WWA_Test
         **   t _ a t i c 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAtic13 function.
+        **  Test WWA.wwaAtic13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAtic13, vvd
+        **  Called:  WWA.wwaAtic13, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double ri, di, date1, date2, rc = 0, dc = 0, eo = 0;
@@ -1538,8 +1499,6 @@ namespace WWA_Test
 
             WWA.wwaAtic13(ri, di, date1, date2, ref rc, ref dc, ref eo);
 
-            //vvd(rc, 2.710126504531374930, 1e-12, "wwaAtic13", "rc", ref status);
-            //vvd(dc, 0.1740632537628342320, 1e-12, "wwaAtic13", "dc", ref status);
             vvd(rc, 2.710126504531716819, 1e-12, "wwaAtic13", "rc", ref status);
             vvd(dc, 0.1740632537627034482, 1e-12, "wwaAtic13", "dc", ref status);
             vvd(eo, -0.002900618712657375647, 1e-14, "wwaAtic13", "eo", ref status);
@@ -1552,21 +1511,19 @@ namespace WWA_Test
         **   t _ a t i c q
         **  - - - - - - - -
         **
-        **  Test wwaAticq function.
+        **  Test WWA.wwaAticq function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci13, wwaAticq, vvd
+        **  Called:  WWA.wwaApci13, WWA.wwaAticq, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-            astrom.eb = new double[3];
-            astrom.eh = new double[3];
-            astrom.bpn = new double[3, 3];
+
 
             date1 = 2456165.5;
             date2 = 0.401182685;
@@ -1576,8 +1533,6 @@ namespace WWA_Test
 
             WWA.wwaAticq(ri, di, ref astrom, ref rc, ref dc);
 
-            //vvd(rc, 2.710126504531374930, 1e-12, "wwaAticq", "rc", ref status);
-            //vvd(dc, 0.1740632537628342320, 1e-12, "wwaAticq", "dc", ref status);
             vvd(rc, 2.710126504531716819, 1e-12, "wwaAticq", "rc", ref status);
             vvd(dc, 0.1740632537627034482, 1e-12, "wwaAticq", "dc", ref status);
 
@@ -1589,31 +1544,29 @@ namespace WWA_Test
         **   t _ a t i c q n
         **  - - - - - - - - -
         **
-        **  Test wwaAticqn function.
+        **  Test WWA.wwaAticqn function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApci13, wwaAticqn, vvd
+        **  Called:  WWA.wwaApci13, WWA.wwaAticqn, vvd
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2017 March 15
         */
         {
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaLDBODY[] b = new WWA.wwaLDBODY[3];
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-            astrom.eb = new double[3];
-            astrom.eh = new double[3];
-            astrom.bpn = new double[3, 3];
+
 
             date1 = 2456165.5;
             date2 = 0.401182685;
             WWA.wwaApci13(date1, date2, ref astrom, ref eo);
             ri = 2.709994899247599271;
             di = 0.1728740720983623469;
+
             b[0].bm = 0.00028574;
             b[0].dl = 3e-10;
-
             b[0].pv = new double[3, 3];
             b[0].pv[0, 0] = -7.81014427;
             b[0].pv[0, 1] = -5.60956681;
@@ -1621,9 +1574,9 @@ namespace WWA_Test
             b[0].pv[1, 0] = 0.0030723249;
             b[0].pv[1, 1] = -0.00406995477;
             b[0].pv[1, 2] = -0.00181335842;
+            
             b[1].bm = 0.00095435;
             b[1].dl = 3e-9;
-
             b[1].pv = new double[3, 3];
             b[1].pv[0, 0] = 0.738098796;
             b[1].pv[0, 1] = 4.63658692;
@@ -1631,9 +1584,9 @@ namespace WWA_Test
             b[1].pv[1, 0] = -0.00755816922;
             b[1].pv[1, 1] = 0.00126913722;
             b[1].pv[1, 2] = 0.000727999001;
+            
             b[2].bm = 1.0;
             b[2].dl = 6e-6;
-
             b[2].pv = new double[3, 3];
             b[2].pv[0, 0] = -0.000712174377;
             b[2].pv[0, 1] = -0.00230478303;
@@ -1644,10 +1597,9 @@ namespace WWA_Test
 
             WWA.wwaAticqn(ri, di, ref astrom, 3, b, ref rc, ref dc);
 
-            //vvd(rc, 2.709999575032685412, 1e-12, "wwaAtciqn", "rc", ref status);
-            //vvd(dc, 0.1739999656317778034, 1e-12, "wwaAtciqn", "dc", ref status);
             vvd(rc, 2.709999575033027333, 1e-12, "wwaAtciqn", "rc", ref status);
             vvd(dc, 0.1739999656316469990, 1e-12, "wwaAtciqn", "dc", ref status);
+
         }
 
         static void t_atio13(ref int status)
@@ -1656,14 +1608,14 @@ namespace WWA_Test
         **   t _ a t i o 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAtio13 function.
+        **  Test WWA.wwaAtio13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAtio13, vvd, viv
+        **  Called:  WWA.wwaAtio13, vvd, viv
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2021 January 5
         */
         {
             double ri, di, utc1, utc2, dut1, elong, phi, hm, xp, yp,
@@ -1696,6 +1648,7 @@ namespace WWA_Test
             vvd(dob, 0.1717653435756234676, 1e-12, "wwaAtio13", "dob", ref status);
             vvd(rob, 2.710085107988480746, 1e-12, "wwaAtio13", "rob", ref status);
             viv(j, 0, "wwaAtio13", "j", ref status);
+
         }
 
         static void t_atioq(ref int status)
@@ -1704,14 +1657,14 @@ namespace WWA_Test
         **   t _ a t i o q
         **  - - - - - - - -
         **
-        **  Test wwaAtioq function.
+        **  Test WWA.wwaAtioq function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaApio13, wwaAtioq, vvd, viv
+        **  Called:  WWA.wwaApio13, WWA.wwaAtioq, vvd, viv
         **
-        **  This revision:  2013 October 4
+        **  This revision:  2021 January 5
         */
         {
             double utc1, utc2, dut1, elong, phi, hm, xp, yp,
@@ -1742,6 +1695,7 @@ namespace WWA_Test
             vvd(hob, -0.9247619879881698140e-1, 1e-12, "wwaAtioq", "hob", ref status);
             vvd(dob, 0.1717653435756234676, 1e-12, "wwaAtioq", "dob", ref status);
             vvd(rob, 2.710085107988480746, 1e-12, "wwaAtioq", "rob", ref status);
+
         }
 
         static void t_atoc13(ref int status)
@@ -1750,14 +1704,14 @@ namespace WWA_Test
         **   t _ a t o c 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAtoc13 function.
+        **  Test WWA.wwaAtoc13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAtoc13, vvd, viv
+        **  Called:  WWA.wwaAtoc13, vvd, viv
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2021 January 5
         */
         {
             double utc1, utc2, dut1,
@@ -1781,8 +1735,8 @@ namespace WWA_Test
 
             ob1 = 2.710085107986886201;
             ob2 = 0.1717653435758265198;
-            char refR = 'R';
-            j = WWA.wwaAtoc13(ref refR, ob1, ob2, utc1, utc2, dut1,
+            char typeCharR = 'R';
+            j = WWA.wwaAtoc13(ref typeCharR, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
             vvd(rc, 2.709956744659136129, 1e-12, "wwaAtoc13", "R/rc", ref status);
@@ -1791,8 +1745,8 @@ namespace WWA_Test
 
             ob1 = -0.09247619879782006106;
             ob2 = 0.1717653435758265198;
-            char refH = 'H';
-            j = WWA.wwaAtoc13(ref refH, ob1, ob2, utc1, utc2, dut1,
+            char typeCharH = 'H';
+            j = WWA.wwaAtoc13(ref typeCharH, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
             vvd(rc, 2.709956744659734086, 1e-12, "wwaAtoc13", "H/rc", ref status);
@@ -1801,13 +1755,14 @@ namespace WWA_Test
 
             ob1 = 0.09233952224794989993;
             ob2 = 1.407758704513722461;
-            char refA = 'A';
-            j = WWA.wwaAtoc13(ref refA, ob1, ob2, utc1, utc2, dut1,
+            char typeCharA = 'A';
+            j = WWA.wwaAtoc13(ref typeCharA, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref rc, ref dc);
             vvd(rc, 2.709956744659734086, 1e-12, "wwaAtoc13", "A/rc", ref status);
             vvd(dc, 0.1741696500898471366, 1e-12, "wwaAtoc13", "A/dc", ref status);
             viv(j, 0, "wwaAtoc13", "A/j", ref status);
+
         }
 
         static void t_atoi13(ref int status)
@@ -1816,14 +1771,14 @@ namespace WWA_Test
         **   t _ a t o i 1 3
         **  - - - - - - - - -
         **
-        **  Test wwaAtoi13 function.
+        **  Test WWA.wwaAtoi13 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaAtoi13, vvd, viv
+        **  Called:  WWA.wwaAtoi13, vvd, viv
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2021 January 5
         */
         {
             double utc1, utc2, dut1, elong, phi, hm, xp, yp, phpa, tc, rh, wl,
@@ -1846,8 +1801,8 @@ namespace WWA_Test
 
             ob1 = 2.710085107986886201;
             ob2 = 0.1717653435758265198;
-            char refR = 'R';
-            j = WWA.wwaAtoi13(ref refR, ob1, ob2, utc1, utc2, dut1,
+            char typeCharR = 'R';
+            j = WWA.wwaAtoi13(ref typeCharR, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref ri, ref di);
             vvd(ri, 2.710121574447540810, 1e-12, "wwaAtoi13", "R/ri", ref status);
@@ -1856,8 +1811,8 @@ namespace WWA_Test
 
             ob1 = -0.09247619879782006106;
             ob2 = 0.1717653435758265198;
-            char refH = 'H';
-            j = WWA.wwaAtoi13(ref refH, ob1, ob2, utc1, utc2, dut1,
+            char typeCharH = 'H';
+            j = WWA.wwaAtoi13(ref typeCharH, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref ri, ref di);
             vvd(ri, 2.710121574448138676, 1e-12, "wwaAtoi13", "H/ri", ref status);
@@ -1866,8 +1821,8 @@ namespace WWA_Test
 
             ob1 = 0.09233952224794989993;
             ob2 = 1.407758704513722461;
-            char refA = 'A';
-            j = WWA.wwaAtoi13(ref refA, ob1, ob2, utc1, utc2, dut1,
+            char typeCharA = 'A';
+            j = WWA.wwaAtoi13(ref typeCharA, ob1, ob2, utc1, utc2, dut1,
                             elong, phi, hm, xp, yp, phpa, tc, rh, wl,
                             ref ri, ref di);
             vvd(ri, 2.710121574448138676, 1e-12, "wwaAtoi13", "A/ri", ref status);
@@ -1882,14 +1837,14 @@ namespace WWA_Test
         **   t _ a t o i q
         **  - - - - - - - -
         *
-        **  Test wwaAtoiq function.
+        **  Test WWA.wwaAtoiq function.
         *
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         *
-        **  Called:  wwaApio13, wwaAtoiq, vvd
+        **  Called:  WWA.wwaApio13, WWA.wwaAtoiq, vvd
         *
-        **  This revision:  2013 October 4
+        **  This revision:  2021 January 5
         */
         {
             double utc1, utc2, dut1, elong, phi, hm, xp, yp, phpa, tc, rh, wl,
@@ -1909,34 +1864,36 @@ namespace WWA_Test
             tc = 12.8;
             rh = 0.59;
             wl = 0.55;
-            WWA.wwaApio13(utc1, utc2, dut1, elong, phi, hm, xp, yp, phpa, tc, rh, wl, ref astrom);
+            WWA.wwaApio13(utc1, utc2, dut1, elong, phi, hm, xp, yp,
+                             phpa, tc, rh, wl, ref astrom);
 
             ob1 = 2.710085107986886201;
             ob2 = 0.1717653435758265198;
-            char refR = 'R';
-            WWA.wwaAtoiq(ref refR, ob1, ob2, ref astrom, ref ri, ref di);
+            char typeCharR = 'R';
+            WWA.wwaAtoiq(ref typeCharR, ob1, ob2, ref astrom, ref ri, ref di);
             vvd(ri, 2.710121574447540810, 1e-12,
-                "wwaAtoiq", "R/ri", ref status);
+                    "wwaAtoiq", "R/ri", ref status);
             vvd(di, 0.17293718391166087785, 1e-12,
-                "wwaAtoiq", "R/di", ref status);
+                    "wwaAtoiq", "R/di", ref status);
 
             ob1 = -0.09247619879782006106;
             ob2 = 0.1717653435758265198;
-            char refH = 'H';
-            WWA.wwaAtoiq(ref refH, ob1, ob2, ref astrom, ref ri, ref di);
+            char typeCharH = 'H';
+            WWA.wwaAtoiq(ref typeCharH, ob1, ob2, ref astrom, ref ri, ref di);
             vvd(ri, 2.710121574448138676, 1e-12,
-                "wwaAtoiq", "H/ri", ref status);
+                    "wwaAtoiq", "H/ri", ref status);
             vvd(di, 0.1729371839116608778, 1e-12,
-                "wwaAtoiq", "H/di", ref status);
+                    "wwaAtoiq", "H/di", ref status);
 
             ob1 = 0.09233952224794989993;
             ob2 = 1.407758704513722461;
-            char refA = 'A';
-            WWA.wwaAtoiq(ref refA, ob1, ob2, ref astrom, ref ri, ref di);
+            char typeCharA = 'A';
+            WWA.wwaAtoiq(ref typeCharA, ob1, ob2, ref astrom, ref ri, ref di);
             vvd(ri, 2.710121574448138676, 1e-12,
-                "wwaAtoiq", "A/ri", ref status);
+                    "wwaAtoiq", "A/ri", ref status);
             vvd(di, 0.1729371839116608781, 1e-12,
-                "wwaAtoiq", "A/di", ref status);
+                    "wwaAtoiq", "A/di", ref status);
+
         }
 
         static void t_bi00(ref int status)
@@ -1945,12 +1902,12 @@ namespace WWA_Test
         **   t _ b i 0 0
         **  - - - - - - -
         **
-        **  Test wwaBi00 function.
+        **  Test WWA.wwaBi00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaBi00, vvd
+        **  Called:  WWA.wwaBi00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -1973,12 +1930,12 @@ namespace WWA_Test
         **   t _ b p 0 0
         **  - - - - - - -
         **
-        **  Test wwaBp00 function.
+        **  Test WWA.wwaBp00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaBp00, vvd
+        **  Called:  WWA.wwaBp00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -1986,6 +1943,7 @@ namespace WWA_Test
             double[,] rb = new double[3, 3];
             double[,] rp = new double[3, 3];
             double[,] rbp = new double[3, 3];
+
 
             WWA.wwaBp00(2400000.5, 50123.9999, rb, rp, rbp);
 
@@ -2053,19 +2011,20 @@ namespace WWA_Test
         **   t _ b p 0 6
         **  - - - - - - -
         **
-        **  Test wwaBp06 function.
+        **  Test WWA.wwaBp06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaBp06, vvd
+        **  Called:  WWA.wwaBp06, vvd
         **
         **  This revision:  2013 August 7
         */
         {
-            double[,] rb = new double[3, 3];
-            double[,] rp = new double[3, 3];
-            double[,] rbp = new double[3, 3];
+            double[,] rb = new double[3, 3];;
+            double[,] rp = new double[3, 3];;
+            double[,] rbp = new double[3, 3];;
+
 
             WWA.wwaBp06(2400000.5, 50123.9999, rb, rp, rbp);
 
@@ -2133,18 +2092,19 @@ namespace WWA_Test
         **   t _ b p n 2 x y
         **  - - - - - - - - -
         **
-        **  Test wwaBpn2xy function.
+        **  Test WWA.wwaBpn2xy function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaBpn2xy, vvd
+        **  Called:  WWA.wwaBpn2xy, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] rbpn = new double[3, 3];
             double x = 0, y = 0;
+
 
             rbpn[0, 0] = 9.999962358680738e-1;
             rbpn[0, 1] = -2.516417057665452e-3;
@@ -2171,12 +2131,12 @@ namespace WWA_Test
         **   t _ c 2 i 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaC2i00a function.
+        **  Test WWA.wwaC2i00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2i00a, vvd
+        **  Called:  WWA.wwaC2i00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -2215,12 +2175,12 @@ namespace WWA_Test
         **   t _ c 2 i 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaC2i00b function.
+        **  Test WWA.wwaC2i00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2i00b, vvd
+        **  Called:  WWA.wwaC2i00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -2259,12 +2219,12 @@ namespace WWA_Test
         **   t _ c 2 i 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaC2i06a function.
+        **  Test WWA.wwaC2i06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2i06a, vvd
+        **  Called:  WWA.wwaC2i06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -2303,18 +2263,19 @@ namespace WWA_Test
         **   t _ c 2 i b p n
         **  - - - - - - - - -
         **
-        **  Test wwaC2ibpn function.
+        **  Test WWA.wwaC2ibpn function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2ibpn, vvd
+        **  Called:  WWA.wwaC2ibpn, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] rbpn = new double[3, 3];
             double[,] rc2i = new double[3, 3];
+
 
             rbpn[0, 0] = 9.999962358680738e-1;
             rbpn[0, 1] = -2.516417057665452e-3;
@@ -2359,18 +2320,18 @@ namespace WWA_Test
         **   t _ c 2 i x y
         **  - - - - - - - -
         **
-        **  Test wwaC2ixy function.
+        **  Test WWA.wwaC2ixy function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2ixy, vvd
+        **  Called:  WWA.wwaC2ixy, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double x, y;
-            double[,] rc2i = new double[3, 3];
+            double[,] rc2i = new double[3, 3];;
 
 
             x = 0.5791308486706011000e-3;
@@ -2407,18 +2368,19 @@ namespace WWA_Test
         **   t _ c 2 i x y s
         **  - - - - - - - - -
         **
-        **  Test wwaC2ixys function.
+        **  Test WWA.wwaC2ixys function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2ixys, vvd
+        **  Called:  WWA.wwaC2ixys, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double x, y, s;
             double[,] rc2i = new double[3, 3];
+
 
             x = 0.5791308486706011000e-3;
             y = 0.4020579816732961219e-4;
@@ -2455,12 +2417,12 @@ namespace WWA_Test
         **   t _ c 2 s
         **  - - - - - -
         **
-        **  Test wwaC2s function.
+        **  Test WWA.wwaC2s function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2s, vvd
+        **  Called:  WWA.wwaC2s, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -2486,18 +2448,19 @@ namespace WWA_Test
         **   t _ c 2 t 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaC2t00a function.
+        **  Test WWA.wwaC2t00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2t00a, vvd
+        **  Called:  WWA.wwaC2t00a, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double tta, ttb, uta, utb, xp, yp;
-            double[,] rc2t = new double[3, 3];
+            double[,] rc2t = new double[3, 3];;
+
 
             tta = 2400000.5;
             uta = 2400000.5;
@@ -2537,18 +2500,19 @@ namespace WWA_Test
         **   t _ c 2 t 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaC2t00b function.
+        **  Test WWA.wwaC2t00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2t00b, vvd
+        **  Called:  WWA.wwaC2t00b, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double tta, ttb, uta, utb, xp, yp;
-            double[,] rc2t = new double[3, 3];
+            double[,] rc2t = new double[3, 3];;
+
 
             tta = 2400000.5;
             uta = 2400000.5;
@@ -2588,18 +2552,18 @@ namespace WWA_Test
         **   t _ c 2 t 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaC2t06a function.
+        **  Test WWA.wwaC2t06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2t06a, vvd
+        **  Called:  WWA.wwaC2t06a, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double tta, ttb, uta, utb, xp, yp;
-            double[,] rc2t = new double[3, 3];
+            double[,] rc2t = new double[3, 3];;
 
 
             tta = 2400000.5;
@@ -2640,12 +2604,12 @@ namespace WWA_Test
         **   t _ c 2 t c i o
         **  - - - - - - - - -
         **
-        **  Test wwaC2tcio function.
+        **  Test WWA.wwaC2tcio function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2tcio, vvd
+        **  Called:  WWA.wwaC2tcio, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -2653,7 +2617,7 @@ namespace WWA_Test
             double[,] rc2i = new double[3, 3];
             double era;
             double[,] rpom = new double[3, 3];
-            double[,] rc2t = new double[3, 3];
+            double[,] rc2t = new double[3, 3];;
 
 
             rc2i[0, 0] = 0.9999998323037164738;
@@ -2714,12 +2678,12 @@ namespace WWA_Test
         **   t _ c 2 t e q x
         **  - - - - - - - - -
         **
-        **  Test wwaC2teqx function.
+        **  Test WWA.wwaC2teqx function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2teqx, vvd
+        **  Called:  WWA.wwaC2teqx, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -2787,18 +2751,19 @@ namespace WWA_Test
         **   t _ c 2 t p e
         **  - - - - - - - -
         **
-        **  Test wwaC2tpe function.
+        **  Test WWA.wwaC2tpe function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2tpe, vvd
+        **  Called:  WWA.wwaC2tpe, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double tta, ttb, uta, utb, dpsi, deps, xp, yp;
-            double[,] rc2t = new double[3, 3];
+            double[,] rc2t = new double[3, 3];;
+
 
             tta = 2400000.5;
             uta = 2400000.5;
@@ -2840,18 +2805,18 @@ namespace WWA_Test
         **   t _ c 2 t x y
         **  - - - - - - - -
         **
-        **  Test wwaC2txy function.
+        **  Test WWA.wwaC2txy function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaC2txy, vvd
+        **  Called:  WWA.wwaC2txy, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double tta, ttb, uta, utb, x, y, xp, yp;
-            double[,] rc2t = new double[3, 3];
+            double[,] rc2t = new double[3, 3];;
 
 
             tta = 2400000.5;
@@ -2894,12 +2859,12 @@ namespace WWA_Test
         **   t _ c a l 2 j d
         **  - - - - - - - - -
         **
-        **  Test wwaCal2jd function.
+        **  Test WWA.wwaCal2jd function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaCal2jd, vvd, viv
+        **  Called:  WWA.wwaCal2jd, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -2923,18 +2888,19 @@ namespace WWA_Test
         **   t _ c p
         **  - - - - -
         **
-        **  Test wwaCp function.
+        **  Test WWA.wwaCp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaCp, vvd
+        **  Called:  WWA.wwaCp, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[] p = new double[3];
             double[] c = new double[3];
+
 
             p[0] = 0.3;
             p[1] = 1.2;
@@ -2953,18 +2919,19 @@ namespace WWA_Test
         **   t _ c p v
         **  - - - - - -
         **
-        **  Test wwaCpv function.
+        **  Test WWA.wwaCpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaCpv, vvd
+        **  Called:  WWA.wwaCpv, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] pv = new double[2, 3];
             double[,] c = new double[2, 3];
+
 
             pv[0, 0] = 0.3;
             pv[0, 1] = 1.2;
@@ -2992,18 +2959,19 @@ namespace WWA_Test
         **   t _ c r
         **  - - - - -
         **
-        **  Test wwaCr function.
+        **  Test WWA.wwaCr function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaCr, vvd
+        **  Called:  WWA.wwaCr, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] r = new double[3, 3];
             double[,] c = new double[3, 3];
+
 
             r[0, 0] = 2.0;
             r[0, 1] = 3.0;
@@ -3038,18 +3006,19 @@ namespace WWA_Test
         **   t _ d 2 d t f
         **  - - - - - - - -
         **
-        **  Test wwaD2dtf function.
+        **  Test WWA.wwaD2dtf function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaD2dtf, viv
+        **  Called:  WWA.wwaD2dtf, viv
         **
         **  This revision:  2013 August 7
         */
         {
             int j, iy = 0, im = 0, id = 0;
             int[] ihmsf = new int[4];
+
 
             j = WWA.wwaD2dtf("UTC", 5, 2400000.5, 49533.99999, ref iy, ref im, ref id, ihmsf);
 
@@ -3070,18 +3039,18 @@ namespace WWA_Test
         **   t _ d 2 t f
         **  - - - - - - -
         **
-        **  Test wwaD2tf function.
+        **  Test WWA.wwaD2tf function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaD2tf, viv, vvd
+        **  Called:  WWA.wwaD2tf, viv, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             int[] ihmsf = new int[4];
-            char s = '+';
+            char s = '\0';
 
 
             WWA.wwaD2tf(4, -0.987654321, ref s, ihmsf);
@@ -3101,14 +3070,14 @@ namespace WWA_Test
         **   t _ d a t
         **  - - - - - -
         **
-        **  Test wwaDat function.
+        **  Test WWA.wwaDat function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaDat, vvd, viv
+        **  Called:  WWA.wwaDat, vvd, viv
         **
-        **  This revision: 2016 July 11
+        **  This revision:  2016 July 11
         */
         {
             int j;
@@ -3125,13 +3094,11 @@ namespace WWA_Test
             vvd(deltat, 33.0, 0.0, "wwaDat", "d2", ref status);
             viv(j, 0, "wwaDat", "j2", ref status);
 
-            //j = WWA.wwaDat(2015, 9, 1, 0.0, ref deltat); // old
             j = WWA.wwaDat(2017, 9, 1, 0.0, ref deltat);
 
-            //vvd(deltat, 36.0, 0.0, "wwaDat", "d3", ref status); // old
             vvd(deltat, 37.0, 0.0, "wwaDat", "d3", ref status);
-
             viv(j, 0, "wwaDat", "j3", ref status);
+
         }
 
         static void t_dtdb(ref int status)
@@ -3140,12 +3107,12 @@ namespace WWA_Test
         **   t _ d t d b
         **  - - - - - - -
         **
-        **  Test wwaDtdb function.
+        **  Test WWA.wwaDtdb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaDtdb, vvd
+        **  Called:  WWA.wwaDtdb, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3165,12 +3132,12 @@ namespace WWA_Test
         **   t _ d t f 2 d
         **  - - - - - - - -
         **
-        **  Test wwaDtf2d function.
+        **  Test WWA.wwaDtf2d function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaDtf2d, vvd, viv
+        **  Called:  WWA.wwaDtf2d, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -3192,12 +3159,12 @@ namespace WWA_Test
         **   t _ e c e q 0 6
         **  - - - - -
         **
-        **  Test wwaEceq06 function.
+        **  Test WWA.wwaEceq06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEceq06, vvd
+        **  Called:  WWA.wwaEceq06, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -3223,12 +3190,12 @@ namespace WWA_Test
         **   t _ e c m 0 6
         **  - - - - - - - -
         **
-        **  Test iauEcm06 function.
+        **  Test WWA.wwaEcm06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEcm06, vvd
+        **  Called:  WWA.wwaEcm06, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -3242,15 +3209,24 @@ namespace WWA_Test
 
             WWA.wwaEcm06(date1, date2, rm);
 
-            vvd(rm[0, 0], 0.9999952427708701137, 1e-14, "wwaEcm06", "rm11", ref status);
-            vvd(rm[0, 1], -0.2829062057663042347e-2, 1e-14, "wwaEcm06", "rm12", ref status);
-            vvd(rm[0, 2], -0.1229163741100017629e-2, 1e-14, "wwaEcm06", "rm13", ref status);
-            vvd(rm[1, 0], 0.3084546876908653562e-2, 1e-14, "wwaEcm06", "rm21", ref status);
-            vvd(rm[1, 1], 0.9174891871550392514, 1e-14, "wwaEcm06", "rm22", ref status);
-            vvd(rm[1, 2], 0.3977487611849338124, 1e-14, "wwaEcm06", "rm23", ref status);
-            vvd(rm[2, 0], 0.2488512951527405928e-5, 1e-14, "wwaEcm06", "rm31", ref status);
-            vvd(rm[2, 1], -0.3977506604161195467, 1e-14, "wwaEcm06", "rm32", ref status);
-            vvd(rm[2, 2], 0.9174935488232863071, 1e-14, "wwaEcm06", "rm33", ref status);
+            vvd(rm[0, 0], 0.9999952427708701137, 1e-14,
+                "wwaEcm06", "rm11", ref status);
+            vvd(rm[0, 1], -0.2829062057663042347e-2, 1e-14,
+                "wwaEcm06", "rm12", ref status);
+            vvd(rm[0, 2], -0.1229163741100017629e-2, 1e-14,
+                "wwaEcm06", "rm13", ref status);
+            vvd(rm[1, 0], 0.3084546876908653562e-2, 1e-14,
+                "wwaEcm06", "rm21", ref status);
+            vvd(rm[1, 1], 0.9174891871550392514, 1e-14,
+                "wwaEcm06", "rm22", ref status);
+            vvd(rm[1, 2], 0.3977487611849338124, 1e-14,
+                "wwaEcm06", "rm23", ref status);
+            vvd(rm[2, 0], 0.2488512951527405928e-5, 1e-14,
+                "wwaEcm06", "rm31", ref status);
+            vvd(rm[2, 1], -0.3977506604161195467, 1e-14,
+                "wwaEcm06", "rm32", ref status);
+            vvd(rm[2, 2], 0.9174935488232863071, 1e-14,
+                "wwaEcm06", "rm33", ref status);
 
         }
 
@@ -3260,12 +3236,12 @@ namespace WWA_Test
         **   t _ e e 0 0
         **  - - - - - - -
         **
-        **  Test wwaEe00 function.
+        **  Test WWA.wwaEe00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEe00, vvd
+        **  Called:  WWA.wwaEe00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3288,17 +3264,18 @@ namespace WWA_Test
         **   t _ e e 0 0 a
         **  - - - - - - - -
         **
-        **  Test wwaEe00a function.
+        **  Test WWA.wwaEe00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEe00a, vvd
+        **  Called:  WWA.wwaEe00a, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double ee;
+
 
             ee = WWA.wwaEe00a(2400000.5, 53736.0);
 
@@ -3312,12 +3289,12 @@ namespace WWA_Test
         **   t _ e e 0 0 b
         **  - - - - - - - -
         **
-        **  Test wwaEe00b function.
+        **  Test WWA.wwaEe00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEe00b, vvd
+        **  Called:  WWA.wwaEe00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3337,12 +3314,12 @@ namespace WWA_Test
         **   t _ e e 0 6 a
         **  - - - - - - - -
         **
-        **  Test wwaEe06a function.
+        **  Test WWA.wwaEe06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEe06a, vvd
+        **  Called:  WWA.wwaEe06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3361,12 +3338,12 @@ namespace WWA_Test
         **   t _ e e c t 0 0
         **  - - - - - - - - -
         **
-        **  Test wwaEect00 function.
+        **  Test WWA.wwaEect00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEect00, vvd
+        **  Called:  WWA.wwaEect00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3386,12 +3363,12 @@ namespace WWA_Test
         **   t _ e f o r m
         **  - - - - - - - -
         **
-        **  Test wwaEform function.
+        **  Test WWA.wwaEform function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEform, viv, vvd
+        **  Called:  WWA.wwaEform, viv, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -3407,21 +3384,18 @@ namespace WWA_Test
 
             viv(j, 0, "wwaEform", "j1", ref status);
             vvd(a, 6378137.0, 1e-10, "wwaEform", "a1", ref status);
-            //vvd(f, 0.0033528106647474807, 1e-18, "wwaEform", "f1", ref status);
             vvd(f, 0.3352810664747480720e-2, 1e-18, "wwaEform", "f1", ref status);
 
             j = WWA.wwaEform(WWA.GRS80, ref a, ref f);
 
             viv(j, 0, "wwaEform", "j2", ref status);
             vvd(a, 6378137.0, 1e-10, "wwaEform", "a2", ref status);
-            //vvd(f, 0.0033528106811823189, 1e-18, "wwaEform", "f2", ref status);
             vvd(f, 0.3352810681182318935e-2, 1e-18, "wwaEform", "f2", ref status);
 
             j = WWA.wwaEform(WWA.WGS72, ref a, ref f);
 
             viv(j, 0, "wwaEform", "j2", ref status);
             vvd(a, 6378135.0, 1e-10, "wwaEform", "a3", ref status);
-            //vvd(f, 0.0033527794541675049, 1e-18, "wwaEform", "f3", ref status);
             vvd(f, 0.3352779454167504862e-2, 1e-18, "wwaEform", "f3", ref status);
 
             j = WWA.wwaEform(4, ref a, ref f);
@@ -3434,12 +3408,12 @@ namespace WWA_Test
         **   t _ e o 0 6 a
         **  - - - - - - - -
         **
-        **  Test wwaEo06a function.
+        **  Test WWA.wwaEo06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEo06a, vvd
+        **  Called:  WWA.wwaEo06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3459,12 +3433,12 @@ namespace WWA_Test
         **   t _ e o r s
         **  - - - - - - -
         **
-        **  Test wwaEors function.
+        **  Test WWA.wwaEors function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEors, vvd
+        **  Called:  WWA.wwaEors, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3499,12 +3473,12 @@ namespace WWA_Test
         **   t _ e p b
         **  - - - - - -
         **
-        **  Test wwaEpb function.
+        **  Test WWA.wwaEpb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEpb, vvd
+        **  Called:  WWA.wwaEpb, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3524,12 +3498,12 @@ namespace WWA_Test
         **   t _ e p b 2 j d
         **  - - - - - - - - -
         **
-        **  Test wwaEpb2jd function.
+        **  Test WWA.wwaEpb2jd function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEpb2jd, vvd
+        **  Called:  WWA.wwaEpb2jd, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3552,12 +3526,12 @@ namespace WWA_Test
         **   t _ e p j
         **  - - - - - -
         **
-        **  Test wwaEpj function.
+        **  Test WWA.wwaEpj function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEpj, vvd
+        **  Called:  WWA.wwaEpj, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3577,12 +3551,12 @@ namespace WWA_Test
         **   t _ e p j 2 j d
         **  - - - - - - - - -
         **
-        **  Test wwaEpj2jd function.
+        **  Test WWA.wwaEpj2jd function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEpj2jd, vvd
+        **  Called:  WWA.wwaEpj2jd, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3605,12 +3579,12 @@ namespace WWA_Test
         **   t _ e p v 0 0
         **  - - - - - - - -
         **
-        **  Test wwaEpv00 function.
+        **  Test WWA.wwaEpv00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called: wwaEpv00, vvd, viv
+        **  Called: WWA.wwaEpv00, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -3660,17 +3634,18 @@ namespace WWA_Test
         **   t _ e q e c 0 6
         **  - - - - - - - - -
         **
-        **  Test wwaEqec06 function.
+        **  Test WWA.wwaEqec06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEqec06, vvd
+        **  Called:  WWA.wwaEqec06, vvd
         **
         **  This revision:  2016 March 12
         */
         {
             double date1, date2, dr, dd, dl = 0, db = 0;
+
 
             date1 = 1234.5;
             date2 = 2440000.5;
@@ -3690,12 +3665,12 @@ namespace WWA_Test
         **   t _ e q e q 9 4
         **  - - - - - - - - -
         **
-        **  Test wwaEqeq94 function.
+        **  Test WWA.wwaEqeq94 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEqeq94, vvd
+        **  Called:  WWA.wwaEqeq94, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3715,12 +3690,12 @@ namespace WWA_Test
         **   t _ e r a 0 0
         **  - - - - - - - -
         **
-        **  Test wwaEra00 function.
+        **  Test WWA.wwaEra00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaEra00, vvd
+        **  Called:  WWA.wwaEra00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -3740,18 +3715,18 @@ namespace WWA_Test
         **   t _ f a d 0 3
         **  - - - - - - - -
         **
-        **  Test wwaFad03 function.
+        **  Test WWA.wwaFad03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFad03, vvd
+        **  Called:  WWA.wwaFad03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFad03(0.80), 1.946709205396925672, 1e-12,
-               "wwaFad03", "", ref status);
+                "wwaFad03", "", ref status);
         }
 
         static void t_fae03(ref int status)
@@ -3760,18 +3735,18 @@ namespace WWA_Test
         **   t _ f a e 0 3
         **  - - - - - - - -
         **
-        **  Test wwaFae03 function.
+        **  Test WWA.wwaFae03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFae03, vvd
+        **  Called:  WWA.wwaFae03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFae03(0.80), 1.744713738913081846, 1e-12,
-               "wwaFae03", "", ref status);
+                "wwaFae03", "", ref status);
         }
 
         static void t_faf03(ref int status)
@@ -3780,18 +3755,18 @@ namespace WWA_Test
         **   t _ f a f 0 3
         **  - - - - - - - -
         **
-        **  Test wwaFaf03 function.
+        **  Test WWA.wwaFaf03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFaf03, vvd
+        **  Called:  WWA.wwaFaf03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFaf03(0.80), 0.2597711366745499518, 1e-12,
-               "wwaFaf03", "", ref status);
+                "wwaFaf03", "", ref status);
         }
 
         static void t_faju03(ref int status)
@@ -3800,18 +3775,18 @@ namespace WWA_Test
         **   t _ f a j u 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFaju03 function.
+        **  Test WWA.wwaFaju03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFaju03, vvd
+        **  Called:  WWA.wwaFaju03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFaju03(0.80), 5.275711665202481138, 1e-12,
-               "wwaFaju03", "", ref status);
+                "wwaFaju03", "", ref status);
         }
 
         static void t_fal03(ref int status)
@@ -3820,18 +3795,18 @@ namespace WWA_Test
         **   t _ f a l 0 3
         **  - - - - - - - -
         **
-        **  Test wwaFal03 function.
+        **  Test WWA.wwaFal03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFal03, vvd
+        **  Called:  WWA.wwaFal03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFal03(0.80), 5.132369751108684150, 1e-12,
-               "wwaFal03", "", ref status);
+                "wwaFal03", "", ref status);
         }
 
         static void t_falp03(ref int status)
@@ -3840,18 +3815,18 @@ namespace WWA_Test
         **   t _ f a l p 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFalp03 function.
+        **  Test WWA.wwaFalp03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFalp03, vvd
+        **  Called:  WWA.wwaFalp03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFalp03(0.80), 6.226797973505507345, 1e-12,
-              "wwaFalp03", "", ref status);
+               "wwaFalp03", "", ref status);
         }
 
         static void t_fama03(ref int status)
@@ -3860,18 +3835,18 @@ namespace WWA_Test
         **   t _ f a m a 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFama03 function.
+        **  Test WWA.wwaFama03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFama03, vvd
+        **  Called:  WWA.wwaFama03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFama03(0.80), 3.275506840277781492, 1e-12,
-               "wwaFama03", "", ref status);
+                "wwaFama03", "", ref status);
         }
 
         static void t_fame03(ref int status)
@@ -3880,18 +3855,18 @@ namespace WWA_Test
         **   t _ f a m e 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFame03 function.
+        **  Test WWA.wwaFame03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFame03, vvd
+        **  Called:  WWA.wwaFame03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFame03(0.80), 5.417338184297289661, 1e-12,
-               "wwaFame03", "", ref status);
+                "wwaFame03", "", ref status);
         }
 
         static void t_fane03(ref int status)
@@ -3900,18 +3875,18 @@ namespace WWA_Test
         **   t _ f a n e 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFane03 function.
+        **  Test WWA.wwaFane03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFane03, vvd
+        **  Called:  WWA.wwaFane03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFane03(0.80), 2.079343830860413523, 1e-12,
-               "wwaFane03", "", ref status);
+                "wwaFane03", "", ref status);
         }
 
         static void t_faom03(ref int status)
@@ -3920,18 +3895,18 @@ namespace WWA_Test
         **   t _ f a o m 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFaom03 function.
+        **  Test WWA.wwaFaom03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFaom03, vvd
+        **  Called:  WWA.wwaFaom03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFaom03(0.80), -5.973618440951302183, 1e-12,
-               "wwaFaom03", "", ref status);
+                "wwaFaom03", "", ref status);
         }
 
         static void t_fapa03(ref int status)
@@ -3940,18 +3915,18 @@ namespace WWA_Test
         **   t _ f a p a 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFapa03 function.
+        **  Test WWA.wwaFapa03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFapa03, vvd
+        **  Called:  WWA.wwaFapa03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFapa03(0.80), 0.1950884762240000000e-1, 1e-12,
-               "wwaFapa03", "", ref status);
+                "wwaFapa03", "", ref status);
         }
 
         static void t_fasa03(ref int status)
@@ -3960,18 +3935,18 @@ namespace WWA_Test
         **   t _ f a s a 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFasa03 function.
+        **  Test WWA.wwaFasa03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFasa03, vvd
+        **  Called:  WWA.wwaFasa03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFasa03(0.80), 5.371574539440827046, 1e-12,
-               "wwaFasa03", "", ref status);
+                "wwaFasa03", "", ref status);
         }
 
         static void t_faur03(ref int status)
@@ -3980,18 +3955,18 @@ namespace WWA_Test
         **   t _ f a u r 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFaur03 function.
+        **  Test WWA.wwaFaur03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFaur03, vvd
+        **  Called:  WWA.wwaFaur03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFaur03(0.80), 5.180636450180413523, 1e-12,
-               "wwaFaur03", "", ref status);
+                "wwaFaur03", "", ref status);
         }
 
         static void t_fave03(ref int status)
@@ -4000,18 +3975,18 @@ namespace WWA_Test
         **   t _ f a v e 0 3
         **  - - - - - - - - -
         **
-        **  Test wwaFave03 function.
+        **  Test WWA.wwaFave03 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFave03, vvd
+        **  Called:  WWA.wwaFave03, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaFave03(0.80), 3.424900460533758000, 1e-12,
-               "wwaFave03", "", ref status);
+                "wwaFave03", "", ref status);
         }
 
         static void t_fk425(ref int status)
@@ -4020,12 +3995,12 @@ namespace WWA_Test
         **   t _ f k 4 2 5
         **  - - - - - - - -
         **
-        **  Test iauFk425 function.
+        **  Test WWA.wwaFk425 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  iauFk425, vvd
+        **  Called:  WWA.wwaFk425, vvd
         **
         **  This revision:  2018 December 6
         */
@@ -4063,12 +4038,12 @@ namespace WWA_Test
         **   t _ f k 4 5 z
         **  - - - - - - - -
         **
-        **  Test iauFk45z function.
+        **  Test WWA.wwaFk45z function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  iauFk45z, vvd
+        **  Called:  WWA.wwaFk45z, vvd
         **
         **  This revision:  2018 December 6
         */
@@ -4095,12 +4070,12 @@ namespace WWA_Test
         **   t _ f k 5 2 4
         **  - - - - - - - -
         **
-        **  Test iauFk524 function.
+        **  Test WWA.wwaFk524 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  iauFk524, vvd
+        **  Called:  WWA.wwaFk524, vvd
         **
         **  This revision:  2018 December 6
         */
@@ -4139,14 +4114,14 @@ namespace WWA_Test
         **   t _ f k 5 2 h
         **  - - - - - - - -
         **
-        **  Test wwaFk52h function.
+        **  Test WWA.wwaFk52h function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFk52h, vvd
+        **  Called:  WWA.wwaFk52h, vvd
         **
-        **  This revision:  2016 December 22
+        **  This revision:  2021 January 5
         */
         {
             double r5, d5, dr5, dd5, px5, rv5, rh = 0, dh = 0, drh = 0, ddh = 0, pxh = 0, rvh = 0;
@@ -4173,7 +4148,7 @@ namespace WWA_Test
             vvd(pxh, 0.37921, 1e-14,
                 "wwaFk52h", "px", ref status);
             vvd(rvh, -7.6000000940000254, 1e-11,
-                    "wwaFk52h", "rv", ref status);
+                "wwaFk52h", "rv", ref status);
 
         }
 
@@ -4183,12 +4158,12 @@ namespace WWA_Test
         **   t _ f k 5 4 z
         **  - - - - - - - -
         **
-        **  Test iauFk54z function.
+        **  Test WWA.wwaFk54z function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  iauFk54z, vvd
+        **  Called:  WWA.wwaFk54z, vvd
         **
         **  This revision:  2018 December 6
         */
@@ -4219,12 +4194,12 @@ namespace WWA_Test
         **   t _ f k 5 h i p
         **  - - - - - - - - -
         **
-        **  Test wwaFk5hip function.
+        **  Test WWA.wwaFk5hip function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFk5hip, vvd
+        **  Called:  WWA.wwaFk5hip, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -4268,12 +4243,12 @@ namespace WWA_Test
         **   t _ f k 5 h z
         **  - - - - - - - -
         **
-        **  Test wwaFk5hz function.
+        **  Test WWA.wwaFk5hz function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFk5hz, vvd
+        **  Called:  WWA.wwaFk5hz, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -4297,18 +4272,19 @@ namespace WWA_Test
         **   t _ f w 2 m
         **  - - - - - - -
         **
-        **  Test wwaFw2m function.
+        **  Test WWA.wwaFw2m function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFw2m, vvd
+        **  Called:  WWA.wwaFw2m, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double gamb, phib, psi, eps;
             double[,] r = new double[3, 3];
+
 
             gamb = -0.2243387670997992368e-5;
             phib = 0.4091014602391312982;
@@ -4346,17 +4322,18 @@ namespace WWA_Test
         **   t _ f w 2 x y
         **  - - - - - - - -
         **
-        **  Test wwaFw2xy function.
+        **  Test WWA.wwaFw2xy function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaFw2xy, vvd
+        **  Called:  WWA.wwaFw2xy, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double gamb, phib, psi, eps, x = 0, y = 0;
+
 
             gamb = -0.2243387670997992368e-5;
             phib = 0.4091014602391312982;
@@ -4367,6 +4344,7 @@ namespace WWA_Test
 
             vvd(x, -0.3779734957034082790e-3, 1e-14, "wwaFw2xy", "x", ref status);
             vvd(y, -0.1924880848087615651e-6, 1e-14, "wwaFw2xy", "y", ref status);
+
         }
 
         static void t_g2icrs(ref int status)
@@ -4375,17 +4353,18 @@ namespace WWA_Test
         **   t _ g 2 i c r s
         **  - - - - - - - - -
         **
-        **  Test iauG2icrs function.
+        **  Test WWA.wwaG2icrs function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaG2icrs, vvd
+        **  Called:  WWA.wwaG2icrs, vvd
         **
         **  This revision:  2015 January 30
         */
         {
             double dl, db, dr = 0, dd = 0;
+
 
             dl = 5.5850536063818546461558105;
             db = -0.7853981633974483096156608;
@@ -4400,18 +4379,18 @@ namespace WWA_Test
         **   t _ g c 2 g d
         **  - - - - - - - -
         **
-        **  Test wwaGc2gd function.
+        **  Test WWA.wwaGc2gd function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGc2gd, viv, vvd
+        **  Called:  WWA.wwaGc2gd, viv, vvd
         **
         **  This revision:  2016 March 12
         */
         {
             int j;
-            double[] xyz = new double[] { 2e6, 3e6, 5.244e6 };
+            double[] xyz = new double[3] { 2e6, 3e6, 5.244e6 };
             double e = 0, p = 0, h = 0;
 
             j = WWA.wwaGc2gd(0, xyz, ref e, ref p, ref h);
@@ -4421,16 +4400,13 @@ namespace WWA_Test
             j = WWA.wwaGc2gd(WWA.WGS84, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gd", "j1", ref status);
-            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e1", ref status);
             vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gd", "e1", ref status);
             vvd(p, 0.97160184819075459, 1e-14, "wwaGc2gd", "p1", ref status);
-            //vvd(h, 331.41724614260599, 1e-8, "wwaGc2gd", "h1", ref status);
             vvd(h, 331.4172461426059892, 1e-8, "wwaGc2gd", "h1", ref status);
 
             j = WWA.wwaGc2gd(WWA.GRS80, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gd", "j2", ref status);
-            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e2", ref status);
             vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gd", "e2", ref status);
             vvd(p, 0.97160184820607853, 1e-14, "wwaGc2gd", "p2", ref status);
             vvd(h, 331.41731754844348, 1e-8, "wwaGc2gd", "h2", ref status);
@@ -4438,11 +4414,8 @@ namespace WWA_Test
             j = WWA.wwaGc2gd(WWA.WGS72, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gd", "j3", ref status);
-            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gd", "e3", ref status);
             vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gd", "e3", ref status);
-            //vvd(p, 0.97160181811015119, 1e-14, "wwaGc2gd", "p3", ref status);
             vvd(p, 0.9716018181101511937, 1e-14, "wwaGc2gd", "p3", ref status);
-            //vvd(h, 333.27707261303181, 1e-8, "wwaGc2gd", "h3", ref status);
             vvd(h, 333.2770726130318123, 1e-8, "wwaGc2gd", "h3", ref status);
 
             j = WWA.wwaGc2gd(4, xyz, ref e, ref p, ref h);
@@ -4456,27 +4429,25 @@ namespace WWA_Test
         **   t _ g c 2 g d e
         **  - - - - - - - - -
         **
-        **  Test wwaGc2gde function.
+        **  Test WWA.wwaGc2gde function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGc2gde, viv, vvd
+        **  Called:  WWA.wwaGc2gde, viv, vvd
         **
         **  This revision:  2016 March 12
         */
         {
             int j;
             double a = 6378136.0, f = 0.0033528;
-            double[] xyz = new double[] { 2e6, 3e6, 5.244e6 };
+            double[] xyz = new double[3] { 2e6, 3e6, 5.244e6 };
             double e = 0, p = 0, h = 0;
 
             j = WWA.wwaGc2gde(a, f, xyz, ref e, ref p, ref h);
 
             viv(j, 0, "wwaGc2gde", "j", ref status);
-            //vvd(e, 0.98279372324732907, 1e-14, "wwaGc2gde", "e", ref status);
             vvd(e, 0.9827937232473290680, 1e-14, "wwaGc2gde", "e", ref status);
-            //vvd(p, 0.97160183775704115, 1e-14, "wwaGc2gde", "p", ref status);
             vvd(p, 0.9716018377570411532, 1e-14, "wwaGc2gde", "p", ref status);
             vvd(h, 332.36862495764397, 1e-8, "wwaGc2gde", "h", ref status);
         }
@@ -4487,12 +4458,12 @@ namespace WWA_Test
         **   t _ g d 2 g c
         **  - - - - - - - -
         **
-        **  Test wwaGd2gc function.
+        **  Test WWA.wwaGd2gc function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGd2gc, viv, vvd
+        **  Called:  WWA.wwaGd2gc, viv, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -4508,9 +4479,6 @@ namespace WWA_Test
             j = WWA.wwaGd2gc(WWA.WGS84, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gc", "j1", ref status);
-            //vvd(xyz[0], -5599000.5577049947, 1e-7, "wwaGd2gc", "0/1", ref status);
-            //vvd(xyz[1], 233011.67223479203, 1e-7, "wwaGd2gc", "1/1", ref status);
-            //vvd(xyz[2], -3040909.4706983363, 1e-7, "wwaGd2gc", "2/1", ref status);
             vvd(xyz[0], -5599000.5577049947, 1e-7, "wwaGd2gc", "1/1", ref status);
             vvd(xyz[1], 233011.67223479203, 1e-7, "wwaGd2gc", "2/1", ref status);
             vvd(xyz[2], -3040909.4706983363, 1e-7, "wwaGd2gc", "3/1", ref status);
@@ -4518,9 +4486,6 @@ namespace WWA_Test
             j = WWA.wwaGd2gc(WWA.GRS80, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gc", "j2", ref status);
-            //vvd(xyz[0], -5599000.5577260984, 1e-7, "wwaGd2gc", "0/2", ref status);
-            //vvd(xyz[1], 233011.6722356703, 1e-7, "wwaGd2gc", "1/2", ref status);
-            //vvd(xyz[2], -3040909.4706095476, 1e-7, "wwaGd2gc", "2/2", ref status);
             vvd(xyz[0], -5599000.5577260984, 1e-7, "wwaGd2gc", "1/2", ref status);
             vvd(xyz[1], 233011.6722356702949, 1e-7, "wwaGd2gc", "2/2", ref status);
             vvd(xyz[2], -3040909.4706095476, 1e-7, "wwaGd2gc", "3/2", ref status);
@@ -4528,9 +4493,6 @@ namespace WWA_Test
             j = WWA.wwaGd2gc(WWA.WGS72, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gc", "j3", ref status);
-            //vvd(xyz[0], -5598998.7626301490, 1e-7, "wwaGd2gc", "0/3", ref status);
-            //vvd(xyz[1], 233011.5975297822, 1e-7, "wwaGd2gc", "1/3", ref status);
-            //vvd(xyz[2], -3040908.6861467111, 1e-7, "wwaGd2gc", "2/3", ref status);
             vvd(xyz[0], -5598998.7626301490, 1e-7, "wwaGd2gc", "1/3", ref status);
             vvd(xyz[1], 233011.5975297822211, 1e-7, "wwaGd2gc", "2/3", ref status);
             vvd(xyz[2], -3040908.6861467111, 1e-7, "wwaGd2gc", "3/3", ref status);
@@ -4546,12 +4508,12 @@ namespace WWA_Test
         **   t _ g d 2 g c e
         **  - - - - - - - - -
         **
-        **  Test wwaGd2gce function.
+        **  Test WWA.wwaGd2gce function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGd2gce, viv, vvd
+        **  Called:  WWA.wwaGd2gce, viv, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -4564,9 +4526,6 @@ namespace WWA_Test
             j = WWA.wwaGd2gce(a, f, e, p, h, xyz);
 
             viv(j, 0, "wwaGd2gce", "j", ref status);
-            //vvd(xyz[0], -5598999.6665116328, 1e-7, "wwaGd2gce", "0", ref status);
-            //vvd(xyz[1], 233011.63514630572, 1e-7, "wwaGd2gce", "1", ref status);
-            //vvd(xyz[2], -3040909.0517314132, 1e-7, "wwaGd2gce", "2", ref status);
             vvd(xyz[0], -5598999.6665116328, 1e-7, "wwaGd2gce", "1", ref status);
             vvd(xyz[1], 233011.6351463057189, 1e-7, "wwaGd2gce", "2", ref status);
             vvd(xyz[2], -3040909.0517314132, 1e-7, "wwaGd2gce", "3", ref status);
@@ -4578,17 +4537,18 @@ namespace WWA_Test
         **   t _ g m s t 0 0
         **  - - - - - - - - -
         **
-        **  Test wwaGmst00 function.
+        **  Test WWA.wwaGmst00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGmst00, vvd
+        **  Called:  WWA.wwaGmst00, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double theta;
+
 
             theta = WWA.wwaGmst00(2400000.5, 53736.0, 2400000.5, 53736.0);
 
@@ -4602,17 +4562,18 @@ namespace WWA_Test
         **   t _ g m s t 0 6
         **  - - - - - - - - -
         **
-        **  Test wwaGmst06 function.
+        **  Test WWA.wwaGmst06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGmst06, vvd
+        **  Called:  WWA.wwaGmst06, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double theta;
+
 
             theta = WWA.wwaGmst06(2400000.5, 53736.0, 2400000.5, 53736.0);
 
@@ -4626,17 +4587,18 @@ namespace WWA_Test
         **   t _ g m s t 8 2
         **  - - - - - - - - -
         **
-        **  Test wwaGmst82 function.
+        **  Test WWA.wwaGmst82 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGmst82, vvd
+        **  Called:  WWA.wwaGmst82, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double theta;
+
 
             theta = WWA.wwaGmst82(2400000.5, 53736.0);
 
@@ -4650,17 +4612,18 @@ namespace WWA_Test
         **   t _ g s t 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaGst00a function.
+        **  Test WWA.wwaGst00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGst00a, vvd
+        **  Called:  WWA.wwaGst00a, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double theta;
+
 
             theta = WWA.wwaGst00a(2400000.5, 53736.0, 2400000.5, 53736.0);
 
@@ -4674,17 +4637,18 @@ namespace WWA_Test
         **   t _ g s t 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaGst00b function.
+        **  Test WWA.wwaGst00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGst00b, vvd
+        **  Called:  WWA.wwaGst00b, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double theta;
+
 
             theta = WWA.wwaGst00b(2400000.5, 53736.0);
 
@@ -4698,12 +4662,12 @@ namespace WWA_Test
         **   t _ g s t 0 6
         **  - - - - - - - -
         **
-        **  Test wwaGst06 function.
+        **  Test WWA.wwaGst06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGst06, vvd
+        **  Called:  WWA.wwaGst06, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -4736,12 +4700,12 @@ namespace WWA_Test
         **   t _ g s t 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaGst06a function.
+        **  Test WWA.wwaGst06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGst06a, vvd
+        **  Called:  WWA.wwaGst06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -4761,17 +4725,18 @@ namespace WWA_Test
         **   t _ g s t 9 4
         **  - - - - - - - -
         **
-        **  Test wwaGst94 function.
+        **  Test WWA.wwaGst94 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaGst94, vvd
+        **  Called:  WWA.wwaGst94, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double theta;
+
 
             theta = WWA.wwaGst94(2400000.5, 53736.0);
 
@@ -4785,12 +4750,12 @@ namespace WWA_Test
         **   t _ i c r s 2 g
         **  - - - - - - - - -
         **
-        **  Test iauIcrs2g function.
+        **  Test WWA.wwaIcrs2g function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaIcrs2g, vvd
+        **  Called:  WWA.wwaIcrs2g, vvd
         **
         **  This revision:  2015 January 30
         */
@@ -4810,14 +4775,14 @@ namespace WWA_Test
         **   t _ h 2 f k 5
         **  - - - - - - - -
         **
-        **  Test wwaH2fk5 function.
+        **  Test WWA.wwaH2fk5 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaH2fk5, vvd
+        **  Called:  WWA.wwaH2fk5, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2017 January 3
         */
         {
             double rh, dh, drh, ddh, pxh, rvh, r5 = 0, d5 = 0, dr5 = 0, dd5 = 0, px5 = 0, rv5 = 0;
@@ -4843,10 +4808,8 @@ namespace WWA_Test
                 "wwaH2fk5", "dd5", ref status);
             vvd(px5, 0.37921, 1e-13,
                 "wwaH2fk5", "px", ref status);
-            //vvd(rv5, -7.6000001309071126, 1e-10,
-            //    "wwaH2fk5", "rv", ref status);
             vvd(rv5, -7.6000001309071126, 1e-11,
-                   "wwaH2fk5", "rv", ref status);
+                "wwaH2fk5", "rv", ref status);
 
         }
 
@@ -4856,12 +4819,12 @@ namespace WWA_Test
         **   t _ h d 2 a e
         **  - - - - - - - -
         **
-        **  Test iauHd2ae function.
+        **  Test WWA.wwaHd2ae function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaHd2ae and vvd
+        **  Called:  WWA.wwaHd2ae and vvd
         **
         **  This revision:  2017 October 21
         */
@@ -4877,6 +4840,7 @@ namespace WWA_Test
 
             vvd(a, 5.916889243730066194, 1e-13, "wwaHd2ae", "a", ref status);
             vvd(e, 0.4472186304990486228, 1e-14, "wwaHd2ae", "e", ref status);
+
         }
 
         static void t_hd2pa(ref int status)
@@ -4885,12 +4849,12 @@ namespace WWA_Test
         **   t _ h d 2 p a
         **  - - - - - - - -
         **
-        **  Test iauHd2pa function.
+        **  Test WWA.wwaHd2pa function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaHd2pa and vvd
+        **  Called:  WWA.wwaHd2pa and vvd
         **
         **  This revision:  2017 October 21
         */
@@ -4914,12 +4878,12 @@ namespace WWA_Test
         **   t _ h f k 5 z
         **  - - - - - - - -
         **
-        **  Test wwaHfk5z function.
+        **  Test WWA.wwaHfk5z function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaHfk5z, vvd
+        **  Called:  WWA.wwaHfk5z, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -4950,17 +4914,18 @@ namespace WWA_Test
         **   t _ i r
         **  - - - - -
         **
-        **  Test wwaIr function.
+        **  Test WWA.wwaIr function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaIr, vvd
+        **  Called:  WWA.wwaIr, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] r = new double[3, 3];
+
 
             r[0, 0] = 2.0;
             r[0, 1] = 3.0;
@@ -4996,12 +4961,12 @@ namespace WWA_Test
         **   t _ j d 2 c a l
         **  - - - - - - - - -
         **
-        **  Test wwaJd2cal function.
+        **  Test WWA.wwaJd2cal function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaJd2cal, viv, vvd
+        **  Called:  WWA.wwaJd2cal, viv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5029,12 +4994,12 @@ namespace WWA_Test
         **   t _ j d c a l f
         **  - - - - - - - - -
         **
-        **  Test wwaJdcalf function.
+        **  Test WWA.wwaJdcalf function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaJdcalf, viv
+        **  Called:  WWA.wwaJdcalf, viv
         **
         **  This revision:  2013 August 7
         */
@@ -5064,12 +5029,12 @@ namespace WWA_Test
         **   t _ l d
         **  - - - - -
         **
-        **  Test wwaLd function.
+        **  Test WWA.wwaLd function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLd, vvd
+        **  Called:  WWA.wwaLd, vvd
         *
         **  This revision:  2013 October 2
         */
@@ -5112,12 +5077,12 @@ namespace WWA_Test
         **   t _ l d n
         **  - - - - - -
         **
-        **  Test wwaLdn function.
+        **  Test WWA.wwaLdn function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLdn, vvd
+        **  Called:  WWA.wwaLdn, vvd
         **
         **  This revision:  2013 October 2
         */
@@ -5128,10 +5093,10 @@ namespace WWA_Test
             double[] sc = new double[3];
             double[] sn = new double[3];
 
+
             n = 3;
             b[0].bm = 0.00028574;
             b[0].dl = 3e-10;
-
             b[0].pv = new double[3, 3];
             b[0].pv[0, 0] = -7.81014427;
             b[0].pv[0, 1] = -5.60956681;
@@ -5139,9 +5104,9 @@ namespace WWA_Test
             b[0].pv[1, 0] = 0.0030723249;
             b[0].pv[1, 1] = -0.00406995477;
             b[0].pv[1, 2] = -0.00181335842;
+
             b[1].bm = 0.00095435;
             b[1].dl = 3e-9;
-
             b[1].pv = new double[3, 3];
             b[1].pv[0, 0] = 0.738098796;
             b[1].pv[0, 1] = 4.63658692;
@@ -5149,9 +5114,9 @@ namespace WWA_Test
             b[1].pv[1, 0] = -0.00755816922;
             b[1].pv[1, 1] = 0.00126913722;
             b[1].pv[1, 2] = 0.000727999001;
+
             b[2].bm = 1.0;
             b[2].dl = 6e-6;
-
             b[2].pv = new double[3, 3];
             b[2].pv[0, 0] = -0.000712174377;
             b[2].pv[0, 1] = -0.00230478303;
@@ -5183,12 +5148,12 @@ namespace WWA_Test
         **   t _ l d s u n
         **  - - - - - - - -
         **
-        **  Test wwaLdsun function.
+        **  Test WWA.wwaLdsun function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLdsun, vvd
+        **  Called:  WWA.wwaLdsun, vvd
         **
         **  This revision:  2013 October 2
         */
@@ -5197,6 +5162,7 @@ namespace WWA_Test
             double[] e = new double[3];
             double em;
             double[] p1 = new double[3];
+
 
             p[0] = -0.763276255;
             p[1] = -0.608633767;
@@ -5223,12 +5189,12 @@ namespace WWA_Test
         **   t _ l t e c e q
         **  - - - - - - - - -
         **
-        **  Test wwaLteceq function.
+        **  Test WWA.wwaLteceq function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLteceq, vvd
+        **  Called:  WWA.wwaLteceq, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5253,12 +5219,12 @@ namespace WWA_Test
         **   t _ l t e c m
         **  - - - - - - - -
         **
-        **  Test wwaLtecm function.
+        **  Test WWA.wwaLtecm function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLtecm, vvd
+        **  Called:  WWA.wwaLtecm, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5271,15 +5237,24 @@ namespace WWA_Test
 
             WWA.wwaLtecm(epj, rm);
 
-            vvd(rm[0, 0], 0.3564105644859788825, 1e-14, "wwaLtecm", "rm11", ref status);
-            vvd(rm[0, 1], 0.8530575738617682284, 1e-14, "wwaLtecm", "rm12", ref status);
-            vvd(rm[0, 2], 0.3811355207795060435, 1e-14, "wwaLtecm", "rm13", ref status);
-            vvd(rm[1, 0], -0.9343283469640709942, 1e-14, "wwaLtecm", "rm21", ref status);
-            vvd(rm[1, 1], 0.3247830597681745976, 1e-14, "wwaLtecm", "rm22", ref status);
-            vvd(rm[1, 2], 0.1467872751535940865, 1e-14, "wwaLtecm", "rm23", ref status);
-            vvd(rm[2, 0], 0.1431636191201167793e-2, 1e-14, "wwaLtecm", "rm31", ref status);
-            vvd(rm[2, 1], -0.4084222566960599342, 1e-14, "wwaLtecm", "rm32", ref status);
-            vvd(rm[2, 2], 0.9127919865189030899, 1e-14, "wwaLtecm", "rm33", ref status);
+            vvd(rm[0, 0], 0.3564105644859788825, 1e-14,
+                "wwaLtecm", "rm11", ref status);
+            vvd(rm[0, 1], 0.8530575738617682284, 1e-14,
+                "wwaLtecm", "rm12", ref status);
+            vvd(rm[0, 2], 0.3811355207795060435, 1e-14,
+                "wwaLtecm", "rm13", ref status);
+            vvd(rm[1, 0], -0.9343283469640709942, 1e-14,
+                "wwaLtecm", "rm21", ref status);
+            vvd(rm[1, 1], 0.3247830597681745976, 1e-14,
+                "wwaLtecm", "rm22", ref status);
+            vvd(rm[1, 2], 0.1467872751535940865, 1e-14,
+                "wwaLtecm", "rm23", ref status);
+            vvd(rm[2, 0], 0.1431636191201167793e-2, 1e-14,
+                "wwaLtecm", "rm31", ref status);
+            vvd(rm[2, 1], -0.4084222566960599342, 1e-14,
+                "wwaLtecm", "rm32", ref status);
+            vvd(rm[2, 2], 0.9127919865189030899, 1e-14,
+                "wwaLtecm", "rm33", ref status);
 
         }
 
@@ -5289,12 +5264,12 @@ namespace WWA_Test
         **   t _ l t e q e c
         **  - - - - - - - - -
         **
-        **  Test wwaLteqec function.
+        **  Test WWA.wwaLteqec function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLteqec, vvd
+        **  Called:  WWA.wwaLteqec, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5310,6 +5285,7 @@ namespace WWA_Test
 
             vvd(dl, 0.5039483649047114859, 1e-14, "wwaLteqec", "dl", ref status);
             vvd(db, 0.5848534459726224882, 1e-14, "wwaLteqec", "db", ref status);
+
         }
 
         static void t_ltp(ref int status)
@@ -5318,12 +5294,12 @@ namespace WWA_Test
         **   t _ l t p
         **  - - - - - -
         **
-        **  Test refLtp function.
+        **  Test WWA.wwaLtp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  refLtp, vvd
+        **  Called:  WWA.wwaLtp, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5336,15 +5312,25 @@ namespace WWA_Test
 
             WWA.wwaLtp(epj, rp);
 
-            vvd(rp[0, 0], 0.9967044141159213819, 1e-14, "wwaLtp", "rp11", ref status);
-            vvd(rp[0, 1], 0.7437801893193210840e-1, 1e-14, "wwaLtp", "rp12", ref status);
-            vvd(rp[0, 2], 0.3237624409345603401e-1, 1e-14, "wwaLtp", "rp13", ref status);
-            vvd(rp[1, 0], -0.7437802731819618167e-1, 1e-14, "wwaLtp", "rp21", ref status);
-            vvd(rp[1, 1], 0.9972293894454533070, 1e-14, "wwaLtp", "rp22", ref status);
-            vvd(rp[1, 2], -0.1205768842723593346e-2, 1e-14, "wwaLtp", "rp23", ref status);
-            vvd(rp[2, 0], -0.3237622482766575399e-1, 1e-14, "wwaLtp", "rp31", ref status);
-            vvd(rp[2, 1], -0.1206286039697609008e-2, 1e-14, "wwaLtp", "rp32", ref status);
-            vvd(rp[2, 2], 0.9994750246704010914, 1e-14, "wwaLtp", "rp33", ref status);
+            vvd(rp[0, 0], 0.9967044141159213819, 1e-14,
+                "wwaLtp", "rp11", ref status);
+            vvd(rp[0, 1], 0.7437801893193210840e-1, 1e-14,
+                "wwaLtp", "rp12", ref status);
+            vvd(rp[0, 2], 0.3237624409345603401e-1, 1e-14,
+                "wwaLtp", "rp13", ref status);
+            vvd(rp[1, 0], -0.7437802731819618167e-1, 1e-14,
+                "wwaLtp", "rp21", ref status);
+            vvd(rp[1, 1], 0.9972293894454533070, 1e-14,
+                "wwaLtp", "rp22", ref status);
+            vvd(rp[1, 2], -0.1205768842723593346e-2, 1e-14,
+                "wwaLtp", "rp23", ref status);
+            vvd(rp[2, 0], -0.3237622482766575399e-1, 1e-14,
+                "wwaLtp", "rp31", ref status);
+            vvd(rp[2, 1], -0.1206286039697609008e-2, 1e-14,
+                "wwaLtp", "rp32", ref status);
+            vvd(rp[2, 2], 0.9994750246704010914, 1e-14,
+                "wwaLtp", "rp33", ref status);
+
         }
 
         static void t_ltpb(ref int status)
@@ -5353,12 +5339,12 @@ namespace WWA_Test
         **   t _ l t p b
         **  - - - - - - -
         **
-        **  Test wwaLtpb function.
+        **  Test WWA.wwaLtpb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLtpb, vvd
+        **  Called:  WWA.wwaLtpb, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5371,15 +5357,25 @@ namespace WWA_Test
 
             WWA.wwaLtpb(epj, rpb);
 
-            vvd(rpb[0, 0], 0.9967044167723271851, 1e-14, "wwaLtpb", "rpb11", ref status);
-            vvd(rpb[0, 1], 0.7437794731203340345e-1, 1e-14, "wwaLtpb", "rpb12", ref status);
-            vvd(rpb[0, 2], 0.3237632684841625547e-1, 1e-14, "wwaLtpb", "rpb13", ref status);
-            vvd(rpb[1, 0], -0.7437795663437177152e-1, 1e-14, "wwaLtpb", "rpb21", ref status);
-            vvd(rpb[1, 1], 0.9972293947500013666, 1e-14, "wwaLtpb", "rpb22", ref status);
-            vvd(rpb[1, 2], -0.1205741865911243235e-2, 1e-14, "wwaLtpb", "rpb23", ref status);
-            vvd(rpb[2, 0], -0.3237630543224664992e-1, 1e-14, "wwaLtpb", "rpb31", ref status);
-            vvd(rpb[2, 1], -0.1206316791076485295e-2, 1e-14, "wwaLtpb", "rpb32", ref status);
-            vvd(rpb[2, 2], 0.9994750220222438819, 1e-14, "wwaLtpb", "rpb33", ref status);
+            vvd(rpb[0, 0], 0.9967044167723271851, 1e-14,
+                "wwaLtpb", "rpb11", ref status);
+            vvd(rpb[0, 1], 0.7437794731203340345e-1, 1e-14,
+                "wwaLtpb", "rpb12", ref status);
+            vvd(rpb[0, 2], 0.3237632684841625547e-1, 1e-14,
+                "wwaLtpb", "rpb13", ref status);
+            vvd(rpb[1, 0], -0.7437795663437177152e-1, 1e-14,
+                "wwaLtpb", "rpb21", ref status);
+            vvd(rpb[1, 1], 0.9972293947500013666, 1e-14,
+                "wwaLtpb", "rpb22", ref status);
+            vvd(rpb[1, 2], -0.1205741865911243235e-2, 1e-14,
+                "wwaLtpb", "rpb23", ref status);
+            vvd(rpb[2, 0], -0.3237630543224664992e-1, 1e-14,
+                "wwaLtpb", "rpb31", ref status);
+            vvd(rpb[2, 1], -0.1206316791076485295e-2, 1e-14,
+                "wwaLtpb", "rpb32", ref status);
+            vvd(rpb[2, 2], 0.9994750220222438819, 1e-14,
+                "wwaLtpb", "rpb33", ref status);
+
         }
 
         static void t_ltpecl(ref int status)
@@ -5388,12 +5384,12 @@ namespace WWA_Test
         **   t _ l t p e c l
         **  - - - - - - - - -
         **
-        **  Test wwaLtpecl function.
+        **  Test WWA.wwaLtpecl function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLtpecl, vvd
+        **  Called:  WWA.wwaLtpecl, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5406,9 +5402,13 @@ namespace WWA_Test
 
             WWA.wwaLtpecl(epj, vec);
 
-            vvd(vec[0], 0.4768625676477096525e-3, 1e-14, "wwaLtpecl", "vec1", ref status);
-            vvd(vec[1], -0.4052259533091875112, 1e-14, "wwaLtpecl", "vec2", ref status);
-            vvd(vec[2], 0.9142164401096448012, 1e-14, "wwaLtpecl", "vec3", ref status);
+            vvd(vec[0], 0.4768625676477096525e-3, 1e-14,
+                "wwaLtpecl", "vec1", ref status);
+            vvd(vec[1], -0.4052259533091875112, 1e-14,
+                "wwaLtpecl", "vec2", ref status);
+            vvd(vec[2], 0.9142164401096448012, 1e-14,
+                "wwaLtpecl", "vec3", ref status);
+
         }
 
         static void t_ltpequ(ref int status)
@@ -5417,12 +5417,12 @@ namespace WWA_Test
         **   t _ l t p e q u
         **  - - - - - - - - -
         **
-        **  Test wwaLtpequ function.
+        **  Test WWA.wwaLtpequ function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaLtpequ, vvd
+        **  Called:  WWA.wwaLtpequ, vvd
         **
         **  This revision:  2016 March 12
         */
@@ -5435,9 +5435,50 @@ namespace WWA_Test
 
             WWA.wwaLtpequ(epj, veq);
 
-            vvd(veq[0], -0.3586652560237326659, 1e-14, "wwaLtpequ", "veq1", ref status);
-            vvd(veq[1], -0.1996978910771128475, 1e-14, "wwaLtpequ", "veq2", ref status);
-            vvd(veq[2], 0.9118552442250819624, 1e-14, "wwaLtpequ", "veq3", ref status);
+            vvd(veq[0], -0.3586652560237326659, 1e-14,
+                "wwaLtpequ", "veq1", ref status);
+            vvd(veq[1], -0.1996978910771128475, 1e-14,
+                "wwaLtpequ", "veq2", ref status);
+            vvd(veq[2], 0.9118552442250819624, 1e-14,
+                "wwaLtpequ", "veq3", ref status);
+
+        }
+
+        static void t_moon98(ref int status)
+        /*
+        **  - - - - - - - - -
+        **   t _ m o o n 9 8
+        **  - - - - - - - - -
+        **
+        **  Test WWA.wwaMoon98 function.
+        **
+        **  Returned:
+        **     status    int         FALSE = success, TRUE = fail
+        **
+        **  Called:  WWA.wwaMoon98, vvd, viv
+        **
+        **  This revision:  2021 April 12
+        */
+        {
+            double[,] pv = new double[2, 3];
+
+
+            WWA.wwaMoon98(2400000.5, 43999.9, pv);
+
+            vvd(pv[0, 0], -0.2601295959971044180e-2, 1e-11,
+                "wwaMoon98", "x 4", ref status);
+            vvd(pv[0, 1], 0.6139750944302742189e-3, 1e-11,
+                "wwaMoon98", "y 4", ref status);
+            vvd(pv[0, 2], 0.2640794528229828909e-3, 1e-11,
+                "wwaMoon98", "z 4", ref status);
+
+            vvd(pv[1, 0], -0.1244321506649895021e-3, 1e-11,
+                "wwaMoon98", "xd 4", ref status);
+            vvd(pv[1, 1], -0.5219076942678119398e-3, 1e-11,
+                "wwaMoon98", "yd 4", ref status);
+            vvd(pv[1, 2], -0.1716132214378462047e-3, 1e-11,
+                "wwaMoon98", "zd 4", ref status);
+
         }
 
         static void t_num00a(ref int status)
@@ -5446,12 +5487,12 @@ namespace WWA_Test
         **   t _ n u m 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaNum00a function.
+        **  Test WWA.wwaNum00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNum00a, vvd
+        **  Called:  WWA.wwaNum00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5490,12 +5531,12 @@ namespace WWA_Test
         **   t _ n u m 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaNum00b function.
+        **  Test WWA.wwaNum00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNum00b, vvd
+        **  Called:  WWA.wwaNum00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5533,12 +5574,12 @@ namespace WWA_Test
         **   t _ n u m 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaNum06a function.
+        **  Test WWA.wwaNum06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNum06a, vvd
+        **  Called:  WWA.wwaNum06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5576,18 +5617,19 @@ namespace WWA_Test
         **   t _ n u m a t
         **  - - - - - - - -
         **
-        **  Test wwaNumat function.
+        **  Test WWA.wwaNumat function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNumat, vvd
+        **  Called:  WWA.wwaNumat, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double epsa, dpsi, deps;
             double[,] rmatn = new double[3, 3];
+
 
             epsa = 0.4090789763356509900;
             dpsi = -0.9630909107115582393e-5;
@@ -5624,12 +5666,12 @@ namespace WWA_Test
         **   t _ n u t 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaNut00a function.
+        **  Test WWA.wwaNut00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNut00a, vvd
+        **  Called:  WWA.wwaNut00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5652,12 +5694,12 @@ namespace WWA_Test
         **   t _ n u t 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaNut00b function.
+        **  Test WWA.wwaNut00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNut00b, vvd
+        **  Called:  WWA.wwaNut00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5680,12 +5722,12 @@ namespace WWA_Test
         **   t _ n u t 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaNut06a function.
+        **  Test WWA.wwaNut06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNut06a, vvd
+        **  Called:  WWA.wwaNut06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5708,12 +5750,12 @@ namespace WWA_Test
         **   t _ n u t 8 0
         **  - - - - - - - -
         **
-        **  Test wwaNut80 function.
+        **  Test WWA.wwaNut80 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNut80, vvd
+        **  Called:  WWA.wwaNut80, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5736,12 +5778,12 @@ namespace WWA_Test
         **   t _ n u t m 8 0
         **  - - - - - - - - -
         **
-        **  Test wwaNutm80 function.
+        **  Test WWA.wwaNutm80 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaNutm80, vvd
+        **  Called:  WWA.wwaNutm80, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5780,18 +5822,18 @@ namespace WWA_Test
         **   t _ o b l 0 6
         **  - - - - - - - -
         **
-        **  Test wwaObl06 function.
+        **  Test WWA.wwaObl06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaObl06, vvd
+        **  Called:  WWA.wwaObl06, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaObl06(2400000.5, 54388.0), 0.4090749229387258204, 1e-14,
-               "wwaObl06", "", ref status);
+                "wwaObl06", "", ref status);
         }
 
         static void t_obl80(ref int status)
@@ -5800,12 +5842,12 @@ namespace WWA_Test
         **   t _ o b l 8 0
         **  - - - - - - - -
         **
-        **  Test wwaObl80 function.
+        **  Test WWA.wwaObl80 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaObl80, vvd
+        **  Called:  WWA.wwaObl80, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5825,23 +5867,24 @@ namespace WWA_Test
         **   t _ p 0 6 e
         **  - - - - - - -
         **
-        **  Test wwaP06e function.
+        **  Test WWA.wwaP06e function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaP06e, vvd
+        **  Called:  WWA.wwaP06e, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2020 May 30
         */
         {
             double eps0 = 0, psia = 0, oma = 0, bpa = 0, bqa = 0, pia = 0, bpia = 0,
-                   epsa = 0, chia = 0, za = 0, zetaa = 0, thetaa = 0, pa = 0, gam = 0, phi = 0, psi = 0;
+                   epsa = 0, chia = 0, za = 0, zetaa = 0, thetaa = 0, pa = 0,
+                   gam = 0, phi = 0, psi = 0;
 
 
             WWA.wwaP06e(2400000.5, 52541.0, ref eps0, ref psia, ref oma, ref bpa,
-                   ref bqa, ref pia, ref bpia, ref epsa, ref chia, ref za,
-                   ref zetaa, ref thetaa, ref pa, ref gam, ref phi, ref psi);
+                    ref bqa, ref pia, ref bpia, ref epsa, ref chia, ref za,
+                    ref zetaa, ref thetaa, ref pa, ref gam, ref phi, ref psi);
 
             vvd(eps0, 0.4090926006005828715, 1e-14,
                 "wwaP06e", "eps0", ref status);
@@ -5867,7 +5910,7 @@ namespace WWA_Test
                 "wwaP06e", "zetaa", ref status);
             vvd(thetaa, 0.2650932701657497181e-3, 1e-14,
                 "wwaP06e", "thetaa", ref status);
-            vvd(pa, 0.6651637681381016344e-3, 1e-14,
+            vvd(pa, 0.6651637681381016288e-3, 1e-14,
                 "wwaP06e", "pa", ref status);
             vvd(gam, 0.1398077115963754987e-5, 1e-14,
                 "wwaP06e", "gam", ref status);
@@ -5884,12 +5927,12 @@ namespace WWA_Test
         **   t _ p 2 p v
         **  - - - - - - -
         **
-        **  Test wwaP2pv function.
+        **  Test WWA.wwaP2pv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaP2pv, vvd
+        **  Called:  WWA.wwaP2pv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5928,12 +5971,12 @@ namespace WWA_Test
         **   t _ p 2 s
         **  - - - - - -
         **
-        **  Test wwaP2s function.
+        **  Test WWA.wwaP2s function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaP2s, vvd
+        **  Called:  WWA.wwaP2s, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5960,12 +6003,12 @@ namespace WWA_Test
         **   t _ p a p
         **  - - - - - -
         **
-        **  Test wwaPap function.
+        **  Test WWA.wwaPap function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPap, vvd
+        **  Called:  WWA.wwaPap, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -5995,12 +6038,12 @@ namespace WWA_Test
         **   t _ p a s
         **  - - - - - -
         **
-        **  Test wwaPas function.
+        **  Test WWA.wwaPas function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPas, vvd
+        **  Called:  WWA.wwaPas, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6025,12 +6068,12 @@ namespace WWA_Test
         **   t _ p b 0 6
         **  - - - - - - -
         **
-        **  Test wwaPb06 function.
+        **  Test WWA.wwaPb06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPb06, vvd
+        **  Called:  WWA.wwaPb06, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6055,12 +6098,12 @@ namespace WWA_Test
         **   t _ p d p
         **  - - - - - -
         **
-        **  Test wwaPdp function.
+        **  Test WWA.wwaPdp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPdp, vvd
+        **  Called:  WWA.wwaPdp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6068,6 +6111,7 @@ namespace WWA_Test
             double[] a = new double[3];
             double[] b = new double[3];
             double adb;
+
 
             a[0] = 2.0;
             a[1] = 2.0;
@@ -6089,12 +6133,12 @@ namespace WWA_Test
         **   t _ p f w 0 6
         **  - - - - - - - -
         **
-        **  Test wwaPfw06 function.
+        **  Test WWA.wwaPfw06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPfw06, vvd
+        **  Called:  WWA.wwaPfw06, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6121,18 +6165,19 @@ namespace WWA_Test
         **   t _ p l a n 9 4
         **  - - - - - - - - -
         **
-        **  Test wwaPlan94 function.
+        **  Test WWA.wwaPlan94 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPlan94, vvd, viv
+        **  Called:  WWA.wwaPlan94, vvd, viv
         **
         **  This revision:  2013 October 2
         */
         {
             double[,] pv = new double[2, 3];
             int j;
+
 
             j = WWA.wwaPlan94(2400000.5, 1e6, 0, pv);
 
@@ -6194,17 +6239,18 @@ namespace WWA_Test
         **   t _ p m a t 0 0
         **  - - - - - - - - -
         **
-        **  Test wwaPmat00 function.
+        **  Test WWA.wwaPmat00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPmat00, vvd
+        **  Called:  WWA.wwaPmat00, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] rbp = new double[3, 3];
+
 
             WWA.wwaPmat00(2400000.5, 50123.9999, rbp);
 
@@ -6237,17 +6283,18 @@ namespace WWA_Test
         **   t _ p m a t 0 6
         **  - - - - - - - - -
         **
-        **  Test wwaPmat06 function.
+        **  Test WWA.wwaPmat06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPmat06, vvd
+        **  Called:  WWA.wwaPmat06, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] rbp = new double[3, 3];
+
 
             WWA.wwaPmat06(2400000.5, 50123.9999, rbp);
 
@@ -6280,17 +6327,18 @@ namespace WWA_Test
         **   t _ p m a t 7 6
         **  - - - - - - - - -
         **
-        **  Test wwaPmat76 function.
+        **  Test WWA.wwaPmat76 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPmat76, vvd
+        **  Called:  WWA.wwaPmat76, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             double[,] rmatp = new double[3, 3];
+
 
             WWA.wwaPmat76(2400000.5, 50123.9999, rmatp);
 
@@ -6323,12 +6371,12 @@ namespace WWA_Test
         **   t _ p m
         **  - - - - -
         **
-        **  Test wwaPm function.
+        **  Test WWA.wwaPm function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPm, vvd
+        **  Called:  WWA.wwaPm, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6353,12 +6401,12 @@ namespace WWA_Test
         **   t _ p m p
         **  - - - - - -
         **
-        **  Test wwaPmp function.
+        **  Test WWA.wwaPmp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPmp, vvd
+        **  Called:  WWA.wwaPmp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6390,14 +6438,14 @@ namespace WWA_Test
         **   t _ p m p x
         **  - - - - - - -
         **
-        **  Test wwaPmpx function.
+        **  Test WWA.wwaPmpx function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPmpx, vvd
+        **  Called:  WWA.wwaPmpx, vvd
         **
-        **  This revision:  2013 October 2
+        **  This revision:  2017 March 15
         */
         {
             double rc, dc, pr, pd, px, rv, pmt;
@@ -6418,12 +6466,12 @@ namespace WWA_Test
 
             WWA.wwaPmpx(rc, dc, pr, pd, px, rv, pmt, pob, pco);
 
-            //vvd(pco[0], 0.2328137623960308440, 1e-12, "wwaPmpx", "1", ref status);
-            //vvd(pco[1], 0.6651097085397855317, 1e-12, "wwaPmpx", "2", ref status);
-            //vvd(pco[2], 0.7095257765896359847, 1e-12, "wwaPmpx", "3", ref status);
-            vvd(pco[0], 0.2328137623960308438, 1e-12, "wwaPmpx", "1", ref status);
-            vvd(pco[1], 0.6651097085397855328, 1e-12, "wwaPmpx", "2", ref status);
-            vvd(pco[2], 0.7095257765896359837, 1e-12, "wwaPmpx", "3", ref status);
+            vvd(pco[0], 0.2328137623960308438, 1e-12,
+                        "wwaPmpx", "1", ref status);
+            vvd(pco[1], 0.6651097085397855328, 1e-12,
+                        "wwaPmpx", "2", ref status);
+            vvd(pco[2], 0.7095257765896359837, 1e-12,
+                        "wwaPmpx", "3", ref status);
 
         }
 
@@ -6433,14 +6481,14 @@ namespace WWA_Test
         **   t _ p m s a f e
         **  - - - - - - - - -
         **
-        **  Test wwaPmsafe function.
+        **  Test WWA.wwaPmsafe function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPmsafe, vvd, viv
+        **  Called:  WWA.wwaPmsafe, vvd, viv
         **
-        **  This revision:  2013 October 2
+        **  This revision:  2017 March 15
         */
         {
             int j;
@@ -6465,25 +6513,16 @@ namespace WWA_Test
 
             vvd(ra2, 1.234087484501017061, 1e-12,
                      "wwaPmsafe", "ra2", ref status);
-            //vvd(dec2, 0.7888249982450468574, 1e-12,
-            //         "wwaPmsafe", "dec2", ref status);
             vvd(dec2, 0.7888249982450468567, 1e-12,
-                    "wwaPmsafe", "dec2", ref status);
+                     "wwaPmsafe", "dec2", ref status);
             vvd(pmr2, 0.9996457663586073988e-5, 1e-12,
                       "wwaPmsafe", "pmr2", ref status);
-            //vvd(pmd2, -0.2000040085106737816e-4, 1e-16,
-            //          "wwaPmsafe", "pmd2", ref status);
-            //vvd(px2, 0.9999997295356765185e-2, 1e-12,
-            //         "wwaPmsafe", "px2", ref status);
-            //vvd(rv2, 10.38468380113917014, 1e-10,
-            //         "wwaPmsafe", "rv2", ref status);
             vvd(pmd2, -0.2000040085106754565e-4, 1e-16,
-                    "wwaPmsafe", "pmd2", ref status);
+                      "wwaPmsafe", "pmd2", ref status);
             vvd(px2, 0.9999997295356830666e-2, 1e-12,
                      "wwaPmsafe", "px2", ref status);
             vvd(rv2, 10.38468380293920069, 1e-10,
                      "wwaPmsafe", "rv2", ref status);
-
             viv(j, 0, "wwaPmsafe", "j", ref status);
 
         }
@@ -6494,12 +6533,12 @@ namespace WWA_Test
         **   t _ p n
         **  - - - - -
         **
-        **  Test wwaPn function.
+        **  Test WWA.wwaPn function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPn, vvd
+        **  Called:  WWA.wwaPn, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6529,12 +6568,12 @@ namespace WWA_Test
         **   t _ p n 0 0
         **  - - - - - - -
         **
-        **  Test wwaPn00 function.
+        **  Test WWA.wwaPn00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPn00, vvd
+        **  Called:  WWA.wwaPn00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6545,6 +6584,7 @@ namespace WWA_Test
             double[,] rbp = new double[3, 3];
             double[,] rn = new double[3, 3];
             double[,] rbpn = new double[3, 3];
+
 
             dpsi = -0.9632552291149335877e-5;
             deps = 0.4063197106621141414e-4;
@@ -6667,12 +6707,12 @@ namespace WWA_Test
         **   t _ p n 0 0 a
         **  - - - - - - - -
         **
-        **  Test wwaPn00a function.
+        **  Test WWA.wwaPn00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPn00a, vvd
+        **  Called:  WWA.wwaPn00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6682,7 +6722,7 @@ namespace WWA_Test
             double[,] rp = new double[3, 3];
             double[,] rbp = new double[3, 3];
             double[,] rn = new double[3, 3];
-            double[,] rbpn = new double[3, 3];
+            double[,] rbpn = new double[3, 3];;
 
 
             WWA.wwaPn00a(2400000.5, 53736.0,
@@ -6807,12 +6847,12 @@ namespace WWA_Test
         **   t _ p n 0 0 b
         **  - - - - - - - -
         **
-        **  Test wwaPn00b function.
+        **  Test WWA.wwaPn00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPn00b, vvd
+        **  Called:  WWA.wwaPn00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6947,12 +6987,12 @@ namespace WWA_Test
         **   t _ p n 0 6 a
         **  - - - - - - - -
         **
-        **  Test wwaPn06a function.
+        **  Test WWA.wwaPn06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPn06a, vvd
+        **  Called:  WWA.wwaPn06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -6962,7 +7002,7 @@ namespace WWA_Test
             double[,] rp = new double[3, 3];
             double[,] rbp = new double[3, 3];
             double[,] rn = new double[3, 3];
-            double[,] rbpn = new double[3, 3];
+            double[,] rbpn = new double[3, 3];;
 
 
             WWA.wwaPn06a(2400000.5, 53736.0, ref dpsi, ref deps, ref epsa,
@@ -7087,12 +7127,12 @@ namespace WWA_Test
         **   t _ p n 0 6
         **  - - - - - - -
         **
-        **  Test wwaPn06 function.
+        **  Test WWA.wwaPn06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPn06, vvd
+        **  Called:  WWA.wwaPn06, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7102,7 +7142,7 @@ namespace WWA_Test
             double[,] rp = new double[3, 3];
             double[,] rbp = new double[3, 3];
             double[,] rn = new double[3, 3];
-            double[,] rbpn = new double[3, 3];
+            double[,] rbpn = new double[3, 3];;
 
 
             dpsi = -0.9632552291149335877e-5;
@@ -7226,12 +7266,12 @@ namespace WWA_Test
         **   t _ p n m 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaPnm00a function.
+        **  Test WWA.wwaPnm00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPnm00a, vvd
+        **  Called:  WWA.wwaPnm00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7270,12 +7310,12 @@ namespace WWA_Test
         **   t _ p n m 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaPnm00b function.
+        **  Test WWA.wwaPnm00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPnm00b, vvd
+        **  Called:  WWA.wwaPnm00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7314,12 +7354,12 @@ namespace WWA_Test
         **   t _ p n m 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaPnm06a function.
+        **  Test WWA.wwaPnm06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPnm06a, vvd
+        **  Called:  WWA.wwaPnm06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7358,12 +7398,12 @@ namespace WWA_Test
         **   t _ p n m 8 0
         **  - - - - - - - -
         **
-        **  Test wwaPnm80 function.
+        **  Test WWA.wwaPnm80 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPnm80, vvd
+        **  Called:  WWA.wwaPnm80, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7402,12 +7442,12 @@ namespace WWA_Test
         **   t _ p o m 0 0
         **  - - - - - - - -
         **
-        **  Test wwaPom00 function.
+        **  Test WWA.wwaPom00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPom00, vvd
+        **  Called:  WWA.wwaPom00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7451,12 +7491,12 @@ namespace WWA_Test
         **   t _ p p p
         **  - - - - - -
         **
-        **  Test wwaPpp function.
+        **  Test WWA.wwaPpp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPpp, vvd
+        **  Called:  WWA.wwaPpp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7488,12 +7528,12 @@ namespace WWA_Test
         **   t _ p p s p
         **  - - - - - - -
         **
-        **  Test wwaPpsp function.
+        **  Test WWA.wwaPpsp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPpsp, vvd
+        **  Called:  WWA.wwaPpsp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7528,12 +7568,12 @@ namespace WWA_Test
         **   t _ p r 0 0
         **  - - - - - - -
         **
-        **  Test wwaPr00 function.
+        **  Test WWA.wwaPr00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPr00, vvd
+        **  Called:  WWA.wwaPr00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7555,12 +7595,12 @@ namespace WWA_Test
         **   t _ p r e c 7 6
         **  - - - - - - - - -
         **
-        **  Test wwaPrec76 function.
+        **  Test WWA.wwaPrec76 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPrec76, vvd
+        **  Called:  WWA.wwaPrec76, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7590,12 +7630,12 @@ namespace WWA_Test
         **   t _ p v 2 p
         **  - - - - - - -
         **
-        **  Test wwaPv2p function.
+        **  Test WWA.wwaPv2p function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPv2p, vvd
+        **  Called:  WWA.wwaPv2p, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7626,12 +7666,12 @@ namespace WWA_Test
         **   t _ p v 2 s
         **  - - - - - - -
         **
-        **  Test wwaPv2s function.
+        **  Test WWA.wwaPv2s function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPv2s, vvd
+        **  Called:  WWA.wwaPv2s, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7665,12 +7705,12 @@ namespace WWA_Test
         **   t _ p v d p v
         **  - - - - - - - -
         **
-        **  Test wwaPvdpv function.
+        **  Test WWA.wwaPvdpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvdpv, vvd
+        **  Called:  WWA.wwaPvdpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7709,12 +7749,12 @@ namespace WWA_Test
         **   t _ p v m
         **  - - - - - -
         **
-        **  Test wwaPvm function.
+        **  Test WWA.wwaPvm function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvm, vvd
+        **  Called:  WWA.wwaPvm, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7744,12 +7784,12 @@ namespace WWA_Test
         **   t _ p v m p v
         **  - - - - - - - -
         **
-        **  Test wwaPvmpv function.
+        **  Test WWA.wwaPvmpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvmpv, vvd
+        **  Called:  WWA.wwaPvmpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7793,12 +7833,12 @@ namespace WWA_Test
         **   t _ p v p p v
         **  - - - - - - - -
         **
-        **  Test wwaPvppv function.
+        **  Test WWA.wwaPvppv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvppv, vvd
+        **  Called:  WWA.wwaPvppv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -7842,14 +7882,14 @@ namespace WWA_Test
         **   t _ p v s t a r
         **  - - - - - - - - -
         **
-        **  Test wwaPvstar function.
+        **  Test WWA.wwaPvstar function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvstar, vvd, viv
+        **  Called:  WWA.wwaPvstar, vvd, viv
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2017 March 15
         */
         {
             double[,] pv = new double[2, 3];
@@ -7869,13 +7909,9 @@ namespace WWA_Test
 
             vvd(ra, 0.1686756e-1, 1e-12, "wwaPvstar", "ra", ref status);
             vvd(dec, -1.093989828, 1e-12, "wwaPvstar", "dec", ref status);
-            //vvd(pmr, -0.178323516e-4, 1e-16, "wwaPvstar", "pmr", ref status);
-            //vvd(pmd, 0.2336024047e-5, 1e-16, "wwaPvstar", "pmd", ref status);
             vvd(pmr, -0.1783235160000472788e-4, 1e-16, "wwaPvstar", "pmr", ref status);
             vvd(pmd, 0.2336024047000619347e-5, 1e-16, "wwaPvstar", "pmd", ref status);
-
             vvd(px, 0.74723, 1e-12, "wwaPvstar", "px", ref status);
-            //vvd(rv, -21.6, 1e-11, "wwaPvstar", "rv", ref status);
             vvd(rv, -21.60000010107306010, 1e-11, "wwaPvstar", "rv", ref status);
 
             viv(j, 0, "wwaPvstar", "j", ref status);
@@ -7888,12 +7924,12 @@ namespace WWA_Test
         **   t _ p v t o b
         **  - - - - - - - -
         **
-        **  Test wwaPvtob function.
+        **  Test WWA.wwaPvtob function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvtob, vvd
+        **  Called:  WWA.wwaPvtob, vvd
         **
         **  This revision:  2013 October 2
         */
@@ -7933,14 +7969,14 @@ namespace WWA_Test
         **   t _ p v u
         **  - - - - - -
         **
-        **  Test wwaPvu function.
+        **  Test WWA.wwaPvu function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvu, vvd
+        **  Called:  WWA.wwaPvu, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2021 January 5
         */
         {
             double[,] pv = new double[2, 3];
@@ -7979,14 +8015,14 @@ namespace WWA_Test
         **   t _ p v u p
         **  - - - - - - -
         **
-        **  Test wwaPvup function.
+        **  Test WWA.wwaPvup function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvup, vvd
+        **  Called:  WWA.wwaPvup, vvd
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2021 January 5
         */
         {
             double[,] pv = new double[2, 3];
@@ -8006,6 +8042,7 @@ namespace WWA_Test
             vvd(p[0], 126656.7598605317105, 1e-6, "wwaPvup", "1", ref status);
             vvd(p[1], 2118.531271155726332, 1e-8, "wwaPvup", "2", ref status);
             vvd(p[2], -245216.5048590656190, 1e-6, "wwaPvup", "3", ref status);
+
         }
 
         static void t_pvxpv(ref int status)
@@ -8014,12 +8051,12 @@ namespace WWA_Test
         **   t _ p v x p v
         **  - - - - - - - -
         **
-        **  Test wwaPvxpv function.
+        **  Test WWA.wwaPvxpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPvxpv, vvd
+        **  Called:  WWA.wwaPvxpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8063,12 +8100,12 @@ namespace WWA_Test
         **   t _ p x p
         **  - - - - - -
         **
-        **  Test wwaPxp function.
+        **  Test WWA.wwaPxp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaPxp, vvd
+        **  Called:  WWA.wwaPxp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8100,12 +8137,12 @@ namespace WWA_Test
         **   t _ r e f c o
         **  - - - - - - - -
         **
-        **  Test wwaRefco function.
+        **  Test WWA.wwaRefco function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRefco, vvd
+        **  Called:  WWA.wwaRefco, vvd
         **
         **  This revision:  2013 October 2
         */
@@ -8133,12 +8170,12 @@ namespace WWA_Test
         **   t _ r m 2 v
         **  - - - - - - -
         **
-        **  Test wwaRm2v function.
+        **  Test WWA.wwaRm2v function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRm2v, vvd
+        **  Called:  WWA.wwaRm2v, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8173,12 +8210,12 @@ namespace WWA_Test
         **   t _ r v 2 m
         **  - - - - - - -
         **
-        **  Test wwaRv2m function.
+        **  Test WWA.wwaRv2m function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRv2m, vvd
+        **  Called:  WWA.wwaRv2m, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8213,12 +8250,12 @@ namespace WWA_Test
         **   t _ r x
         **  - - - - -
         **
-        **  Test wwaRx function.
+        **  Test WWA.wwaRx function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRx, vvd
+        **  Called:  WWA.wwaRx, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8263,12 +8300,12 @@ namespace WWA_Test
         **   t _ r x p
         **  - - - - - -
         **
-        **  Test wwaRxp function.
+        **  Test WWA.wwaRxp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRxp, vvd
+        **  Called:  WWA.wwaRxp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8308,12 +8345,12 @@ namespace WWA_Test
         **   t _ r x p v
         **  - - - - - - -
         **
-        **  Test wwaRxpv function.
+        **  Test WWA.wwaRxpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRxpv, vvd
+        **  Called:  WWA.wwaRxpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8362,12 +8399,12 @@ namespace WWA_Test
         **   t _ r x r
         **  - - - - - -
         **
-        **  Test wwaRxr function.
+        **  Test WWA.wwaRxr function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRxr, vvd
+        **  Called:  WWA.wwaRxr, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8423,12 +8460,12 @@ namespace WWA_Test
         **   t _ r y
         **  - - - - -
         **
-        **  Test wwaRy function.
+        **  Test WWA.wwaRy function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRy, vvd
+        **  Called:  WWA.wwaRy, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8473,12 +8510,12 @@ namespace WWA_Test
         **   t _ r z
         **  - - - - -
         **
-        **  Test wwaRz function.
+        **  Test WWA.wwaRz function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaRz, vvd
+        **  Called:  WWA.wwaRz, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8523,12 +8560,12 @@ namespace WWA_Test
         **   t _ s 0 0 a
         **  - - - - - - -
         **
-        **  Test wwaS00a function.
+        **  Test WWA.wwaS00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS00a, vvd
+        **  Called:  WWA.wwaS00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8548,12 +8585,12 @@ namespace WWA_Test
         **   t _ s 0 0 b
         **  - - - - - - -
         **
-        **  Test wwaS00b function.
+        **  Test WWA.wwaS00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS00b, vvd
+        **  Called:  WWA.wwaS00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8573,12 +8610,12 @@ namespace WWA_Test
         **   t _ s 0 0
         **  - - - - - -
         **
-        **  Test wwaS00 function.
+        **  Test WWA.wwaS00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS00, vvd
+        **  Called:  WWA.wwaS00, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8601,12 +8638,12 @@ namespace WWA_Test
         **   t _ s 0 6 a
         **  - - - - - - -
         **
-        **  Test wwaS06a function.
+        **  Test WWA.wwaS06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS06a, vvd
+        **  Called:  WWA.wwaS06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8626,12 +8663,12 @@ namespace WWA_Test
         **   t _ s 0 6
         **  - - - - - -
         **
-        **  Test wwaS06 function.
+        **  Test WWA.wwaS06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS06, vvd
+        **  Called:  WWA.wwaS06, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8654,12 +8691,12 @@ namespace WWA_Test
         **   t _ s 2 c
         **  - - - - - -
         **
-        **  Test wwaS2c function.
+        **  Test WWA.wwaS2c function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS2c, vvd
+        **  Called:  WWA.wwaS2c, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8681,12 +8718,12 @@ namespace WWA_Test
         **   t _ s 2 p
         **  - - - - - -
         **
-        **  Test wwaS2p function.
+        **  Test WWA.wwaS2p function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS2p, vvd
+        **  Called:  WWA.wwaS2p, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8708,12 +8745,12 @@ namespace WWA_Test
         **   t _ s 2 p v
         **  - - - - - - -
         **
-        **  Test wwaS2pv function.
+        **  Test WWA.wwaS2pv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS2pv, vvd
+        **  Called:  WWA.wwaS2pv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8742,12 +8779,12 @@ namespace WWA_Test
         **   t _ s 2 x p v
         **  - - - - - - - -
         **
-        **  Test wwaS2xpv function.
+        **  Test WWA.wwaS2xpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaS2xpv, vvd
+        **  Called:  WWA.wwaS2xpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8786,12 +8823,12 @@ namespace WWA_Test
         **   t _ s e p p
         **  - - - - - - -
         **
-        **  Test wwaSepp function.
+        **  Test WWA.wwaSepp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaSepp, vvd
+        **  Called:  WWA.wwaSepp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8821,12 +8858,12 @@ namespace WWA_Test
         **   t _ s e p s
         **  - - - - - - -
         **
-        **  Test wwaSeps function.
+        **  Test WWA.wwaSeps function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaSeps, vvd
+        **  Called:  WWA.wwaSeps, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -8852,18 +8889,18 @@ namespace WWA_Test
         **   t _ s p 0 0
         **  - - - - - - -
         **
-        **  Test wwaSp00 function.
+        **  Test WWA.wwaSp00 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaSp00, vvd
+        **  Called:  WWA.wwaSp00, vvd
         **
         **  This revision:  2013 August 7
         */
         {
             vvd(WWA.wwaSp00(2400000.5, 52541.0),
-               -0.6216698469981019309e-11, 1e-12, "wwaSp00", "", ref status);
+                -0.6216698469981019309e-11, 1e-12, "wwaSp00", "", ref status);
 
         }
 
@@ -8873,14 +8910,14 @@ namespace WWA_Test
         **   t _ s t a r p m
         **  - - - - - - - - -
         **
-        **  Test wwaStarpm function.
+        **  Test WWA.wwaStarpm function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaStarpm, vvd, viv
+        **  Called:  WWA.wwaStarpm, vvd, viv
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2017 March 15
         */
         {
             double ra1, dec1, pmr1, pmd1, px1, rv1;
@@ -8899,18 +8936,6 @@ namespace WWA_Test
                           2400000.5, 50083.0, 2400000.5, 53736.0,
                           ref ra2, ref dec2, ref pmr2, ref pmd2, ref px2, ref rv2);
 
-            //vvd(ra2, 0.01668919069414242368, 1e-13,
-            //    "wwaStarpm", "ra", ref status);
-            //vvd(dec2, -1.093966454217127879, 1e-13,
-            //    "wwaStarpm", "dec", ref status);
-            //vvd(pmr2, -0.1783662682155932702e-4, 1e-17,
-            //    "wwaStarpm", "pmr", ref status);
-            //vvd(pmd2, 0.2338092915987603664e-5, 1e-17,
-            //    "wwaStarpm", "pmd", ref status);
-            //vvd(px2, 0.7473533835323493644, 1e-13,
-            //    "wwaStarpm", "px", ref status);
-            //vvd(rv2, -21.59905170476860786, 1e-11,
-            //    "wwaStarpm", "rv", ref status);
             vvd(ra2, 0.01668919069414256149, 1e-13,
                 "wwaStarpm", "ra", ref status);
             vvd(dec2, -1.093966454217127897, 1e-13,
@@ -8934,14 +8959,14 @@ namespace WWA_Test
         **   t _ s t a r p v
         **  - - - - - - - - -
         **
-        **  Test wwaStarpv function.
+        **  Test WWA.wwaStarpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaStarpv, vvd, viv
+        **  Called:  WWA.wwaStarpv, vvd, viv
         **
-        **  This revision:  2013 August 7
+        **  This revision:  2017 March 15
         */
         {
             double ra, dec, pmr, pmd, px, rv;
@@ -8965,12 +8990,6 @@ namespace WWA_Test
             vvd(pv[0, 2], -245251.2339876830091, 1e-10,
                 "wwaStarpv", "13", ref status);
 
-            //vvd(pv[1, 0], -0.4051854035740712739e-2, 1e-13,
-            //    "wwaStarpv", "21", ref status);
-            //vvd(pv[1, 1], -0.6253919754866173866e-2, 1e-15,
-            //    "wwaStarpv", "22", ref status);
-            //vvd(pv[1, 2], 0.1189353719774107189e-1, 1e-13,
-            //    "wwaStarpv", "23", ref status);
             vvd(pv[1, 0], -0.4051854008955659551e-2, 1e-13,
                 "wwaStarpv", "21", ref status);
             vvd(pv[1, 1], -0.6253919754414777970e-2, 1e-15,
@@ -8988,12 +9007,12 @@ namespace WWA_Test
         **   t _ s x p
         **  - - - - - -
         **
-        **  Test wwaSxp function.
+        **  Test WWA.wwaSxp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaSxp, vvd
+        **  Called:  WWA.wwaSxp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9024,12 +9043,12 @@ namespace WWA_Test
         **   t _ s x p v
         **  - - - - - - -
         **
-        **  Test wwaSxpv function.
+        **  Test WWA.wwaSxpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaSxpv, vvd
+        **  Called:  WWA.wwaSxpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9067,12 +9086,12 @@ namespace WWA_Test
         **   t _ t a i t t
         **  - - - - - - - -
         **
-        **  Test wwaTaitt function.
+        **  Test WWA.wwaTaitt function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTaitt, vvd, viv
+        **  Called:  WWA.wwaTaitt, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9095,12 +9114,12 @@ namespace WWA_Test
         **   t _ t a i u t 1
         **  - - - - - - - - -
         **
-        **  Test wwaTaiut1 function.
+        **  Test WWA.wwaTaiut1 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTaiut1, vvd, viv
+        **  Called:  WWA.wwaTaiut1, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9123,12 +9142,12 @@ namespace WWA_Test
         **   t _ t a i u t c
         **  - - - - - - - - -
         **
-        **  Test wwaTaiutc function.
+        **  Test WWA.wwaTaiutc function.
         **
         **  Returned:
         **     status    LOGICAL     TRUE = success, FALSE = fail
         **
-        **  Called:  wwaTaiutc, vvd, viv
+        **  Called:  WWA.wwaTaiutc, vvd, viv
         **
         **  This revision:  2013 October 3
         */
@@ -9151,12 +9170,12 @@ namespace WWA_Test
         **   t _ t c b t d b
         **  - - - - - - - - -
         **
-        **  Test wwaTcbtdb function.
+        **  Test WWA.wwaTcbtdb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTcbtdb, vvd, viv
+        **  Called:  WWA.wwaTcbtdb, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9179,12 +9198,12 @@ namespace WWA_Test
         **   t _ t c g t t
         **  - - - - - - - -
         **
-        **  Test wwaTcgtt function.
+        **  Test WWA.wwaTcgtt function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTcgtt, vvd, viv
+        **  Called:  WWA.wwaTcgtt, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9207,12 +9226,12 @@ namespace WWA_Test
         **   t _ t d b t c b
         **  - - - - - - - - -
         **
-        **  Test wwaTdbtcb function.
+        **  Test WWA.wwaTdbtcb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTdbtcb, vvd, viv
+        **  Called:  WWA.wwaTdbtcb, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9235,12 +9254,12 @@ namespace WWA_Test
         **   t _ t d b t t
         **  - - - - - - - -
         **
-        **  Test wwaTdbtt function.
+        **  Test WWA.wwaTdbtt function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTdbtt, vvd, viv
+        **  Called:  WWA.wwaTdbtt, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9263,12 +9282,12 @@ namespace WWA_Test
         **   t _ t f 2 a
         **  - - - - - - -
         **
-        **  Test wwaTf2a function.
+        **  Test WWA.wwaTf2a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTf2a, vvd, viv
+        **  Called:  WWA.wwaTf2a, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9290,12 +9309,12 @@ namespace WWA_Test
         **   t _ t f 2 d
         **  - - - - - - -
         **
-        **  Test wwaTf2d function.
+        **  Test WWA.wwaTf2d function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTf2d, vvd, viv
+        **  Called:  WWA.wwaTf2d, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9308,6 +9327,7 @@ namespace WWA_Test
 
             vvd(d, 0.9966539351851851852, 1e-12, "wwaTf2d", "d", ref status);
             viv(j, 0, "wwaTf2d", "j", ref status);
+
         }
 
         static void t_tpors(ref int status)
@@ -9316,12 +9336,12 @@ namespace WWA_Test
         **   t _ t p o r s
         **  - - - - - - - -
         **
-        **  Test iauTpors function.
+        **  Test WWA.wwaTpors function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTpors, vvd, viv
+        **  Called:  WWA.wwaTpors, vvd, viv
         **
         **  This revision:  2017 October 21
         */
@@ -9353,12 +9373,12 @@ namespace WWA_Test
         **   t _ t p o r v
         **  - - - - - - - -
         **
-        **  Test iauTporv function.
+        **  Test WWA.wwaTporv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTporv, wwaS2c, vvd, viv
+        **  Called:  WWA.wwaTporv, WWA.wwaS2c, vvd, viv
         **
         **  This revision:  2017 October 21
         */
@@ -9402,12 +9422,12 @@ namespace WWA_Test
         **   t _ t p s t s
         **  - - - - - - - -
         **
-        **  Test iauTpsts function.
+        **  Test WWA.wwaTpsts function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTpsts, vvd
+        **  Called:  WWA.wwaTpsts, vvd
         **
         **  This revision:  2017 October 21
         */
@@ -9433,12 +9453,12 @@ namespace WWA_Test
         **   t _ t p s t v
         **  - - - - - - - -
         **
-        **  Test iauTpstv function.
+        **  Test WWA.wwaTpstv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTpstv, wwaS2c, vvd
+        **  Called:  WWA.wwaTpstv, WWA.wwaS2c, vvd
         **
         **  This revision:  2017 October 21
         */
@@ -9468,12 +9488,12 @@ namespace WWA_Test
         **   t _ t p x e s
         **  - - - - - - - -
         **
-        **  Test iauTpxes function.
+        **  Test WWA.wwaTpxes function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTpxes, vvd, viv
+        **  Called:  WWA.wwaTpxes, vvd, viv
         **
         **  This revision:  2017 October 21
         */
@@ -9502,19 +9522,20 @@ namespace WWA_Test
         **   t _ t p x e v
         **  - - - - - - - -
         **
-        **  Test iauTpxev function.
+        **  Test WWA.wwaTpxev function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTpxev, wwaS2c, vvd
+        **  Called:  WWA.wwaTpxev, WWA.wwaS2c, vvd
         **
         **  This revision:  2017 October 21
         */
         {
-            double ra, dec, raz, decz, xi = 0, eta = 0;
+            double ra, dec, raz, decz;
             double[] v = new double[3];
             double[] vz = new double[3];
+            double xi = 0, eta = 0;
             int j;
 
 
@@ -9540,12 +9561,12 @@ namespace WWA_Test
         **   t _ t r
         **  - - - - -
         **
-        **  Test wwaTr function.
+        **  Test WWA.wwaTr function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTr, vvd
+        **  Called:  WWA.wwaTr, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9588,12 +9609,12 @@ namespace WWA_Test
         **   t _ t r x p
         **  - - - - - - -
         **
-        **  Test wwaTrxp function.
+        **  Test WWA.wwaTrxp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTrxp, vvd
+        **  Called:  WWA.wwaTrxp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9633,12 +9654,12 @@ namespace WWA_Test
         **   t _ t r x p v
         **  - - - - - - - -
         **
-        **  Test wwaTrxpv function.
+        **  Test WWA.wwaTrxpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTrxpv, vvd
+        **  Called:  WWA.wwaTrxpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9686,12 +9707,12 @@ namespace WWA_Test
         **   t _ t t t a i
         **  - - - - - - - -
         **
-        **  Test wwaTttai function.
+        **  Test WWA.wwaTttai function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTttai, vvd, viv
+        **  Called:  WWA.wwaTttai, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9714,12 +9735,12 @@ namespace WWA_Test
         **   t _ t t t c g
         **  - - - - - - - -
         **
-        **  Test wwaTttcg function.
+        **  Test WWA.wwaTttcg function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTttcg, vvd, viv
+        **  Called:  WWA.wwaTttcg, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9733,6 +9754,7 @@ namespace WWA_Test
             vvd(g1, 2453750.5, 1e-6, "wwaTttcg", "g1", ref status);
             vvd(g2, 0.8924900312508587113, 1e-12, "wwaTttcg", "g2", ref status);
             viv(j, 0, "wwaTttcg", "j", ref status);
+
         }
 
         static void t_tttdb(ref int status)
@@ -9741,12 +9763,12 @@ namespace WWA_Test
         **   t _ t t t d b
         **  - - - - - - - -
         **
-        **  Test wwaTttdb function.
+        **  Test WWA.wwaTttdb function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTttdb, vvd, viv
+        **  Called:  WWA.wwaTttdb, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9769,12 +9791,12 @@ namespace WWA_Test
         **   t _ t t u t 1
         **  - - - - - - - -
         **
-        **  Test wwaTtut1 function.
+        **  Test WWA.wwaTtut1 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaTtut1, vvd, viv
+        **  Called:  WWA.wwaTtut1, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9797,12 +9819,12 @@ namespace WWA_Test
         **   t _ u t 1 t a i
         **  - - - - - - - - -
         **
-        **  Test wwaUt1tai function.
+        **  Test WWA.wwaUt1tai function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaUt1tai, vvd, viv
+        **  Called:  WWA.wwaUt1tai, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9825,12 +9847,12 @@ namespace WWA_Test
         **   t _ u t 1 t t
         **  - - - - - - - -
         **
-        **  Test wwaUt1tt function.
+        **  Test WWA.wwaUt1tt function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaUt1tt, vvd, viv
+        **  Called:  WWA.wwaUt1tt, vvd, viv
         **
         **  This revision:  2013 October 3
         */
@@ -9853,12 +9875,12 @@ namespace WWA_Test
         **   t _ u t 1 u t c
         **  - - - - - - - - -
         **
-        **  Test wwaUt1utc function.
+        **  Test WWA.wwaUt1utc function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaUt1utc, vvd, viv
+        **  Called:  WWA.wwaUt1utc, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9881,12 +9903,12 @@ namespace WWA_Test
         **   t _ u t c t a i
         **  - - - - - - - - -
         **
-        **  Test wwaUtctai function.
+        **  Test WWA.wwaUtctai function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaUtctai, vvd, viv
+        **  Called:  WWA.wwaUtctai, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9909,12 +9931,12 @@ namespace WWA_Test
         **   t _ u t c u t 1
         **  - - - - - - - - -
         **
-        **  Test wwaUtcut1 function.
+        **  Test WWA.wwaUtcut1 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaUtcut1, vvd, viv
+        **  Called:  WWA.wwaUtcut1, vvd, viv
         **
         **  This revision:  2013 August 7
         */
@@ -9937,12 +9959,12 @@ namespace WWA_Test
         **   t _ x y 0 6
         **  - - - - - - -
         **
-        **  Test wwaXy06 function.
+        **  Test WWA.wwaXy06 function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaXy06, vvd
+        **  Called:  WWA.wwaXy06, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9963,12 +9985,12 @@ namespace WWA_Test
         **   t _ x y s 0 0 a
         **  - - - - - - - - -
         **
-        **  Test wwaXys00a function.
+        **  Test WWA.wwaXys00a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaXys00a, vvd
+        **  Called:  WWA.wwaXys00a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -9990,12 +10012,12 @@ namespace WWA_Test
         **   t _ x y s 0 0 b
         **  - - - - - - - - -
         **
-        **  Test wwaXys00b function.
+        **  Test WWA.wwaXys00b function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaXys00b, vvd
+        **  Called:  WWA.wwaXys00b, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -10017,12 +10039,12 @@ namespace WWA_Test
         **   t _ x y s 0 6 a
         **  - - - - - - - - -
         **
-        **  Test wwaXys06a function.
+        **  Test WWA.wwaXys06a function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaXys06a, vvd
+        **  Called:  WWA.wwaXys06a, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -10044,12 +10066,12 @@ namespace WWA_Test
         **   t _ z p
         **  - - - - -
         **
-        **  Test wwaZp function.
+        **  Test WWA.wwaZp function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaZp, vvd
+        **  Called:  WWA.wwaZp, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -10075,12 +10097,12 @@ namespace WWA_Test
         **   t _ z p v
         **  - - - - - -
         **
-        **  Test wwaZpv function.
+        **  Test WWA.wwaZpv function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaZpv, vvd
+        **  Called:  WWA.wwaZpv, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -10114,12 +10136,12 @@ namespace WWA_Test
         **   t _ z r
         **  - - - - -
         **
-        **  Test wwaZr function.
+        **  Test WWA.wwaZr function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
         **
-        **  Called:  wwaZr, vvd
+        **  Called:  WWA.wwaZr, vvd
         **
         **  This revision:  2013 August 7
         */
@@ -10161,10 +10183,11 @@ namespace WWA_Test
         **   m a i n
         **  - - - - -
         **
-        **  This revision:  2013 October 3
+        **  This revision:  2021 April 18
         */
         {
             int status;
+
 
             /* If any command-line argument, switch to verbose reporting. */
             if (args.Length >= 1)
@@ -10180,7 +10203,7 @@ namespace WWA_Test
             t_a2af(ref status);
             t_a2tf(ref status);
             t_ab(ref status);
-            t_ae2hd(ref status); // new 2
+            t_ae2hd(ref status);
             t_af2a(ref status);
             t_anp(ref status);
             t_anpm(ref status);
@@ -10196,6 +10219,8 @@ namespace WWA_Test
             t_aper13(ref status);
             t_apio(ref status);
             t_apio13(ref status);
+            t_atcc13(ref status);
+            t_atccq(ref status);
             t_atci13(ref status);
             t_atciq(ref status);
             t_atciqn(ref status);
@@ -10236,8 +10261,8 @@ namespace WWA_Test
             t_dat(ref status);
             t_dtdb(ref status);
             t_dtf2d(ref status);
-            t_eceq06(ref status); // new
-            t_ecm06(ref status); // new
+            t_eceq06(ref status);
+            t_ecm06(ref status);
             t_ee00(ref status);
             t_ee00a(ref status);
             t_ee00b(ref status);
@@ -10251,7 +10276,7 @@ namespace WWA_Test
             t_epj(ref status);
             t_epj2jd(ref status);
             t_epv00(ref status);
-            t_eqec06(ref status); // new
+            t_eqec06(ref status);
             t_eqeq94(ref status);
             t_era00(ref status);
             t_fad03(ref status);
@@ -10268,7 +10293,11 @@ namespace WWA_Test
             t_fasa03(ref status);
             t_faur03(ref status);
             t_fave03(ref status);
+            t_fk425(ref status);
+            t_fk45z(ref status);
+            t_fk524(ref status);
             t_fk52h(ref status);
+            t_fk54z(ref status);
             t_fk5hip(ref status);
             t_fk5hz(ref status);
             t_fw2m(ref status);
@@ -10287,8 +10316,8 @@ namespace WWA_Test
             t_gst06a(ref status);
             t_gst94(ref status);
             t_h2fk5(ref status);
-            t_hd2ae(ref status); // new 2
-            t_hd2pa(ref status); // new 2
+            t_hd2ae(ref status);
+            t_hd2pa(ref status);
             t_hfk5z(ref status);
             t_icrs2g(ref status);
             t_ir(ref status);
@@ -10297,13 +10326,14 @@ namespace WWA_Test
             t_ld(ref status);
             t_ldn(ref status);
             t_ldsun(ref status);
-            t_lteceq(ref status); // new
-            t_ltecm(ref status); // new
-            t_lteqec(ref status); // new
-            t_ltp(ref status); // new
-            t_ltpb(ref status); // new
-            t_ltpecl(ref status); // new
-            t_ltpequ(ref status); // new
+            t_lteceq(ref status);
+            t_ltecm(ref status);
+            t_lteqec(ref status);
+            t_ltp(ref status);
+            t_ltpb(ref status);
+            t_ltpecl(ref status);
+            t_ltpequ(ref status);
+            t_moon98(ref status);
             t_num00a(ref status);
             t_num00b(ref status);
             t_num06a(ref status);
@@ -10392,12 +10422,12 @@ namespace WWA_Test
             t_tdbtt(ref status);
             t_tf2a(ref status);
             t_tf2d(ref status);
-            t_tpors(ref status); // new 2
-            t_tporv(ref status); // new 2
-            t_tpsts(ref status); // new 2
-            t_tpstv(ref status); // new 2
-            t_tpxes(ref status); // new 2
-            t_tpxev(ref status); // new 2
+            t_tpors(ref status);
+            t_tporv(ref status);
+            t_tpsts(ref status);
+            t_tpstv(ref status);
+            t_tpxes(ref status);
+            t_tpxev(ref status);
             t_tr(ref status);
             t_trxp(ref status);
             t_trxpv(ref status);
@@ -10419,15 +10449,16 @@ namespace WWA_Test
             t_zr(ref status);
 
             /* Report, set up an appropriate exit status, and finish. */
-            if (status != 0)
+            if (status == 1)
             {
-                Console.WriteLine("SOFA library validation failed!\n");
+                Console.WriteLine("t_sofa_c validation failed!\n");
             }
             else
             {
-                Console.WriteLine("SOFA library validation successful\n");
+                Console.WriteLine("t_sofa_c validation successful\n");
             }
+
             return status;
         }
     }
-}   
+}
