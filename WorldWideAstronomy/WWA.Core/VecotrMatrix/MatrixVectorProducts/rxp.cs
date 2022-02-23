@@ -57,8 +57,6 @@ namespace WorldWideAstronomy
 
             /* Return the result. */
             wwaCp(wrp, rp);
-
-            return;
         }
     }
 }
