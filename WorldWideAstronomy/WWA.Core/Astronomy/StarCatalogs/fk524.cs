@@ -175,7 +175,6 @@ namespace WorldWideAstronomy
             v1950 = rv;
 
             /* Finished. */
-
         }
     }
 }

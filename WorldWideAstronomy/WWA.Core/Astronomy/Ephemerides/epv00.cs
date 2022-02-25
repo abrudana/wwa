@@ -41,13 +41,13 @@ namespace WorldWideAstronomy
         /// </returns>
         public static int wwaEpv00(double date1, double date2, double[,] pvh, double[,] pvb)
         {
-            double am12 = 0.000000211284,
-                   am13 = -0.000000091603,
-                   am21 = -0.000000230286,
-                   am22 = 0.917482137087,
-                   am23 = -0.397776982902,
-                   am32 = 0.397776982902,
-                   am33 = 0.917482137087;
+            const double        am12 = 0.000000211284,
+                                am13 = -0.000000091603,
+                                am21 = -0.000000230286,
+                                am22 = 0.917482137087,
+                                am23 = -0.397776982902,
+                                am32 = 0.397776982902,
+                                am33 = 0.917482137087;
 
             /*
             ** ----------------------
@@ -2291,54 +2291,37 @@ namespace WorldWideAstronomy
             double coeffs;
 
             /* Numbers of terms for each component of the model, in x,y,z sets */
-            //int[] ne0 = new int[3] {(int)(e0x.Length / sizeof (double) / 3),
-            //                        (int)(e0y.Length / sizeof (double) / 3),
-            //                        (int)(e0z.Length / sizeof (double) / 3) };
-            //int[] ne1 = new int[3] {(int)(e1x.Length / sizeof (double) / 3),
-            //                        (int)(e1y.Length / sizeof (double) / 3),
-            //                        (int)(e1z.Length / sizeof (double) / 3) };
-            //int[] ne2 = new int[3] {(int)(e2x.Length / sizeof (double) / 3),
-            //                        (int)(e2y.Length / sizeof (double) / 3),
-            //                        (int)(e2z.Length / sizeof (double) / 3) };
-            //int[] ns0 = new int[3] {(int)(s0x.Length / sizeof (double) / 3),
-            //                        (int)(s0y.Length / sizeof (double) / 3),
-            //                        (int)(s0z.Length / sizeof (double) / 3) };
-            //int[] ns1 = new int[3] {(int)(s1x.Length / sizeof (double) / 3),
-            //                        (int)(s1y.Length / sizeof (double) / 3),
-            //                        (int)(s1z.Length / sizeof (double) / 3) };
-            //int[] ns2 = new int[3] {(int)(s2x.Length / sizeof (double) / 3),
-            //                        (int)(s2y.Length / sizeof (double) / 3),
-            //                        (int)(s2z.Length / sizeof (double) / 3) };
-            int[] ne0 = new int[3] {(int)((e0x.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((e0y.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((e0z.Length * sizeof(double)) / sizeof (double) / 3) };
-            int[] ne1 = new int[3] {(int)((e1x.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((e1y.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((e1z.Length * sizeof(double)) / sizeof (double) / 3) };
-            int[] ne2 = new int[3] {(int)((e2x.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((e2y.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((e2z.Length * sizeof(double)) / sizeof (double) / 3) };
-            int[] ns0 = new int[3] {(int)((s0x.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((s0y.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((s0z.Length * sizeof(double)) / sizeof (double) / 3) };
-            int[] ns1 = new int[3] {(int)((s1x.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((s1y.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((s1z.Length * sizeof(double)) / sizeof (double) / 3) };
-            int[] ns2 = new int[3] {(int)((s2x.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((s2y.Length * sizeof(double)) / sizeof (double) / 3),
-                                    (int)((s2z.Length * sizeof(double)) / sizeof (double) / 3) };
+            int[] ne0 = new int[3] {(int)(e0x.Length / sizeof (double) / 3),
+                              (int)(e0y.Length / sizeof (double) / 3),
+                              (int)(e0z.Length / sizeof (double) / 3) };
+            int[] ne1 = new int[3] {(int)(e1x.Length / sizeof (double) / 3),
+                              (int)(e1y.Length / sizeof (double) / 3),
+                              (int)(e1z.Length / sizeof (double) / 3) };
+            int[] ne2 = new int[3] {(int)(e2x.Length / sizeof (double) / 3),
+                              (int)(e2y.Length / sizeof (double) / 3),
+                              (int)(e2z.Length / sizeof (double) / 3) };
+            int[] ns0 = new int[3] {(int)(s0x.Length / sizeof (double) / 3),
+                              (int)(s0y.Length / sizeof (double) / 3),
+                              (int)(s0z.Length / sizeof (double) / 3) };
+            int[] ns1 = new int[3] {(int)(s1x.Length / sizeof (double) / 3),
+                              (int)(s1y.Length / sizeof (double) / 3),
+                              (int)(s1z.Length / sizeof (double) / 3) };
+            int[] ns2 = new int[3] {(int)(s2x.Length / sizeof (double) / 3),
+                              (int)(s2y.Length / sizeof (double) / 3),
+                              (int)(s2z.Length / sizeof (double) / 3) };
 
             int nterms;
 
             /* Miscellaneous */
             int jstat, i, j;
-            double t, t2, xyz, xyzd, a, b, c, ct, p, cp, x, y, z;
-            double[] ph = new double[3] { 0, 0, 0 };
-            double[] vh = new double[3] { 0, 0, 0 };
-            double[] pb = new double[3] { 0, 0, 0 };
+            double t, t2, xyz, xyzd, a, b, c, ct, p, cp;
+            double[] ph = new double[3];
+            double[] vh = new double[3];
+            double[] pb = new double[3];
             double[] vb = new double[3];
+            double x, y, z;
 
-            /*--------------------------------------------------------------------*/
+            /* ------------------------------------------------------------------ */
 
             /* Time since reference epoch, Julian years. */
             t = ((date1 - DJ00) + date2) / DJY;
@@ -2350,6 +2333,7 @@ namespace WorldWideAstronomy
             /* X then Y then Z. */
             for (i = 0; i < 3; i++)
             {
+
                 /* Initialize position and velocity component. */
                 xyz = 0.0;
                 xyzd = 0.0;
@@ -2360,18 +2344,12 @@ namespace WorldWideAstronomy
 
                 /* Sun to Earth, T^0 terms. */
                 coeffs = ce0[0][i];
-                //nterms = ne0[0];
-                nterms = ce0[i].Length - 1;
+                nterms = ne0[i];
                 for (j = 0; j < nterms; j++)
                 {
-                    //a = coeffs++; // todo: Itt lehetnek gondok
-                    //b = coeffs++;
-                    //c = coeffs++;
-
-                    a = ce0[i][j]; // todo: Itt lehetnek gondok
-                    b = ce0[i][++j];
-                    c = ce0[i][++j];
-
+                    a = coeffs++;
+                    b = coeffs++;
+                    c = coeffs++;
                     p = b + c * t;
                     xyz += a * Math.Cos(p);
                     xyzd -= a * c * Math.Sin(p);
@@ -2379,18 +2357,12 @@ namespace WorldWideAstronomy
 
                 /* Sun to Earth, T^1 terms. */
                 coeffs = ce1[0][i];
-                //nterms = ne1[i];
-                nterms = ce1[i].Length - 1;
+                nterms = ne1[i];
                 for (j = 0; j < nterms; j++)
                 {
-                    //a = coeffs++; // todo: Itt lehetnek gondok
-                    //b = coeffs++;
-                    //c = coeffs++;
-
-                    a = ce1[i][j]; // todo: Itt lehetnek gondok
-                    b = ce1[i][++j];
-                    c = ce1[i][++j];
-
+                    a = coeffs++;
+                    b = coeffs++;
+                    c = coeffs++;
                     ct = c * t;
                     p = b + ct;
                     cp = Math.Cos(p);
@@ -2400,18 +2372,12 @@ namespace WorldWideAstronomy
 
                 /* Sun to Earth, T^2 terms. */
                 coeffs = ce2[0][i];
-                //nterms = ne2[i];
-                nterms = ce2[i].Length - 1;
+                nterms = ne2[i];
                 for (j = 0; j < nterms; j++)
                 {
-                    //a = coeffs++; // todo: Itt lehetnek gondok
-                    //b = coeffs++;
-                    //c = coeffs++;
-
-                    a = ce2[i][j]; // todo: Itt lehetnek gondok
-                    b = ce2[i][++j];
-                    c = ce2[i][++j];
-
+                    a = coeffs++;
+                    b = coeffs++;
+                    c = coeffs++;
                     ct = c * t;
                     p = b + ct;
                     cp = Math.Cos(p);
@@ -2429,18 +2395,12 @@ namespace WorldWideAstronomy
 
                 /* SSB to Sun, T^0 terms. */
                 coeffs = cs0[0][i];
-                //nterms = ns0[i];
-                nterms = cs0[i].Length - 1;
+                nterms = ns0[i];
                 for (j = 0; j < nterms; j++)
                 {
-                    //a = coeffs++;
-                    //b = coeffs++;
-                    //c = coeffs++;
-
-                    a = cs0[i][j];
-                    b = cs0[i][++j];
-                    c = cs0[i][++j];
-
+                    a = coeffs++;
+                    b = coeffs++;
+                    c = coeffs++;
                     p = b + c * t;
                     xyz += a * Math.Cos(p);
                     xyzd -= a * c * Math.Sin(p);
@@ -2448,18 +2408,12 @@ namespace WorldWideAstronomy
 
                 /* SSB to Sun, T^1 terms. */
                 coeffs = cs1[0][i];
-                //nterms = ns1[i];
-                nterms = cs1[i].Length - 1;
+                nterms = ns1[i];
                 for (j = 0; j < nterms; j++)
                 {
-                    //a = coeffs++;
-                    //b = coeffs++;
-                    //c = coeffs++;
-
-                    a = cs1[i][j];
-                    b = cs1[i][++j];
-                    c = cs1[i][++j];
-
+                    a = coeffs++;
+                    b = coeffs++;
+                    c = coeffs++;
                     ct = c * t;
                     p = b + ct;
                     cp = Math.Cos(p);
@@ -2469,18 +2423,12 @@ namespace WorldWideAstronomy
 
                 /* SSB to Sun, T^2 terms. */
                 coeffs = cs2[0][i];
-                //nterms = ns2[i];
-                nterms = cs2[i].Length - 1;
+                nterms = ns2[i];
                 for (j = 0; j < nterms; j++)
                 {
-                    //a = coeffs++;
-                    //b = coeffs++;
-                    //c = coeffs++;
-
-                    a = cs2[i][j];
-                    b = cs2[i][++j];
-                    c = cs2[i][++j];
-
+                    a = coeffs++;
+                    b = coeffs++;
+                    c = coeffs++;
                     ct = c * t;
                     p = b + ct;
                     cp = Math.Cos(p);
@@ -2500,33 +2448,35 @@ namespace WorldWideAstronomy
             x = ph[0];
             y = ph[1];
             z = ph[2];
-            pvh[0,0] = x + am12 * y + am13 * z;
-            pvh[0,1] = am21 * x + am22 * y + am23 * z;
-            pvh[0,2] = am32 * y + am33 * z;
+            pvh[0, 0] = x + am12 * y + am13 * z;
+            pvh[0, 1] = am21 * x + am22 * y + am23 * z;
+            pvh[0, 2] = am32 * y + am33 * z;
 
             x = vh[0];
             y = vh[1];
             z = vh[2];
-            pvh[1,0] = x + am12 * y + am13 * z;
-            pvh[1,1] = am21 * x + am22 * y + am23 * z;
-            pvh[1,2] = am32 * y + am33 * z;
+            pvh[1, 0] = x + am12 * y + am13 * z;
+            pvh[1, 1] = am21 * x + am22 * y + am23 * z;
+            pvh[1, 2] = am32 * y + am33 * z;
 
             x = pb[0];
             y = pb[1];
             z = pb[2];
-            pvb[0,0] = x + am12 * y + am13 * z;
-            pvb[0,1] = am21 * x + am22 * y + am23 * z;
-            pvb[0,2] = am32 * y + am33 * z;
+            pvb[0, 0] = x + am12 * y + am13 * z;
+            pvb[0, 1] = am21 * x + am22 * y + am23 * z;
+            pvb[0, 2] = am32 * y + am33 * z;
 
             x = vb[0];
             y = vb[1];
             z = vb[2];
-            pvb[1,0] = x + am12 * y + am13 * z;
-            pvb[1,1] = am21 * x + am22 * y + am23 * z;
-            pvb[1,2] = am32 * y + am33 * z;
+            pvb[1, 0] = x + am12 * y + am13 * z;
+            pvb[1, 1] = am21 * x + am22 * y + am23 * z;
+            pvb[1, 2] = am32 * y + am33 * z;
 
             /* Return the status. */
             return jstat;
+
+            /* Finished. */
         }
     }
 }

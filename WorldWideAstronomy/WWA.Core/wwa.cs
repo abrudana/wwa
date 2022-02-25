@@ -173,7 +173,7 @@ namespace WorldWideAstronomy
         /// Light time for 1 au (s)
         /// </summary>
         //public const double AULT = 499.004782;
-        public const double AULT = (DAU / CMPS);
+        public const double AULT = DAU / CMPS;
 
         /// <summary>
         /// Speed of light (AU per day)

@@ -43,9 +43,8 @@ namespace WorldWideAstronomy
         /// <param name="eo">equation of the origins (ERA-GST)</param>
         public static void wwaApci13(double date1, double date2, ref wwaASTROM astrom, ref double eo)
         {
-            double[,] ehpv = new double[2, 3] { { 0, 0, 0 }, { 0, 0, 0 } };
-            double[,] ebpv = new double[2, 3] { { 0, 0, 0 }, { 0, 0, 0 } };
-
+            double[,] ehpv = new double[2, 3];
+            double[,] ebpv = new double[2, 3];
             double[,] r = new double[3,3];
             double x = 0, y = 0, s;
 
