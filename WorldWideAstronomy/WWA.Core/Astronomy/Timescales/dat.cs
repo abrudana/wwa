@@ -64,7 +64,7 @@ namespace WorldWideAstronomy
         /// modifications in code.
         /// 
         /// Contributor
-        /// Attila Abrudán
+        /// Attila AbrudÃ¡n
         /// 
         /// Please read the ReadMe.1st text file for more information.
         /// </remarks>
@@ -163,7 +163,7 @@ namespace WorldWideAstronomy
 
             /* Number of Delta(AT) changes */
             //const int NDAT = sizeof changes / sizeof changes[0];
-            //enum { NDAT = (int) (sizeof changes / sizeof changes[0]) }; // 2015 Február 27
+            //enum { NDAT = (int) (sizeof changes / sizeof changes[0]) }; // 2015 Februï¿½r 27
             int NDAT = changes.GetLength(0); // by AA
 
             /* Miscellaneous local variables */

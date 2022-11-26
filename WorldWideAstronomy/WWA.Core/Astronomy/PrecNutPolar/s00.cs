@@ -38,7 +38,7 @@ namespace WorldWideAstronomy
         /// modifications in code.
         /// 
         /// Contributor
-        /// Attila Abrud·n
+        /// Attila Abrud√°n
         /// 
         /// Please read the ReadMe.1st text file for more information.
         /// </remarks>
