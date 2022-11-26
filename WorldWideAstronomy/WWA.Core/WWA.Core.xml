@@ -10,33 +10,33 @@
             </summary>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaAb(System.Double[],System.Double[],System.Double,System.Double,System.Double[]@)">
-            <summary>
-            Apply aberration to transform natural direction into proper direction.
-            </summary>
+             <summary>
+             Apply aberration to transform natural direction into proper direction.
+             </summary>
             
-            <remarks>
-            World Wide Astronomy - WWA
-            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+             <remarks>
+             World Wide Astronomy - WWA
+             Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
             
-            This program is derived from the International Astronomical Union's
-            SOFA (Standards of Fundamental Astronomy) software collection.
-            http://www.iausofa.org
+             This program is derived from the International Astronomical Union's
+             SOFA (Standards of Fundamental Astronomy) software collection.
+             http://www.iausofa.org
             
-            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
-            This version is intended to retain identical functionality to the SOFA library, but
-            made distinct through different function names (prefixes) and C# language specific
-            modifications in code.
+             The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+             This version is intended to retain identical functionality to the SOFA library, but
+             made distinct through different function names (prefixes) and C# language specific
+             modifications in code.
             
-            Contributor
-            Attila Abrudán
+             Contributor
+             Attila Abrudán
             
-            Please read the ReadMe.1st text file for more information.
-            </remarks>
-            <param name="pnat">natural direction to the source (unit vector)</param>
-            <param name="v">observer barycentric velocity in units of c</param>
-            <param name="s">distance between the Sun and the observer (au)</param>
-            <param name="bm1">sqrt(1-|v|^2): reciprocal of Lorenz factor</param>
-            <param name="ppr">proper direction to source (unit vector)</param>
+             Please read the ReadMe.1st text file for more information.
+             </remarks>
+             <param name="pnat">natural direction to the source (unit vector)</param>
+             <param name="v">observer barycentric velocity in units of c</param>
+             <param name="s">distance between the Sun and the observer (au)</param>
+             <param name="bm1">sqrt(1-|v|^2): reciprocal of Lorenz factor</param>
+             <param name="ppr">proper direction to source (unit vector)</param>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaApcg(System.Double,System.Double,System.Double[0:,0:],System.Double[],WorldWideAstronomy.WWA.wwaASTROM@)">
             <summary>
@@ -474,6 +474,82 @@
             <param name="wl">wavelength (micrometers, Note 7)</param>
             <param name="astrom">star-independent astrometry parameters:</param>
             <returns></returns>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaAtcc13(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            For a terrestrial observer, prepare star-independent astrometry
+            parameters for transformations between CIRS and observed
+            coordinates.  The caller supplies the Earth orientation information
+            and the refraction constants as well as the site coordinates.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="rc"></param>
+            <param name="dc"></param>
+            <param name="pr"></param>
+            <param name="pd"></param>
+            <param name="px"></param>
+            <param name="rv"></param>
+            <param name="date1"></param>
+            <param name="date2"></param>
+            <param name="ra"></param>
+            <param name="da"></param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaAtccq(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,WorldWideAstronomy.WWA.wwaASTROM@,System.Double@,System.Double@)">
+            <summary>
+            For a geocentric observer, prepare star-independent astrometry
+            parameters for transformations between ICRS and GCRS coordinates.
+            The caller supplies the date, and SOFA models are used to predict
+            the Earth ephemeris.
+            The parameters produced by this function are required in the
+            parallax, light deflection and aberration parts of the astrometric
+            transformation chain.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="rc"></param>
+            <param name="dc"></param>
+            <param name="pr"></param>
+            <param name="pd"></param>
+            <param name="px"></param>
+            <param name="rv"></param>
+            <param name="astrom"></param>
+            <param name="ra"></param>
+            <param name="da"></param>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaAtci13(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@)">
             <summary>
@@ -4735,6 +4811,93 @@
             else = binary logical OR of the above
             </returns>
         </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk425(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Convert B1950.0 FK4 star catalog data to J2000.0 FK5.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk45z(System.Double,System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            Convert a B1950.0 FK4 star position to J2000.0 FK5, assuming zero proper motion in the FK5 system.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk524(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Convert J2000.0 FK5 star catalog data to B1950.0 FK4.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
+        </member>
         <member name="M:WorldWideAstronomy.WWA.wwaFk52h(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
             <summary>
             Transform FK5 (J2000.0) star data into the Hipparcos system.
@@ -4772,6 +4935,35 @@
             <param name="ddh">proper motion in Dec (dDec/dt, rad/Jyear)</param>
             <param name="pxh">parallax (arcsec)</param>
             <param name="rvh">radial velocity (km/s, positive = receding)</param>
+        </member>
+        <member name="M:WorldWideAstronomy.WWA.wwaFk54z(System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Convert a J2000.0 FK5 star position to B1950.0 FK4, assuming zero proper motion in FK5 and parallax.
+            </summary>
+            
+            <remarks>
+            World Wide Astronomy - WWA
+            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
+            
+            This program is derived from the International Astronomical Union's
+            SOFA (Standards of Fundamental Astronomy) software collection.
+            http://www.iausofa.org
+            
+            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
+            This version is intended to retain identical functionality to the SOFA library, but
+            made distinct through different function names (prefixes) and C# language specific
+            modifications in code.
+            
+            Contributor
+            Attila Abrudán
+            
+            Please read the ReadMe.1st text file for more information.
+            </remarks>
+            <param name="r1950"></param>
+            <param name="d1950"></param>
+            <param name="bepoch"></param>
+            <param name="r2000"></param>
+            <param name="d2000"></param>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaFk5hip(System.Double[0:,0:],System.Double[])">
             <summary>
@@ -5599,122 +5791,6 @@
             <param name="phi">site latitude</param>
             <param name="ha">hour angle (local)</param>
             <param name="dec">declination</param>
-        </member>
-        <member name="M:WorldWideAstronomy.WWA.wwaFk425(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
-            <summary>
-            Convert B1950.0 FK4 star catalog data to J2000.0 FK5.
-            </summary>
-            
-            <remarks>
-            World Wide Astronomy - WWA
-            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
-            
-            This program is derived from the International Astronomical Union's
-            SOFA (Standards of Fundamental Astronomy) software collection.
-            http://www.iausofa.org
-            
-            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
-            This version is intended to retain identical functionality to the SOFA library, but
-            made distinct through different function names (prefixes) and C# language specific
-            modifications in code.
-            
-            Contributor
-            Attila Abrudán
-            
-            Please read the ReadMe.1st text file for more information.
-            </remarks>
-            <param name="r1950"></param>
-            <param name="d1950"></param>
-            <param name="bepoch"></param>
-            <param name="r2000"></param>
-            <param name="d2000"></param>
-        </member>
-        <member name="M:WorldWideAstronomy.WWA.wwaFk45z(System.Double,System.Double,System.Double,System.Double@,System.Double@)">
-            <summary>
-            Convert a B1950.0 FK4 star position to J2000.0 FK5, assuming zero proper motion in the FK5 system.
-            </summary>
-            
-            <remarks>
-            World Wide Astronomy - WWA
-            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
-            
-            This program is derived from the International Astronomical Union's
-            SOFA (Standards of Fundamental Astronomy) software collection.
-            http://www.iausofa.org
-            
-            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
-            This version is intended to retain identical functionality to the SOFA library, but
-            made distinct through different function names (prefixes) and C# language specific
-            modifications in code.
-            
-            Contributor
-            Attila Abrudán
-            
-            Please read the ReadMe.1st text file for more information.
-            </remarks>
-            <param name="r1950"></param>
-            <param name="d1950"></param>
-            <param name="bepoch"></param>
-            <param name="r2000"></param>
-            <param name="d2000"></param>
-        </member>
-        <member name="M:WorldWideAstronomy.WWA.wwaFk524(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
-            <summary>
-            Convert J2000.0 FK5 star catalog data to B1950.0 FK4.
-            </summary>
-            
-            <remarks>
-            World Wide Astronomy - WWA
-            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
-            
-            This program is derived from the International Astronomical Union's
-            SOFA (Standards of Fundamental Astronomy) software collection.
-            http://www.iausofa.org
-            
-            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
-            This version is intended to retain identical functionality to the SOFA library, but
-            made distinct through different function names (prefixes) and C# language specific
-            modifications in code.
-            
-            Contributor
-            Attila Abrudán
-            
-            Please read the ReadMe.1st text file for more information.
-            </remarks>
-            <param name="r1950"></param>
-            <param name="d1950"></param>
-            <param name="bepoch"></param>
-            <param name="r2000"></param>
-            <param name="d2000"></param>
-        </member>
-        <member name="M:WorldWideAstronomy.WWA.wwaFk54z(System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Double@,System.Double@)">
-            <summary>
-            Convert a J2000.0 FK5 star position to B1950.0 FK4, assuming zero proper motion in FK5 and parallax.
-            </summary>
-            
-            <remarks>
-            World Wide Astronomy - WWA
-            Set of C# algorithms and procedures that implement standard models used in fundamental astronomy.
-            
-            This program is derived from the International Astronomical Union's
-            SOFA (Standards of Fundamental Astronomy) software collection.
-            http://www.iausofa.org
-            
-            The WWA code does not itself constitute software provided by and/or endorsed by SOFA.
-            This version is intended to retain identical functionality to the SOFA library, but
-            made distinct through different function names (prefixes) and C# language specific
-            modifications in code.
-            
-            Contributor
-            Attila Abrudán
-            
-            Please read the ReadMe.1st text file for more information.
-            </remarks>
-            <param name="r1950"></param>
-            <param name="d1950"></param>
-            <param name="bepoch"></param>
-            <param name="r2000"></param>
-            <param name="d2000"></param>
         </member>
         <member name="M:WorldWideAstronomy.WWA.wwaHd2ae(System.Double,System.Double,System.Double,System.Double@,System.Double@)">
             <summary>

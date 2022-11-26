@@ -284,7 +284,7 @@ namespace WWA_Test
         **   t _ a p c g
         **  - - - - - - -
         **
-        **  Test WWA.wwaApcg function.  
+        **  Test WWA.wwaApcg function.
         **
         **  Returned:
         **     status    int         FALSE = success, TRUE = fail
@@ -1530,7 +1530,7 @@ namespace WWA_Test
         {
             double date1, date2, eo = 0, ri, di, rc = 0, dc = 0;
             WWA.wwaASTROM astrom = new WWA.wwaASTROM();
-            
+
             astrom.eb = new double[3];
             astrom.eh = new double[3];
             astrom.bpn = new double[3, 3];
@@ -1588,7 +1588,7 @@ namespace WWA_Test
             b[0].pv[1, 0] = 0.0030723249;
             b[0].pv[1, 1] = -0.00406995477;
             b[0].pv[1, 2] = -0.00181335842;
-            
+
             b[1].bm = 0.00095435;
             b[1].dl = 3e-9;
             b[1].pv = new double[3, 3];
@@ -1598,7 +1598,7 @@ namespace WWA_Test
             b[1].pv[1, 0] = -0.00755816922;
             b[1].pv[1, 1] = 0.00126913722;
             b[1].pv[1, 2] = 0.000727999001;
-            
+
             b[2].bm = 1.0;
             b[2].dl = 6e-6;
             b[2].pv = new double[3, 3];
